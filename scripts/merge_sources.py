@@ -50,6 +50,18 @@ SUPPLEMENTAL = {
     ],
 }
 
+# Polls on RealClearPolling's latest-polls listing (read 2026-10-29) that the race pages, served from a
+# days-old cache, did not yet carry. Toplines are RCP's; fieldwork dates and samples from the pollsters' releases.
+LISTING = collections.defaultdict(list)
+try:
+    for m in json.load(open(f"{SRC}/missing_meta.json")):
+        res = next(x[3] for x in json.load(open(f"{SRC}/missing.json")) if x[1] == m["race"] and x[2] == m["pollster"])
+        url = next(x[4] for x in json.load(open(f"{SRC}/missing.json")) if x[1] == m["race"] and x[2] == m["pollster"])
+        LISTING[m["race"]].append({"pollster": m["pollster"], "start": m["start"], "end": m["end"], "sample": m["sample"],
+                                   "sample_type": m["sample_type"], "moe": m["moe"], "results": res, "url": url})
+except FileNotFoundError:
+    print("note: missing_meta.json not present; listing polls not added", file=sys.stderr)
+
 def key_for(name):
     return name.split()[-1]
 
@@ -97,12 +109,11 @@ for ro in roster:
                           "results": p["results"], "url": p["url"], "via": "RCP"})
         for p in SUPPLEMENTAL.get(rid, []):
             polls.append(dict(p, via="270toWin"))
+        for p in LISTING.get(rid, []):
+            polls.append(dict(p, via="RCP"))
         polls.sort(key=lambda p: (p["end"], p["start"] or p["end"]))
-        na = norm_avg(pr.get("rcp_average"))
-        if na:
-            lk, m = leader(na["values"])
-            avg = {"source": "RCP", "dates": na["dates"], "values": na["values"], "leader_key": lk, "margin": m}
-        elif polls:
+        rcp_avg = norm_avg(pr.get("rcp_average"))  # as published on the (CDN-cached) race page when read; reference only
+        if polls:
             avg = mean_of_recent(polls, sorted(pkeys))
         sources.append(pr["source_url"])
     if rid == "AK" and "AK-rcv" in polled:
@@ -124,7 +135,7 @@ for ro in roster:
         "seat_party": ro["seat_holder_party"], "incumbent": ro["incumbent"],
         "incumbent_running": ro["incumbent_running"], "open_seat": ro["open_seat"],
         "rating": ro["rating"], "notes": ro.get("notes"),
-        "candidates": cands, "average": avg, "polls": polls, "rcv_first_round": rcv,
+        "candidates": cands, "average": avg, "rcp_average_when_read": rcp_avg if pr else None, "polls": polls, "rcv_first_round": rcv,
         "sources": sorted(set(sources)),
     })
 

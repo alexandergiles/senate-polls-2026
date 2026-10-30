@@ -18,13 +18,14 @@ Everything the page shows is in [`data/senate-polls-2026.json`](data/senate-poll
 
 | Field | Source |
 |---|---|
-| Individual polls, RCP averages | [RealClearPolling](https://www.realclearpolling.com/latest-polls/senate) race pages, read 2026-10-29 |
+| Individual polls | [RealClearPolling](https://www.realclearpolling.com/latest-polls/senate) race pages and latest-polls listing, read 2026-10-29 (fieldwork dates for the newest polls from the pollsters' releases) |
 | Nebraska polls RCP does not list | [270toWin](https://www.270towin.com/2026-senate-polls/nebraska) (marked `"via": "270toWin"`) |
 | Candidates, incumbents, open seats | [270toWin](https://www.270towin.com/2026-senate-election/) and [Ballotpedia](https://ballotpedia.org/United_States_Senate_elections,_2026) |
 | Race ratings | Cook Political Report, as shown on 270toWin (Oct. 20, 2026 update) |
 
-Where RCP publishes no average (Nebraska, Alaska's ranked-choice first round) the page shows a plain
-mean of the five most recent polls and says so. Trend lines are a Gaussian-kernel smoothing
+Each race's **average** is the site's own: the plain mean of the five most recent polls (all polls
+where fewer than five exist). RCP's published average as of the read is kept in the data file as
+`rcp_average_when_read` for reference but is not shown. Trend lines are a Gaussian-kernel smoothing
 (12-day bandwidth) of the listed polls, drawn only where polls exist.
 
 The New York Times runs its own tracker with a different poll set and method:
@@ -32,9 +33,10 @@ The New York Times runs its own tracker with a different poll set and method:
 
 ## Updating
 
-1. Edit `data/senate-polls-2026.json` (add polls to a race's `polls` array; update `average` and
-   `generated`).
-2. `python3 build.py` regenerates `index.html` from `src/page.html` and the data file.
+1. Edit `data/senate-polls-2026.json`: append new polls to a race's `polls` array and update
+   `generated`. Averages are recomputed at build time, so there is nothing else to edit.
+2. `python3 build.py` regenerates `index.html` from `src/page.html` and the data file (and rewrites
+   the data file with sorted polls and fresh averages).
 3. Commit and push; GitHub Pages redeploys.
 
 `scripts/merge_sources.py` is the one-off script that merged the extracted RCP race files and the

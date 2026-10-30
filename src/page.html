@@ -267,8 +267,8 @@ footer a { color: var(--ink-2); }
   </header>
   <main id="app"></main>
   <footer>
-    <p><strong>Data.</strong> Individual polls and race averages are those listed on RealClearPolling race pages, read Oct. 29, 2026; averages marked “simple average” are this site’s own mean of the five most recent polls where RCP publishes none. Nebraska polls that RCP does not carry are taken from 270toWin. Candidates and seat status from 270toWin and Ballotpedia; race ratings are the Cook Political Report’s, as shown on 270toWin (Oct. 20 update). The New York Times keeps its own tracker, with a different poll set and averaging method, at <a href="https://www.nytimes.com/interactive/polls/senate-polls-2026.html" target="_blank" rel="noopener">nytimes.com</a>.</p>
-    <p><strong>Reading the numbers.</strong> A lead inside a poll’s margin of error is not a lead you can count on; a one-point average is a coin flip. Trend lines are a time-weighted smoothing of the listed polls and are not the Times’s or RCP’s averages. This is a snapshot of public polling, not a forecast.</p>
+    <p><strong>Data.</strong> Individual polls are those listed by RealClearPolling (race pages and the latest-polls listing, read Oct. 29, 2026), with Nebraska polls RCP does not carry taken from 270toWin. Each race’s average is this site’s own: the plain mean of the five most recent polls. Candidates and seat status come from 270toWin and Ballotpedia; race ratings are the Cook Political Report’s, as shown on 270toWin (Oct. 20 update). The New York Times keeps its own tracker, with a different poll set and averaging method, at <a href="https://www.nytimes.com/interactive/polls/senate-polls-2026.html" target="_blank" rel="noopener">nytimes.com</a>.</p>
+    <p><strong>Reading the numbers.</strong> A lead inside a poll’s margin of error is not a lead you can count on; a one-point average is a coin flip. Trend lines are a time-weighted smoothing of the listed polls, not anyone’s official average. This is a snapshot of public polling, not a forecast.</p>
   </footer>
 </div>
 
@@ -400,9 +400,9 @@ footer a { color: var(--ink-2); }
     const plotbox = el('div', { class: 'plotbox' });
     app.append(el('section', {},
       el('div', { class: 'sec-head' }, el('h2', { text: 'Where the polls stand, race by race' }),
-        el('p', { text: 'The dot is the current polling average; the band is the spread of margins in polls taken over the past 30 days (or the last five). Click a race for every poll.' })),
+        el('p', { text: 'The dot is the race’s polling average (mean of the last five polls); the band is the spread of margins in polls taken over the past 30 days. Click a race for every poll.' })),
       plotbox,
-      el('p', { class: 'caption', text: 'Averages are RealClearPolling’s where it publishes one (Nebraska: simple average of the five most recent polls). Independents Dan Osborn (Neb.), Brian Bengs (S.D.) and Seth Bodnar (Mont.) are the main opposition to the Republican in their races and are plotted on the Democratic side.' })));
+      el('p', { class: 'caption', text: 'Each race’s average is the plain mean of its five most recent polls (all of them where fewer exist). Independents Dan Osborn (Neb.), Brian Bengs (S.D.) and Seth Bodnar (Mont.) are the main opposition to the Republican in their races and are plotted on the Democratic side.' })));
     drawMarginPlot(plotbox, polled);
 
     // latest polls
@@ -526,7 +526,7 @@ footer a { color: var(--ink-2); }
       if (!onRight && cx - 11 - est < (narrow ? left : left - 4)) onRight = true;
       g.append(svgEl('text', { class: 'val', x: onRight ? cx + 11 : cx - 11, y: y + 4, 'text-anchor': onRight ? 'start' : 'end' }, vt));
       const show = ev => {
-        tip.replaceChildren(el('div', { class: 't', text: raceTitle(r) }), el('div', { class: 'm', text: (r.average.source === 'RCP' ? 'RCP average, ' : 'Simple average of last ' + r.average.n + ' polls, ') + fmtAvgDates(r.average.dates) }));
+        tip.replaceChildren(el('div', { class: 't', text: raceTitle(r) }), el('div', { class: 'm', text: 'Average of the last ' + r.average.n + ' polls, ' + fmtAvgDates(r.average.dates) }));
         for (const c of cands(r).slice().sort((a, b) => (r.average.values[b.key] ?? -1) - (r.average.values[a.key] ?? -1))) {
           const v = r.average.values[c.key]; if (v == null) continue;
           tip.append(el('div', { class: 'r' }, el('span', {}, el('i', { class: 'k ' + c.party }), c.name), el('b', { text: n1(v) + '%' })));
@@ -569,7 +569,7 @@ footer a { color: var(--ink-2); }
     const avgRow = el('div', { class: 'avg-row', style: `--cols:${nTiles + (nTiles > 2 ? 1 : 2)};--lead:${nTiles > 2 ? 1 : 2}` });
     if (r.average) {
       const leadC = candByKey(r, r.average.leader_key);
-      avgRow.append(el('div', { class: 'tile lead' }, el('div', { class: 'lab' }, el('span', { text: r.average.source === 'RCP' ? 'RCP polling average' : 'Simple average of the last ' + r.average.n + ' polls' })),
+      avgRow.append(el('div', { class: 'tile lead' }, el('div', { class: 'lab' }, el('span', { text: 'Polling average · last ' + r.average.n + ' polls' })),
         el('div', { class: 'v', text: r.average.margin === 0 ? 'Tied' : shortName(leadC) + ' +' + n1(r.average.margin) }),
         el('div', { class: 'sub', text: 'Polls ' + fmtAvgDates(r.average.dates) + ' · ' + r.polls.length + ' polls listed' })));
       for (const c of cands(r).slice().sort((a, b) => (r.average.values[b.key] ?? -1) - (r.average.values[a.key] ?? -1))) {
@@ -621,7 +621,7 @@ footer a { color: var(--ink-2); }
     t.append(el('thead', {}, thead));
     const tb = el('tbody');
     if (avg) {
-      const tr = el('tr', { style: 'background:var(--surface-2)' }, el('td', {}, el('strong', { text: avg.source === 'RCP' ? 'RCP average' : 'Average of last ' + avg.n })), el('td', { class: 'd', text: fmtAvgDates(avg.dates) }), el('td', {}));
+      const tr = el('tr', { style: 'background:var(--surface-2)' }, el('td', {}, el('strong', { text: 'Average of last ' + avg.n })), el('td', { class: 'd', text: fmtAvgDates(avg.dates) }), el('td', {}));
       for (const c of order) tr.append(el('td', { class: 'n' + (avg.leader_key === c.key ? ' top' : ''), text: avg.values[c.key] == null ? '—' : n1(avg.values[c.key]) }));
       tr.append(el('td', { class: 'mg', text: marginText(r, avg.values) }));
       tb.append(tr);

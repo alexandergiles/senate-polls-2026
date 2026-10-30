@@ -49,14 +49,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "09/21 - 10/16",
+    "source": "mean",
+    "n": 2,
+    "values": {
+     "Wess": 34.0,
+     "Moore": 55.0
+    },
+    "leader_key": "Moore",
+    "margin": 21.0,
+    "dates": "9/21 - 10/16"
+   },
+   "rcp_average_when_read": {
     "values": {
      "Moore": 55.0,
      "Wess": 34.0
     },
-    "leader_key": "Moore",
-    "margin": 21.0
+    "dates": "09/21 - 10/16"
    },
    "polls": [
     {
@@ -135,14 +143,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "10/1 - 10/16",
+    "source": "mean",
+    "n": 5,
     "values": {
      "Peltola": 49.4,
      "Sullivan": 48.2
     },
     "leader_key": "Peltola",
-    "margin": 1.2
+    "margin": 1.2,
+    "dates": "10/1 - 10/16"
+   },
+   "rcp_average_when_read": {
+    "values": {
+     "Peltola": 49.4,
+     "Sullivan": 48.2
+    },
+    "dates": "10/1 - 10/16"
    },
    "polls": [
     {
@@ -674,7 +690,7 @@
     "source_url": "https://www.realclearpolling.com/polls/senate/general/2026/alaska/peltola-vs-sullivan-vs-heikes-vs-j-sullivan",
     "average": {
      "source": "mean",
-     "dates": "9/28 - 10/16",
+     "n": 5,
      "values": {
       "Peltola": 46.4,
       "Sullivan": 44.0,
@@ -683,7 +699,7 @@
      },
      "leader_key": "Peltola",
      "margin": 2.4,
-     "n": 5
+     "dates": "9/28 - 10/16"
     }
    },
    "sources": [
@@ -722,6 +738,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -757,6 +774,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -792,6 +810,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -826,14 +845,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "9/28 - 10/20",
+    "source": "mean",
+    "n": 5,
+    "values": {
+     "Nixon": 43.2,
+     "Moody": 49.4
+    },
+    "leader_key": "Moody",
+    "margin": 6.2,
+    "dates": "10/2 - 10/27"
+   },
+   "rcp_average_when_read": {
     "values": {
      "Moody": 49.5,
      "Nixon": 42.2
     },
-    "leader_key": "Moody",
-    "margin": 7.3
+    "dates": "9/28 - 10/20"
    },
    "polls": [
     {
@@ -1045,6 +1072,34 @@
      },
      "url": "https://battlegrounds.coefficient.org/fl/",
      "via": "RCP"
+    },
+    {
+     "pollster": "NY Times/Siena",
+     "start": "2026-10-19",
+     "end": "2026-10-25",
+     "sample": 813,
+     "sample_type": "LV",
+     "moe": 3.9,
+     "results": {
+      "Moody": 50,
+      "Nixon": 44
+     },
+     "url": "https://www.nytimes.com/interactive/2026/10/28/polls/times-siena-fl-poll-toplines.html",
+     "via": "RCP"
+    },
+    {
+     "pollster": "St. Pete Polls",
+     "start": "2026-10-25",
+     "end": "2026-10-27",
+     "sample": 916,
+     "sample_type": "LV",
+     "moe": 3.2,
+     "results": {
+      "Moody": 49,
+      "Nixon": 45
+     },
+     "url": "https://floridapolitics.com/archives/827487-final-st-pete-polls-byron-donalds-leads-david-jolly-48-to-46-as-long-as-republicans-show-up/",
+     "via": "RCP"
     }
    ],
    "rcv_first_round": null,
@@ -1082,14 +1137,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "09/21 - 10/17",
+    "source": "mean",
+    "n": 5,
     "values": {
      "Ossoff": 51.2,
      "Collins": 43.0
     },
     "leader_key": "Ossoff",
-    "margin": 8.2
+    "margin": 8.2,
+    "dates": "9/21 - 10/17"
+   },
+   "rcp_average_when_read": {
+    "values": {
+     "Ossoff": 51.2,
+     "Collins": 43.0
+    },
+    "dates": "09/21 - 10/17"
    },
    "polls": [
     {
@@ -1394,6 +1457,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -1428,6 +1492,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -1463,14 +1528,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "09/29 - 10/22",
+    "source": "mean",
+    "n": 5,
+    "values": {
+     "Turek": 45.6,
+     "Hinson": 46.4
+    },
+    "leader_key": "Hinson",
+    "margin": 0.8,
+    "dates": "10/6 - 10/22"
+   },
+   "rcp_average_when_read": {
     "values": {
      "Hinson": 46.1,
      "Turek": 45.5
     },
-    "leader_key": "Hinson",
-    "margin": 0.6
+    "dates": "09/29 - 10/22"
    },
    "polls": [
     {
@@ -1915,14 +1988,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "9/8 - 10/14",
+    "source": "mean",
+    "n": 5,
+    "values": {
+     "Hamilton": 47.2,
+     "Marshall": 45.8
+    },
+    "leader_key": "Hamilton",
+    "margin": 1.4,
+    "dates": "9/24 - 10/26"
+   },
+   "rcp_average_when_read": {
     "values": {
      "Marshall": 46.0,
      "Hamilton": 45.7
     },
-    "leader_key": "Marshall",
-    "margin": 0.3
+    "dates": "9/8 - 10/14"
    },
    "polls": [
     {
@@ -2022,6 +2103,20 @@
      },
      "url": "https://insideradvantage.com/insideradvantage-senate-surveys-texas-paxton-49-talarico-48-kansas-marshall-48-hamilton-47-maine-jackson-49-collins-47/",
      "via": "RCP"
+    },
+    {
+     "pollster": "CNN",
+     "start": "2026-10-20",
+     "end": "2026-10-26",
+     "sample": 838,
+     "sample_type": "LV",
+     "moe": 4.5,
+     "results": {
+      "Hamilton": 49,
+      "Marshall": 45
+     },
+     "url": "https://www.documentcloud.org/documents/28856723-cnn-poll-conducted-by-ssrs-kansas-october/",
+     "via": "RCP"
     }
    ],
    "rcv_first_round": null,
@@ -2059,6 +2154,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -2094,6 +2190,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -2129,14 +2226,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "9/23 - 10/25",
+    "source": "mean",
+    "n": 5,
+    "values": {
+     "Jackson": 48.6,
+     "Collins": 47.0
+    },
+    "leader_key": "Jackson",
+    "margin": 1.6,
+    "dates": "10/13 - 10/26"
+   },
+   "rcp_average_when_read": {
     "values": {
      "Jackson": 48.7,
      "Collins": 47.5
     },
-    "leader_key": "Jackson",
-    "margin": 1.2
+    "dates": "9/23 - 10/25"
    },
    "polls": [
     {
@@ -2474,6 +2579,20 @@
      },
      "url": "https://maristpoll.marist.edu/polls/the-midterm-elections-in-maine-october-2026/",
      "via": "RCP"
+    },
+    {
+     "pollster": "CNN",
+     "start": "2026-10-20",
+     "end": "2026-10-26",
+     "sample": 783,
+     "sample_type": "LV",
+     "moe": 4.5,
+     "results": {
+      "Jackson": 49,
+      "Collins": 45
+     },
+     "url": "https://www.documentcloud.org/documents/28856725-cnn-poll-conducted-by-ssrs-maine-october/",
+     "via": "RCP"
     }
    ],
    "rcv_first_round": null,
@@ -2511,14 +2630,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "09/14 - 10/18",
+    "source": "mean",
+    "n": 5,
     "values": {
      "Markey": 55.6,
      "Deaton": 29.0
     },
     "leader_key": "Markey",
-    "margin": 26.6
+    "margin": 26.6,
+    "dates": "9/14 - 10/18"
+   },
+   "rcp_average_when_read": {
+    "values": {
+     "Markey": 55.6,
+     "Deaton": 29.0
+    },
+    "dates": "09/14 - 10/18"
    },
    "polls": [
     {
@@ -2739,14 +2866,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "9/24 - 10/22",
+    "source": "mean",
+    "n": 5,
+    "values": {
+     "El-Sayed": 49.2,
+     "Rogers": 44.6
+    },
+    "leader_key": "El-Sayed",
+    "margin": 4.6,
+    "dates": "10/2 - 10/27"
+   },
+   "rcp_average_when_read": {
     "values": {
      "El-Sayed": 47.9,
      "Rogers": 46.0
     },
-    "leader_key": "El-Sayed",
-    "margin": 1.9
+    "dates": "9/24 - 10/22"
    },
    "polls": [
     {
@@ -3310,6 +3445,20 @@
      "via": "RCP"
     },
     {
+     "pollster": "Detroit News/Glengariff",
+     "start": "2026-10-19",
+     "end": "2026-10-22",
+     "sample": 600,
+     "sample_type": "LV",
+     "moe": 4.0,
+     "results": {
+      "El-Sayed": 51,
+      "Rogers": 45
+     },
+     "url": "https://www.clickondetroit.com/news/local/2026/10/27/democratic-candidate-el-sayed-leads-michigan-us-senate-race-new-poll-finds/",
+     "via": "RCP"
+    },
+    {
      "pollster": "InsiderAdvantage",
      "start": "2026-10-21",
      "end": "2026-10-22",
@@ -3321,6 +3470,34 @@
       "Rogers": 46
      },
      "url": "https://insideradvantage.com/insideradvantage-senate-surveys-mi-el-sayed-47-rogers-46-ia-hinson-47-turek-45-oh-brown-47-husted-44/",
+     "via": "RCP"
+    },
+    {
+     "pollster": "CNN",
+     "start": "2026-10-20",
+     "end": "2026-10-27",
+     "sample": 768,
+     "sample_type": "LV",
+     "moe": 4.7,
+     "results": {
+      "El-Sayed": 49,
+      "Rogers": 42
+     },
+     "url": "https://s3.documentcloud.org/documents/28856720/cnn-poll-conducted-by-ssrs-michigan-october.pdf",
+     "via": "RCP"
+    },
+    {
+     "pollster": "CBS News/Mitchell",
+     "start": "2026-10-26",
+     "end": "2026-10-27",
+     "sample": 636,
+     "sample_type": "LV",
+     "moe": 3.9,
+     "results": {
+      "El-Sayed": 51,
+      "Rogers": 44
+     },
+     "url": "https://www.cbsnews.com/detroit/news/el-sayed-widens-lead-rogers-michigan-senate-poll/",
      "via": "RCP"
     }
    ],
@@ -3359,14 +3536,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "10/2 - 10/21",
+    "source": "mean",
+    "n": 5,
+    "values": {
+     "Flanagan": 48.6,
+     "Tafoya": 43.4
+    },
+    "leader_key": "Flanagan",
+    "margin": 5.2,
+    "dates": "10/5 - 10/26"
+   },
+   "rcp_average_when_read": {
     "values": {
      "Flanagan": 46.6,
      "Tafoya": 43.2
     },
-    "leader_key": "Flanagan",
-    "margin": 3.4
+    "dates": "10/2 - 10/21"
    },
    "polls": [
     {
@@ -3564,6 +3749,20 @@
      },
      "url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_minnesota_senate",
      "via": "RCP"
+    },
+    {
+     "pollster": "NY Times/Siena",
+     "start": "2026-10-19",
+     "end": "2026-10-26",
+     "sample": 752,
+     "sample_type": "LV",
+     "moe": 4.1,
+     "results": {
+      "Flanagan": 54,
+      "Tafoya": 40
+     },
+     "url": "https://www.nytimes.com/2026/10/28/us/south-carolina-florida-minnesota-poll.html",
+     "via": "RCP"
     }
    ],
    "rcv_first_round": null,
@@ -3607,6 +3806,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -3653,16 +3853,26 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "08/27 - 10/18",
+    "source": "mean",
+    "n": 3,
+    "values": {
+     "Bankhead": 20.0,
+     "Alme": 42.0,
+     "Bodnar": 27.3,
+     "Austin": 3.5
+    },
+    "leader_key": "Alme",
+    "margin": 14.7,
+    "dates": "8/27 - 10/18"
+   },
+   "rcp_average_when_read": {
     "values": {
      "Alme": 41.0,
      "Bodnar": 29.0,
      "Bankhead": 18.5,
      "Austin": 3.5
     },
-    "leader_key": "Alme",
-    "margin": 12.0
+    "dates": "08/27 - 10/18"
    },
    "polls": [
     {
@@ -3750,15 +3960,16 @@
    ],
    "average": {
     "source": "mean",
-    "dates": "9/8 - 10/27",
+    "n": 5,
     "values": {
-     "Osborn": 45.2,
-     "Ricketts": 46.0
+     "Ricketts": 46.0,
+     "Osborn": 45.2
     },
     "leader_key": "Ricketts",
     "margin": 0.8,
-    "n": 5
+    "dates": "9/8 - 10/27"
    },
+   "rcp_average_when_read": null,
    "polls": [
     {
      "pollster": "Tavern Research",
@@ -3880,14 +4091,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "9/15 - 10/20",
+    "source": "mean",
+    "n": 5,
+    "values": {
+     "Pappas": 49.6,
+     "Sununu": 43.0
+    },
+    "leader_key": "Pappas",
+    "margin": 6.6,
+    "dates": "9/28 - 10/23"
+   },
+   "rcp_average_when_read": {
     "values": {
      "Pappas": 49.5,
      "Sununu": 43.0
     },
-    "leader_key": "Pappas",
-    "margin": 6.5
+    "dates": "9/15 - 10/20"
    },
    "polls": [
     {
@@ -3961,6 +4180,20 @@
      "via": "RCP"
     },
     {
+     "pollster": "UMass Lowell",
+     "start": "2026-10-02",
+     "end": "2026-10-19",
+     "sample": 600,
+     "sample_type": "LV",
+     "moe": 5.0,
+     "results": {
+      "Pappas": 48,
+      "Sununu": 41
+     },
+     "url": "https://www.uml.edu/news/press-releases/2026/102826-new-england-polls.aspx",
+     "via": "RCP"
+    },
+    {
      "pollster": "St. Anselm",
      "start": "2026-10-19",
      "end": "2026-10-20",
@@ -3972,6 +4205,20 @@
       "Sununu": 43
      },
      "url": "https://www.anselm.edu/about/anselmian-hub/news/new-saint-anselm-college-poll-finds-democrats-leading-congressional-races-affordability-concerns-shape-election-landscape",
+     "via": "RCP"
+    },
+    {
+     "pollster": "Rasmussen Reports",
+     "start": "2026-10-20",
+     "end": "2026-10-23",
+     "sample": 970,
+     "sample_type": "LV",
+     "moe": 3.0,
+     "results": {
+      "Pappas": 50,
+      "Sununu": 44
+     },
+     "url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_new_hampshire_senate",
      "via": "RCP"
     }
    ],
@@ -4010,6 +4257,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -4044,6 +4292,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -4079,14 +4328,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "9/27 - 10/25",
+    "source": "mean",
+    "n": 5,
+    "values": {
+     "Cooper": 51.0,
+     "Whatley": 40.4
+    },
+    "leader_key": "Cooper",
+    "margin": 10.6,
+    "dates": "9/29 - 10/25"
+   },
+   "rcp_average_when_read": {
     "values": {
      "Cooper": 50.8,
      "Whatley": 40.5
     },
-    "leader_key": "Cooper",
-    "margin": 10.3
+    "dates": "9/27 - 10/25"
    },
    "polls": [
     {
@@ -4636,6 +4893,20 @@
      "via": "RCP"
     },
     {
+     "pollster": "High Point University",
+     "start": "2026-10-01",
+     "end": "2026-10-20",
+     "sample": 620,
+     "sample_type": "LV",
+     "moe": 4.7,
+     "results": {
+      "Cooper": 54,
+      "Whatley": 40
+     },
+     "url": "https://www.highpoint.edu/blog/2026/10/hpu-yougov-poll-north-carolina-likely-voters-weigh-in-on-u-s-senate-race-and-more/",
+     "via": "RCP"
+    },
+    {
      "pollster": "Carolina Journal/Harper",
      "start": "2026-10-18",
      "end": "2026-10-20",
@@ -4699,14 +4970,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "9/22 - 10/22",
+    "source": "mean",
+    "n": 5,
+    "values": {
+     "Brown": 48.6,
+     "Husted": 45.4
+    },
+    "leader_key": "Brown",
+    "margin": 3.2,
+    "dates": "10/9 - 10/22"
+   },
+   "rcp_average_when_read": {
     "values": {
      "Brown": 48.2,
      "Husted": 44.9
     },
-    "leader_key": "Brown",
-    "margin": 3.3
+    "dates": "9/22 - 10/22"
    },
    "polls": [
     {
@@ -5165,6 +5444,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -5201,6 +5481,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -5235,14 +5516,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "09/17 - 10/11",
+    "source": "mean",
+    "n": 5,
+    "values": {
+     "Reed": 54.0,
+     "McKay": 31.2
+    },
+    "leader_key": "Reed",
+    "margin": 22.8,
+    "dates": "6/18 - 10/11"
+   },
+   "rcp_average_when_read": {
     "values": {
      "Reed": 55.7,
      "McKay": 30.0
     },
-    "leader_key": "Reed",
-    "margin": 25.7
+    "dates": "09/17 - 10/11"
    },
    "polls": [
     {
@@ -5365,14 +5654,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "9/28 - 10/18",
+    "source": "mean",
+    "n": 5,
+    "values": {
+     "Andrews": 44.6,
+     "Graham Nordone": 47.0
+    },
+    "leader_key": "Graham Nordone",
+    "margin": 2.4,
+    "dates": "9/28 - 10/26"
+   },
+   "rcp_average_when_read": {
     "values": {
      "Graham Nordone": 48.0,
      "Andrews": 45.3
     },
-    "leader_key": "Graham Nordone",
-    "margin": 2.7
+    "dates": "9/28 - 10/18"
    },
    "polls": [
     {
@@ -5458,6 +5755,34 @@
      },
      "url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/10/SC-Midterms-Survey-Report-1019.pdf",
      "via": "RCP"
+    },
+    {
+     "pollster": "The Citadel",
+     "start": "2026-10-14",
+     "end": "2026-10-25",
+     "sample": 890,
+     "sample_type": "LV",
+     "moe": 4.5,
+     "results": {
+      "Graham Nordone": 43,
+      "Andrews": 39
+     },
+     "url": "https://poll.citadel.edu/2026/10/27/sc-voters-look-to-pass-the-torch-in-the-midterms/",
+     "via": "RCP"
+    },
+    {
+     "pollster": "NY Times/Siena",
+     "start": "2026-10-19",
+     "end": "2026-10-26",
+     "sample": 707,
+     "sample_type": "LV",
+     "moe": 4.3,
+     "results": {
+      "Graham Nordone": 48,
+      "Andrews": 48
+     },
+     "url": "https://www.nytimes.com/2026/10/28/us/south-carolina-florida-minnesota-poll.html",
+     "via": "RCP"
     }
    ],
    "rcv_first_round": null,
@@ -5498,14 +5823,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "10/12 - 10/20",
+    "source": "mean",
+    "n": 3,
     "values": {
      "Rounds": 54.3,
      "Bengs": 38.7
     },
     "leader_key": "Rounds",
-    "margin": 15.6
+    "margin": 15.6,
+    "dates": "10/12 - 10/20"
+   },
+   "rcp_average_when_read": {
+    "values": {
+     "Rounds": 54.3,
+     "Bengs": 38.7
+    },
+    "dates": "10/12 - 10/20"
    },
    "polls": [
     {
@@ -5586,6 +5919,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -5620,14 +5954,22 @@
     }
    ],
    "average": {
-    "source": "RCP",
-    "dates": "10/8 - 10/27",
+    "source": "mean",
+    "n": 5,
+    "values": {
+     "Talarico": 48.4,
+     "Paxton": 45.6
+    },
+    "leader_key": "Talarico",
+    "margin": 2.8,
+    "dates": "10/13 - 10/27"
+   },
+   "rcp_average_when_read": {
     "values": {
      "Talarico": 48.6,
      "Paxton": 46.5
     },
-    "leader_key": "Talarico",
-    "margin": 2.1
+    "dates": "10/8 - 10/27"
    },
    "polls": [
     {
@@ -6366,6 +6708,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -6400,6 +6743,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
@@ -6434,6 +6778,7 @@
     }
    ],
    "average": null,
+   "rcp_average_when_read": null,
    "polls": [],
    "rcv_first_round": null,
    "sources": [
