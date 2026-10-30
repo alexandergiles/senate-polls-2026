@@ -118,6 +118,8 @@ section { padding-block: 28px 8px; }
 .plotbox .rng { stroke-width: 6; stroke-linecap: round; opacity: .25; }
 .plotbox .dot { stroke: var(--surface); stroke-width: 2; }
 .plotbox .axis { fill: var(--ink-3); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
+.plotbox .fifty { stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.plotbox text.fiftylab { fill: var(--ink); font-size: 11px; font-weight: 600; letter-spacing: .04em; }
 .D { fill: var(--dem); stroke: var(--dem); } .R { fill: var(--rep); stroke: var(--rep); } .I { fill: var(--ind); stroke: var(--ind); } .L, .O { fill: var(--oth); stroke: var(--oth); }
 
 /* ---------- tooltip ---------- */
@@ -402,7 +404,7 @@ footer a { color: var(--ink-2); }
       el('div', { class: 'sec-head' }, el('h2', { text: 'Where the polls stand, race by race' }),
         el('p', { text: 'The dot is the race’s polling average (mean of the last five polls); the band is the spread of margins in polls taken over the past 30 days. Click a race for every poll.' })),
       plotbox,
-      el('p', { class: 'caption', text: 'Each race’s average is the plain mean of its five most recent polls (all of them where fewer exist). Independents Dan Osborn (Neb.), Brian Bengs (S.D.) and Seth Bodnar (Mont.) are the main opposition to the Republican in their races and are plotted on the Democratic side.' })));
+      el('p', { class: 'caption', text: 'The dashed line is the 50–50 line: Democrats hold 50 seats if they win every race above it (34 seats not up, 7 unpolled races rated Democratic, plus the races listed), and Republicans hold 50 if they win everything below it. The majority, 51, runs through the race on either side of the line. Each race’s average is the plain mean of its five most recent polls (all of them where fewer exist). Independents Dan Osborn (Neb.), Brian Bengs (S.D.) and Seth Bodnar (Mont.) are the main opposition to the Republican in their races and are plotted on the Democratic side.' })));
     drawMarginPlot(plotbox, polled);
 
     // latest polls
@@ -486,8 +488,14 @@ footer a { color: var(--ink-2); }
   // ---------- margin plot ----------
   function drawMarginPlot(box, polled) {
     box.replaceChildren();
-    const W = Math.max(300, box.clientWidth - 20), narrow = W < 560, rowH = narrow ? 40 : 26, left = narrow ? 8 : 150, right = narrow ? 8 : 70, top = 28, bottom = 8;
-    const H = top + polled.length * rowH + bottom;
+    const W = Math.max(300, box.clientWidth - 20), narrow = W < 560, rowH = narrow ? 40 : 28, left = narrow ? 8 : 150, right = narrow ? 8 : 70, top = 28, bottom = 8;
+    // The 50-seat line: seats not up plus unpolled races by rating, then one seat per polled race from the top (Democrats)
+    // or from the bottom (Republicans). It falls where each side would stand at exactly 50, and gets its own band of space.
+    const sm = seatMath();
+    const dBase = sm.dHold + sm.dRate, rBase = sm.rHold + sm.rRate;
+    const kD = 50 - dBase, hasLine = kD >= 0 && kD <= polled.length, gap = hasLine ? 44 : 0;
+    const rowY = i => top + i * rowH + (hasLine && i >= kD ? gap : 0);
+    const H = top + polled.length * rowH + gap + bottom;
     const maxAbs = Math.max(10, ...polled.map(r => Math.abs(r.average.signedMargin))) ;
     const lim = Math.ceil((maxAbs + 2) / 5) * 5;
     const x = v => left + (v + lim) / (2 * lim) * (W - left - right);
@@ -500,10 +508,19 @@ footer a { color: var(--ink-2); }
     }
     const tip = el('div', { class: 'tip', hidden: '' });
     box.append(tip);
+    // The 50-seat line: seats not up plus unpolled races by rating, then one seat per polled race from the top (Democrats)
+    // or from the bottom (Republicans). The line falls where each side would stand at exactly 50.
+    if (hasLine) {
+      const yl = top + kD * rowH + gap / 2;
+      const rBelow = rBase + (polled.length - kD);
+      svg.append(svgEl('line', { class: 'fifty', x1: narrow ? left : 8, x2: W - (narrow ? right : 8), y1: yl, y2: yl }));
+      svg.append(svgEl('text', { class: 'fiftylab', x: W - (narrow ? right : 8), y: yl - 6, 'text-anchor': 'end' }, `Democrats at ${dBase + kD} seats with every race above the line`));
+      svg.append(svgEl('text', { class: 'fiftylab', x: W - (narrow ? right : 8), y: yl + 14, 'text-anchor': 'end' }, `Republicans at ${rBelow} with every race below it`));
+    }
     polled.forEach((r, i) => {
-      const y = top + i * rowH + (narrow ? rowH - 12 : rowH / 2);
+      const y = rowY(i) + (narrow ? rowH - 12 : rowH / 2);
       const g = svgEl('g', { class: 'row', tabindex: '0', role: 'link', 'aria-label': raceTitle(r) + ': ' + marginText(r, r.average.values) });
-      g.append(svgEl('rect', { class: 'hit', x: 0, y: y - rowH / 2, width: W, height: rowH, rx: 3 }));
+      g.append(svgEl('rect', { class: 'hit', x: 0, y: narrow ? y - rowH + 12 : y - rowH / 2, width: W, height: rowH, rx: 3 }));
       const m = signedMargin(r, r.average.values);
       // recent-poll range
       const cutoff = new Date(pd(DATA.generated)); cutoff.setDate(cutoff.getDate() - 30);
