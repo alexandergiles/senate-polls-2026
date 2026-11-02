@@ -1,1 +1,420 @@
-{"updated": null, "note": null, "races": {}}
+{
+"updated": "2026-11-02T15:28:26-05:00",
+"note": "Counts from state election offices, refreshed every few minutes on election night; calls entered by hand.",
+"races": {
+"DE": {
+"source": "Delaware Department of Elections",
+"source_url": "https://elections.delaware.gov/results/enr/GE2026.html",
+"fetched": "2026-11-02T15:28:26-05:00",
+"stale": false,
+"reporting": null,
+"reporting_pct": null,
+"status": "no results",
+"called_for": null,
+"candidates": [
+{
+"key": "Coons",
+"name": "CHRIS COONS",
+"party": "D",
+"votes": 0
+},
+{
+"key": "Katz",
+"name": "MICHAEL \"DR. MIKE\" KATZ",
+"party": "R",
+"votes": 0
+}
+]
+},
+"FL-special": {
+"source": "Florida Division of Elections (Florida Election Watch)",
+"source_url": "https://floridaelectionwatch.gov/FederalOffices/USSenator",
+"fetched": "2026-11-02T15:28:26-05:00",
+"stale": false,
+"reporting": null,
+"reporting_pct": null,
+"status": "no results",
+"called_for": null,
+"candidates": [
+{
+"key": "Moody",
+"name": "Ashley Moody",
+"party": "R",
+"votes": 0
+},
+{
+"key": "Nixon",
+"name": "Angie Nixon",
+"party": "D",
+"votes": 0
+},
+{
+"key": "Gillespie",
+"name": "Neil J. Gillespie",
+"party": "I",
+"votes": 0
+}
+]
+},
+"ID": {
+"source": "Idaho Secretary of State",
+"source_url": "https://app.enhancedvoting.com/results/public/id/nov2026",
+"fetched": "2026-11-02T15:28:26-05:00",
+"stale": false,
+"reporting": null,
+"reporting_pct": null,
+"status": "no results",
+"called_for": null,
+"candidates": [
+{
+"key": "Fleming",
+"name": "Natalie M Fleming",
+"party": "I",
+"votes": 0
+},
+{
+"key": "Achilles",
+"name": "Todd Achilles",
+"party": "I",
+"votes": 0
+},
+{
+"key": "Loesby",
+"name": "Matt Loesby",
+"party": "L",
+"votes": 0
+},
+{
+"key": "Risch",
+"name": "Jim Risch",
+"party": "R",
+"votes": 0
+}
+]
+},
+"KS": {
+"source": "Kansas Secretary of State",
+"source_url": "https://ent.sos.ks.gov/kssos_ent.html",
+"fetched": "2026-11-02T15:28:26-05:00",
+"stale": false,
+"reporting": "Precincts Reporting: 0 of 4168",
+"reporting_pct": 0.0,
+"status": "no results",
+"called_for": null,
+"candidates": [
+{
+"key": "Hamilton",
+"name": "Adam Hamilton",
+"party": "D",
+"votes": 0
+},
+{
+"key": "Marshall",
+"name": "Roger Marshall",
+"party": "R",
+"votes": 0
+},
+{
+"key": "Graham",
+"name": "David C Graham",
+"party": "L",
+"votes": 0
+}
+]
+},
+"MN": {
+"source": "Minnesota Secretary of State",
+"source_url": "https://electionresults.sos.mn.gov/20261103",
+"fetched": "2026-11-02T15:28:26-05:00",
+"stale": false,
+"reporting": "0 of 4,105 precincts",
+"reporting_pct": 0.0,
+"status": "no results",
+"called_for": null,
+"candidates": [
+{
+"key": "Simonetti",
+"name": "Marisa Simonetti",
+"party": "I",
+"votes": 0
+},
+{
+"key": "Whiting",
+"name": "Rebecca Whiting",
+"party": "L",
+"votes": 0
+},
+{
+"key": "Flanagan",
+"name": "Peggy Flanagan",
+"party": "D",
+"votes": 0
+},
+{
+"key": "Tafoya",
+"name": "Michele Tafoya",
+"party": "R",
+"votes": 0
+},
+{
+"key": "Write-in",
+"name": "WRITE-IN",
+"party": "O",
+"votes": 0
+}
+]
+},
+"MT": {
+"source": "Montana Secretary of State",
+"source_url": "https://electionresults.mt.gov/",
+"fetched": "2026-11-02T15:28:26-05:00",
+"stale": false,
+"reporting": "Precincts Fully: 728 / 728",
+"reporting_pct": 100.0,
+"status": "counting",
+"called_for": null,
+"candidates": [
+{
+"key": "Alme",
+"name": "Kurt Alme",
+"party": "R",
+"votes": 128716
+},
+{
+"key": "Calhoun",
+"name": "LEE CALHOUN",
+"party": "R",
+"votes": 23872
+},
+{
+"key": "Child",
+"name": "CHARLES WALKING CHILD",
+"party": "R",
+"votes": 16474
+}
+]
+},
+"NE": {
+"source": "Nebraska Secretary of State",
+"source_url": "https://electionresults.nebraska.gov/",
+"fetched": "2026-11-02T15:28:26-05:00",
+"stale": false,
+"reporting": "0 of 1,322 precincts",
+"reporting_pct": 0.0,
+"status": "no results",
+"called_for": null,
+"candidates": [
+{
+"key": "Ricketts",
+"name": "Pete Ricketts",
+"party": "R",
+"votes": 0
+},
+{
+"key": "Marvin",
+"name": "Mike  Marvin",
+"party": "O",
+"votes": 0
+},
+{
+"key": "Richards",
+"name": "Robin  Richards",
+"party": "O",
+"votes": 0
+},
+{
+"key": "Conboy",
+"name": "Chuck  Conboy",
+"party": "O",
+"votes": 0
+},
+{
+"key": "Osborn",
+"name": "Dan Osborn",
+"party": "I",
+"votes": 0
+}
+]
+},
+"NM": {
+"source": "New Mexico Secretary of State",
+"source_url": "https://electionresults.sos.nm.gov/",
+"fetched": "2026-11-02T15:28:26-05:00",
+"stale": false,
+"reporting": "0 of 2,204 precincts",
+"reporting_pct": 0.0,
+"status": "no results",
+"called_for": null,
+"candidates": [
+{
+"key": "Marker",
+"name": "LARRY E MARKER",
+"party": "R",
+"votes": 0
+},
+{
+"key": "Lujan",
+"name": "BEN R LUJAN",
+"party": "D",
+"votes": 0
+}
+]
+},
+"NC": {
+"source": "N.C. State Board of Elections",
+"source_url": "https://er.ncsbe.gov/?election_dt=11/03/2026",
+"fetched": "2026-11-02T15:28:26-05:00",
+"stale": false,
+"reporting": null,
+"reporting_pct": null,
+"status": "no results",
+"called_for": null,
+"candidates": [
+{
+"key": "Dublin",
+"name": "Michael Dublin",
+"party": "O",
+"votes": 0
+},
+{
+"key": "Whatley",
+"name": "Michael Whatley",
+"party": "R",
+"votes": 0
+},
+{
+"key": "Cooper",
+"name": "Roy Cooper",
+"party": "D",
+"votes": 0
+},
+{
+"key": "Bray",
+"name": "Shannon W. Bray",
+"party": "L",
+"votes": 0
+}
+]
+},
+"SD": {
+"source": "South Dakota Secretary of State",
+"source_url": "https://electionresults.sd.gov/",
+"fetched": "2026-11-02T15:28:26-05:00",
+"stale": false,
+"reporting": "0 of 671 precincts",
+"reporting_pct": 0.0,
+"status": "no results",
+"called_for": null,
+"candidates": [
+{
+"key": "Rounds",
+"name": "Mike Rounds",
+"party": "R",
+"votes": 0
+},
+{
+"key": "Bengs",
+"name": "Brian Bengs",
+"party": "I",
+"votes": 0
+}
+]
+},
+"TX": {
+"source": "Texas Secretary of State",
+"source_url": "https://goelect.txelections.civixapps.com/ivis-enr-ui/races",
+"fetched": "2026-11-02T15:28:26-05:00",
+"stale": false,
+"reporting": null,
+"reporting_pct": null,
+"status": "no results",
+"called_for": null,
+"candidates": [
+{
+"key": "Ayers",
+"name": "Avery Ayers",
+"party": "O",
+"votes": 0
+},
+{
+"key": "Brown",
+"name": "Ted Brown",
+"party": "L",
+"votes": 0
+},
+{
+"key": "Hall",
+"name": "Bradford \"Brad\" Hall",
+"party": "O",
+"votes": 0
+},
+{
+"key": "Mohamed",
+"name": "Zul Mohamed",
+"party": "O",
+"votes": 0
+},
+{
+"key": "Paxton",
+"name": "Ken Paxton",
+"party": "R",
+"votes": 0
+},
+{
+"key": "Simmons",
+"name": "Jade Simmons",
+"party": "O",
+"votes": 0
+},
+{
+"key": "Talarico",
+"name": "James Talarico",
+"party": "D",
+"votes": 0
+}
+]
+},
+"VA": {
+"source": "Virginia Department of Elections",
+"source_url": "https://enr.elections.virginia.gov/results/public/virginia/elections/2026-November-General",
+"fetched": "2026-11-02T15:28:26-05:00",
+"stale": false,
+"reporting": null,
+"reporting_pct": null,
+"status": "no results",
+"called_for": null,
+"candidates": [
+{
+"key": "Warner",
+"name": "Mark R. Warner",
+"party": "D",
+"votes": 0
+},
+{
+"key": "Mizusawa",
+"name": "Bert Mizusawa",
+"party": "R",
+"votes": 0
+},
+{
+"key": "Write-in",
+"name": "Write-In",
+"party": "O",
+"votes": 0
+}
+]
+}
+},
+"errors": {
+"AL": "RuntimeError: contest section not found",
+"AK": "HTTPError: HTTP Error 404: Not Found",
+"CO": "HTTPError: HTTP Error 403: Forbidden",
+"GA": "HTTPError: HTTP Error 404: Not Found",
+"IA": "RuntimeError: could not find the current election id at https://electionresults.iowa.gov/",
+"KY": "HTTPError: HTTP Error 403: Forbidden",
+"OR": "RuntimeError: no election id on https://sos.oregon.gov/voting/pages/current-election.aspx",
+"RI": "HTTPError: HTTP Error 403: Forbidden",
+"SC": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+"WV": "RuntimeError: could not find the current election id at https://results.enr.clarityelections.com/WV/"
+}
+}
