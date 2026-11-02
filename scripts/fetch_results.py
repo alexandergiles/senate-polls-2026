@@ -431,11 +431,39 @@ def parse_text_rows(html, cfg):
     return {"candidates": cands, "reporting": rep, "reporting_pct": pct}
 
 
+def adapter_civix(cfg):
+    """Texas's Civix IVIS feed: a JSON object whose values are base64-encoded JSON sections
+    ({OffType, Races: [{N: race, Candidates: [{N: name, P: party, V: votes}]}]})."""
+    import base64
+    doc = json.loads(get(cfg["url"], cfg=cfg))
+    pat = re.compile(cfg.get("contest", r"U\.?S\.? SENATOR|UNITED STATES SENATOR"), re.I)
+    sections = []
+    for k, v in doc.items():
+        if isinstance(v, str) and len(v) > 50:
+            try:
+                sections.append(json.loads(base64.b64decode(v + "=" * (-len(v) % 4)).decode("utf-8", errors="replace")))
+            except Exception:
+                pass
+    for sec in sections:
+        for race in (sec.get("Races") or []) if isinstance(sec, dict) else []:
+            name = str(race.get("N") or race.get("Name") or "")
+            if pat.search(name) and not re.search(cfg.get("exclude", r"DISTRICT"), name):
+                cands = []
+                for c in race.get("Candidates") or []:
+                    nm = re.sub(r"\s*\(I\)\s*$", "", str(c.get("N") or "")).strip()
+                    cands.append({"name": nm.title() if nm.isupper() else nm, "party": party_code(str(c.get("P") or "")), "votes": int(c.get("V") or 0)})
+                rep = None
+                for k in ("PR", "PollingLocationsReporting", "PrecinctsReporting", "PLR"):
+                    if k in race: rep = f"{k}: {race[k]}"
+                return {"candidates": cands, "reporting": rep, "reporting_pct": None}
+    raise RuntimeError("Senate race not found; sections: " + ", ".join(str((s.get("OffType") if isinstance(s, dict) else "?")) for s in sections)[:300])
+
+
 def adapter_manual(cfg):
     raise RuntimeError("manual-only race")
 
 
-ADAPTERS = {"clarity": adapter_clarity, "json": adapter_json, "csv": adapter_csv, "html": adapter_html, "pdf": adapter_pdf, "manual": adapter_manual}
+ADAPTERS = {"clarity": adapter_clarity, "json": adapter_json, "csv": adapter_csv, "html": adapter_html, "pdf": adapter_pdf, "civix": adapter_civix, "manual": adapter_manual}
 
 
 def probe(sources):
@@ -449,7 +477,18 @@ def probe(sources):
         try:
             for pu in cfg.get("probe_urls", []):
                 try:
-                    txt = get(pu, cfg=cfg); rec.setdefault("probe_pages", {})[pu] = {"head": txt[:1500], "tables": [t[:2500] for t in re.findall(r"<table.*?</table>", txt, re.I | re.S)[:6]], "eids": re.findall(r"eid=(\d+)", txt)[:10], "paths": sorted(set(re.findall(r"/[A-Z]{2}/\d{5,7}", txt)))[:10]}
+                    txt = get(pu, cfg=cfg); rec.setdefault("probe_pages", {})[pu] = {"head": txt[:1500], "tables": [t[:2500] for t in re.findall(r"<table.*?</table>", txt, re.I | re.S)[:6]], "eids": re.findall(r"eid=(\d+)", txt)[:10], "paths": sorted(set(re.findall(r"/[A-Z]{2}/\d{5,7}", txt)))[:10],
+                                                                "hints": sorted(set(re.findall(r"[\w./-]*(?:cdn/results|export-|/api/|\.json)[\w./?=-]*", txt)))[:40]}
+                    if cfg.get("grep_js"):
+                        for js in re.findall(r"<script[^>]+src=[\"']([^\"']+)[\"']", txt)[:6]:
+                            jsu = js if js.startswith("http") else re.match(r"https?://[^/]+", pu).group(0) + ("/" if not js.startswith("/") else "") + js
+                            if not js.startswith("http") and not js.startswith("/"):
+                                jsu = pu.rstrip("/") + "/" + js
+                            try:
+                                code = get(jsu, cfg=cfg)
+                                rec["probe_pages"][pu].setdefault("js", {})[jsu] = sorted(set(re.findall(r"[\w./-]*(?:cdn/results|export|/api/|elections?)[\w./?${}=-]{0,80}", code)))[:60]
+                            except Exception as e:
+                                rec["probe_pages"][pu].setdefault("js", {})[jsu] = "error " + str(e)[:80]
                 except Exception as e:
                     rec.setdefault("probe_pages", {})[pu] = {"error": str(e)[:200]}
             url = resolve_url(cfg) if cfg.get("url") else None
@@ -488,7 +527,7 @@ def probe(sources):
                     if cfg.get("section"):
                         m = re.search(cfg["section"], text, re.I | re.S)
                         rec["section_found"] = bool(m)
-                        if m: rec["section_head"] = text[m.start():m.start() + 3000]
+                        if m: rec["section_head"] = text[m.start():m.start() + 12000]
             if cfg.get("_root_seen"): rec["root_seen"] = cfg["_root_seen"]
             try:
                 got = ADAPTERS[cfg["adapter"]](cfg); rec["parsed"] = got

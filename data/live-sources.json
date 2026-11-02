@@ -31,7 +31,9 @@
   "notes": "Dominion election summary report (PDF, parsed with pypdf). The enr26 directory still held the August primary on Nov 2, so the fetcher refuses a report that does not say GENERAL ELECTION. First-choice votes only; the ranked-choice tabulation comes Nov 18. The state's TLS chain is incomplete, so certificate verification is off for this one public file.",
   "tls_verify": false,
   "probe_urls": [
-   "https://www.elections.alaska.gov/enr26/"
+   "https://www.elections.alaska.gov/enr26/includes/map.js",
+   "https://www.elections.alaska.gov/enr26/results/",
+   "https://www.elections.alaska.gov/enr26/results/ElectionSummaryReportRPT.pdf"
   ]
  },
  "AR": {
@@ -55,7 +57,8 @@
   "probe_urls": [
    "https://www.sos.state.co.us/pubs/elections/Results/",
    "https://www.sos.state.co.us/pubs/elections/resultsData.html"
-  ]
+  ],
+  "user_agent": "browser"
  },
  "DE": {
   "adapter": "csv",
@@ -104,15 +107,21 @@
    "https://results.sos.ga.gov/cdn/results/Georgia/export-November2026General.json",
    "https://results.sos.ga.gov/cdn/results/Georgia/export-2026-November-General.json",
    "https://results.sos.ga.gov/cdn/results/Georgia/export-GeneralElection110326.json",
-   "https://results.sos.ga.gov/cdn/results/Georgia/export-General110326.json"
+   "https://results.sos.ga.gov/cdn/results/Georgia/export-General110326.json",
+   "https://results.sos.ga.gov/cdn/results/Georgia/export-nov2026.json",
+   "https://results.sos.ga.gov/cdn/results/Georgia/export-Nov2026.json",
+   "https://results.sos.ga.gov/cdn/results/Georgia/export-2026GeneralElection.json",
+   "https://results.sos.ga.gov/cdn/results/Georgia/export-GeneralElection2026.json",
+   "https://results.sos.ga.gov/cdn/results/Georgia/export-NovGen2026.json",
+   "https://results.sos.ga.gov/cdn/results/Georgia/export-2026NovGeneral.json",
+   "https://results.sos.ga.gov/cdn/results/Georgia/export-2026NovemberGen.json",
+   "https://results.sos.ga.gov/cdn/results/Georgia/export-2026Nov.json",
+   "https://results.sos.ga.gov/cdn/results/Georgia/export-2026-11-03.json"
   ],
   "probe_urls": [
-   "https://results.sos.ga.gov/results/public/Georgia",
-   "https://results.sos.ga.gov/results/public/Georgia/elections",
-   "https://results.sos.ga.gov/cdn/results/Georgia/",
-   "https://sos.ga.gov/page/election-results",
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia"
-  ]
+   "https://results.sos.ga.gov/results/public/Georgia"
+  ],
+  "grep_js": true
  },
  "ID": {
   "adapter": "json",
@@ -148,11 +157,12 @@
   "verified": false,
   "notes": "Clarity; the Nov 3 election id is resolved from the site root at run time.",
   "probe_urls": [
-   "https://sos.iowa.gov/elections/results/index.html",
-   "https://sos.iowa.gov/elections/results/"
+   "https://electionresults.iowa.gov/IA/",
+   "https://electionresults.iowa.gov/",
+   "https://sos.iowa.gov/elections/results/2026results.html",
+   "https://sos.iowa.gov/elections/results/index.html"
   ],
-  "eid_from": "https://sos.iowa.gov/elections/results/index.html",
-  "eid_pattern": "electionresults\\.iowa\\.gov/IA/(\\d{5,7})"
+  "user_agent": "browser"
  },
  "KS": {
   "adapter": "html",
@@ -247,7 +257,6 @@
   "eid_from": "https://sosmt.gov/elections/results",
   "eid_pattern": "eid=(\\d+)",
   "probe_urls": [
-   "https://electionresults.mt.gov/resultsSW.aspx?type=FED&map=CTY&eid=22",
    "https://sosmt.gov/elections/results"
   ],
   "row": "<td[^>]*>\\s*(?P<name>[A-Z][^<]{3,60}?)\\s*</td>\\s*<td[^>]*>\\s*(?P<party>[^<]{1,30}?)\\s*</td>\\s*<td[^>]*>\\s*(?P<votes>[\\d,]+)\\s*</td>",
@@ -349,7 +358,8 @@
    "https://scvotes.gov/election-results"
   ],
   "eid_from": "https://scvotes.gov/election-results",
-  "eid_pattern": "enr-scvotes\\.org/SC/(\\d{5,7})"
+  "eid_pattern": "enr-scvotes\\.org/SC/(\\d{5,7})",
+  "user_agent": "browser"
  },
  "SD": {
   "adapter": "csv",
@@ -367,16 +377,12 @@
   "notes": "JavaScript dashboard; no export."
  },
  "TX": {
-  "adapter": "json",
+  "adapter": "civix",
   "source": "Texas Secretary of State",
   "source_url": "https://goelect.txelections.civixapps.com/ivis-enr-ui/races",
   "url": "https://goelect.txelections.civixapps.com/api-ivis-system/api/s3/enr/election/53815",
-  "base64": true,
   "verified": false,
-  "notes": "Civix IVIS; the response is reported to be base64-encoded JSON. Layout unconfirmed; probe.",
-  "probe_urls": [
-   "https://goelect.txelections.civixapps.com/ivis-enr-ui/races"
-  ]
+  "notes": "Civix IVIS feed: JSON whose sections are base64-encoded (verified Nov 2). Reporting figure unconfirmed."
  },
  "VA": {
   "adapter": "json",
@@ -398,14 +404,18 @@
   "url_candidates": [
    "https://enr.elections.virginia.gov/cdn/results/Virginia/export-2026NovemberGeneral.json",
    "https://enr.elections.virginia.gov/cdn/results/Virginia/export-2026-November-General.json",
-   "https://enr.elections.virginia.gov/cdn/results/Virginia/export-2026NovGen.json"
+   "https://enr.elections.virginia.gov/cdn/results/Virginia/export-2026NovGen.json",
+   "https://enr.elections.virginia.gov/cdn/results/Virginia/export-nov2026.json",
+   "https://enr.elections.virginia.gov/cdn/results/Virginia/export-2026November.json",
+   "https://enr.elections.virginia.gov/cdn/results/Virginia/export-November2026General.json",
+   "https://enr.elections.virginia.gov/cdn/results/Virginia/export-2026GeneralElection.json",
+   "https://enr.elections.virginia.gov/cdn/results/Virginia/export-2026-November-General-Election.json",
+   "https://enr.elections.virginia.gov/cdn/results/Virginia/export-2026NovemberGeneralElection.json"
   ],
   "probe_urls": [
-   "https://enr.elections.virginia.gov/results/public/virginia",
-   "https://enr.elections.virginia.gov/results/public/virginia/elections",
-   "https://www.elections.virginia.gov/resultsreports/",
-   "https://enr.elections.virginia.gov/cdn/results/Virginia/"
-  ]
+   "https://enr.elections.virginia.gov/results/public/virginia"
+  ],
+  "grep_js": true
  },
  "WV": {
   "adapter": "clarity",
@@ -417,11 +427,11 @@
   "verified": false,
   "notes": "Clarity; the Nov 3 election id is resolved from the state root at run time.",
   "probe_urls": [
-   "https://sos.wv.gov/elections/Pages/ElectionResults.aspx",
+   "https://results.enr.clarityelections.com/WV/",
+   "https://sos.wv.gov/elections/Pages/Results.aspx",
    "https://sos.wv.gov/elections/Pages/default.aspx"
   ],
-  "eid_from": "https://sos.wv.gov/elections/Pages/ElectionResults.aspx",
-  "eid_pattern": "/WV/(\\d{5,7})"
+  "user_agent": "browser"
  },
  "WY": {
   "adapter": "manual",
