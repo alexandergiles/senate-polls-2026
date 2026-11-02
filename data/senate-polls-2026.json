@@ -20,7 +20,8 @@
   "polls": "RealClearPolling race pages (realclearpolling.com), read 2026-10-29",
   "roster": "270toWin 2026 Senate map and Ballotpedia, read 2026-10-29",
   "ratings": "Cook Political Report ratings as shown on 270toWin (reflecting Cook's Oct. 20, 2026 update)",
-  "reference": "https://www.nytimes.com/interactive/polls/senate-polls-2026.html"
+  "reference": "https://www.nytimes.com/interactive/polls/senate-polls-2026.html",
+  "poll_closing": "270toWin 2026 poll closing times (https://www.270towin.com/poll-closing-times/) and The Green Papers (https://www.thegreenpapers.com/G26/PollingHours.phtml), read 2026-10-30; all times Eastern Standard Time"
  },
  "races": [
   {
@@ -6787,5 +6788,182 @@
     "https://www.270towin.com/2026-senate-election/cook-political-report-2026-senate"
    ]
   }
- ]
+ ],
+ "poll_closing": {
+  "AL": {
+   "first": "20:00",
+   "last": "20:00",
+   "note": null
+  },
+  "AK": {
+   "first": "00:00",
+   "last": "01:00",
+   "note": "Most of Alaska closes at midnight ET; the Aleutians west of Umnak at 1 a.m."
+  },
+  "AR": {
+   "first": "20:30",
+   "last": "20:30",
+   "note": null
+  },
+  "CO": {
+   "first": "21:00",
+   "last": "21:00",
+   "note": null
+  },
+  "DE": {
+   "first": "20:00",
+   "last": "20:00",
+   "note": null
+  },
+  "FL-special": {
+   "first": "19:00",
+   "last": "20:00",
+   "note": "Peninsula and most of the state at 7; the Central-time Panhandle counties at 8."
+  },
+  "GA": {
+   "first": "19:00",
+   "last": "19:00",
+   "note": null
+  },
+  "ID": {
+   "first": "22:00",
+   "last": "23:00",
+   "note": "Mountain-time Idaho at 10; the Pacific-time north at 11."
+  },
+  "IL": {
+   "first": "20:00",
+   "last": "20:00",
+   "note": null
+  },
+  "IA": {
+   "first": "21:00",
+   "last": "21:00",
+   "note": null
+  },
+  "KS": {
+   "first": "20:00",
+   "last": "21:00",
+   "note": "All but four Mountain-time counties close at 8."
+  },
+  "KY": {
+   "first": "18:00",
+   "last": "19:00",
+   "note": "Eastern-time Kentucky at 6; the Central-time west at 7."
+  },
+  "LA": {
+   "first": "21:00",
+   "last": "21:00",
+   "note": null
+  },
+  "ME": {
+   "first": "20:00",
+   "last": "20:00",
+   "note": null
+  },
+  "MA": {
+   "first": "20:00",
+   "last": "20:00",
+   "note": null
+  },
+  "MI": {
+   "first": "20:00",
+   "last": "21:00",
+   "note": "All but four Upper Peninsula counties close at 8."
+  },
+  "MN": {
+   "first": "21:00",
+   "last": "21:00",
+   "note": null
+  },
+  "MS": {
+   "first": "20:00",
+   "last": "20:00",
+   "note": null
+  },
+  "MT": {
+   "first": "22:00",
+   "last": "22:00",
+   "note": null
+  },
+  "NE": {
+   "first": "21:00",
+   "last": "21:00",
+   "note": "8 p.m. Central and 7 p.m. Mountain, so the whole state closes at once."
+  },
+  "NH": {
+   "first": "20:00",
+   "last": "20:00",
+   "note": "Towns set their own hours; most close at 7, none later than 8."
+  },
+  "NJ": {
+   "first": "20:00",
+   "last": "20:00",
+   "note": null
+  },
+  "NM": {
+   "first": "21:00",
+   "last": "21:00",
+   "note": null
+  },
+  "NC": {
+   "first": "19:30",
+   "last": "19:30",
+   "note": null
+  },
+  "OH-special": {
+   "first": "19:30",
+   "last": "19:30",
+   "note": null
+  },
+  "OK": {
+   "first": "20:00",
+   "last": "20:00",
+   "note": null
+  },
+  "OR": {
+   "first": "22:00",
+   "last": "23:00",
+   "note": "Vote by mail; Malheur County (Mountain time) at 10, the rest at 11."
+  },
+  "RI": {
+   "first": "20:00",
+   "last": "20:00",
+   "note": null
+  },
+  "SC": {
+   "first": "19:00",
+   "last": "19:00",
+   "note": null
+  },
+  "SD": {
+   "first": "20:00",
+   "last": "21:00",
+   "note": "Central-time east at 8; the Mountain-time west at 9."
+  },
+  "TN": {
+   "first": "20:00",
+   "last": "20:00",
+   "note": null
+  },
+  "TX": {
+   "first": "20:00",
+   "last": "21:00",
+   "note": "All but El Paso and Hudspeth counties close at 8."
+  },
+  "VA": {
+   "first": "19:00",
+   "last": "19:00",
+   "note": null
+  },
+  "WV": {
+   "first": "19:30",
+   "last": "19:30",
+   "note": null
+  },
+  "WY": {
+   "first": "21:00",
+   "last": "21:00",
+   "note": null
+  }
+ }
 }

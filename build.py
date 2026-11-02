@@ -36,6 +36,11 @@ for race in data["races"]:
         rcv["average"] = mean_of_recent(rcv["polls"], [c["key"] for c in rcv["candidates"]])
 json.dump(data, open(ROOT / "data" / "senate-polls-2026.json", "w", encoding="utf-8"), indent=1, ensure_ascii=False)
 
+# Optional companions: the 2018–2024 accuracy study and the election-night counting notes.
+acc_path = ROOT / "data" / "accuracy-2018-2024.json"
+if acc_path.exists():
+    data["accuracy"] = json.load(open(acc_path, encoding="utf-8"))
+
 # Inline the data; escape "</" so a stray "</script>" inside a string can never end the data block.
 blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 fragment = page.replace("__DATA__", blob)

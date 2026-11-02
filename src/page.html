@@ -71,6 +71,39 @@ button { font: inherit; color: inherit; }
 .masthead .meta { font-size: 13px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; }
 .masthead .meta strong { color: var(--ink); font-weight: 600; }
 .countdown { font-family: var(--font-display); font-variation-settings: "wdth" 75; font-weight: 800; font-size: 22px; line-height: 1; color: var(--ink); }
+.nav { display: flex; gap: 2px; flex-basis: 100%; margin-top: 4px; }
+.nav a { text-decoration: none; font-size: 13px; font-weight: 600; padding: 6px 10px; border-radius: 3px; color: var(--ink-2); }
+.nav a:hover { background: var(--surface); }
+.nav a[aria-current="page"] { background: var(--ink); color: var(--bg); }
+
+/* ---------- election night ---------- */
+.lede { font-size: 16px; line-height: 1.5; color: var(--ink-2); max-width: 70ch; margin: 6px 0 18px; }
+.glance { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.glance a { text-decoration: none; display: flex; flex-direction: column; gap: 2px; background: var(--surface); border: 1px solid var(--rule); padding: 8px 12px; min-width: 112px; border-radius: 3px; }
+.glance a:hover { border-color: var(--ink-3); }
+.glance .t { font-family: var(--font-display); font-variation-settings: "wdth" 75; font-weight: 800; font-size: 20px; line-height: 1; }
+.glance .s { font-size: 12px; color: var(--ink-2); line-height: 1.35; }
+.hour { display: grid; grid-template-columns: 110px 1fr; gap: 12px 20px; padding: 18px 0; border-top: 1px solid var(--rule); }
+.hour:first-of-type { border-top: 2px solid var(--ink); }
+.hour .time { font-family: var(--font-display); font-variation-settings: "wdth" 75; font-weight: 800; font-size: 30px; line-height: 1; letter-spacing: -0.01em; position: sticky; top: 8px; }
+.hour .time small { display: block; font-family: var(--font-body); font-weight: 500; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-top: 6px; }
+.hour .races { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; min-width: 0; }
+.nr { background: var(--surface); border: 1px solid var(--rule); padding: 10px 12px; text-decoration: none; display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.nr:hover { border-color: var(--ink-3); }
+.nr.key { border-left: 3px solid var(--ink); }
+.nr .h { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.nr h4 { margin: 0; font-size: 16px; font-weight: 700; }
+.nr .mg { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.nr .mg.none { color: var(--ink-3); font-weight: 400; }
+.nr .who { font-size: 13px; color: var(--ink-2); }
+.nr .note { font-size: 12px; color: var(--ink-3); line-height: 1.4; }
+.nr .count { font-size: 12px; color: var(--ink-2); line-height: 1.4; border-top: 1px solid var(--rule-2); padding-top: 5px; }
+.closed-so-far { font-size: 12px; color: var(--ink-3); grid-column: 1 / -1; }
+@media (max-width: 640px) {
+  .hour { grid-template-columns: 1fr; gap: 8px; }
+  .hour .time { position: static; font-size: 26px; }
+  .hour .time small { display: inline; margin-left: 8px; }
+}
 
 /* ---------- sections ---------- */
 section { padding-block: 28px 8px; }
@@ -239,6 +272,42 @@ table.polls td.smp { color: var(--ink-2); white-space: nowrap; font-variant-nume
 .notes ul { margin: 6px 0 0; padding-left: 18px; }
 .notes li { margin-bottom: 3px; overflow-wrap: anywhere; }
 
+/* ---------- accuracy ---------- */
+.cycles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-bottom: 8px; }
+.cyc { background: var(--surface); border: 1px solid var(--rule); padding: 12px 14px; min-width: 0; }
+.cyc .yr { font-family: var(--font-display); font-variation-settings: "wdth" 75; font-weight: 800; font-size: 26px; line-height: 1; }
+.cyc .big { font-size: 26px; font-weight: 700; line-height: 1.1; margin-top: 8px; letter-spacing: -0.01em; }
+.cyc .big.D { color: var(--dem); } .cyc .big.R { color: var(--rep); }
+.cyc .lab { font-size: 12px; color: var(--ink-2); margin-top: 2px; line-height: 1.35; }
+.cyc .row { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--ink-2); margin-top: 6px; border-top: 1px solid var(--rule-2); padding-top: 6px; }
+.cyc .row b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.swarm { background: var(--surface); border: 1px solid var(--rule); padding: 14px 10px 6px; position: relative; }
+.swarm svg { display: block; width: 100%; height: auto; overflow: visible; }
+.swarm text { font-family: var(--font-body); font-size: 11px; fill: var(--ink-3); font-variant-numeric: tabular-nums; }
+.swarm text.yr { fill: var(--ink); font-weight: 700; font-size: 13px; }
+.swarm text.st { font-size: 9px; fill: var(--ink); font-weight: 600; }
+.swarm .grid { stroke: var(--rule-2); stroke-width: 1; } .swarm .zero { stroke: var(--ink); stroke-width: 1; }
+.swarm .pt { stroke: var(--surface); stroke-width: 1.5; cursor: default; }
+.swarm .pt.blow { fill-opacity: .35; }
+.swarm .mean { stroke: var(--ink); stroke-width: 2; }
+.swarm .band { fill: var(--ink); fill-opacity: .06; }
+.swarm .axis { fill: var(--ink-3); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
+table.acc { border-collapse: collapse; width: 100%; font-size: 13px; min-width: 700px; }
+table.acc th, table.acc td { padding: 7px 10px; text-align: left; border-top: 1px solid var(--rule-2); vertical-align: top; }
+table.acc th { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; border-top: 0; background: var(--surface-2); white-space: nowrap; }
+table.acc td.n, table.acc th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+table.acc td.miss { font-weight: 700; }
+table.acc td a { text-decoration: none; font-weight: 600; }
+table.acc td a:hover { text-decoration: underline; }
+table.acc td .sub { color: var(--ink-3); font-size: 12px; }
+table.acc tr.flip td { background: var(--surface-2); }
+table.acc td.flip { font-weight: 700; }
+table.acc td.flip::after { content: ' flips'; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }
+.hist { margin-top: 18px; }
+.hist h3 { margin: 0 0 8px; font-family: var(--font-display); font-variation-settings: "wdth" 75; font-weight: 800; font-size: 20px; }
+.hist table.acc { min-width: 0; }
+.sumline { font-size: 14px; color: var(--ink-2); margin: 10px 0 0; max-width: 72ch; line-height: 1.5; }
+
 /* ---------- footer ---------- */
 footer { margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 12px; color: var(--ink-3); line-height: 1.5; }
 footer p { margin: 0 0 6px; max-width: 80ch; }
@@ -265,6 +334,7 @@ footer a { color: var(--ink-2); }
     <div class="meta">
       <div class="countdown" id="countdown"></div>
       <div><strong>35</strong> seats on the ballot · <strong>51</strong> for a majority · Senate today <strong>53 R</strong>–<strong>47 D</strong></div>
+      <nav class="nav" aria-label="Sections"><a href="#" data-view="home">Polls</a><a href="#election-night" data-view="night">Election night</a><a href="#accuracy" data-view="accuracy">How polls have missed</a></nav>
     </div>
   </header>
   <main id="app"></main>
@@ -617,6 +687,13 @@ footer a { color: var(--ink-2); }
       app.append(tabs, tableHost);
     }
 
+    if (A && A.by_state[r.abbr]) {
+      const hs = A.by_state[r.abbr].filter(h => !h.runoff);
+      const avg = hs.length ? hs.reduce((s, h) => s + h.miss, 0) / hs.length : null;
+      app.append(el('section', {}, el('div', { class: 'sec-head' }, el('h2', { text: 'How the polls did here before' }),
+        el('p', { text: (avg != null ? 'Across ' + hs.length + (hs.length === 1 ? ' race' : ' races') + ' since 2018 the final average here ' + (Math.abs(avg) < 0.05 ? 'was on target on average' : 'overrated ' + (avg < 0 ? 'the Democratic side' : 'the Republican') + ' by ' + n1(Math.abs(avg)) + ' points on average') + '. ' : '') + 'See the full record on the accuracy page.' })),
+        stateHistoryTable(r.abbr)));
+    }
     const notes = el('div', { class: 'notes' });
     if (r.notes) notes.append(el('p', { text: r.notes }));
     if (r.id === 'AK') notes.append(el('p', { text: 'Alaska uses ranked-choice voting. The head-to-head table shows the final-round matchup pollsters report; the first-round tab shows all four candidates as listed.' }));
@@ -767,17 +844,255 @@ footer a { color: var(--ink-2); }
     box.append(svg, tip);
   }
 
+  // ---------- election night ----------
+  const fmtClock = hhmm => {
+    const [h, m] = hhmm.split(':').map(Number);
+    const next = h < 6;  // after midnight = early Wednesday
+    const h12 = ((h + 11) % 12) + 1;
+    return (h12 + (m ? ':' + String(m).padStart(2, '0') : '')) + (h >= 12 && h < 24 ? ' p.m.' : ' a.m.') + (next ? ' Wed.' : '');
+  };
+  const closeKey = hhmm => { const [h, m] = hhmm.split(':').map(Number); return (h < 6 ? h + 24 : h) * 60 + m; };
+  function isKeyRace(r) { return r.rating === 'Toss-up' || r.rating.startsWith('Lean') || (r.average && Math.abs(r.average.margin) <= 8); }
+  function renderNight() {
+    app.replaceChildren();
+    const PC = DATA.poll_closing || {};
+    app.append(el('section', { style: 'padding-top:20px' },
+      el('div', { class: 'sec-head' }, el('h2', { text: 'Tuesday night: when the polls close' })),
+      el('p', { class: 'lede', text: 'All times are Eastern (standard time; the clocks went back on Nov. 1). Races are listed at the hour the last polls in the state close, because the AP and the networks will not call a race before then; where part of a state closes earlier, the card says so. Margins are this site’s polling averages.' })));
+    // key races at a glance, in closing order
+    const keys = RACES.filter(r => PC[r.id] && isKeyRace(r)).sort((a, b) => closeKey(PC[a.id].last) - closeKey(PC[b.id].last) || Math.abs((a.average ? a.average.margin : 99)) - Math.abs((b.average ? b.average.margin : 99)));
+    const glance = el('div', { class: 'glance' });
+    const groups = new Map();
+    for (const r of keys) { const k = PC[r.id].last; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(r); }
+    for (const [k, rs] of groups) glance.append(el('a', { href: '#h' + k.replace(':', ''), onclick: e => { e.preventDefault(); const t = document.getElementById('h' + k.replace(':', '')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } },
+      el('span', { class: 't', text: fmtClock(k) }), el('span', { class: 's', text: rs.map(r => r.state + (r.special ? ' (sp.)' : '')).join(' · ') })));
+    app.append(el('div', {}, el('div', { class: 'sec-head' }, el('h2', { style: 'font-size:18px', text: 'The competitive races, by closing time' })), glance));
+    // timeline
+    const hours = [...new Set(RACES.filter(r => PC[r.id]).map(r => PC[r.id].last))].sort((a, b) => closeKey(a) - closeKey(b));
+    let closedSoFar = 0;
+    const timeline = el('div', {});
+    for (const h of hours) {
+      const rs = RACES.filter(r => PC[r.id] && PC[r.id].last === h).sort((a, b) => (isKeyRace(b) - isKeyRace(a)) || competitiveSort(a, b));
+      closedSoFar += rs.length;
+      const block = el('div', { class: 'hour', id: 'h' + h.replace(':', '') },
+        el('div', { class: 'time' }, fmtClock(h), el('small', { text: rs.length + (rs.length === 1 ? ' race' : ' races') })));
+      const list = el('div', { class: 'races' });
+      for (const r of rs) {
+        const pc = PC[r.id];
+        const card = el('a', { class: 'nr' + (isKeyRace(r) ? ' key' : ''), href: '#' + r.id });
+        card.append(el('div', { class: 'h' }, el('h4', { text: raceTitle(r) }), el('span', { class: 'mg' + (r.average ? '' : ' none'), text: r.average ? marginText(r, r.average.values) : r.rating })));
+        const cs = r.candidates.slice().sort((a, b) => ((r.average && a.key && r.average.values[a.key]) ?? -1) - ((r.average && b.key && r.average.values[b.key]) ?? -1)).reverse();
+        card.append(el('div', { class: 'who', text: cs.map(c => c.name + ' (' + c.party + ')' + (r.average && c.key && r.average.values[c.key] != null ? ' ' + n1(r.average.values[c.key]) : '')).join(' · ') }));
+        const bits = [];
+        if (pc.first !== pc.last) bits.push('First polls close at ' + fmtClock(pc.first).replace(/\.$/, '') + '.');
+        if (pc.note) bits.push(pc.note);
+        if (r.rating) bits.push('Cook: ' + r.rating + '.');
+        card.append(el('div', { class: 'note', text: bits.join(' ') }));
+        const cn = DATA.counting_notes && DATA.counting_notes[r.abbr];
+        if (cn) card.append(el('div', { class: 'count', text: cn.note }));
+        list.append(card);
+      }
+      list.append(el('div', { class: 'closed-so-far', text: 'Polls closed in ' + closedSoFar + ' of 35 races by ' + fmtClock(h).replace(/\.$/, '') + '.' }));
+      block.append(list);
+      timeline.append(block);
+    }
+    app.append(timeline);
+    const notes = el('div', { class: 'notes' });
+    if (DATA.counting_notes && DATA.counting_notes.ALL) notes.append(el('p', { text: DATA.counting_notes.ALL.note }));
+    notes.append(el('p', { text: 'Closing times: ' + (DATA.sources.poll_closing || '') + '. Your own polling place may close earlier; this page is for watching results, not for deciding when to vote.' }));
+    app.append(notes);
+    window.scrollTo(0, 0);
+  }
+
+  // ---------- polling accuracy, 2018–2024 ----------
+  const A = DATA.accuracy;
+  const fmtMiss = m => m === 0 ? 'Even' : (m < 0 ? 'D overrated by ' : 'R overrated by ') + n1(Math.abs(m));
+  const fmtMarginDR = m => m === 0 ? 'Even' : (m > 0 ? 'D +' : 'R +') + n1(Math.abs(m));
+  const biasPhrase = b => b === 0 ? 'No net lean' : 'Polls overrated ' + (b < 0 ? 'Democrats' : 'Republicans') + ' by ' + n1(Math.abs(b));
+  function renderAccuracy() {
+    app.replaceChildren();
+    const years = Object.keys(A.cycles).filter(k => k !== 'all').sort();
+    app.append(el('section', { style: 'padding-top:20px' },
+      el('div', { class: 'sec-head' }, el('h2', { text: 'How Senate polls have missed, 2018–2024' })),
+      el('p', { class: 'lede', text: 'Every Senate race with a RealClearPolitics final polling average in the last four cycles, scored against the certified result. The miss is the result margin minus the polled margin, Democratic side minus Republican: a negative miss means the polls overrated the Democrat (or the independent running against a Republican), a positive miss means they overrated the Republican. “Competitive” means the final average was within 10 points.' })));
+    // cycle cards
+    const cards = el('div', { class: 'cycles' });
+    for (const y of [...years, 'all']) {
+      const c = A.cycles[y]; const a = c.all, k = c.competitive;
+      if (!a) continue;
+      cards.append(el('div', { class: 'cyc' },
+        el('div', { class: 'yr', text: y === 'all' ? 'All four' : y }),
+        el('div', { class: 'big ' + (a.bias < 0 ? 'D' : a.bias > 0 ? 'R' : ''), text: (a.bias < 0 ? 'D' : 'R') + ' +' + n1(Math.abs(a.bias)) }),
+        el('div', { class: 'lab', text: biasPhrase(a.bias) + ' points on average across ' + a.n + ' polled races.' }),
+        el('div', { class: 'row' }, el('span', { text: 'Competitive races' }), el('b', { text: k ? biasPhrase(k.bias).replace('Polls overrated ', '').replace('Democrats', 'D').replace('Republicans', 'R') + ' (n=' + k.n + ')' : '—' })),
+        el('div', { class: 'row' }, el('span', { text: 'Average miss, either direction' }), el('b', { text: n1(a.mae) + ' pts' })),
+        el('div', { class: 'row' }, el('span', { text: 'Leader in the average won' }), el('b', { text: Math.round(a.leader_correct * a.n_calls) + ' of ' + a.n_calls })),
+        el('div', { class: 'row' }, el('span', { text: 'Competitive races called' }), el('b', { text: k && k.n_calls ? Math.round(k.leader_correct * k.n_calls) + ' of ' + k.n_calls : '—' }))));
+    }
+    app.append(el('section', {}, el('div', { class: 'sec-head' }, el('h2', { text: 'The lean, cycle by cycle' }), el('p', { text: 'A miss of a few points in one direction, shared across most states, is the signature of a polling cycle. The size of the typical miss has been steadier than its direction.' })), cards));
+    // swarm
+    const swarm = el('div', { class: 'swarm' });
+    app.append(el('section', {}, el('div', { class: 'sec-head' }, el('h2', { text: 'Every race’s miss' }), el('p', { text: 'One dot per race, placed by how far the result landed from the final average. Filled dots are competitive races; faded dots are races the polls had outside 10 points. The bar marks each cycle’s average miss among competitive races.' })), swarm,
+      el('p', { class: 'caption', text: 'Hover a dot for the race. Races at the edge of the axis are plotted at the edge.' })));
+    drawSwarm(swarm, years);
+    // what-if for 2026
+    app.append(buildScenarios(years));
+    // 2026 states' own history
+    app.append(buildStateHistory());
+    // full table
+    app.append(buildAccTable(years));
+    app.append(el('div', { class: 'notes' }, el('p', { text: 'Sources: final averages and poll lists from RealClearPolitics/RealClearPolling race pages; certified results from Wikipedia’s election pages (which cite state canvasses). Runoffs (Georgia 2020 and 2022, Mississippi 2018) are listed in the table but excluded from the cycle statistics. Ranked-choice races use the final-round result.' })));
+    window.scrollTo(0, 0);
+  }
+  function drawSwarm(box, years) {
+    box.replaceChildren();
+    const W = Math.max(320, box.clientWidth - 20), narrow = W < 560, left = narrow ? 44 : 70, right = 14, top = 30, rowH = narrow ? 70 : 84, bottom = 6;
+    const H = top + years.length * rowH + bottom;
+    const lim = 15;
+    const x = v => left + (Math.max(-lim, Math.min(lim, v)) + lim) / (2 * lim) * (W - left - right);
+    const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: 'img', 'aria-label': 'Polling misses by race and cycle' });
+    for (let v = -lim; v <= lim; v += 5) {
+      svg.append(svgEl('line', { class: v === 0 ? 'zero' : 'grid', x1: x(v), x2: x(v), y1: top - 8, y2: H - bottom }));
+      svg.append(svgEl('text', { class: 'axis', x: x(v), y: top - 13, 'text-anchor': 'middle' }, v === 0 ? 'On target' : (v < 0 ? 'D overrated ' : 'R overrated ') + Math.abs(v)));
+    }
+    const tip = el('div', { class: 'tip', hidden: '' }); box.append(tip);
+    years.forEach((y, i) => {
+      const y0 = top + i * rowH, yc = y0 + rowH / 2;
+      const rs = A.races.filter(r => String(r.cycle) === y && !r.runoff);
+      svg.append(svgEl('text', { class: 'yr', x: left - 10, y: yc + 5, 'text-anchor': 'end' }, y));
+      const k = A.cycles[y].competitive;
+      if (k) { svg.append(svgEl('rect', { class: 'band', x: Math.min(x(0), x(k.bias)), y: y0 + 6, width: Math.abs(x(k.bias) - x(0)), height: rowH - 12 })); svg.append(svgEl('line', { class: 'mean', x1: x(k.bias), x2: x(k.bias), y1: y0 + 6, y2: y0 + rowH - 6 })); }
+      // simple collision-avoiding placement: sort by miss, stack dots that would overlap
+      const placed = [];
+      for (const r of rs.slice().sort((a, b) => a.miss - b.miss)) {
+        const cx = x(r.miss); let dy = 0, tries = 0;
+        const collides = () => placed.some(p => Math.abs(p.cx - cx) < 11 && Math.abs(p.dy - dy) < 11);
+        while (collides() && tries < 12) { tries++; dy = (tries % 2 ? 1 : -1) * Math.ceil(tries / 2) * 11; }
+        placed.push({ cx, dy, r });
+      }
+      for (const { cx, dy, r } of placed) {
+        const g = svgEl('g', {});
+        const c = svgEl('circle', { class: 'pt ' + (r.d.party === 'D' ? 'D' : 'I') + (r.competitive ? '' : ' blow'), cx, cy: yc + dy, r: 5.5 });
+        g.append(c, svgEl('text', { class: 'st', x: cx, y: yc + dy + 3, 'text-anchor': 'middle', 'pointer-events': 'none' }, narrow ? '' : r.abbr));
+        const show = ev => {
+          tip.replaceChildren(el('div', { class: 't', text: r.state + (r.special ? ' special' : '') + ' ' + r.cycle }),
+            el('div', { class: 'm', text: r.d.name + ' (' + r.d.party + ') vs. ' + r.r.name + ' (R)' }),
+            el('div', { class: 'r' }, el('span', { text: 'Final average' }), el('b', { text: fmtMarginDR(r.poll.margin) })),
+            el('div', { class: 'r' }, el('span', { text: 'Result' }), el('b', { text: fmtMarginDR(r.result.margin) })),
+            el('div', { class: 'r' }, el('span', { text: 'Miss' }), el('b', { text: fmtMiss(r.miss) })));
+          tip.hidden = false; place(tip, box, ev);
+        };
+        g.addEventListener('pointerenter', show); g.addEventListener('pointermove', show); g.addEventListener('pointerleave', () => { tip.hidden = true; });
+        svg.append(g);
+      }
+    });
+    box.append(svg);
+  }
+  function scenarioSeats(shift) {
+    const out = { D: DATA.senate.not_up.D, R: DATA.senate.not_up.R, flips: [] };
+    for (const r of RACES) {
+      if (r.average) {
+        const m = signedMargin(r, r.average.values); // signed: negative = D/I lead
+        const dm = -m.signed + shift;               // D-minus-R margin after the shift
+        const leadD = dm > 0;
+        const nowD = m.signed < 0;
+        if (leadD) out.D++; else out.R++;
+        if (leadD !== nowD) out.flips.push({ r, from: nowD ? 'D' : 'R', to: leadD ? 'D' : 'R', margin: dm });
+      } else if (r.rating.endsWith('D')) out.D++; else if (r.rating.endsWith('R')) out.R++;
+    }
+    return out;
+  }
+  function buildScenarios(years) {
+    const sec = el('section', {});
+    sec.append(el('div', { class: 'sec-head' }, el('h2', { text: 'If 2026 polls miss the way past cycles did' }), el('p', { text: 'Each column shifts every 2026 race by that cycle’s average miss in competitive races, the same number of points everywhere. Real misses are never that uniform, so read this as the direction and rough size of the risk, not a forecast.' })));
+    const wrap = el('div', { class: 'tablewrap' }); const t = el('table', { class: 'acc' });
+    const cols = years.map(y => ({ y, shift: A.cycles[y].competitive ? A.cycles[y].competitive.bias : 0 }));
+    const head = el('tr', {}, el('th', { text: 'Race' }), el('th', { class: 'n', text: 'Polls now' }));
+    for (const c of cols) head.append(el('th', { class: 'n', text: 'Like ' + c.y + ' (' + (c.shift > 0 ? 'R' : 'D') + ' +' + n1(Math.abs(c.shift)) + ')' }));
+    t.append(el('thead', {}, head));
+    const tb = el('tbody');
+    const polled = RACES.filter(r => r.average).sort((a, b) => a.average.signedMargin - b.average.signedMargin);
+    for (const r of polled) {
+      const m = signedMargin(r, r.average.values); const now = -m.signed; const nowD = now > 0;
+      const tr = el('tr', {}, el('td', {}, el('a', { href: '#' + r.id, text: raceTitle(r) })), el('td', { class: 'n', text: marginText(r, r.average.values) }));
+      for (const c of cols) {
+        const adj = now + c.shift; const leadD = adj > 0; const flip = leadD !== nowD && adj !== 0;
+        const leader = leadD ? cands(r).find(x => x.party !== 'R') : cands(r).find(x => x.party === 'R');
+        tr.append(el('td', { class: 'n' + (flip ? ' flip' : ''), text: adj === 0 ? 'Even' : (leader ? shortName(leader) : (leadD ? 'D' : 'R')) + ' +' + n1(Math.abs(adj)) }));
+      }
+      tb.append(tr);
+    }
+    const tot = el('tr', { style: 'background:var(--surface-2)' }, el('td', {}, el('strong', { text: 'Senate' })), (() => { const s = scenarioSeats(0); return el('td', { class: 'n', text: 'D ' + s.D + ' – R ' + s.R }); })());
+    for (const c of cols) { const s = scenarioSeats(c.shift); tot.append(el('td', { class: 'n' }, el('strong', { text: 'D ' + s.D + ' – R ' + s.R }), el('div', { class: 'sub', text: s.flips.length ? s.flips.length + (s.flips.length === 1 ? ' flip' : ' flips') : 'no flips' }))); }
+    tb.append(tot);
+    t.append(tb); wrap.append(t); sec.append(wrap);
+    const lines = cols.map(c => { const s = scenarioSeats(c.shift); return 'A ' + c.y + '-sized miss (' + biasPhrase(c.shift).toLowerCase() + ' points) gives ' + (s.D >= 51 ? 'Democrats ' + s.D : s.R >= 51 ? 'Republicans ' + s.R : 'a 50–50 Senate') + (s.flips.length ? ', flipping ' + s.flips.map(f => f.r.state + (f.r.special ? ' (sp.)' : '')).join(', ') : ', flipping nothing') + '.'; });
+    sec.append(el('p', { class: 'sumline', text: lines.join(' ') }));
+    return sec;
+  }
+  function stateHistoryTable(abbr, compact) {
+    const hs = (A.by_state[abbr] || []);
+    if (!hs.length) return null;
+    const t = el('table', { class: 'acc' });
+    t.append(el('thead', {}, el('tr', {}, el('th', { text: 'Year' }), el('th', { text: 'Race' }), el('th', { class: 'n', text: 'Final average' }), el('th', { class: 'n', text: 'Result' }), el('th', { class: 'n', text: 'Miss' }))));
+    const tb = el('tbody');
+    for (const h of hs) tb.append(el('tr', {}, el('td', { text: String(h.cycle) + (h.runoff ? ' runoff' : h.special ? ' special' : '') }),
+      el('td', {}, h.d.name + ' (' + h.d.party + ') vs. ' + h.r.name + ' (R)'), el('td', { class: 'n', text: fmtMarginDR(h.poll.margin) }), el('td', { class: 'n', text: fmtMarginDR(h.result.margin) }), el('td', { class: 'n miss', text: fmtMiss(h.miss) })));
+    t.append(tb);
+    return el('div', { class: 'tablewrap' }, t);
+  }
+  function buildStateHistory() {
+    const sec = el('section', {});
+    sec.append(el('div', { class: 'sec-head' }, el('h2', { text: 'The 2026 battlegrounds’ own record' }), el('p', { text: 'How the final averages did the last time each of this year’s competitive states elected a senator. A state’s average miss is a weak guide on its own (two or three data points), but a repeated lean is worth knowing.' })));
+    const list = RACES.filter(r => r.average && A.by_state[r.abbr]).sort(competitiveSort);
+    for (const r of list) {
+      const hs = A.by_state[r.abbr].filter(h => !h.runoff);
+      const avg = hs.length ? hs.reduce((s, h) => s + h.miss, 0) / hs.length : null;
+      const box = el('div', { class: 'hist' });
+      box.append(el('h3', {}, el('a', { href: '#' + r.id, style: 'text-decoration:none', text: raceTitle(r) }), ' ', el('span', { style: 'font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--ink-2)', text: '· 2026 average ' + marginText(r, r.average.values) + (avg != null ? ' · past misses here average ' + fmtMiss(Math.round(avg * 10) / 10).toLowerCase() : '') })));
+      box.append(stateHistoryTable(r.abbr));
+      sec.append(box);
+    }
+    return sec;
+  }
+  function buildAccTable(years) {
+    const sec = el('section', {});
+    sec.append(el('div', { class: 'sec-head' }, el('h2', { text: 'Every race scored' }), el('p', { text: 'Final RCP average, certified result, and the miss. “Last 5” scores the plain mean of the five final polls, the estimator this site uses for 2026.' })));
+    const chips = el('div', { class: 'filters' }, el('span', { class: 'lab', text: 'Cycle' }));
+    const wrap = el('div', { class: 'tablewrap' }); let active = 'all';
+    const paint = () => {
+      wrap.replaceChildren();
+      const t = el('table', { class: 'acc' });
+      t.append(el('thead', {}, el('tr', {}, el('th', { text: 'Year' }), el('th', { text: 'State' }), el('th', { text: 'Candidates' }), el('th', { class: 'n', text: 'Final average' }), el('th', { class: 'n', text: 'Last 5' }), el('th', { class: 'n', text: 'Result' }), el('th', { class: 'n', text: 'Miss (average)' }), el('th', { class: 'n', text: 'Miss (last 5)' }))));
+      const tb = el('tbody');
+      const rows = A.races.filter(r => active === 'all' || String(r.cycle) === active).sort((a, b) => (b.cycle - a.cycle) || (a.abs_miss - b.abs_miss));
+      for (const h of rows) tb.append(el('tr', {}, el('td', { text: String(h.cycle) + (h.runoff ? ' runoff' : h.special ? ' special' : '') }), el('td', {}, el('a', { href: h.url || '#', target: '_blank', rel: 'noopener', text: h.state })),
+        el('td', { text: h.d.name + ' (' + h.d.party + ') vs. ' + h.r.name + ' (R)' }), el('td', { class: 'n', text: fmtMarginDR(h.poll.margin) }), el('td', { class: 'n', text: h.last5_margin == null ? '—' : fmtMarginDR(h.last5_margin) }), el('td', { class: 'n', text: fmtMarginDR(h.result.margin) }),
+        el('td', { class: 'n miss', text: fmtMiss(h.miss) }), el('td', { class: 'n', text: h.miss5 == null ? '—' : fmtMiss(h.miss5) })));
+      t.append(tb); wrap.append(t);
+      for (const b of chips.querySelectorAll('button')) b.setAttribute('aria-pressed', String(b.dataset.f === active));
+    };
+    for (const y of ['all', ...years]) chips.append(el('button', { class: 'chipbtn', type: 'button', 'data-f': y, 'aria-pressed': 'false', text: y === 'all' ? 'All' : y, onclick: () => { active = y; paint(); } }));
+    paint();
+    sec.append(chips, wrap);
+    return sec;
+  }
+
   // ---------- router ----------
   const debounce = (fn, ms) => { let t; return () => { clearTimeout(t); t = setTimeout(fn, ms); }; };
   const currentId = () => decodeURIComponent(location.hash.replace(/^#/, ''));
+  function setNav(view) { for (const a of document.querySelectorAll('.nav a')) { if (a.dataset.view === view) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); } }
   function route() {
     const id = currentId();
-    if (id && byId[id]) { document.title = raceTitle(byId[id]) + ' · Senate Polls 2026'; renderRace(byId[id]); }
-    else { document.title = 'Senate Polls 2026'; renderHome(); }
+    if (id && byId[id]) { document.title = raceTitle(byId[id]) + ' · Senate Polls 2026'; setNav('home'); renderRace(byId[id]); }
+    else if (id === 'election-night') { document.title = 'Election night · Senate Polls 2026'; setNav('night'); renderNight(); }
+    else if (id === 'accuracy' && typeof renderAccuracy === 'function' && DATA.accuracy) { document.title = 'How polls have missed · Senate Polls 2026'; setNav('accuracy'); renderAccuracy(); }
+    else { document.title = 'Senate Polls 2026'; setNav('home'); renderHome(); }
   }
   // precompute signed margins
   for (const r of RACES) if (r.average) { const m = signedMargin(r, r.average.values); r.average.signedMargin = m ? m.signed : 0; }
   document.getElementById('updated').textContent = fmtD(DATA.generated) + ', 2026';
+  if (!DATA.accuracy) { const na = document.querySelector('.nav a[data-view="accuracy"]'); if (na) na.hidden = true; }
   (function countdown() {
     const now = new Date(); const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     const days = Math.round((ELECTION - today) / 864e5);
