@@ -23,19 +23,25 @@
   "url": "https://www.elections.alaska.gov/enr26/results/ElectionSummaryReportRPT.pdf",
   "section": "U\\.?S\\.? Senator",
   "section_end": "U\\.?S\\.? Representative|Governor",
-  "row": "(?P<name>[A-Z][A-Za-z'\\-\\. ]+, [A-Z][A-Za-z\\.\\- ]*?)\\s+(?P<party>REP|DEM|LIB|NON|UND|AIP|GRN|CON|NAF|NPA|IND|NA)\\b[^\\n]*?(?P<votes>\\d[\\d,]*)\\s+\\d+\\.\\d+%",
+  "row": "(?P<name>[A-Z][A-Za-z'\\-\\.\\\" ]+, [A-Z][A-Za-z\\.\\-\\\" ]*?)\\s+(?:(?P<party>REP|DEM|LIB|NON|UND|GRN|RAP|AIP|CON|NPA|IND)\\s+)?(?P<votes>\\d[\\d,]*)\\s+\\d+\\.\\d+%",
   "reporting": "(Precincts Reported:\\s*\\d+ of \\d+)",
   "reporting_in_section": true,
   "verified": false,
   "require": "GENERAL ELECTION",
-  "notes": "Dominion election summary report (PDF, parsed with pypdf). The enr26 directory still held the August primary on Nov 2, so the fetcher refuses a report that does not say GENERAL ELECTION. First-choice votes only; the ranked-choice tabulation comes Nov 18. The state's TLS chain is incomplete, so certificate verification is off for this one public file.",
+  "notes": "Dominion election summary report (PDF, parsed with pypdf). The report at this path was still the August primary on Nov 2 and the state's site answered GitHub's servers with 404s, so expect to enter Alaska by hand. First-choice votes only; the ranked-choice tabulation comes Nov 18.",
   "tls_verify": false,
   "probe_urls": [
    "https://www.elections.alaska.gov/enr26/includes/map.js",
    "https://www.elections.alaska.gov/enr26/results/",
    "https://www.elections.alaska.gov/enr26/results/ElectionSummaryReportRPT.pdf"
   ],
-  "user_agent": "browser"
+  "user_agent": "browser",
+  "parties": {
+   "Sullivan, Dan": "R",
+   "Sullivan, Daniel": "I",
+   "Peltola": "D",
+   "Heikes": "R"
+  }
  },
  "AR": {
   "adapter": "manual",
@@ -134,7 +140,11 @@
   "probe_urls": [
    "https://results.sos.ga.gov/results/public/Georgia"
   ],
-  "grep_js": true
+  "grep_js": true,
+  "grep_js_context": [
+   "cdn/results",
+   "/elections/${"
+  ]
  },
  "ID": {
   "adapter": "json",
@@ -275,7 +285,7 @@
   "row": "display-results-box-d\">\\s*<h1>(?P<name>[^<]+)</h1>\\s*<h2 class=\"[^\"]*\">(?P<party>[^<]*)</h2>.*?display-results-box-f\">\\s*<h1>(?P<votes>[\\d,]+)</h1>",
   "section": "display-results-box-a\">\\s*<h1>\\s*UNITED STATES SENATOR",
   "section_end": "display-results-box-a\">\\s*<h1>",
-  "reporting": "(Precincts\\s+Fully[^<]{0,60})",
+  "reporting": "(Precincts\\s+Fully:\\s*[\\d,]+\\s*/\\s*[\\d,]+)",
   "reporting_in_section": false
  },
  "NE": {
@@ -428,7 +438,11 @@
   "probe_urls": [
    "https://enr.elections.virginia.gov/results/public/virginia"
   ],
-  "grep_js": true
+  "grep_js": true,
+  "grep_js_context": [
+   "cdn/results",
+   "/elections/${"
+  ]
  },
  "WV": {
   "adapter": "clarity",

@@ -490,7 +490,12 @@ def probe(sources):
                             jsu = js if js.startswith("http") else host + (js if js.startswith("/") else basep + js)
                             try:
                                 code = get(jsu, cfg=cfg)
-                                rec["probe_pages"][pu].setdefault("js", {})[jsu] = sorted(set(re.findall(r"[\w./-]*(?:cdn/results|export|/api/|elections?)[\w./?${}=-]{0,80}", code)))[:60]
+                                rec["probe_pages"][pu].setdefault("js", {})[jsu] = sorted(set(re.findall(r"[\w./-]*(?:cdn/results|export-|/api/)[\w./?${}=-]{0,80}", code)))[:40]
+                                ctx = []
+                                for needle in cfg.get("grep_js_context", []):
+                                    for mm in list(re.finditer(re.escape(needle), code))[:6]:
+                                        ctx.append(code[max(0, mm.start() - 260):mm.end() + 260])
+                                if ctx: rec["probe_pages"][pu].setdefault("js_context", {})[jsu] = ctx
                             except Exception as e:
                                 rec["probe_pages"][pu].setdefault("js", {})[jsu] = "error " + str(e)[:80]
                 except Exception as e:
