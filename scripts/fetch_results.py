@@ -175,9 +175,35 @@ def adapter_clarity(cfg):
     return {"candidates": cands, "reporting": rep, "reporting_pct": pct}
 
 
+def election_keys(cfg):
+    """Election keys found at run time: walk the JSON at cfg.key_from for objects dated cfg.key_date and collect their slug-like fields."""
+    doc = json.loads(get(cfg["key_from"], cfg=cfg))
+    found = []
+    def walk_(o):
+        if isinstance(o, dict):
+            if str(o.get("electionDate", ""))[:10] == cfg["key_date"]:
+                for k in ("shortName", "slug", "key", "urlKey", "urlName", "electionKey", "name", "id"):
+                    v = o.get(k)
+                    if isinstance(v, str) and 2 < len(v) < 80: found.append(v)
+                    if isinstance(v, list):
+                        for x in v:
+                            if isinstance(x, dict) and isinstance(x.get("text"), str): found.append(x["text"])
+            for v in o.values(): walk_(v)
+        elif isinstance(o, list):
+            for v in o: walk_(v)
+    walk_(doc)
+    cfg["_keys_seen"] = found[:20]
+    return found
+
+
 def get_first(cfg):
     """cfg.url, or the first of cfg.url_candidates that answers 200 (election keys that could not be confirmed in advance)."""
     urls = [cfg["url"]] if cfg.get("url") else []
+    if cfg.get("key_from") and cfg.get("url_template"):
+        try:
+            urls = [cfg["url_template"].replace("{key}", k) for k in election_keys(cfg)] + urls
+        except Exception as e:
+            cfg["_keys_error"] = str(e)[:200]
     urls += [u for u in cfg.get("url_candidates", []) if u not in urls]
     last = None
     for u in urls:
@@ -538,6 +564,8 @@ def probe(sources):
                         rec["section_found"] = bool(m)
                         if m: rec["section_head"] = text[m.start():m.start() + 12000]
             if cfg.get("_root_seen"): rec["root_seen"] = cfg["_root_seen"]
+            if cfg.get("_keys_seen") is not None: rec["keys_seen"] = cfg["_keys_seen"]
+            if cfg.get("_keys_error"): rec["keys_error"] = cfg["_keys_error"]
             try:
                 got = ADAPTERS[cfg["adapter"]](cfg); rec["parsed"] = got
             except Exception as e:
