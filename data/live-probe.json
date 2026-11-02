@@ -16,7 +16,7 @@
   "status": 200,
   "content_type": "text/html; charset=utf-8",
   "final_url": "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001300",
-  "bytes": 42113,
+  "bytes": 42719,
   "raw_head": "\r\n\r\n<link rel=\"stylesheet\" href=\"css/electionNightResults.css\" media=\"all\" />\r\n\r\n<html lang=\"en\" dir=\"ltr\" prefix=\"content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# schema",
   "head": "\r\n\r\n<link rel=\"stylesheet\" href=\"css/electionNightResults.css\" media=\"all\" />\r\n\r\n<html lang=\"en\" dir=\"ltr\" prefix=\"content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# schema: http://schema.org/ sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema# \"><head>\r\n    <!-- Global site tag (gtag.js) - Google Analytics -->\r\n        <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-5287078-7\"></script>\r\n        <script>\r\n            window.dataLayer = window.dataLayer || [];\r\n            function gtag() { dataLayer.push(arguments); }\r\n            gtag('js', new Date());\r\n\r\n            gtag('config', 'UA-5287078-7');\r\n        </script>\r\n\r\n    <meta charset=\"utf-8\">\r\n   \r\n    <meta name=\"MobileOptimized\" content=\"width\">\r\n    <meta name=\"HandheldFriendly\" content=\"true\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    \r\n    <link rel=\"shortcut icon\" href=\"https://www2.alabamavotes.gov/electionNight/themes/custom/sos/favicon.ico\" type=\"image/vnd.microsoft.icon\">\r\n    <title>Alabama Votes | Alabama Secretary of State</title>\r\n\r\n\r\n    \r\n    <link rel=\"stylesheet\" href=\"https://www2.alabamavotes.gov/electionNight/themes/custom/sos/css/reset.css?ot006q\" media=\"all\">\r\n    <link rel=\"stylesheet\" href=\"https://www2.alabamavotes.gov/electionNight/themes/custom/sos/css/style.css?ot006q\" media=\"all\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css\" media=\"all\">\r\n    <link rel=\"stylesheet\" href=\"css/electionNightResults.css\" media=\"all\">\r\n    <!--[if lte IE 8]><script src=\"/core/assets/vendor/html5shiv/html5shiv.min.js?v=3.7.3\"></script><![endif]-->\r\n    <script src=\"https://www2.alabamavotes.gov/electionNight/core/assets/vendor/jquery/jquery.min.js?v=3.6.3\"></script>\r\n    <script src=\"https://www2.alabamavotes.gov/electionNight/themes/custom/sos/js/main.js?ot006q\"></script>\r\n</head>\r\n\r\n<body class=\"not-front\"> \r\n    <a href=\"#main-content\" class=\"skip\"> Skip to main content </a>\r\n    <header class=\"sos-header\">\r\n        <div class=\"main-nav-container\">\r\n            <div class=\"branding\">\r\n                <div>\r\n                    <div id=\"block-sos-branding\">\r\n                        \r\n                        <a href=\"https://www.sos.alabama.gov/\" titl",
   "tables": [],
@@ -132,91 +132,6 @@
  },
  "GA": {
   "adapter": "json",
-  "probe_pages": {
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/2026NovGen": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/2026NovemberGeneral": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/NovGen2026": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/nov2026": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/2026General": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/GeneralElection110326": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/2026-November-General": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/2026Nov": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/November2026": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/2026GeneralElection": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/20261103": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/2026_General": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/Nov32026General": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/2026NovemberGen": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/2026GenElection": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/2026Gen": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/GE2026": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/2026NovemberGeneralElection": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/jurisdictions/Georgia": {
-    "final_url": "https://results.sos.ga.gov/results/public/api/jurisdictions/Georgia",
-    "status": 200,
-    "head": "{\"bannerUrl\":\"09378a07-e6cf-4f66-be7c-ca4aa534f99a/BannerImage_e053a245-e1c1-434e-b5e8-ee4ae82de691.jpg\",\"bannerUrlAltText\":null,\"bannerLinkUrl\":null,\"bannerUrlLeft\":null,\"bannerUrlLeftAltText\":null,\"bannerLinkUrlLeft\":null,\"bannerUrlRight\":null,\"bannerUrlRightAltText\":null,\"bannerLinkUrlRight\":null,\"childLocalities\":[{\"id\":\"7DAF14BF-669E-4A33-BB04-262C69C0CB1D\",\"name\":[{\"languageId\":\"en\",\"text\":\"Clayton County\"}],\"shortName\":\"clayton-county-ga\",\"turnoutPercent\":null,\"percentReporting\":1.0,\"precinctsReporting\":1.0,\"hasCountGroupStatus\":true,\"hasPrecinctStatus\":true,\"mapFeatureId\":\"Clayton\"},{\"id\":\"6911DEA4-3A52-4AD8-B4DE-B4EBF56C8D85\",\"name\":[{\"languageId\":\"en\",\"text\":\"DeKalb County\"}],\"shortName\":\"dekalb-county-ga\",\"turnoutPercent\":null,\"percentReporting\":1.0,\"precinctsReporting\":1.0,\"hasCountGroupStatus\":true,\"hasPrecinctStatus\":true,\"mapFeatureId\":\"DeKalb\"},{\"id\":\"CC909DFD-FE48-42F6-84FD-62E0578F146B\",\"name\":[{\"languageId\":\"en\",\"text\":\"Gwinnett County\"}],\"shortName\":\"gwinnett-county-ga\",\"turnoutPercent\":null,\"percentReporting\":1.0,\"precinctsReporting\":1.0,\"hasCountGroupStatus\":true,\"hasPrecinctStatus\":true,\"mapFeatureId\":\"Gwinnett\"},{\"id\":\"496916CF-9DF1-4F42-93F5-F28E3AB9B357\",\"name\":[{\"languageId\":\"en\",\"text\":\"Henry County\"}],\"shortName\":\"henry-county-ga\",\"turnoutPercent\":null,\"percentReporting\":1.0,\"precinctsReporting\":1.0,\"hasCountGroupStatus\":true,\"hasPrecinctStatus\":true,\"mapFeatureId\":\"Henry\"},{\"id\":\"0DF49C1E-22D2-4237-BD5D-92085A24A46C\",\"name\":[{\"languageId\":\"en\",\"t",
-    "tables": [],
-    "eids": [],
-    "paths": [],
-    "hints": [
-     "media-export-link-text"
-    ]
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/all": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/active": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/Georgia/elections": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/current": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/recent": {
-    "error": "HTTP Error 404: Not Found"
-   },
-   "https://results.sos.ga.gov/results/public/api/elections/Georgia/search": {
-    "error": "HTTP Error 404: Not Found"
-   }
-  },
   "url": "https://results.sos.ga.gov/cdn/results/Georgia/export-2026NovGen.json",
   "candidates_tried": {
    "https://results.sos.ga.gov/cdn/results/Georgia/export-2026NovGen.json": "HTTP Error 404: Not Found",
@@ -471,8 +386,8 @@
   "content_type": "application/text",
   "final_url": "https://electionresults.nebraska.gov/resultsCSV.aspx?text=All&type=SW&map=CTY",
   "bytes": 2473,
-  "raw_head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n13224,\"For United States Senator - 6  Year Term\",\"REP\",\"SW\",\"\",102,,3012,\"Pete  Ricketts \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",",
-  "head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n13224,\"For United States Senator - 6  Year Term\",\"REP\",\"SW\",\"\",102,,3012,\"Pete  Ricketts \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"LMN\",\"SW\",\"\",102,,3249,\"Mike  Marvin \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"NWP\",\"SW\",\"\",102,,3434,\"Robin  Richards \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"AFP\",\"SW\",\"\",102,,3429,\"Chuck  Conboy \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"PET\",\"SW\",\"\",102,,3365,\"Dan  Osborn \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"REP\",\"SW\",\"\",105,,3352,\"Jim Pillen and Joe Kelly \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"DEM\",\"SW\",\"\",105,,3353,\"Lynne Walz and Ben Steffen \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"LMN\",\"SW\",\"\",105,,3354,\"Rick Beard and Keenya Barnes \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"AFP\",\"SW\",\"\",105,,3428,\"Brett Lindstrom and Michael Picard \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"REP\",\"SW\",\"\",106,,3116,\"Scott  Petersen \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"DEM\",\"SW\",\"\",106,,2951,\"Sarah J. Slattery \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"NWP\",\"SW\",\"\",106,,3433,\"Paul  Rumbaugh \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"AFP\",\"SW\",\"\",106,,3431,\"Bob  Krist \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13223,\"For State Treasurer\",\"REP\",\"SW\",\"\",107,,2801,\"Joey  Spellerberg \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13223,\"For State Treasurer\",\"DEM\",\"SW\",\"\",107,,3161,\"Daniel  Ebers \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13217,\"For Attorney General\",\"REP\",\"SW\",\"\",108,,3067,\"Mike  Hilgers \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13217,\"For Attorney General\",\"DEM\",\"SW\",\"\",108,,3064,\"Jocelyn  Brasher \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13218,\"For Auditor of Public Accounts\",\"REP\",\"SW\",\"\",109,,2736,\"Mike  Foley \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n13218,\"For Auditor of Public Accounts\",\"AFP\",\"SW\",\"\",109,,3432,\"John  Knight \",11/2/2026 2:23:31 PM,1,0,0,=\"0/1322\",\r\n",
+  "raw_head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n13224,\"For United States Senator - 6  Year Term\",\"REP\",\"SW\",\"\",102,,3012,\"Pete  Ricketts \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",",
+  "head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n13224,\"For United States Senator - 6  Year Term\",\"REP\",\"SW\",\"\",102,,3012,\"Pete  Ricketts \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"LMN\",\"SW\",\"\",102,,3249,\"Mike  Marvin \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"NWP\",\"SW\",\"\",102,,3434,\"Robin  Richards \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"AFP\",\"SW\",\"\",102,,3429,\"Chuck  Conboy \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"PET\",\"SW\",\"\",102,,3365,\"Dan  Osborn \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"REP\",\"SW\",\"\",105,,3352,\"Jim Pillen and Joe Kelly \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"DEM\",\"SW\",\"\",105,,3353,\"Lynne Walz and Ben Steffen \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"LMN\",\"SW\",\"\",105,,3354,\"Rick Beard and Keenya Barnes \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"AFP\",\"SW\",\"\",105,,3428,\"Brett Lindstrom and Michael Picard \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"REP\",\"SW\",\"\",106,,3116,\"Scott  Petersen \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"DEM\",\"SW\",\"\",106,,2951,\"Sarah J. Slattery \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"NWP\",\"SW\",\"\",106,,3433,\"Paul  Rumbaugh \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"AFP\",\"SW\",\"\",106,,3431,\"Bob  Krist \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13223,\"For State Treasurer\",\"REP\",\"SW\",\"\",107,,2801,\"Joey  Spellerberg \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13223,\"For State Treasurer\",\"DEM\",\"SW\",\"\",107,,3161,\"Daniel  Ebers \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13217,\"For Attorney General\",\"REP\",\"SW\",\"\",108,,3067,\"Mike  Hilgers \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13217,\"For Attorney General\",\"DEM\",\"SW\",\"\",108,,3064,\"Jocelyn  Brasher \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13218,\"For Auditor of Public Accounts\",\"REP\",\"SW\",\"\",109,,2736,\"Mike  Foley \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n13218,\"For Auditor of Public Accounts\",\"AFP\",\"SW\",\"\",109,,3432,\"John  Knight \",11/2/2026 2:26:32 PM,1,0,0,=\"0/1322\",\r\n",
   "parsed": {
    "candidates": [
     {
