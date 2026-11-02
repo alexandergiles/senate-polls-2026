@@ -136,78 +136,29 @@
    "https://results.sos.ga.gov/results/public/Georgia": {
     "final_url": "https://results.sos.ga.gov/results/public/Georgia",
     "status": 200,
-    "head": "<!doctype html>\n<html lang=\"en\" data-beasties-container=\"\">\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Election Results</title>\n    <base href=\"/results/public/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.png\">\n\n    <meta name=\"CSP_NONCE\" content=\"2450b4029310a284a36f22267f5f9813\">\n    <!-- The below should only be uncommented when testing CSP locally -->\n    <!-- <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; script-src 'self' 'nonce-2450b4029310a284a36f22267f5f9813'; img-src 'self' https://app.dev.enhancedvoting.com https://app.enhancedvoting.com data:; connect-src 'self' https://api.mapbox.com https://events.mapbox.com ws://localhost:4200 https://app.enhancedvoting.com https://app.dev.enhancedvoting.com https://localhost:7297 https://localhost:5006; style-src 'self' 'nonce-2450b4029310a284a36f22267f5f9813'; worker-src 'self' blob:;\"> -->\n  <style nonce=\"2450b4029310a284a36f22267f5f9813\">@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}:root{--fa-font-solid:normal 900 1em/1 \"Font Awesome 7 Free\";--fa-font-regular:normal 400 1em/1 \"Font Awesome 7 Free\";--fa-font-light:normal 300 1em/1 \"Font Awesome 7 Pro\";--fa-font-thin:normal 100 1em/1 \"Font Awesome 7 Pro\";--fa-font-duotone:normal 900 1em/1 \"Font Awesome 7 Duotone\";--fa-font-duotone-regular:normal 400 1em/1 \"Font Aweso",
+    "head": "<!doctype html>\n<html lang=\"en\" data-beasties-container=\"\">\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Election Results</title>\n    <base href=\"/results/public/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.png\">\n\n    <meta name=\"CSP_NONCE\" content=\"088cd67acadbc1bfcd3bbd0ec9ec7c0b\">\n    <!-- The below should only be uncommented when testing CSP locally -->\n    <!-- <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; script-src 'self' 'nonce-088cd67acadbc1bfcd3bbd0ec9ec7c0b'; img-src 'self' https://app.dev.enhancedvoting.com https://app.enhancedvoting.com data:; connect-src 'self' https://api.mapbox.com https://events.mapbox.com ws://localhost:4200 https://app.enhancedvoting.com https://app.dev.enhancedvoting.com https://localhost:7297 https://localhost:5006; style-src 'self' 'nonce-088cd67acadbc1bfcd3bbd0ec9ec7c0b'; worker-src 'self' blob:;\"> -->\n  <style nonce=\"088cd67acadbc1bfcd3bbd0ec9ec7c0b\">@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}:root{--fa-font-solid:normal 900 1em/1 \"Font Awesome 7 Free\";--fa-font-regular:normal 400 1em/1 \"Font Awesome 7 Free\";--fa-font-light:normal 300 1em/1 \"Font Awesome 7 Pro\";--fa-font-thin:normal 100 1em/1 \"Font Awesome 7 Pro\";--fa-font-duotone:normal 900 1em/1 \"Font Awesome 7 Duotone\";--fa-font-duotone-regular:normal 400 1em/1 \"Font Aweso",
     "tables": [],
     "eids": [],
     "paths": [],
     "hints": [],
     "js": {
      "https://results.sos.ga.gov/results/public/polyfills-2FSRUXKO.js": [],
-     "https://results.sos.ga.gov/results/public/scripts-TTWY4XDY.js": [
-      "exports==",
-      "module.exports=fe"
-     ],
+     "https://results.sos.ga.gov/results/public/scripts-TTWY4XDY.js": [],
      "https://results.sos.ga.gov/results/public/main-SDUQU7SI.js": [
-      ".election-cards",
-      ".electionId",
-      ".electionId===a.id",
       "//www.mapbox.com/mapbox-gl-js/api/.",
       "/cdn/results",
-      "/cdn/results/",
-      "/elections/${a}/${p}",
-      "/elections/${a}/${p}/localities",
-      "/elections/${a}/${p}/stats",
-      "/elections/${a}/${p}/turnout",
-      "/elections/${a}/${p}/vr",
-      "K.election=o.find",
-      "K.election?.groupReportingStatus?.sort",
-      "K.election?.precinctReportingStatus",
-      "M.electionId",
-      "Yt.electionBallotItemResults",
-      "Yt.electionBallotItemResults}}",
-      "Yt.electionSummaryResults",
-      "Yt.electionSummaryResults?o=ct.searchPlaceholder",
-      "Yt.electionSummaryResults}}",
-      "a.election.closeRaceThreshold",
-      "a.election.electionId",
-      "a.election.isOfficialResults?p.ClientTextKey.officialResults",
-      "a.election.map.disclaimer",
-      "a.election.map==null?null",
-      "a.election.nextUpdateAt.time",
-      "a.election==null",
-      "a.electionDate",
-      "a.electionId",
-      "a.electionNightComplete.reportingStatus.clientTextKey",
-      "a.electionNightComplete.reportingStatus.clientTextKey?1",
-      "a.electionNightComplete.value",
-      "a.electionNightComplete.value/a.totalPrecincts",
-      "a.electionParams?1",
-      "a.electionStatsCardCount",
-      "a.electionStatsCardCount==1?",
-      "a.electionStatsCardCount==1?I=",
-      "a.electionStatsCardCount==2",
-      "a.electionStatsCardCount==2?",
-      "a.electionStatsCardCount?",
-      "a.electionStatsCardCount?0",
-      "a.electionStatsCardCount?4",
-      "a.elections",
-      "a.elections.length",
-      "a.elections.slice",
-      "a.elections=a.elections.sort",
-      "a.elections?.length",
-      "app-election-filters",
-      "app-election-summary-page",
-      "app-election-summary-widgets",
-      "app-election-top-controls",
-      "e.exports",
-      "e.exports}var",
-      "ef.exports=d",
-      "election",
-      "election-cards",
-      "election-filters-section",
-      "election-header",
-      "election-info",
-      "electionId"
+      "/cdn/results/"
+     ]
+    },
+    "js_context": {
+     "https://results.sos.ga.gov/results/public/main-SDUQU7SI.js": [
+      ":\"\",workerClass:null,setNow:o.exported.setNow,restoreNow:o.exported.restoreNow};return Ks});var g=a;return g})});var _5={production:!0,flags:{enableBallotImageHosting:!0},api:{endpoint:\"/results/public/api\",graphQlEndpoint:\"/admin/gateway/graphql\"},imageCdn:\"/cdn/results/\",cdn:\"/cdn/results\",pathBase:\"/results/public\"};function M5(c,d){(d==null||d>c.length)&&(d=c.length);for(var a=0,p=Array(d);a<d;a++)p[a]=c[a];return p}function Sb(c){if(Array.isArray(c))return c}function Lb(c){if(Array.isArray(c))return M5(c)}function Tb(c,d",
+      ",setNow:o.exported.setNow,restoreNow:o.exported.restoreNow};return Ks});var g=a;return g})});var _5={production:!0,flags:{enableBallotImageHosting:!0},api:{endpoint:\"/results/public/api\",graphQlEndpoint:\"/admin/gateway/graphql\"},imageCdn:\"/cdn/results/\",cdn:\"/cdn/results\",pathBase:\"/results/public\"};function M5(c,d){(d==null||d>c.length)&&(d=c.length);for(var a=0,p=Array(d);a<d;a++)p[a]=c[a];return p}function Sb(c){if(Array.isArray(c))return c}function Lb(c){if(Array.isArray(c))return M5(c)}function Tb(c,d){if(!(c instanceof ",
+      "\\u4E2A\\u6708\",months:\"%d\\u6708\",year:\"\\u5927\\u7EA61\\u5E74\",years:\"%d\\u5E74\",wordSeparator:\"\"};var _6=(()=>{class c{constructor(){this.http=Le(s7),this.baseUrl=Le(_1).api.endpoint}getAllLocalityElections(a,p){return this.elections=this.http.get(`${this.baseUrl}/elections/${a}/${p}/localities`),this.elections}getElection(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}`).pipe(St(g=>new z7(g)))}getStatistics(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/stats`)}getLocalityVoterRegistration(a,p){retur",
+      ")=>{class c{constructor(){this.http=Le(s7),this.baseUrl=Le(_1).api.endpoint}getAllLocalityElections(a,p){return this.elections=this.http.get(`${this.baseUrl}/elections/${a}/${p}/localities`),this.elections}getElection(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}`).pipe(St(g=>new z7(g)))}getStatistics(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/stats`)}getLocalityVoterRegistration(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/vr`)}getPrecinctVoterTurnout(a,p){return this.http",
+      "p){return this.elections=this.http.get(`${this.baseUrl}/elections/${a}/${p}/localities`),this.elections}getElection(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}`).pipe(St(g=>new z7(g)))}getStatistics(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/stats`)}getLocalityVoterRegistration(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/vr`)}getPrecinctVoterTurnout(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/turnout`)}static{this.\\u0275fac=function(p){return new(p||c)",
+      "ons}getElection(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}`).pipe(St(g=>new z7(g)))}getStatistics(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/stats`)}getLocalityVoterRegistration(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/vr`)}getPrecinctVoterTurnout(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/turnout`)}static{this.\\u0275fac=function(p){return new(p||c)}}static{this.\\u0275prov=lr({token:c,factory:c.\\u0275fac,providedIn:\"root\"})}}return c})();var HM={p",
+      "new z7(g)))}getStatistics(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/stats`)}getLocalityVoterRegistration(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/vr`)}getPrecinctVoterTurnout(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/turnout`)}static{this.\\u0275fac=function(p){return new(p||c)}}static{this.\\u0275prov=lr({token:c,factory:c.\\u0275fac,providedIn:\"root\"})}}return c})();var HM={prefix:\"fas\",iconName:\"circle-check\",icon:[512,512,[61533,\"check-circle\"],\"f058\",\"M256 512a25"
      ]
     }
    }
@@ -459,8 +410,8 @@
      "votes": 16474
     }
    ],
-   "reporting": "Precincts Fully Reported",
-   "reporting_pct": null
+   "reporting": "Precincts Fully: 728 / 728",
+   "reporting_pct": 100.0
   }
  },
  "NE": {
@@ -470,8 +421,8 @@
   "content_type": "application/text",
   "final_url": "https://electionresults.nebraska.gov/resultsCSV.aspx?text=All&type=SW&map=CTY",
   "bytes": 2473,
-  "raw_head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n13224,\"For United States Senator - 6  Year Term\",\"REP\",\"SW\",\"\",102,,3012,\"Pete  Ricketts \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",",
-  "head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n13224,\"For United States Senator - 6  Year Term\",\"REP\",\"SW\",\"\",102,,3012,\"Pete  Ricketts \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"LMN\",\"SW\",\"\",102,,3249,\"Mike  Marvin \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"NWP\",\"SW\",\"\",102,,3434,\"Robin  Richards \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"AFP\",\"SW\",\"\",102,,3429,\"Chuck  Conboy \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"PET\",\"SW\",\"\",102,,3365,\"Dan  Osborn \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"REP\",\"SW\",\"\",105,,3352,\"Jim Pillen and Joe Kelly \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"DEM\",\"SW\",\"\",105,,3353,\"Lynne Walz and Ben Steffen \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"LMN\",\"SW\",\"\",105,,3354,\"Rick Beard and Keenya Barnes \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"AFP\",\"SW\",\"\",105,,3428,\"Brett Lindstrom and Michael Picard \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"REP\",\"SW\",\"\",106,,3116,\"Scott  Petersen \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"DEM\",\"SW\",\"\",106,,2951,\"Sarah J. Slattery \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"NWP\",\"SW\",\"\",106,,3433,\"Paul  Rumbaugh \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"AFP\",\"SW\",\"\",106,,3431,\"Bob  Krist \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13223,\"For State Treasurer\",\"REP\",\"SW\",\"\",107,,2801,\"Joey  Spellerberg \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13223,\"For State Treasurer\",\"DEM\",\"SW\",\"\",107,,3161,\"Daniel  Ebers \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13217,\"For Attorney General\",\"REP\",\"SW\",\"\",108,,3067,\"Mike  Hilgers \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13217,\"For Attorney General\",\"DEM\",\"SW\",\"\",108,,3064,\"Jocelyn  Brasher \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13218,\"For Auditor of Public Accounts\",\"REP\",\"SW\",\"\",109,,2736,\"Mike  Foley \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n13218,\"For Auditor of Public Accounts\",\"AFP\",\"SW\",\"\",109,,3432,\"John  Knight \",11/2/2026 2:17:29 PM,1,0,0,=\"0/1322\",\r\n",
+  "raw_head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n13224,\"For United States Senator - 6  Year Term\",\"REP\",\"SW\",\"\",102,,3012,\"Pete  Ricketts \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",",
+  "head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n13224,\"For United States Senator - 6  Year Term\",\"REP\",\"SW\",\"\",102,,3012,\"Pete  Ricketts \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"LMN\",\"SW\",\"\",102,,3249,\"Mike  Marvin \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"NWP\",\"SW\",\"\",102,,3434,\"Robin  Richards \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"AFP\",\"SW\",\"\",102,,3429,\"Chuck  Conboy \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13224,\"For United States Senator - 6  Year Term\",\"PET\",\"SW\",\"\",102,,3365,\"Dan  Osborn \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"REP\",\"SW\",\"\",105,,3352,\"Jim Pillen and Joe Kelly \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"DEM\",\"SW\",\"\",105,,3353,\"Lynne Walz and Ben Steffen \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"LMN\",\"SW\",\"\",105,,3354,\"Rick Beard and Keenya Barnes \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13508,\"For Governor and Lt. Governor\",\"AFP\",\"SW\",\"\",105,,3428,\"Brett Lindstrom and Michael Picard \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"REP\",\"SW\",\"\",106,,3116,\"Scott  Petersen \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"DEM\",\"SW\",\"\",106,,2951,\"Sarah J. Slattery \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"NWP\",\"SW\",\"\",106,,3433,\"Paul  Rumbaugh \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13222,\"For Secretary of State\",\"AFP\",\"SW\",\"\",106,,3431,\"Bob  Krist \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13223,\"For State Treasurer\",\"REP\",\"SW\",\"\",107,,2801,\"Joey  Spellerberg \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13223,\"For State Treasurer\",\"DEM\",\"SW\",\"\",107,,3161,\"Daniel  Ebers \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13217,\"For Attorney General\",\"REP\",\"SW\",\"\",108,,3067,\"Mike  Hilgers \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13217,\"For Attorney General\",\"DEM\",\"SW\",\"\",108,,3064,\"Jocelyn  Brasher \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13218,\"For Auditor of Public Accounts\",\"REP\",\"SW\",\"\",109,,2736,\"Mike  Foley \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n13218,\"For Auditor of Public Accounts\",\"AFP\",\"SW\",\"\",109,,3432,\"John  Knight \",11/2/2026 2:20:31 PM,1,0,0,=\"0/1322\",\r\n",
   "parsed": {
    "candidates": [
     {
@@ -648,8 +599,8 @@
   "content_type": "application/text",
   "final_url": "https://electionresults.sd.gov/resultsCSV.aspx?text=All&type=SWR&map=CTY",
   "bytes": 2227,
-  "raw_head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n14412,\"United States Senator\",\"REP\",\"\",\"\",110,,24967,\"Mike  Rounds \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14412,\"United States ",
-  "head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n14412,\"United States Senator\",\"REP\",\"\",\"\",110,,24967,\"Mike  Rounds \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14412,\"United States Senator\",\"IND\",\"\",\"\",110,,24887,\"Brian L Bengs \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14869,\"United States Representative\",\"REP\",\"\",\"\",120,,24968,\"Marty  Jackley \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14869,\"United States Representative\",\"DEM\",\"\",\"\",120,,25521,\"Nicole 'Nikki'  Gronli \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14896,\"Governor and Lieutenant Governor\",\"REP\",\"\",\"\",205,,25561,\"Larry Rhoden and Tony Venhuizen \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14896,\"Governor and Lieutenant Governor\",\"DEM\",\"\",\"\",205,,25560,\"Dan Ahlers and Steven  McCleerey \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14441,\"Secretary of State\",\"REP\",\"\",\"\",210,,25540,\"Heather  Baxter \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14441,\"Secretary of State\",\"LIB\",\"\",\"\",210,,24925,\"Tamara J. Lesnar \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14441,\"Secretary of State\",\"DEM\",\"\",\"\",210,,24958,\"Terrence  Davis \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14882,\"Attorney General\",\"REP\",\"\",\"\",220,,25541,\"Lance  Russell \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14462,\"State Auditor\",\"REP\",\"\",\"\",230,,25538,\"Catherine  Barranco \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14462,\"State Auditor\",\"DEM\",\"\",\"\",230,,24956,\"Tom  Cool \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14463,\"State Treasurer\",\"REP\",\"\",\"\",240,,25537,\"Melissa  Hull \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14463,\"State Treasurer\",\"DEM\",\"\",\"\",240,,24957,\"Margaret  Kuipers \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14464,\"Commissioner of School and Public Lands\",\"REP\",\"\",\"\",250,,25539,\"Brock  Greenfield \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14464,\"Commissioner of School and Public Lands\",\"DEM\",\"\",\"\",250,,24959,\"Raeann  Mettler \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14465,\"Public Utilities Commissioner\",\"REP\",\"\",\"\",260,,25536,\"Don  Haggar \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14465,\"Public Utilities Commissioner\",\"DEM\",\"\",\"\",260,,24960,\"Frank  Kloucek \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n",
+  "raw_head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n14412,\"United States Senator\",\"REP\",\"\",\"\",110,,24967,\"Mike  Rounds \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14412,\"United States ",
+  "head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n14412,\"United States Senator\",\"REP\",\"\",\"\",110,,24967,\"Mike  Rounds \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14412,\"United States Senator\",\"IND\",\"\",\"\",110,,24887,\"Brian L Bengs \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14869,\"United States Representative\",\"REP\",\"\",\"\",120,,24968,\"Marty  Jackley \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14869,\"United States Representative\",\"DEM\",\"\",\"\",120,,25521,\"Nicole 'Nikki'  Gronli \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14896,\"Governor and Lieutenant Governor\",\"REP\",\"\",\"\",205,,25561,\"Larry Rhoden and Tony Venhuizen \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14896,\"Governor and Lieutenant Governor\",\"DEM\",\"\",\"\",205,,25560,\"Dan Ahlers and Steven  McCleerey \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14441,\"Secretary of State\",\"REP\",\"\",\"\",210,,25540,\"Heather  Baxter \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14441,\"Secretary of State\",\"LIB\",\"\",\"\",210,,24925,\"Tamara J. Lesnar \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14441,\"Secretary of State\",\"DEM\",\"\",\"\",210,,24958,\"Terrence  Davis \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14882,\"Attorney General\",\"REP\",\"\",\"\",220,,25541,\"Lance  Russell \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14462,\"State Auditor\",\"REP\",\"\",\"\",230,,25538,\"Catherine  Barranco \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14462,\"State Auditor\",\"DEM\",\"\",\"\",230,,24956,\"Tom  Cool \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14463,\"State Treasurer\",\"REP\",\"\",\"\",240,,25537,\"Melissa  Hull \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14463,\"State Treasurer\",\"DEM\",\"\",\"\",240,,24957,\"Margaret  Kuipers \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14464,\"Commissioner of School and Public Lands\",\"REP\",\"\",\"\",250,,25539,\"Brock  Greenfield \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14464,\"Commissioner of School and Public Lands\",\"DEM\",\"\",\"\",250,,24959,\"Raeann  Mettler \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14465,\"Public Utilities Commissioner\",\"REP\",\"\",\"\",260,,25536,\"Don  Haggar \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n14465,\"Public Utilities Commissioner\",\"DEM\",\"\",\"\",260,,24960,\"Frank  Kloucek \",11/2/2026 8:21:09 PM,1,0,0,=\"0/671\",\r\n",
   "parsed": {
    "candidates": [
     {
@@ -724,78 +675,29 @@
    "https://enr.elections.virginia.gov/results/public/virginia": {
     "final_url": "https://enr.elections.virginia.gov/results/public/virginia",
     "status": 200,
-    "head": "<!doctype html>\n<html lang=\"en\" data-beasties-container=\"\">\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Election Results</title>\n    <base href=\"/results/public/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.png\">\n\n    <meta name=\"CSP_NONCE\" content=\"d583fc16ca5cbe7f49275de5cd032e17\">\n    <!-- The below should only be uncommented when testing CSP locally -->\n    <!-- <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; script-src 'self' 'nonce-d583fc16ca5cbe7f49275de5cd032e17'; img-src 'self' https://app.dev.enhancedvoting.com https://app.enhancedvoting.com data:; connect-src 'self' https://api.mapbox.com https://events.mapbox.com ws://localhost:4200 https://app.enhancedvoting.com https://app.dev.enhancedvoting.com https://localhost:7297 https://localhost:5006; style-src 'self' 'nonce-d583fc16ca5cbe7f49275de5cd032e17'; worker-src 'self' blob:;\"> -->\n  <style nonce=\"d583fc16ca5cbe7f49275de5cd032e17\">@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}:root{--fa-font-solid:normal 900 1em/1 \"Font Awesome 7 Free\";--fa-font-regular:normal 400 1em/1 \"Font Awesome 7 Free\";--fa-font-light:normal 300 1em/1 \"Font Awesome 7 Pro\";--fa-font-thin:normal 100 1em/1 \"Font Awesome 7 Pro\";--fa-font-duotone:normal 900 1em/1 \"Font Awesome 7 Duotone\";--fa-font-duotone-regular:normal 400 1em/1 \"Font Aweso",
+    "head": "<!doctype html>\n<html lang=\"en\" data-beasties-container=\"\">\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Election Results</title>\n    <base href=\"/results/public/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.png\">\n\n    <meta name=\"CSP_NONCE\" content=\"c84d4118d27b73952cf2650ae518844b\">\n    <!-- The below should only be uncommented when testing CSP locally -->\n    <!-- <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; script-src 'self' 'nonce-c84d4118d27b73952cf2650ae518844b'; img-src 'self' https://app.dev.enhancedvoting.com https://app.enhancedvoting.com data:; connect-src 'self' https://api.mapbox.com https://events.mapbox.com ws://localhost:4200 https://app.enhancedvoting.com https://app.dev.enhancedvoting.com https://localhost:7297 https://localhost:5006; style-src 'self' 'nonce-c84d4118d27b73952cf2650ae518844b'; worker-src 'self' blob:;\"> -->\n  <style nonce=\"c84d4118d27b73952cf2650ae518844b\">@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}:root{--fa-font-solid:normal 900 1em/1 \"Font Awesome 7 Free\";--fa-font-regular:normal 400 1em/1 \"Font Awesome 7 Free\";--fa-font-light:normal 300 1em/1 \"Font Awesome 7 Pro\";--fa-font-thin:normal 100 1em/1 \"Font Awesome 7 Pro\";--fa-font-duotone:normal 900 1em/1 \"Font Awesome 7 Duotone\";--fa-font-duotone-regular:normal 400 1em/1 \"Font Aweso",
     "tables": [],
     "eids": [],
     "paths": [],
     "hints": [],
     "js": {
      "https://enr.elections.virginia.gov/results/public/polyfills-2FSRUXKO.js": [],
-     "https://enr.elections.virginia.gov/results/public/scripts-TTWY4XDY.js": [
-      "exports==",
-      "module.exports=fe"
-     ],
+     "https://enr.elections.virginia.gov/results/public/scripts-TTWY4XDY.js": [],
      "https://enr.elections.virginia.gov/results/public/main-SDUQU7SI.js": [
-      ".election-cards",
-      ".electionId",
-      ".electionId===a.id",
       "//www.mapbox.com/mapbox-gl-js/api/.",
       "/cdn/results",
-      "/cdn/results/",
-      "/elections/${a}/${p}",
-      "/elections/${a}/${p}/localities",
-      "/elections/${a}/${p}/stats",
-      "/elections/${a}/${p}/turnout",
-      "/elections/${a}/${p}/vr",
-      "K.election=o.find",
-      "K.election?.groupReportingStatus?.sort",
-      "K.election?.precinctReportingStatus",
-      "M.electionId",
-      "Yt.electionBallotItemResults",
-      "Yt.electionBallotItemResults}}",
-      "Yt.electionSummaryResults",
-      "Yt.electionSummaryResults?o=ct.searchPlaceholder",
-      "Yt.electionSummaryResults}}",
-      "a.election.closeRaceThreshold",
-      "a.election.electionId",
-      "a.election.isOfficialResults?p.ClientTextKey.officialResults",
-      "a.election.map.disclaimer",
-      "a.election.map==null?null",
-      "a.election.nextUpdateAt.time",
-      "a.election==null",
-      "a.electionDate",
-      "a.electionId",
-      "a.electionNightComplete.reportingStatus.clientTextKey",
-      "a.electionNightComplete.reportingStatus.clientTextKey?1",
-      "a.electionNightComplete.value",
-      "a.electionNightComplete.value/a.totalPrecincts",
-      "a.electionParams?1",
-      "a.electionStatsCardCount",
-      "a.electionStatsCardCount==1?",
-      "a.electionStatsCardCount==1?I=",
-      "a.electionStatsCardCount==2",
-      "a.electionStatsCardCount==2?",
-      "a.electionStatsCardCount?",
-      "a.electionStatsCardCount?0",
-      "a.electionStatsCardCount?4",
-      "a.elections",
-      "a.elections.length",
-      "a.elections.slice",
-      "a.elections=a.elections.sort",
-      "a.elections?.length",
-      "app-election-filters",
-      "app-election-summary-page",
-      "app-election-summary-widgets",
-      "app-election-top-controls",
-      "e.exports",
-      "e.exports}var",
-      "ef.exports=d",
-      "election",
-      "election-cards",
-      "election-filters-section",
-      "election-header",
-      "election-info",
-      "electionId"
+      "/cdn/results/"
+     ]
+    },
+    "js_context": {
+     "https://enr.elections.virginia.gov/results/public/main-SDUQU7SI.js": [
+      ":\"\",workerClass:null,setNow:o.exported.setNow,restoreNow:o.exported.restoreNow};return Ks});var g=a;return g})});var _5={production:!0,flags:{enableBallotImageHosting:!0},api:{endpoint:\"/results/public/api\",graphQlEndpoint:\"/admin/gateway/graphql\"},imageCdn:\"/cdn/results/\",cdn:\"/cdn/results\",pathBase:\"/results/public\"};function M5(c,d){(d==null||d>c.length)&&(d=c.length);for(var a=0,p=Array(d);a<d;a++)p[a]=c[a];return p}function Sb(c){if(Array.isArray(c))return c}function Lb(c){if(Array.isArray(c))return M5(c)}function Tb(c,d",
+      ",setNow:o.exported.setNow,restoreNow:o.exported.restoreNow};return Ks});var g=a;return g})});var _5={production:!0,flags:{enableBallotImageHosting:!0},api:{endpoint:\"/results/public/api\",graphQlEndpoint:\"/admin/gateway/graphql\"},imageCdn:\"/cdn/results/\",cdn:\"/cdn/results\",pathBase:\"/results/public\"};function M5(c,d){(d==null||d>c.length)&&(d=c.length);for(var a=0,p=Array(d);a<d;a++)p[a]=c[a];return p}function Sb(c){if(Array.isArray(c))return c}function Lb(c){if(Array.isArray(c))return M5(c)}function Tb(c,d){if(!(c instanceof ",
+      "\\u4E2A\\u6708\",months:\"%d\\u6708\",year:\"\\u5927\\u7EA61\\u5E74\",years:\"%d\\u5E74\",wordSeparator:\"\"};var _6=(()=>{class c{constructor(){this.http=Le(s7),this.baseUrl=Le(_1).api.endpoint}getAllLocalityElections(a,p){return this.elections=this.http.get(`${this.baseUrl}/elections/${a}/${p}/localities`),this.elections}getElection(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}`).pipe(St(g=>new z7(g)))}getStatistics(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/stats`)}getLocalityVoterRegistration(a,p){retur",
+      ")=>{class c{constructor(){this.http=Le(s7),this.baseUrl=Le(_1).api.endpoint}getAllLocalityElections(a,p){return this.elections=this.http.get(`${this.baseUrl}/elections/${a}/${p}/localities`),this.elections}getElection(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}`).pipe(St(g=>new z7(g)))}getStatistics(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/stats`)}getLocalityVoterRegistration(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/vr`)}getPrecinctVoterTurnout(a,p){return this.http",
+      "p){return this.elections=this.http.get(`${this.baseUrl}/elections/${a}/${p}/localities`),this.elections}getElection(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}`).pipe(St(g=>new z7(g)))}getStatistics(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/stats`)}getLocalityVoterRegistration(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/vr`)}getPrecinctVoterTurnout(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/turnout`)}static{this.\\u0275fac=function(p){return new(p||c)",
+      "ons}getElection(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}`).pipe(St(g=>new z7(g)))}getStatistics(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/stats`)}getLocalityVoterRegistration(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/vr`)}getPrecinctVoterTurnout(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/turnout`)}static{this.\\u0275fac=function(p){return new(p||c)}}static{this.\\u0275prov=lr({token:c,factory:c.\\u0275fac,providedIn:\"root\"})}}return c})();var HM={p",
+      "new z7(g)))}getStatistics(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/stats`)}getLocalityVoterRegistration(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/vr`)}getPrecinctVoterTurnout(a,p){return this.http.get(`${this.baseUrl}/elections/${a}/${p}/turnout`)}static{this.\\u0275fac=function(p){return new(p||c)}}static{this.\\u0275prov=lr({token:c,factory:c.\\u0275fac,providedIn:\"root\"})}}return c})();var HM={prefix:\"fas\",iconName:\"circle-check\",icon:[512,512,[61533,\"check-circle\"],\"f058\",\"M256 512a25"
      ]
     }
    }
