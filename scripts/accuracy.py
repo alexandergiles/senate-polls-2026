@@ -33,12 +33,10 @@ def side(values, candidates):
     others = [k for k, p in keymap.items() if p not in ("R", "D")]
     if len(rs) != 1:
         return None
-    if ds:
-        d = max(ds, key=lambda k: values.get(k) or 0)
-    elif others:
-        d = max(others, key=lambda k: values.get(k) or 0)
-    else:
+    pool = ds + others   # the Democratic side is whichever non-Republican the polls had highest (Maine 2024: King, not the Democrat)
+    if not pool:
         return None
+    d = max(pool, key=lambda k: values.get(k) or 0)
     return d, rs[0]
 
 races = []
