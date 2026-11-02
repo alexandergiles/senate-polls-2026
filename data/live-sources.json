@@ -138,12 +138,13 @@
    "https://app.enhancedvoting.com/cdn/results/Georgia/export-2026GeneralElection.json"
   ],
   "probe_urls": [
-   "https://results.sos.ga.gov/results/public/Georgia"
-  ],
-  "grep_js": true,
-  "grep_js_context": [
-   "cdn/results",
-   "/elections/${"
+   "https://results.sos.ga.gov/results/public/api/elections/Georgia/2024NovGen",
+   "https://results.sos.ga.gov/results/public/api/elections/Georgia",
+   "https://results.sos.ga.gov/results/public/api/elections/Georgia/list",
+   "https://results.sos.ga.gov/results/public/api/customers/Georgia",
+   "https://results.sos.ga.gov/results/public/api/customers/Georgia/elections",
+   "https://results.sos.ga.gov/results/public/api/elections?customer=Georgia",
+   "https://results.sos.ga.gov/results/public/api/elections/Georgia/GeneralPrimary51926/stats"
   ]
  },
  "ID": {
@@ -436,12 +437,10 @@
    "https://enr.elections.virginia.gov/cdn/results/Virginia/export-2026NovemberGeneralElection.json"
   ],
   "probe_urls": [
-   "https://enr.elections.virginia.gov/results/public/virginia"
-  ],
-  "grep_js": true,
-  "grep_js_context": [
-   "cdn/results",
-   "/elections/${"
+   "https://enr.elections.virginia.gov/results/public/api/elections/virginia",
+   "https://enr.elections.virginia.gov/results/public/api/elections/virginia/2026-November-General",
+   "https://enr.elections.virginia.gov/results/public/api/elections/virginia/list",
+   "https://enr.elections.virginia.gov/results/public/api/customers/virginia/elections"
   ]
  },
  "WV": {
