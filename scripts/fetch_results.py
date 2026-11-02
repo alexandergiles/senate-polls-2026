@@ -25,7 +25,7 @@ UA = "senate-polls-2026 results fetcher (github.com/alexandergiles/senate-polls-
 TIMEOUT = 25
 
 PARTY_WORDS = {"dem": "D", "democrat": "D", "democratic": "D", "dfl": "D", "rep": "R", "republican": "R", "gop": "R",
-               "ind": "I", "independent": "I", "npa": "I", "nonpartisan": "I", "non-partisan": "I", "lib": "L", "libertarian": "L",
+               "ind": "I", "independent": "I", "npa": "I", "nonpartisan": "I", "non-partisan": "I", "pet": "I", "petition": "I", "una": "I", "unaffiliated": "I", "non": "I", "und": "I", "nop": "I", "lib": "L", "libertarian": "L",
                "grn": "O", "green": "O", "wi": "O", "write-in": "O", "con": "O", "constitution": "O", "oth": "O", "other": "O"}
 
 
@@ -33,9 +33,25 @@ def log(*a):
     print(time.strftime("%H:%M:%S"), *a, file=sys.stderr)
 
 
-def get(url, binary=False):
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*", "Cache-Control": "no-cache"})
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
+BROWSER_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
+
+
+def opener_for(cfg):
+    """urllib opener honoring per-source options: user_agent 'browser' (some state sites refuse non-browser agents)
+    and tls_verify false (one state serves an incomplete certificate chain; public read-only data)."""
+    import ssl
+    handlers = []
+    if cfg and cfg.get("tls_verify") is False:
+        ctx = ssl.create_default_context(); ctx.check_hostname = False; ctx.verify_mode = ssl.CERT_NONE
+        handlers.append(urllib.request.HTTPSHandler(context=ctx))
+    op = urllib.request.build_opener(*handlers)
+    ua = BROWSER_UA if (cfg or {}).get("user_agent") == "browser" else UA
+    op.addheaders = [("User-Agent", ua), ("Accept", "*/*"), ("Cache-Control", "no-cache"), ("Accept-Language", "en-US,en;q=0.9")]
+    return op
+
+
+def get(url, binary=False, cfg=None):
+    with opener_for(cfg).open(url, timeout=TIMEOUT) as r:
         data = r.read()
     return data if binary else data.decode("utf-8-sig", errors="replace")
 
@@ -93,11 +109,18 @@ def match_candidates(race, found):
 def clarity_base(cfg):
     """Election base URL: cfg.url as given, or resolved from the state root (the root redirects / links to the current election)."""
     if cfg.get("url"):
-        return cfg["url"].rstrip("/")
+        base = cfg["url"].rstrip("/")
+        if not cfg.get("root"):
+            return base
+        try:
+            if get(base + "/current_ver.txt", cfg=cfg).strip():
+                return base
+        except Exception:
+            pass
     root = cfg["root"]; st = cfg.get("state", "")
-    req = urllib.request.Request(root, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
+    with opener_for(cfg).open(root, timeout=TIMEOUT) as r:
         final, body = r.geturl(), r.read().decode("utf-8", errors="replace")
+    cfg["_root_seen"] = {"final_url": final, "head": body[:1500]}
     for text in (final, body):
         m = re.search(r"/" + re.escape(st) + r"/(\d{5,7})(?:/|\b)", text)
         if m:
@@ -112,8 +135,8 @@ def adapter_clarity(cfg):
     bare list of contests; newer ones {"Contests": [...]} — each contest: A name, C candidate names, P parties
     (sometimes), V votes; precinct counts vary by version, so they are read where present."""
     base = clarity_base(cfg)
-    ver = get(base + "/current_ver.txt").strip()
-    doc = json.loads(get(f"{base}/{ver}/json/en/summary.json"))
+    ver = get(base + "/current_ver.txt", cfg=cfg).strip()
+    doc = json.loads(get(f"{base}/{ver}/json/en/summary.json", cfg=cfg))
     summary = doc.get("Contests") if isinstance(doc, dict) else doc
     pat = re.compile(cfg.get("contest", r"U\.?S\.? Senat|United States Senat"), re.I)
     name_of = lambda c: str(c.get("A") or c.get("Name") or "")
@@ -132,7 +155,7 @@ def adapter_clarity(cfg):
         rep, pct = f"{int(rep_n):,} of {int(tot):,} precincts", round(100.0 * rep_n / tot, 1)
     else:
         try:
-            es = json.loads(get(f"{base}/{ver}/json/en/electionsettings.json"))
+            es = json.loads(get(f"{base}/{ver}/json/en/electionsettings.json", cfg=cfg))
             s = es.get("settings", {}).get("electiondetails", es.get("electiondetails", es))
             t = s.get("totalprecincts") or s.get("precinctsTotal") or s.get("PrecinctsTotal")
             r = s.get("precinctsreporting") or s.get("precinctsReported") or s.get("PrecinctsReporting") or 0
@@ -141,6 +164,32 @@ def adapter_clarity(cfg):
         except Exception:
             pass
     return {"candidates": cands, "reporting": rep, "reporting_pct": pct}
+
+
+def get_first(cfg):
+    """cfg.url, or the first of cfg.url_candidates that answers 200 (election keys that could not be confirmed in advance)."""
+    urls = [cfg["url"]] if cfg.get("url") else []
+    urls += [u for u in cfg.get("url_candidates", []) if u not in urls]
+    last = None
+    for u in urls:
+        try:
+            return get(u, cfg=cfg)
+        except urllib.error.HTTPError as e:
+            last = e
+            if e.code not in (403, 404): raise
+    raise last or RuntimeError("no url")
+
+
+def resolve_url(cfg):
+    """cfg.url, with {eid} filled from a page that links to the current election (cfg.eid_from: page url, cfg.eid_pattern)."""
+    url = cfg["url"]
+    if "{eid}" in url:
+        page = get(cfg["eid_from"], cfg=cfg)
+        ids = re.findall(cfg.get("eid_pattern", r"eid=(\d+)"), page)
+        if not ids:
+            raise RuntimeError("no election id on " + cfg["eid_from"])
+        url = url.replace("{eid}", max(ids, key=int))
+    return url
 
 
 def walk(obj, path):
@@ -163,7 +212,7 @@ def auto_json(doc, pat, exclude):
         if depth > 6: return
         if isinstance(o, list) and o and all(isinstance(x, dict) for x in o):
             keys = set(k.lower() for x in o for k in x)
-            if any(re.search(r"name|candidate|choice", k) for k in keys) and any(re.search(r"votes|total", k) for k in keys):
+            if any(re.search(r"name|candidate|choice", k) for k in keys) and any(re.search(r"vote|total", k) for k in keys):
                 yield o
         if isinstance(o, dict):
             for v in o.values(): yield from cand_lists(v, depth + 1)
@@ -182,7 +231,7 @@ def auto_json(doc, pat, exclude):
             rows = []
             for x in lst:
                 nk = next((k for k in x if re.search(r"candidate|choice|name", k, re.I) and isinstance(x[k], str)), None)
-                vk = next((k for k in x if re.search(r"^(total_?votes|votes|voteTotal|total)$", k, re.I)), None) or next((k for k in x if re.search(r"votes", k, re.I) and isinstance(x[k], (int, float, str))), None)
+                vk = next((k for k in x if re.search(r"^(total_?votes|votes|voteCount|voteTotal|total)$", k, re.I)), None) or next((k for k in x if re.search(r"vote", k, re.I) and isinstance(x[k], (int, float, str)) and not re.search(r"percent|pct|for$", k, re.I)), None)
                 pk = next((k for k in x if re.search(r"party", k, re.I) and isinstance(x[k], str)), None)
                 if nk and vk:
                     rows.append({"name": x[nk], "party": party_code(x[pk]) if pk else party_code(x[nk]), "votes": int(re.sub(r"[^\d]", "", str(x[vk])) or 0)})
@@ -195,10 +244,13 @@ def adapter_json(cfg):
     """Generic JSON. cfg: url, contests (path to list), contest_name (field), contest (regex), candidates (field),
     name, party, votes (fields on each candidate), reporting (optional path on the contest or root). Without
     'contests' the layout is discovered (auto_json). base64: true decodes a base64 body first."""
-    raw = get(cfg["url"])
+    raw = get_first(cfg)
     if cfg.get("base64"):
         import base64
-        raw = base64.b64decode(raw.strip()).decode("utf-8", errors="replace")
+        body = raw.strip()
+        if body[:1] == '"':                      # a JSON string literal holding the base64 text
+            body = json.loads(body)
+        raw = base64.b64decode(body).decode("utf-8", errors="replace")
     doc = json.loads(raw)
     pat = re.compile(cfg.get("contest", r"U\.?S\.? Senat|United States Senat"), re.I)
     if "contests" not in cfg:
@@ -224,6 +276,13 @@ def adapter_json(cfg):
         votes = walk(r, cfg.get("votes", "votes"))
         cands.append({"name": name, "party": party, "votes": int(str(votes).replace(",", "") or 0)})
     rep = pct = None
+    if cfg.get("reporting_pair"):
+        try:
+            a, b = (walk(c, cfg["reporting_pair"][0]), walk(c, cfg["reporting_pair"][1]))
+            if b:
+                rep, pct = f"{int(a or 0):,} of {int(b):,} precincts", round(100.0 * int(a or 0) / int(b), 1)
+        except Exception:
+            pass
     if cfg.get("reporting"):
         try:
             rep = str(walk(c, cfg["reporting"]))
@@ -241,7 +300,7 @@ def adapter_json(cfg):
 def adapter_csv(cfg):
     """Delimited text. cfg: url, delimiter (default ','), zip_member (optional), contest_col, contest (regex),
     name_col, party_col (optional), votes_col, header (true/false; false -> cols by index), reporting_cols (optional [reported, total])."""
-    raw = get(cfg["url"], binary=True)
+    raw = get(resolve_url(cfg), binary=True, cfg=cfg)
     if cfg.get("zip_member"):
         with zipfile.ZipFile(io.BytesIO(raw)) as z:
             member = next(n for n in z.namelist() if re.search(cfg["zip_member"], n))
@@ -268,6 +327,7 @@ def adapter_csv(cfg):
         if "party_col" not in cfg: cfg["party_col"] = find([r"party"], r"id$")
         if "votes_col" not in cfg: cfg["votes_col"] = find([r"^total ?votes$", r"^votes$", r"^total$", r"votes"], r"percent|pct|%|for office|registered")
         if "county_col" not in cfg: cfg["county_col"] = find([r"^county", r"parish", r"jurisdiction"], r"id$|code")
+        if "reporting_col" not in cfg: cfg["reporting_col"] = find([r"precincts?.?report"])
         if cfg.get("contest_col") is None or cfg.get("name_col") is None or cfg.get("votes_col") is None:
             raise RuntimeError("could not detect columns in header " + str(hdr[:25]))
     else:
@@ -298,6 +358,11 @@ def adapter_csv(cfg):
             rep, pct = f"{rr:,} of {tt:,} precincts", round(100.0 * rr / tt, 1) if tt else None
         except Exception:
             pass
+    elif cfg.get("reporting_col") is not None:
+        m = re.search(r"(\d+)\s*/\s*(\d+)", sel[0][col(cfg["reporting_col"])])   # "0/1322", sometimes wrapped as ="0/1322"
+        if m:
+            rr, tt = int(m.group(1)), int(m.group(2))
+            rep, pct = f"{rr:,} of {tt:,} precincts", round(100.0 * rr / tt, 1) if tt else None
     return {"candidates": cands, "reporting": rep, "reporting_pct": pct}
 
 
@@ -305,7 +370,7 @@ def adapter_html(cfg):
     """Server-rendered results page. cfg: url, section (regex locating the contest; text from the first match to
     cfg.section_end regex or 60k chars is searched), row (regex with named groups name, votes and optionally party),
     reporting (optional regex with one group)."""
-    html = get(cfg["url"])
+    html = get(resolve_url(cfg), cfg=cfg)
     if cfg.get("require") and not re.search(cfg["require"], html[:20000], re.I):
         raise RuntimeError("page does not carry the required text " + cfg["require"])
     text = html
@@ -357,14 +422,25 @@ def probe(sources):
             continue
         rec = {"adapter": cfg["adapter"]}
         try:
-            url = cfg.get("url")
+            url = resolve_url(cfg) if cfg.get("url") else None
+            for pu in cfg.get("probe_urls", []):
+                try:
+                    txt = get(pu, cfg=cfg); rec.setdefault("probe_pages", {})[pu] = {"head": txt[:1500], "tables": [t[:2500] for t in re.findall(r"<table.*?</table>", txt, re.I | re.S)[:6]]}
+                except Exception as e:
+                    rec.setdefault("probe_pages", {})[pu] = {"error": str(e)[:200]}
             if cfg["adapter"] == "clarity":
                 base = clarity_base(cfg); rec["base"] = base
-                ver = get(base + "/current_ver.txt").strip(); rec["version"] = ver
+                ver = get(base + "/current_ver.txt", cfg=cfg).strip(); rec["version"] = ver
                 url = f"{base}/{ver}/json/en/summary.json"
             rec["url"] = url
-            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
-            with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
+            if cfg["adapter"] == "json" and cfg.get("url_candidates"):
+                for u in [url] + cfg["url_candidates"]:
+                    try:
+                        with opener_for(cfg).open(u, timeout=TIMEOUT) as r:
+                            r.read(1); rec.setdefault("candidates_tried", {})[u] = r.status; url = u; break
+                    except Exception as e:
+                        rec.setdefault("candidates_tried", {})[u] = str(e)[:80]
+            with opener_for(cfg).open(url, timeout=TIMEOUT) as r:
                 raw = r.read(); rec["status"] = r.status; rec["content_type"] = r.headers.get("Content-Type"); rec["final_url"] = r.geturl()
             rec["bytes"] = len(raw)
             if raw[:2] == b"PK":
@@ -376,14 +452,18 @@ def probe(sources):
                 text = raw.decode("utf-8-sig", errors="replace")
                 if cfg.get("base64"):
                     try:
-                        import base64; text = base64.b64decode(text.strip()).decode("utf-8", errors="replace"); rec["base64_decoded"] = True
+                        import base64; body = text.strip(); body = json.loads(body) if body[:1] == '"' else body
+                        text = base64.b64decode(body).decode("utf-8", errors="replace"); rec["base64_decoded"] = True
                     except Exception as e:
                         rec["base64_error"] = str(e)
                 rec["head"] = text[:2500]
-                if cfg["adapter"] == "html" and cfg.get("section"):
-                    m = re.search(cfg["section"], text, re.I | re.S)
-                    rec["section_found"] = bool(m)
-                    if m: rec["section_head"] = text[m.start():m.start() + 3000]
+                if cfg["adapter"] == "html":
+                    rec["tables"] = [t[:2500] for t in re.findall(r"<table.*?</table>", text, re.I | re.S)[:6]]
+                    if cfg.get("section"):
+                        m = re.search(cfg["section"], text, re.I | re.S)
+                        rec["section_found"] = bool(m)
+                        if m: rec["section_head"] = text[m.start():m.start() + 3000]
+            if cfg.get("_root_seen"): rec["root_seen"] = cfg["_root_seen"]
             try:
                 got = ADAPTERS[cfg["adapter"]](cfg); rec["parsed"] = got
             except Exception as e:
