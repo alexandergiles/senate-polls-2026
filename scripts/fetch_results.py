@@ -46,7 +46,7 @@ def opener_for(cfg):
         handlers.append(urllib.request.HTTPSHandler(context=ctx))
     op = urllib.request.build_opener(*handlers)
     ua = BROWSER_UA if (cfg or {}).get("user_agent") == "browser" else UA
-    op.addheaders = [("User-Agent", ua), ("Accept", "*/*"), ("Cache-Control", "no-cache"), ("Accept-Language", "en-US,en;q=0.9")]
+    op.addheaders = [("User-Agent", ua), ("Accept", "*/*"), ("Cache-Control", "no-cache"), ("Accept-Language", "en-US,en;q=0.9")] + list(((cfg or {}).get("headers") or {}).items())
     return op
 
 
@@ -68,6 +68,8 @@ def party_code(s):
     for k, v in PARTY_WORDS.items():
         if t == k or t.startswith(k + " ") or t.endswith(" " + k):
             return v
+    if len(t) == 1 and t in "drli":
+        return t.upper()
     if t[:1] in ("d", "r") and len(t) <= 4:
         return t[0].upper()
     return None
@@ -117,7 +119,14 @@ def clarity_base(cfg):
                 return base
         except Exception:
             pass
-    root = cfg["root"]; st = cfg.get("state", "")
+    st = cfg.get("state", "")
+    if cfg.get("eid_from"):
+        page = get(cfg["eid_from"], cfg=cfg)
+        ids = re.findall(cfg.get("eid_pattern", r"/" + re.escape(st) + r"/(\d{5,7})"), page)
+        if ids:
+            host = re.match(r"https?://[^/]+", cfg.get("root") or cfg["url"]).group(0)
+            return f"{host}/{st}/{max(ids, key=int)}"
+    root = cfg["root"]
     with opener_for(cfg).open(root, timeout=TIMEOUT) as r:
         final, body = r.geturl(), r.read().decode("utf-8", errors="replace")
     cfg["_root_seen"] = {"final_url": final, "head": body[:1500]}
@@ -263,7 +272,6 @@ def adapter_json(cfg):
     contests = walk(doc, cfg.get("contests", ""))
     if isinstance(contests, dict):
         contests = list(contests.values())
-    pat = re.compile(cfg.get("contest", r"U\.?S\.? Senat"), re.I)
     sel = [c for c in contests if pat.search(str(walk(c, cfg.get("contest_name", "name")) or "")) and not re.search(cfg.get("exclude", r"\bDistrict\b"), str(walk(c, cfg.get("contest_name", "name")) or ""))]
     if not sel:
         raise RuntimeError("contest not found")
@@ -332,7 +340,7 @@ def adapter_csv(cfg):
             raise RuntimeError("could not detect columns in header " + str(hdr[:25]))
     else:
         col = lambda idx: int(idx)
-    pat = re.compile(cfg.get("contest", r"U\.?S\.? Senat"), re.I)
+    pat = re.compile(cfg.get("contest", r"U\.?S\.? Senat|United States Senat"), re.I)
     sel = [r for r in rows if len(r) > col(cfg["contest_col"]) and pat.search(r[col(cfg["contest_col"])]) and not re.search(cfg.get("exclude", r"\bDistrict\b"), r[col(cfg["contest_col"])])]
     if not sel:
         raise RuntimeError("contest rows not found; contests seen: " + "; ".join(sorted({r[col(cfg["contest_col"])] for r in rows if len(r) > col(cfg["contest_col"])})[:30]))
@@ -369,8 +377,21 @@ def adapter_csv(cfg):
 def adapter_html(cfg):
     """Server-rendered results page. cfg: url, section (regex locating the contest; text from the first match to
     cfg.section_end regex or 60k chars is searched), row (regex with named groups name, votes and optionally party),
-    reporting (optional regex with one group)."""
-    html = get(resolve_url(cfg), cfg=cfg)
+    reporting (optional regex with one group), require (regex the page must contain), parties (surname -> party)."""
+    return parse_text_rows(get(resolve_url(cfg), cfg=cfg), cfg)
+
+
+def adapter_pdf(cfg):
+    """A results report published as PDF (Alaska's Dominion summary). Text is extracted with pypdf, then parsed
+    like an html source: cfg.section / section_end / row / reporting / require."""
+    from pypdf import PdfReader
+    raw = get(resolve_url(cfg), binary=True, cfg=cfg)
+    reader = PdfReader(io.BytesIO(raw))
+    text = "\n".join((pg.extract_text() or "") for pg in reader.pages[:40])
+    return parse_text_rows(text, cfg)
+
+
+def parse_text_rows(html, cfg):
     if cfg.get("require") and not re.search(cfg["require"], html[:20000], re.I):
         raise RuntimeError("page does not carry the required text " + cfg["require"])
     text = html
@@ -403,6 +424,10 @@ def adapter_html(cfg):
         m = re.search(cfg["reporting"], text if cfg.get("reporting_in_section") else html, re.I | re.S)
         if m:
             rep = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", m.group(1))).strip()
+            mm = re.search(r"(\d[\d,]*)\s*(?:of|/)\s*(\d[\d,]*)", rep)
+            if mm:
+                a, b = int(mm.group(1).replace(",", "")), int(mm.group(2).replace(",", ""))
+                if b: pct = round(100.0 * a / b, 1)
     return {"candidates": cands, "reporting": rep, "reporting_pct": pct}
 
 
@@ -410,7 +435,7 @@ def adapter_manual(cfg):
     raise RuntimeError("manual-only race")
 
 
-ADAPTERS = {"clarity": adapter_clarity, "json": adapter_json, "csv": adapter_csv, "html": adapter_html, "manual": adapter_manual}
+ADAPTERS = {"clarity": adapter_clarity, "json": adapter_json, "csv": adapter_csv, "html": adapter_html, "pdf": adapter_pdf, "manual": adapter_manual}
 
 
 def probe(sources):
@@ -422,12 +447,12 @@ def probe(sources):
             continue
         rec = {"adapter": cfg["adapter"]}
         try:
-            url = resolve_url(cfg) if cfg.get("url") else None
             for pu in cfg.get("probe_urls", []):
                 try:
-                    txt = get(pu, cfg=cfg); rec.setdefault("probe_pages", {})[pu] = {"head": txt[:1500], "tables": [t[:2500] for t in re.findall(r"<table.*?</table>", txt, re.I | re.S)[:6]]}
+                    txt = get(pu, cfg=cfg); rec.setdefault("probe_pages", {})[pu] = {"head": txt[:1500], "tables": [t[:2500] for t in re.findall(r"<table.*?</table>", txt, re.I | re.S)[:6]], "eids": re.findall(r"eid=(\d+)", txt)[:10], "paths": sorted(set(re.findall(r"/[A-Z]{2}/\d{5,7}", txt)))[:10]}
                 except Exception as e:
                     rec.setdefault("probe_pages", {})[pu] = {"error": str(e)[:200]}
+            url = resolve_url(cfg) if cfg.get("url") else None
             if cfg["adapter"] == "clarity":
                 base = clarity_base(cfg); rec["base"] = base
                 ver = get(base + "/current_ver.txt", cfg=cfg).strip(); rec["version"] = ver
@@ -450,6 +475,7 @@ def probe(sources):
                     rec["head"] = first[:1500].decode("utf-8", errors="replace")
             else:
                 text = raw.decode("utf-8-sig", errors="replace")
+                rec["raw_head"] = text[:300]
                 if cfg.get("base64"):
                     try:
                         import base64; body = text.strip(); body = json.loads(body) if body[:1] == '"' else body

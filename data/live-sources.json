@@ -17,19 +17,22 @@
   ]
  },
  "AK": {
-  "adapter": "html",
+  "adapter": "pdf",
   "source": "Alaska Division of Elections",
   "source_url": "https://www.elections.alaska.gov/enr26/",
-  "url": "https://www.elections.alaska.gov/enr26/results/ElectionSummaryReportRPT.txt",
+  "url": "https://www.elections.alaska.gov/enr26/results/ElectionSummaryReportRPT.pdf",
   "section": "U\\.?S\\.? Senator",
   "section_end": "U\\.?S\\.? Representative|Governor",
-  "row": "(?P<name>[A-Z][A-Za-z'\\-\\. ]+, [A-Z][A-Za-z\\. ]+?)\\s+(?P<party>REP|DEM|LIB|NON|UND|AIP|GRN|CON|NAF|NPA|IND)\\b[^\\n]*?(?P<votes>\\d[\\d,]*)\\s+\\d+\\.\\d+%",
+  "row": "(?P<name>[A-Z][A-Za-z'\\-\\. ]+, [A-Z][A-Za-z\\.\\- ]*?)\\s+(?P<party>REP|DEM|LIB|NON|UND|AIP|GRN|CON|NAF|NPA|IND|NA)\\b[^\\n]*?(?P<votes>\\d[\\d,]*)\\s+\\d+\\.\\d+%",
   "reporting": "(Precincts Reported:\\s*\\d+ of \\d+)",
   "reporting_in_section": true,
   "verified": false,
   "require": "GENERAL ELECTION",
-  "notes": "Dominion summary report; the enr26 directory still held the August primary report on Nov 2, so the fetcher refuses a report whose header is not the general election. First-choice votes only; ranked-choice tabulation Nov 18. The state's TLS chain is incomplete, so certificate verification is off for this one public file.",
-  "tls_verify": false
+  "notes": "Dominion election summary report (PDF, parsed with pypdf). The enr26 directory still held the August primary on Nov 2, so the fetcher refuses a report that does not say GENERAL ELECTION. First-choice votes only; the ranked-choice tabulation comes Nov 18. The state's TLS chain is incomplete, so certificate verification is off for this one public file.",
+  "tls_verify": false,
+  "probe_urls": [
+   "https://www.elections.alaska.gov/enr26/"
+  ]
  },
  "AR": {
   "adapter": "manual",
@@ -46,7 +49,13 @@
   "verified": false,
   "root": "https://results.enr.clarityelections.com/CO/",
   "state": "CO",
-  "notes": "Election 126592 per Mesa County's link; if it has no version yet the state root is used to find the current election."
+  "notes": "Election 126592 per Mesa County's link; if it has no version yet the state root is used to find the current election.",
+  "eid_from": "https://www.sos.state.co.us/pubs/elections/Results/",
+  "eid_pattern": "/CO/(\\d{5,7})",
+  "probe_urls": [
+   "https://www.sos.state.co.us/pubs/elections/Results/",
+   "https://www.sos.state.co.us/pubs/elections/resultsData.html"
+  ]
  },
  "DE": {
   "adapter": "csv",
@@ -62,10 +71,9 @@
   "source": "Florida Division of Elections (Florida Election Watch)",
   "source_url": "https://floridaelectionwatch.gov/FederalOffices/USSenator",
   "url": "https://floridaelectionwatch.gov/FederalOffices/USSenator",
-  "section": "U\\.?S\\.? Senator",
-  "row": "<tr[^>]*>\\s*<td[^>]*>\\s*(?P<name>[^<]{3,60}?)\\s*</td>\\s*<td[^>]*>\\s*(?P<party>REP|DEM|NPA|LPF|GRE|IND|CPF|[A-Z]{2,4})\\s*</td>\\s*<td[^>]*>\\s*(?P<votes>[\\d,]+)\\s*</td>",
-  "verified": false,
-  "notes": "Server-rendered HTML, already switched to the Nov 3 general with zeros.",
+  "row": "<tr class=\"grid-row\"[^>]*>\\s*<td[^>]*>\\s*(?P<name>[^<]+?)\\s*</td>\\s*<td[^>]*>\\s*(?P<party>[A-Z]{2,4})\\s*</td>\\s*<td[^>]*>\\s*<span>\\s*(?P<votes>[\\d,]+)\\s*</span>",
+  "verified": true,
+  "notes": "Server-rendered HTML, live with the Nov 3 general at zero on Nov 2.",
   "probe_urls": [
    "https://floridaelectionwatch.gov/CountyReportingStatus"
   ]
@@ -97,6 +105,13 @@
    "https://results.sos.ga.gov/cdn/results/Georgia/export-2026-November-General.json",
    "https://results.sos.ga.gov/cdn/results/Georgia/export-GeneralElection110326.json",
    "https://results.sos.ga.gov/cdn/results/Georgia/export-General110326.json"
+  ],
+  "probe_urls": [
+   "https://results.sos.ga.gov/results/public/Georgia",
+   "https://results.sos.ga.gov/results/public/Georgia/elections",
+   "https://results.sos.ga.gov/cdn/results/Georgia/",
+   "https://sos.ga.gov/page/election-results",
+   "https://results.sos.ga.gov/results/public/api/elections/Georgia"
   ]
  },
  "ID": {
@@ -133,8 +148,11 @@
   "verified": false,
   "notes": "Clarity; the Nov 3 election id is resolved from the site root at run time.",
   "probe_urls": [
-   "https://electionresults.iowa.gov/"
-  ]
+   "https://sos.iowa.gov/elections/results/index.html",
+   "https://sos.iowa.gov/elections/results/"
+  ],
+  "eid_from": "https://sos.iowa.gov/elections/results/index.html",
+  "eid_pattern": "electionresults\\.iowa\\.gov/IA/(\\d{5,7})"
  },
  "KS": {
   "adapter": "html",
@@ -142,12 +160,12 @@
   "source_url": "https://ent.sos.ks.gov/kssos_ent.html",
   "url": "https://ent.sos.ks.gov/national.html",
   "section": "United States Senat",
-  "section_end": "United States House|U\\.?S\\.? House|Representative",
-  "row": "<tr[^>]*>\\s*<td[^>]*>\\s*(?P<party>[DRLi])\\s*-\\s*(?P<name>[^<]{3,60}?)\\s*</td>\\s*<td[^>]*>\\s*(?P<votes>[\\d,]+)\\s*</td>",
+  "section_end": "class='row race-heading'",
+  "row": "<p>(?P<party>[DRLi])-(?P<name>[^<]{3,60}?)</p>\\s*</div>\\s*<div class='col-2'>\\s*<p>(?P<votes>[\\d,]+)</p>",
   "reporting": "(Precincts Reporting:\\s*[\\d,]+ of [\\d,]+)",
   "reporting_in_section": true,
-  "verified": false,
-  "notes": "Static HTML rewritten each cycle; rows are 'R-Name'. Page goes live 5 pm CT.",
+  "verified": true,
+  "notes": "Static HTML; live with the Nov 3 general at zero on Nov 2 (browser user agent required).",
   "user_agent": "browser"
  },
  "KY": {
@@ -165,7 +183,11 @@
    "Booker": "D"
   },
   "notes": "No party labels on the page; parties mapped by surname.",
-  "user_agent": "browser"
+  "user_agent": "browser",
+  "headers": {
+   "Referer": "https://vrsws.sos.ky.gov/liveresults/",
+   "Accept": "text/html,application/xhtml+xml"
+  }
  },
  "LA": {
   "adapter": "manual",
@@ -216,19 +238,23 @@
   "source_url": "https://www.sos.ms.gov/elections-voting/election-results"
  },
  "MT": {
-  "adapter": "csv",
+  "adapter": "html",
   "source": "Montana Secretary of State",
   "source_url": "https://electionresults.mt.gov/",
-  "url": "https://electionresults.mt.gov/resultsCSV.aspx?text=All&type=FED&map=CTY&eid={eid}",
-  "contest": "U\\.?S\\.? Senat|United States Senat",
+  "url": "https://electionresults.mt.gov/resultsSW.aspx?type=FED&map=CTY&eid={eid}",
   "verified": false,
-  "notes": "Same platform family as South Dakota; export URL and the 2026 election id unconfirmed.",
+  "notes": "Montana's ENR; the general's election id is read from sosmt.gov/elections/results on the night (highest eid linked). Table layout fitted from the 2022 page.",
   "eid_from": "https://sosmt.gov/elections/results",
   "eid_pattern": "eid=(\\d+)",
   "probe_urls": [
-   "https://electionresults.mt.gov/resultsSW.aspx?type=FED&map=CTY",
+   "https://electionresults.mt.gov/resultsSW.aspx?type=FED&map=CTY&eid=22",
    "https://sosmt.gov/elections/results"
-  ]
+  ],
+  "row": "<td[^>]*>\\s*(?P<name>[A-Z][^<]{3,60}?)\\s*</td>\\s*<td[^>]*>\\s*(?P<party>[^<]{1,30}?)\\s*</td>\\s*<td[^>]*>\\s*(?P<votes>[\\d,]+)\\s*</td>",
+  "section": "U\\.?S\\.? Senat|United States Senat",
+  "section_end": "U\\.?S\\.? House|United States Representative",
+  "reporting": "(Precincts Fully[^<]*)",
+  "reporting_in_section": false
  },
  "NE": {
   "adapter": "csv",
@@ -294,10 +320,11 @@
   "contest": "U\\.?S\\.? Senat|United States Senat",
   "verified": false,
   "notes": "Same platform as New Mexico; the site had not switched to the 2026 general on Nov 2.",
-  "eid_from": "https://results.oregonvotes.gov/",
-  "eid_pattern": "eid=(\\d+)",
+  "eid_from": "https://sos.oregon.gov/voting/pages/current-election.aspx",
+  "eid_pattern": "results\\.oregonvotes\\.gov[^\\\"'\\s]*?eid=(\\d+)",
   "probe_urls": [
-   "https://results.oregonvotes.gov/",
+   "https://sos.oregon.gov/voting/pages/current-election.aspx",
+   "https://results.oregonvotes.gov/Default.aspx",
    "https://results.oregonvotes.gov/ResultsSW.aspx?type=SW&map=CTY"
   ]
  },
@@ -319,9 +346,10 @@
   "verified": false,
   "notes": "Clarity (enr-scvotes.org); the Nov 3 election id is resolved from the site root at run time.",
   "probe_urls": [
-   "https://www.enr-scvotes.org/",
    "https://scvotes.gov/election-results"
-  ]
+  ],
+  "eid_from": "https://scvotes.gov/election-results",
+  "eid_pattern": "enr-scvotes\\.org/SC/(\\d{5,7})"
  },
  "SD": {
   "adapter": "csv",
@@ -347,7 +375,7 @@
   "verified": false,
   "notes": "Civix IVIS; the response is reported to be base64-encoded JSON. Layout unconfirmed; probe.",
   "probe_urls": [
-   "https://goelect.txelections.civixapps.com/api-ivis-system/api/s3/enr/countyInfo/53815"
+   "https://goelect.txelections.civixapps.com/ivis-enr-ui/races"
   ]
  },
  "VA": {
@@ -371,6 +399,12 @@
    "https://enr.elections.virginia.gov/cdn/results/Virginia/export-2026NovemberGeneral.json",
    "https://enr.elections.virginia.gov/cdn/results/Virginia/export-2026-November-General.json",
    "https://enr.elections.virginia.gov/cdn/results/Virginia/export-2026NovGen.json"
+  ],
+  "probe_urls": [
+   "https://enr.elections.virginia.gov/results/public/virginia",
+   "https://enr.elections.virginia.gov/results/public/virginia/elections",
+   "https://www.elections.virginia.gov/resultsreports/",
+   "https://enr.elections.virginia.gov/cdn/results/Virginia/"
   ]
  },
  "WV": {
@@ -383,8 +417,11 @@
   "verified": false,
   "notes": "Clarity; the Nov 3 election id is resolved from the state root at run time.",
   "probe_urls": [
-   "https://results.enr.clarityelections.com/WV/"
-  ]
+   "https://sos.wv.gov/elections/Pages/ElectionResults.aspx",
+   "https://sos.wv.gov/elections/Pages/default.aspx"
+  ],
+  "eid_from": "https://sos.wv.gov/elections/Pages/ElectionResults.aspx",
+  "eid_pattern": "/WV/(\\d{5,7})"
  },
  "WY": {
   "adapter": "manual",
