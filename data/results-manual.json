@@ -1,0 +1,11 @@
+{
+ "_doc": "Hand-entered counts and race calls for election night. Keys are race ids from senate-polls-2026.json (e.g. ME, OH-special). Anything here wins over the automatic feed for that race; remove the entry when the feed is right. Fields: as_of (ISO time), source, source_url, reporting (free text), reporting_pct, called_for (D, R or I), candidates [{name, party, votes}]. Votes must be totals, not percentages. Edit on GitHub, commit, and the next scheduled run (or Actions → Live results → Run workflow) publishes it.",
+ "_example": {
+  "as_of": "2026-11-03T23:10:00-05:00",
+  "source": "Maine Secretary of State (unofficial tally)",
+  "source_url": "https://www.maine.gov/sos/cec/elec/results/",
+  "reporting": "61% of precincts",
+  "called_for": null,
+  "candidates": [{"name": "Susan Collins", "party": "R", "votes": 201345}, {"name": "Troy Jackson", "party": "D", "votes": 188902}]
+ }
+}

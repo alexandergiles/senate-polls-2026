@@ -14,9 +14,10 @@ November 3, 2026. One page, no build dependencies beyond Python, no server: it h
   final polls did in that state in 2018–2024.
 - **Election night** (`#election-night`). Poll-closing times for all 35 races, hour by hour, with each
   state's counting rules.
-- **How polls have missed** (`#accuracy`). Every Senate race with public polling in the final three weeks
-  of 2018, 2020, 2022 and 2024, scored against the certified result; a what-if that applies each cycle's
-  average miss to the 2026 averages.
+- **How polls have missed** (`#accuracy`). A scenario mapper first: pick a past cycle and every 2026 race
+  shifts by that state's own miss that year (its 2018–2024 average where it had no race; the national
+  figure only where it has no polled race at all), giving the seat count and the flips. Then a state ×
+  cycle matrix of misses, the national lean by cycle, and every scored race.
 
 ## Data
 
@@ -56,6 +57,25 @@ Built by `scripts/accuracy.py` from one file per cycle of RealClearPolitics/Real
 Regenerate with `python3 scripts/accuracy.py <dir of cycle_YYYY.json files> data/accuracy-2018-2024.json`,
 then `python3 build.py`.
 
+### Live results on election night
+
+The Election night tab shows the official count as it comes in. The pieces:
+
+- `data/live-sources.json` — one entry per race: the state election office's results feed, the adapter
+  that reads it (`clarity` for Scytl/Clarity ENR sites, `json`, `csv`, or `manual` where a state publishes
+  nothing machine-readable), and the public results page.
+- `scripts/fetch_results.py` — pulls every feed, maps candidates onto the site's keys, and writes
+  `data/results-live.json`. A race whose feed fails keeps its last good numbers, marked `stale`.
+- `data/results-manual.json` — hand-entered counts and race calls; an entry here wins over the feed.
+  Edit it on GitHub for a state with no feed (Maine, for instance) or to mark a race called by the AP.
+- `.github/workflows/live-results.yml` — runs the fetcher every 5 minutes through election night
+  (then every 30 minutes on Wednesday, every two hours for a week) and commits the file when the count
+  changes. "Run workflow" on the Actions tab runs it by hand.
+- The page (`#election-night`) reads the file from the repository once a minute while the tab is open and
+  colors each race by the leader of the count, or of the polling average until the count starts.
+
+Nobody calls races here. The count is the state's; calls appear only when entered in the manual file.
+
 ## Updating
 
 1. Edit `data/senate-polls-2026.json`: append new polls to a race's `polls` array and update
@@ -74,7 +94,12 @@ index.html                 generated page (commit this; Pages serves it)
 src/page.html              page source: styles, markup, script, __DATA__ placeholder
 data/senate-polls-2026.json
 data/accuracy-2018-2024.json   the 2018–2024 scoring, embedded at build time if present
+data/live-sources.json     where each race's official count comes from
+data/results-live.json     the count, written by the fetch job (read by the page at run time)
+data/results-manual.json   hand-entered counts and calls
 build.py
 scripts/merge_sources.py
 scripts/accuracy.py        scores past cycles' final polls against results
+scripts/fetch_results.py   election-night fetcher
+.github/workflows/live-results.yml
 ```

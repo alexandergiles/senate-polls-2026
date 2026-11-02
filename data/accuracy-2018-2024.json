@@ -1377,46 +1377,6 @@
   },
   {
    "cycle": 2020,
-   "state": "Arkansas",
-   "abbr": "AR",
-   "special": false,
-   "runoff": false,
-   "d": {
-    "key": "Harrington",
-    "name": "Ricky Dale Harrington Jr.",
-    "party": "L"
-   },
-   "r": {
-    "key": "Cotton",
-    "name": "Tom Cotton"
-   },
-   "poll": {
-    "d": 24.0,
-    "r": 69.0,
-    "margin": -45.0,
-    "n": 2,
-    "latest": "2020-10-21",
-    "days_before": 13,
-    "n_polls_listed": 2
-   },
-   "rcp": null,
-   "result": {
-    "d": 33.47,
-    "r": 66.53,
-    "margin": -33.1,
-    "source": "https://en.wikipedia.org/wiki/2020_United_States_Senate_elections"
-   },
-   "miss": 11.9,
-   "miss_rcp": null,
-   "abs_miss": 11.9,
-   "leader_correct": true,
-   "competitive": false,
-   "fresh": true,
-   "url": "https://www.realclearpolitics.com/epolls/2020/senate/ar/arkansas_senate_cotton_vs_harrington-7303.html",
-   "notes": "Source: archived RCP epolls page, Wayback capture 20201204181218 (post-election; Final Results row present). RCP published NO RCP Average row for this race (2 poll(s) listed); rcp_average left empty (dates/spread null). Confirmed absent on election-eve captures too. Candidates block missing from the archived capture; full names taken from Wikipedia, party labels from RCP's column headers. No Democratic nominee; the Libertarian Harrington was the main opposition and RCP labels him (L). result_wiki taken from the \"Arkansas general election\" table on the Wikipedia page (certified %, two decimals as listed)."
-  },
-  {
-   "cycle": 2020,
    "state": "Arizona",
    "abbr": "AZ",
    "special": true,
@@ -5528,14 +5488,14 @@
   },
   "2020": {
    "all": {
-    "n": 23,
-    "bias": -5.6,
-    "median": -5.5,
-    "mae": 7.0,
-    "rmse": 8.2,
-    "share_d_overrated": 0.83,
-    "leader_correct": 0.87,
-    "n_calls": 23,
+    "n": 22,
+    "bias": -6.4,
+    "median": -5.8,
+    "mae": 6.7,
+    "rmse": 8.0,
+    "share_d_overrated": 0.86,
+    "leader_correct": 0.86,
+    "n_calls": 22,
     "bias_rcp": -3.7,
     "mae_rcp": 3.7,
     "n_rcp": 6,
@@ -5662,46 +5622,6 @@
      },
      {
       "cycle": 2020,
-      "state": "Arkansas",
-      "abbr": "AR",
-      "special": false,
-      "runoff": false,
-      "d": {
-       "key": "Harrington",
-       "name": "Ricky Dale Harrington Jr.",
-       "party": "L"
-      },
-      "r": {
-       "key": "Cotton",
-       "name": "Tom Cotton"
-      },
-      "poll": {
-       "d": 24.0,
-       "r": 69.0,
-       "margin": -45.0,
-       "n": 2,
-       "latest": "2020-10-21",
-       "days_before": 13,
-       "n_polls_listed": 2
-      },
-      "rcp": null,
-      "result": {
-       "d": 33.47,
-       "r": 66.53,
-       "margin": -33.1,
-       "source": "https://en.wikipedia.org/wiki/2020_United_States_Senate_elections"
-      },
-      "miss": 11.9,
-      "miss_rcp": null,
-      "abs_miss": 11.9,
-      "leader_correct": true,
-      "competitive": false,
-      "fresh": true,
-      "url": "https://www.realclearpolitics.com/epolls/2020/senate/ar/arkansas_senate_cotton_vs_harrington-7303.html",
-      "notes": "Source: archived RCP epolls page, Wayback capture 20201204181218 (post-election; Final Results row present). RCP published NO RCP Average row for this race (2 poll(s) listed); rcp_average left empty (dates/spread null). Confirmed absent on election-eve captures too. Candidates block missing from the archived capture; full names taken from Wikipedia, party labels from RCP's column headers. No Democratic nominee; the Libertarian Harrington was the main opposition and RCP labels him (L). result_wiki taken from the \"Arkansas general election\" table on the Wikipedia page (certified %, two decimals as listed)."
-     },
-     {
-      "cycle": 2020,
       "state": "Kentucky",
       "abbr": "KY",
       "special": false,
@@ -5739,6 +5659,46 @@
       "fresh": true,
       "url": "https://www.realclearpolitics.com/epolls/2020/senate/ky/kentucky_senate_mcconnell_vs_mcgrath-6919.html",
       "notes": "Source: archived RCP epolls page, Wayback capture 20201204170938 (post-election; Final Results row present). RCP published NO RCP Average row for this race (3 poll(s) listed); rcp_average left empty (dates/spread null). Confirmed absent on election-eve captures too. result_wiki taken from the \"Kentucky general election\" table on the Wikipedia page (certified %, two decimals as listed)."
+     },
+     {
+      "cycle": 2020,
+      "state": "Alabama",
+      "abbr": "AL",
+      "special": false,
+      "runoff": false,
+      "d": {
+       "key": "Jones",
+       "name": "Doug Jones",
+       "party": "D"
+      },
+      "r": {
+       "key": "Tuberville",
+       "name": "Tommy Tuberville"
+      },
+      "poll": {
+       "d": 42.3,
+       "r": 52.7,
+       "margin": -10.3,
+       "n": 3,
+       "latest": "2020-10-28",
+       "days_before": 6,
+       "n_polls_listed": 3
+      },
+      "rcp": null,
+      "result": {
+       "d": 39.74,
+       "r": 60.1,
+       "margin": -20.4,
+       "source": "https://en.wikipedia.org/wiki/2020_United_States_Senate_elections"
+      },
+      "miss": -10.1,
+      "miss_rcp": null,
+      "abs_miss": 10.1,
+      "leader_correct": true,
+      "competitive": false,
+      "fresh": true,
+      "url": "https://www.realclearpolitics.com/epolls/2020/senate/al/alabama_senate_tuberville_vs_jones-7015.html",
+      "notes": "Source: archived RCP epolls page, Wayback capture 20201214034939 (post-election; Final Results row present). RCP published NO RCP Average row for this race (3 poll(s) listed); rcp_average left empty (dates/spread null). Confirmed absent on election-eve captures too. result_wiki taken from the \"Alabama general election\" table on the Wikipedia page (certified %, two decimals as listed)."
      }
     ]
    },
@@ -7069,14 +7029,14 @@
   },
   "all": {
    "all": {
-    "n": 91,
-    "bias": -1.9,
+    "n": 90,
+    "bias": -2.0,
     "median": -1.9,
     "mae": 4.8,
-    "rmse": 6.4,
+    "rmse": 6.3,
     "share_d_overrated": 0.62,
     "leader_correct": 0.89,
-    "n_calls": 91,
+    "n_calls": 90,
     "bias_rcp": -0.0,
     "mae_rcp": 3.4,
     "n_rcp": 50,
@@ -11146,88 +11106,6 @@
     "notes": "Open seat (R). One poll; no RCP Average."
    }
   ],
-  "AR": [
-   {
-    "cycle": 2020,
-    "state": "Arkansas",
-    "abbr": "AR",
-    "special": false,
-    "runoff": false,
-    "d": {
-     "key": "Harrington",
-     "name": "Ricky Dale Harrington Jr.",
-     "party": "L"
-    },
-    "r": {
-     "key": "Cotton",
-     "name": "Tom Cotton"
-    },
-    "poll": {
-     "d": 24.0,
-     "r": 69.0,
-     "margin": -45.0,
-     "n": 2,
-     "latest": "2020-10-21",
-     "days_before": 13,
-     "n_polls_listed": 2
-    },
-    "rcp": null,
-    "result": {
-     "d": 33.47,
-     "r": 66.53,
-     "margin": -33.1,
-     "source": "https://en.wikipedia.org/wiki/2020_United_States_Senate_elections"
-    },
-    "miss": 11.9,
-    "miss_rcp": null,
-    "abs_miss": 11.9,
-    "leader_correct": true,
-    "competitive": false,
-    "fresh": true,
-    "url": "https://www.realclearpolitics.com/epolls/2020/senate/ar/arkansas_senate_cotton_vs_harrington-7303.html",
-    "notes": "Source: archived RCP epolls page, Wayback capture 20201204181218 (post-election; Final Results row present). RCP published NO RCP Average row for this race (2 poll(s) listed); rcp_average left empty (dates/spread null). Confirmed absent on election-eve captures too. Candidates block missing from the archived capture; full names taken from Wikipedia, party labels from RCP's column headers. No Democratic nominee; the Libertarian Harrington was the main opposition and RCP labels him (L). result_wiki taken from the \"Arkansas general election\" table on the Wikipedia page (certified %, two decimals as listed)."
-   },
-   {
-    "cycle": 2022,
-    "state": "Arkansas",
-    "abbr": "AR",
-    "special": false,
-    "runoff": false,
-    "d": {
-     "key": "James",
-     "name": "Natalie James",
-     "party": "D"
-    },
-    "r": {
-     "key": "Boozman",
-     "name": "John Boozman"
-    },
-    "poll": {
-     "d": 30.7,
-     "r": 50.3,
-     "margin": -19.7,
-     "n": 3,
-     "latest": "2022-10-31",
-     "days_before": 8,
-     "n_polls_listed": 3
-    },
-    "rcp": null,
-    "result": {
-     "d": 31.09,
-     "r": 65.73,
-     "margin": -34.6,
-     "source": "https://en.wikipedia.org/wiki/2022_United_States_Senate_elections"
-    },
-    "miss": -14.9,
-    "miss_rcp": null,
-    "abs_miss": 14.9,
-    "leader_correct": true,
-    "competitive": false,
-    "fresh": true,
-    "url": "https://www.realclearpolling.com/polls/senate/general/2022/arkansas/boozman-vs-james",
-    "notes": "Boozman is the incumbent. The live RealClearPolling page shows the table header but no poll rows; the archived RCP epolls page (2023-01-02) listed three polls: Univ. of Arkansas 10/13 - 10/31 (63-30), Talk Business/Hendrix College* 10/17 - 10/18 (44-31), Talk Business/Hendrix College* 9/12 - 9/12 (44-31). No RCP Average. last_five_polls and n_polls_listed reflect the archived page."
-   }
-  ],
   "CO": [
    {
     "cycle": 2020,
@@ -12340,6 +12218,48 @@
     "fresh": true,
     "url": "https://www.realclearpolitics.com/epolls/2020/senate/wy/wyoming_senate_lummis_vs_bendavid-7093.html",
     "notes": "Source: archived RCP epolls page, Wayback capture 20201214034953 (post-election; Final Results row present). RCP published NO RCP Average row for this race (1 poll(s) listed); rcp_average left empty (dates/spread null). Confirmed absent on election-eve captures too. result_wiki taken from the \"Wyoming general election\" table on the Wikipedia page (certified %, two decimals as listed)."
+   }
+  ],
+  "AR": [
+   {
+    "cycle": 2022,
+    "state": "Arkansas",
+    "abbr": "AR",
+    "special": false,
+    "runoff": false,
+    "d": {
+     "key": "James",
+     "name": "Natalie James",
+     "party": "D"
+    },
+    "r": {
+     "key": "Boozman",
+     "name": "John Boozman"
+    },
+    "poll": {
+     "d": 30.7,
+     "r": 50.3,
+     "margin": -19.7,
+     "n": 3,
+     "latest": "2022-10-31",
+     "days_before": 8,
+     "n_polls_listed": 3
+    },
+    "rcp": null,
+    "result": {
+     "d": 31.09,
+     "r": 65.73,
+     "margin": -34.6,
+     "source": "https://en.wikipedia.org/wiki/2022_United_States_Senate_elections"
+    },
+    "miss": -14.9,
+    "miss_rcp": null,
+    "abs_miss": 14.9,
+    "leader_correct": true,
+    "competitive": false,
+    "fresh": true,
+    "url": "https://www.realclearpolling.com/polls/senate/general/2022/arkansas/boozman-vs-james",
+    "notes": "Boozman is the incumbent. The live RealClearPolling page shows the table header but no poll rows; the archived RCP epolls page (2023-01-02) listed three polls: Univ. of Arkansas 10/13 - 10/31 (63-30), Talk Business/Hendrix College* 10/17 - 10/18 (44-31), Talk Business/Hendrix College* 9/12 - 9/12 (44-31). No RCP Average. last_five_polls and n_polls_listed reflect the archived page."
    }
   ],
   "CA": [

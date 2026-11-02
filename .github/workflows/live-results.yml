@@ -1,0 +1,56 @@
+# Election night: pull the official count from state election offices every few minutes and commit
+# data/results-live.json, which the Election night tab reads. Times below are UTC (ET + 5).
+name: Live results
+
+on:
+  schedule:
+    - cron: '*/5 22-23 3 11 *'    # Tue Nov 3, 5–7 pm ET: first closings (Indiana/Kentucky at 6)
+    - cron: '*/5 0-14 4 11 *'     # Tue 7 pm – Wed 9 am ET: election night
+    - cron: '*/30 15-23 4 11 *'   # Wed daytime: late counting
+    - cron: '0 */2 5-12 11 *'     # Nov 5–12, every two hours: mail ballots, Alaska's ranked-choice tabulation
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-results
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch the count
+        run: python3 scripts/fetch_results.py
+      - name: Commit if the count changed
+        run: |
+          python3 - <<'PY'
+          import json, subprocess, datetime, sys
+          new = json.load(open('data/results-live.json'))
+          try:
+              old = json.loads(subprocess.check_output(['git', 'show', 'HEAD:data/results-live.json']))
+          except Exception:
+              old = {}
+          strip = lambda d: {k: {kk: vv for kk, vv in v.items() if kk not in ('fetched',)} for k, v in (d.get('races') or {}).items()}
+          changed = strip(new) != strip(old)
+          age_ok = True
+          try:
+              t = datetime.datetime.fromisoformat(old.get('updated'))
+              age_ok = (datetime.datetime.now(datetime.timezone.utc) - t.astimezone(datetime.timezone.utc)).total_seconds() > 15 * 60
+          except Exception:
+              pass
+          if not changed and not age_ok:
+              print('no change; skipping commit'); sys.exit(0)
+          subprocess.check_call(['git', 'config', 'user.name', 'github-actions[bot]'])
+          subprocess.check_call(['git', 'config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com'])
+          subprocess.check_call(['git', 'add', 'data/results-live.json'])
+          msg = 'Live results ' + (new.get('updated') or '') + ('' if changed else ' (heartbeat)')
+          subprocess.check_call(['git', 'commit', '-q', '-m', msg])
+          subprocess.check_call(['git', 'push', '-q'])
+          print('committed:', msg)
+          PY

@@ -30,10 +30,10 @@ def side(values, candidates):
                 keymap[k] = c["party"]
     rs = [k for k, p in keymap.items() if p == "R"]
     ds = [k for k, p in keymap.items() if p == "D"]
-    others = [k for k, p in keymap.items() if p not in ("R", "D")]
+    others = [k for k, p in keymap.items() if p == "I"]   # independents only; a Libertarian-vs-Republican race (Arkansas 2020) is not a D-vs-R contest
     if len(rs) != 1:
         return None
-    pool = ds + others   # the Democratic side is whichever non-Republican the polls had highest (Maine 2024: King, not the Democrat)
+    pool = ds + others   # the Democratic side is whichever Democrat or independent the polls had highest (Maine 2024: King, not the Democrat)
     if not pool:
         return None
     d = max(pool, key=lambda k: values.get(k) or 0)
