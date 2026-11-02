@@ -21,7 +21,8 @@
   "roster": "270toWin 2026 Senate map and Ballotpedia, read 2026-10-29",
   "ratings": "Cook Political Report ratings as shown on 270toWin (reflecting Cook's Oct. 20, 2026 update)",
   "reference": "https://www.nytimes.com/interactive/polls/senate-polls-2026.html",
-  "poll_closing": "270toWin 2026 poll closing times (https://www.270towin.com/poll-closing-times/) and The Green Papers (https://www.thegreenpapers.com/G26/PollingHours.phtml), read 2026-10-30; all times Eastern Standard Time"
+  "poll_closing": "270toWin 2026 poll closing times (https://www.270towin.com/poll-closing-times/) and The Green Papers (https://www.thegreenpapers.com/G26/PollingHours.phtml), read 2026-10-30; all times Eastern Standard Time",
+  "live_results": "state election offices' own results feeds, read by the repository's fetch job every five minutes on election night (Delaware, Florida, Idaho, Kansas, Minnesota, Montana, Nebraska, New Mexico, North Carolina, South Dakota, Texas and Virginia were read successfully before election night; Colorado, Georgia, Iowa, South Carolina and West Virginia publish their election-night pages on the day; Alaska and Kentucky refuse automated requests; Maine, Massachusetts, Michigan, New Hampshire, New Jersey, Illinois, Mississippi, Ohio, Oklahoma, Arkansas, Louisiana, Tennessee and Wyoming publish nothing machine-readable on the night, so those counts are entered by hand from the AP). Race calls are the AP's and the networks', entered by hand"
  },
  "races": [
   {

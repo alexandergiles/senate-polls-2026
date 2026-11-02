@@ -76,6 +76,18 @@ The Election night tab shows the official count as it comes in. The pieces:
 
 Nobody calls races here. The count is the state's; calls appear only when entered in the manual file.
 
+Status the day before the election (`python3 scripts/fetch_results.py --probe` writes `data/live-probe.json`
+with what every feed returned):
+
+| Read successfully with the Nov 3 ballot at zero | Delaware, Florida, Idaho, Kansas, Minnesota, Montana, Nebraska, New Mexico, North Carolina, South Dakota, Texas, Virginia |
+|---|---|
+| Feed exists, election not yet published (resolved at run time) | Colorado, Georgia, Iowa, South Carolina, West Virginia, Oregon, Rhode Island, Alabama |
+| State site refuses GitHub's servers | Alaska (404), Kentucky (403) — enter by hand |
+| Nothing machine-readable on election night | Maine, New Hampshire, Massachusetts, New Jersey, Illinois, Michigan, Ohio, Mississippi, Tennessee, Arkansas, Oklahoma, Louisiana, Wyoming — enter by hand from the AP |
+
+To enter a count by hand: edit `data/results-manual.json` on GitHub (the `_example` entry shows the shape),
+commit, and either wait for the next scheduled run or start one from Actions → Live results → Run workflow.
+
 ## Updating
 
 1. Edit `data/senate-polls-2026.json`: append new polls to a race's `polls` array and update
