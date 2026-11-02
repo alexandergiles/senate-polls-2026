@@ -34,7 +34,8 @@
    "https://www.elections.alaska.gov/enr26/includes/map.js",
    "https://www.elections.alaska.gov/enr26/results/",
    "https://www.elections.alaska.gov/enr26/results/ElectionSummaryReportRPT.pdf"
-  ]
+  ],
+  "user_agent": "browser"
  },
  "AR": {
   "adapter": "manual",
@@ -116,7 +117,19 @@
    "https://results.sos.ga.gov/cdn/results/Georgia/export-2026NovGeneral.json",
    "https://results.sos.ga.gov/cdn/results/Georgia/export-2026NovemberGen.json",
    "https://results.sos.ga.gov/cdn/results/Georgia/export-2026Nov.json",
-   "https://results.sos.ga.gov/cdn/results/Georgia/export-2026-11-03.json"
+   "https://results.sos.ga.gov/cdn/results/Georgia/export-2026-11-03.json",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-2026NovGen.json",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-2026NovemberGeneral.json",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-2026General.json",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-Nov2026Gen.json",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-2026Gen.json",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-November2026General.json",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-2026-November-General.json",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-GeneralElection110326.json",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-General110326.json",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-nov2026.json",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-Nov2026.json",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-2026GeneralElection.json"
   ],
   "probe_urls": [
    "https://results.sos.ga.gov/results/public/Georgia"
@@ -253,16 +266,16 @@
   "source_url": "https://electionresults.mt.gov/",
   "url": "https://electionresults.mt.gov/resultsSW.aspx?type=FED&map=CTY&eid={eid}",
   "verified": false,
-  "notes": "Montana's ENR; the general's election id is read from sosmt.gov/elections/results on the night (highest eid linked). Table layout fitted from the 2022 page.",
+  "notes": "Montana's ENR (HTML). The general's election id is read from sosmt.gov/elections/results on the night (highest eid linked); layout fitted from the 2026 primary page.",
   "eid_from": "https://sosmt.gov/elections/results",
   "eid_pattern": "eid=(\\d+)",
   "probe_urls": [
    "https://sosmt.gov/elections/results"
   ],
-  "row": "<td[^>]*>\\s*(?P<name>[A-Z][^<]{3,60}?)\\s*</td>\\s*<td[^>]*>\\s*(?P<party>[^<]{1,30}?)\\s*</td>\\s*<td[^>]*>\\s*(?P<votes>[\\d,]+)\\s*</td>",
-  "section": "U\\.?S\\.? Senat|United States Senat",
-  "section_end": "U\\.?S\\.? House|United States Representative",
-  "reporting": "(Precincts Fully[^<]*)",
+  "row": "display-results-box-d\">\\s*<h1>(?P<name>[^<]+)</h1>\\s*<h2 class=\"[^\"]*\">(?P<party>[^<]*)</h2>.*?display-results-box-f\">\\s*<h1>(?P<votes>[\\d,]+)</h1>",
+  "section": "display-results-box-a\">\\s*<h1>\\s*UNITED STATES SENATOR",
+  "section_end": "display-results-box-a\">\\s*<h1>",
+  "reporting": "(Precincts\\s+Fully[^<]{0,60})",
   "reporting_in_section": false
  },
  "NE": {

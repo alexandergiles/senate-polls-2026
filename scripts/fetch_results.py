@@ -436,7 +436,7 @@ def adapter_civix(cfg):
     ({OffType, Races: [{N: race, Candidates: [{N: name, P: party, V: votes}]}]})."""
     import base64
     doc = json.loads(get(cfg["url"], cfg=cfg))
-    pat = re.compile(cfg.get("contest", r"U\.?S\.? SENATOR|UNITED STATES SENATOR"), re.I)
+    pat = re.compile(cfg.get("contest", r"U\.?\s?S\.?\s*SENAT|UNITED\s+STATES\s+SENAT"), re.I)
     sections = []
     for k, v in doc.items():
         if isinstance(v, str) and len(v) > 50:
@@ -456,7 +456,8 @@ def adapter_civix(cfg):
                 for k in ("PR", "PollingLocationsReporting", "PrecinctsReporting", "PLR"):
                     if k in race: rep = f"{k}: {race[k]}"
                 return {"candidates": cands, "reporting": rep, "reporting_pct": None}
-    raise RuntimeError("Senate race not found; sections: " + ", ".join(str((s.get("OffType") if isinstance(s, dict) else "?")) for s in sections)[:300])
+    seen = [str(r.get("N")) for sec in sections if isinstance(sec, dict) and re.search(r"FEDERAL|STATEWIDE", str(sec.get("OffType"))) for r in (sec.get("Races") or [])]
+    raise RuntimeError("Senate race not found; federal/statewide races: " + "; ".join(seen)[:400])
 
 
 def adapter_manual(cfg):
@@ -477,13 +478,16 @@ def probe(sources):
         try:
             for pu in cfg.get("probe_urls", []):
                 try:
-                    txt = get(pu, cfg=cfg); rec.setdefault("probe_pages", {})[pu] = {"head": txt[:1500], "tables": [t[:2500] for t in re.findall(r"<table.*?</table>", txt, re.I | re.S)[:6]], "eids": re.findall(r"eid=(\d+)", txt)[:10], "paths": sorted(set(re.findall(r"/[A-Z]{2}/\d{5,7}", txt)))[:10],
+                    with opener_for(cfg).open(pu, timeout=TIMEOUT) as pr:
+                        txt = pr.read().decode("utf-8-sig", errors="replace"); pfinal, pstatus = pr.geturl(), pr.status
+                    rec.setdefault("probe_pages", {})[pu] = {"final_url": pfinal, "status": pstatus, "head": txt[:1500], "tables": [t[:2500] for t in re.findall(r"<table.*?</table>", txt, re.I | re.S)[:6]], "eids": re.findall(r"eid=(\d+)", txt)[:10], "paths": sorted(set(re.findall(r"/[A-Z]{2}/\d{5,7}", txt)))[:10],
                                                                 "hints": sorted(set(re.findall(r"[\w./-]*(?:cdn/results|export-|/api/|\.json)[\w./?=-]*", txt)))[:40]}
                     if cfg.get("grep_js"):
+                        host = re.match(r"https?://[^/]+", pu).group(0)
+                        bm = re.search(r"<base\s+href=[\"']([^\"']+)[\"']", txt, re.I)
+                        basep = (bm.group(1) if bm else pu[len(host):].rsplit("/", 1)[0] + "/")
                         for js in re.findall(r"<script[^>]+src=[\"']([^\"']+)[\"']", txt)[:6]:
-                            jsu = js if js.startswith("http") else re.match(r"https?://[^/]+", pu).group(0) + ("/" if not js.startswith("/") else "") + js
-                            if not js.startswith("http") and not js.startswith("/"):
-                                jsu = pu.rstrip("/") + "/" + js
+                            jsu = js if js.startswith("http") else host + (js if js.startswith("/") else basep + js)
                             try:
                                 code = get(jsu, cfg=cfg)
                                 rec["probe_pages"][pu].setdefault("js", {})[jsu] = sorted(set(re.findall(r"[\w./-]*(?:cdn/results|export|/api/|elections?)[\w./?${}=-]{0,80}", code)))[:60]
