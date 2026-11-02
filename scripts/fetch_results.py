@@ -90,30 +90,54 @@ def match_candidates(race, found):
 
 # ---------- adapters: each returns {"candidates": [{name, party, votes}], "reporting": str|None, "reporting_pct": float|None} ----------
 
+def clarity_base(cfg):
+    """Election base URL: cfg.url as given, or resolved from the state root (the root redirects / links to the current election)."""
+    if cfg.get("url"):
+        return cfg["url"].rstrip("/")
+    root = cfg["root"]; st = cfg.get("state", "")
+    req = urllib.request.Request(root, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
+        final, body = r.geturl(), r.read().decode("utf-8", errors="replace")
+    for text in (final, body):
+        m = re.search(r"/" + re.escape(st) + r"/(\d{5,7})(?:/|\b)", text)
+        if m:
+            host = re.match(r"https?://[^/]+", final or root).group(0)
+            return f"{host}/{st}/{m.group(1)}"
+    raise RuntimeError("could not find the current election id at " + root)
+
+
 def adapter_clarity(cfg):
-    """Scytl/Clarity ENR. cfg.url = election base, e.g. https://results.enr.clarityelections.com/GA/123456/345678
-    Reads current_ver.txt, then <ver>/json/en/summary.json (contests: A name, C candidates, V votes, P precincts?)."""
-    base = cfg["url"].rstrip("/")
+    """Scytl/Clarity ENR. cfg.url = election base, e.g. https://results.enr.clarityelections.com/GA/123456
+    (the web id segment is optional). Reads current_ver.txt, then <ver>/json/en/summary.json. Older sites return a
+    bare list of contests; newer ones {"Contests": [...]} — each contest: A name, C candidate names, P parties
+    (sometimes), V votes; precinct counts vary by version, so they are read where present."""
+    base = clarity_base(cfg)
     ver = get(base + "/current_ver.txt").strip()
-    summary = json.loads(get(f"{base}/{ver}/json/en/summary.json"))
-    pat = re.compile(cfg.get("contest", r"U\.?S\.? Senat"), re.I)
-    contests = [c for c in summary if pat.search(c.get("A", "")) and not re.search(cfg.get("exclude", r"\b(District|Dist\.?)\b"), c.get("A", ""))]
+    doc = json.loads(get(f"{base}/{ver}/json/en/summary.json"))
+    summary = doc.get("Contests") if isinstance(doc, dict) else doc
+    pat = re.compile(cfg.get("contest", r"U\.?S\.? Senat|United States Senat"), re.I)
+    name_of = lambda c: str(c.get("A") or c.get("Name") or "")
+    contests = [c for c in summary if pat.search(name_of(c)) and not re.search(cfg.get("exclude", r"\b(District|Dist\.?)\b"), name_of(c))]
     if not contests:
-        raise RuntimeError("contest not found in summary.json: " + "; ".join(c.get("A", "") for c in summary[:40]))
+        raise RuntimeError("contest not found in summary.json: " + "; ".join(name_of(c) for c in summary[:40]))
     c = contests[0]
-    cands = [{"name": n, "party": party_code(n), "votes": v} for n, v in zip(c.get("C", []), c.get("V", []))]
+    names, votes, parties = c.get("C", []), c.get("V", []), c.get("P") or []
+    cands = [{"name": n, "party": (party_code(parties[i]) if i < len(parties) and isinstance(parties[i], str) else None) or party_code(n), "votes": v} for i, (n, v) in enumerate(zip(names, votes))]
     rep, pct = None, None
-    # precinct totals live in the contest ("P"/"PR") on newer versions, or in the election settings
-    tot, rep_n = c.get("PT") or c.get("P"), c.get("PR") or c.get("R")
+    # precinct totals: in the contest on some versions, in the election settings on others
+    tot, rep_n = c.get("PT") or c.get("TP"), c.get("PR") or c.get("RP")
+    if isinstance(c.get("P"), str) and "/" in c["P"]:
+        rep_n, tot = [int(x) for x in c["P"].split("/")[:2]]
     if isinstance(tot, (int, float)) and isinstance(rep_n, (int, float)) and tot:
         rep, pct = f"{int(rep_n):,} of {int(tot):,} precincts", round(100.0 * rep_n / tot, 1)
     else:
         try:
             es = json.loads(get(f"{base}/{ver}/json/en/electionsettings.json"))
-            s = es.get("settings", {}).get("electiondetails", es.get("electiondetails", {}))
-            t, r = s.get("totalprecincts") or s.get("precinctsTotal"), s.get("precinctsreporting") or s.get("precinctsReported")
+            s = es.get("settings", {}).get("electiondetails", es.get("electiondetails", es))
+            t = s.get("totalprecincts") or s.get("precinctsTotal") or s.get("PrecinctsTotal")
+            r = s.get("precinctsreporting") or s.get("precinctsReported") or s.get("PrecinctsReporting") or 0
             if t:
-                rep, pct = f"{int(r or 0):,} of {int(t):,} precincts", round(100.0 * (r or 0) / t, 1)
+                rep, pct = f"{int(r):,} of {int(t):,} precincts", round(100.0 * int(r) / int(t), 1)
         except Exception:
             pass
     return {"candidates": cands, "reporting": rep, "reporting_pct": pct}
@@ -131,10 +155,59 @@ def walk(obj, path):
     return obj
 
 
+def auto_json(doc, pat, exclude):
+    """Unknown layout: find the contest whose name matches, then the list of candidate-like objects inside it."""
+    def strings(o):
+        return [v for v in o.values() if isinstance(v, str)] if isinstance(o, dict) else []
+    def cand_lists(o, depth=0):
+        if depth > 6: return
+        if isinstance(o, list) and o and all(isinstance(x, dict) for x in o):
+            keys = set(k.lower() for x in o for k in x)
+            if any(re.search(r"name|candidate|choice", k) for k in keys) and any(re.search(r"votes|total", k) for k in keys):
+                yield o
+        if isinstance(o, dict):
+            for v in o.values(): yield from cand_lists(v, depth + 1)
+        elif isinstance(o, list):
+            for v in o: yield from cand_lists(v, depth + 1)
+    def contests(o, depth=0):
+        if depth > 8: return
+        if isinstance(o, dict):
+            if any(pat.search(v) and not re.search(exclude, v) for v in strings(o)):
+                yield o
+            for v in o.values(): yield from contests(v, depth + 1)
+        elif isinstance(o, list):
+            for v in o: yield from contests(v, depth + 1)
+    for c in contests(doc):
+        for lst in cand_lists(c):
+            rows = []
+            for x in lst:
+                nk = next((k for k in x if re.search(r"candidate|choice|name", k, re.I) and isinstance(x[k], str)), None)
+                vk = next((k for k in x if re.search(r"^(total_?votes|votes|voteTotal|total)$", k, re.I)), None) or next((k for k in x if re.search(r"votes", k, re.I) and isinstance(x[k], (int, float, str))), None)
+                pk = next((k for k in x if re.search(r"party", k, re.I) and isinstance(x[k], str)), None)
+                if nk and vk:
+                    rows.append({"name": x[nk], "party": party_code(x[pk]) if pk else party_code(x[nk]), "votes": int(re.sub(r"[^\d]", "", str(x[vk])) or 0)})
+            if rows:
+                return rows, c
+    raise RuntimeError("no contest/candidate structure found; top-level keys: " + ", ".join(list(doc.keys())[:20] if isinstance(doc, dict) else ["<list>"]))
+
+
 def adapter_json(cfg):
     """Generic JSON. cfg: url, contests (path to list), contest_name (field), contest (regex), candidates (field),
-    name, party, votes (fields on each candidate), reporting (optional path on the contest or root)."""
-    doc = json.loads(get(cfg["url"]))
+    name, party, votes (fields on each candidate), reporting (optional path on the contest or root). Without
+    'contests' the layout is discovered (auto_json). base64: true decodes a base64 body first."""
+    raw = get(cfg["url"])
+    if cfg.get("base64"):
+        import base64
+        raw = base64.b64decode(raw.strip()).decode("utf-8", errors="replace")
+    doc = json.loads(raw)
+    pat = re.compile(cfg.get("contest", r"U\.?S\.? Senat|United States Senat"), re.I)
+    if "contests" not in cfg:
+        cands, c = auto_json(doc, pat, cfg.get("exclude", r"\bDistrict\b"))
+        rep = None
+        for k, v in (c.items() if isinstance(c, dict) else []):
+            if re.search(r"precinct|report", k, re.I) and isinstance(v, (str, int, float)):
+                rep = (rep + " · " if rep else "") + f"{k}: {v}"
+        return {"candidates": cands, "reporting": rep, "reporting_pct": None}
     contests = walk(doc, cfg.get("contests", ""))
     if isinstance(contests, dict):
         contests = list(contests.values())
@@ -175,16 +248,40 @@ def adapter_csv(cfg):
             raw = z.read(member)
     text = raw.decode(cfg.get("encoding", "utf-8-sig"), errors="replace")
     delim = cfg.get("delimiter", ",")
-    rows = list(csv.reader(io.StringIO(text), delimiter=delim))
+    rows = [r for r in csv.reader(io.StringIO(text), delimiter=delim) if r]
+    cfg = dict(cfg)
     if cfg.get("header", True):
         hdr = [h.strip() for h in rows[0]]; rows = rows[1:]
-        col = lambda name: hdr.index(name)
+        def col(name):
+            if isinstance(name, int): return name
+            for i, h in enumerate(hdr):
+                if h.lower() == str(name).lower(): return i
+            raise RuntimeError(f"column {name!r} not in header {hdr[:20]}")
+        # columns not given: detect them from the header
+        def find(pats, avoid=r"$^"):
+            for pt in pats:
+                for i, h in enumerate(hdr):
+                    if re.search(pt, h, re.I) and not re.search(avoid, h, re.I): return i
+            return None
+        if "contest_col" not in cfg: cfg["contest_col"] = find([r"contest", r"^race", r"office"], r"id$|type|group")
+        if "name_col" not in cfg: cfg["name_col"] = find([r"candidate", r"choice", r"^name$"], r"party|id$|county|contest")
+        if "party_col" not in cfg: cfg["party_col"] = find([r"party"], r"id$")
+        if "votes_col" not in cfg: cfg["votes_col"] = find([r"^total ?votes$", r"^votes$", r"^total$", r"votes"], r"percent|pct|%|for office|registered")
+        if "county_col" not in cfg: cfg["county_col"] = find([r"^county", r"parish", r"jurisdiction"], r"id$|code")
+        if cfg.get("contest_col") is None or cfg.get("name_col") is None or cfg.get("votes_col") is None:
+            raise RuntimeError("could not detect columns in header " + str(hdr[:25]))
     else:
         col = lambda idx: int(idx)
     pat = re.compile(cfg.get("contest", r"U\.?S\.? Senat"), re.I)
     sel = [r for r in rows if len(r) > col(cfg["contest_col"]) and pat.search(r[col(cfg["contest_col"])]) and not re.search(cfg.get("exclude", r"\bDistrict\b"), r[col(cfg["contest_col"])])]
     if not sel:
-        raise RuntimeError("contest rows not found")
+        raise RuntimeError("contest rows not found; contests seen: " + "; ".join(sorted({r[col(cfg["contest_col"])] for r in rows if len(r) > col(cfg["contest_col"])})[:30]))
+    # county-level files: use the statewide/total rows if the file has them, otherwise sum the counties
+    if cfg.get("county_col") is not None:
+        cc = col(cfg["county_col"])
+        tot = [r for r in sel if len(r) > cc and (not r[cc].strip() or re.fullmatch(r"(total|statewide|state|all)", r[cc].strip(), re.I))]
+        if tot:
+            sel = tot
     agg = {}
     for r in sel:
         name = r[col(cfg["name_col"])].strip()
@@ -204,11 +301,99 @@ def adapter_csv(cfg):
     return {"candidates": cands, "reporting": rep, "reporting_pct": pct}
 
 
+def adapter_html(cfg):
+    """Server-rendered results page. cfg: url, section (regex locating the contest; text from the first match to
+    cfg.section_end regex or 60k chars is searched), row (regex with named groups name, votes and optionally party),
+    reporting (optional regex with one group)."""
+    html = get(cfg["url"])
+    if cfg.get("require") and not re.search(cfg["require"], html[:20000], re.I):
+        raise RuntimeError("page does not carry the required text " + cfg["require"])
+    text = html
+    if cfg.get("section"):
+        m = re.search(cfg["section"], html, re.I | re.S)
+        if not m:
+            raise RuntimeError("contest section not found")
+        text = html[m.start():]
+        if cfg.get("section_end"):
+            e = re.search(cfg["section_end"], text[1:], re.I | re.S)
+            if e:
+                text = text[:e.start() + 1]
+        else:
+            text = text[:60000]
+    cands = []
+    for m in re.finditer(cfg["row"], text, re.I | re.S):
+        g = m.groupdict()
+        name = re.sub(r"<[^>]+>", "", g.get("name") or "").strip()
+        if not name:
+            continue
+        party = party_code(re.sub(r"<[^>]+>", "", g.get("party") or "")) if g.get("party") else party_code(name)
+        if not party and cfg.get("parties"):
+            party = next((p for sn, p in cfg["parties"].items() if sn.lower() in name.lower()), None)
+        votes = int(re.sub(r"[^\d]", "", g.get("votes") or "0") or 0)
+        cands.append({"name": name, "party": party, "votes": votes})
+    if not cands:
+        raise RuntimeError("no candidate rows matched")
+    rep = pct = None
+    if cfg.get("reporting"):
+        m = re.search(cfg["reporting"], text if cfg.get("reporting_in_section") else html, re.I | re.S)
+        if m:
+            rep = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", m.group(1))).strip()
+    return {"candidates": cands, "reporting": rep, "reporting_pct": pct}
+
+
 def adapter_manual(cfg):
     raise RuntimeError("manual-only race")
 
 
-ADAPTERS = {"clarity": adapter_clarity, "json": adapter_json, "csv": adapter_csv, "manual": adapter_manual}
+ADAPTERS = {"clarity": adapter_clarity, "json": adapter_json, "csv": adapter_csv, "html": adapter_html, "manual": adapter_manual}
+
+
+def probe(sources):
+    """--probe: fetch each configured feed and record what came back (status, type, the first bytes), so the
+    adapters can be fitted to layouts that could not be read before election night. Writes data/live-probe.json."""
+    out = {}
+    for rid, cfg in sources.items():
+        if rid.startswith("_") or cfg.get("adapter") in (None, "manual"):
+            continue
+        rec = {"adapter": cfg["adapter"]}
+        try:
+            url = cfg.get("url")
+            if cfg["adapter"] == "clarity":
+                base = clarity_base(cfg); rec["base"] = base
+                ver = get(base + "/current_ver.txt").strip(); rec["version"] = ver
+                url = f"{base}/{ver}/json/en/summary.json"
+            rec["url"] = url
+            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
+            with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
+                raw = r.read(); rec["status"] = r.status; rec["content_type"] = r.headers.get("Content-Type"); rec["final_url"] = r.geturl()
+            rec["bytes"] = len(raw)
+            if raw[:2] == b"PK":
+                with zipfile.ZipFile(io.BytesIO(raw)) as z:
+                    rec["zip_members"] = z.namelist()[:10]
+                    first = z.read(z.namelist()[0])
+                    rec["head"] = first[:1500].decode("utf-8", errors="replace")
+            else:
+                text = raw.decode("utf-8-sig", errors="replace")
+                if cfg.get("base64"):
+                    try:
+                        import base64; text = base64.b64decode(text.strip()).decode("utf-8", errors="replace"); rec["base64_decoded"] = True
+                    except Exception as e:
+                        rec["base64_error"] = str(e)
+                rec["head"] = text[:2500]
+                if cfg["adapter"] == "html" and cfg.get("section"):
+                    m = re.search(cfg["section"], text, re.I | re.S)
+                    rec["section_found"] = bool(m)
+                    if m: rec["section_head"] = text[m.start():m.start() + 3000]
+            try:
+                got = ADAPTERS[cfg["adapter"]](cfg); rec["parsed"] = got
+            except Exception as e:
+                rec["parse_error"] = type(e).__name__ + ": " + str(e)[:300]
+        except Exception as e:
+            rec["error"] = type(e).__name__ + ": " + str(e)[:300]
+        out[rid] = rec
+        log(rid, rec.get("status"), rec.get("error") or rec.get("parse_error") or "parsed")
+    json.dump(out, open(DATA / "live-probe.json", "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    log("wrote live-probe.json")
 
 
 def main():
@@ -220,6 +405,8 @@ def main():
     site = json.load(open(DATA / "senate-polls-2026.json", encoding="utf-8"))
     races = {r["id"]: r for r in site["races"]}
     sources = json.load(open(DATA / "live-sources.json", encoding="utf-8")) if (DATA / "live-sources.json").exists() else {}
+    if "--probe" in sys.argv:
+        probe(sources); return
     manual = json.load(open(DATA / "results-manual.json", encoding="utf-8")) if (DATA / "results-manual.json").exists() else {}
     prev = {}
     try:
@@ -227,7 +414,7 @@ def main():
     except Exception:
         pass
     now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-5))).isoformat(timespec="seconds")
-    out = {}
+    out = {}; errors = {}
     for rid, race in races.items():
         if only and rid not in only:
             if rid in prev: out[rid] = prev[rid]
@@ -244,6 +431,7 @@ def main():
                 log(rid, "ok", [(c["key"], c["votes"]) for c in cands], got.get("reporting"))
             except Exception as e:
                 log(rid, "FAILED", type(e).__name__, str(e)[:160])
+                errors[rid] = type(e).__name__ + ": " + str(e)[:200]
                 if rid in prev:
                     entry = dict(prev[rid]); entry["stale"] = True
         elif rid in prev:
@@ -262,7 +450,7 @@ def main():
                 entry["called_for"] = m["called_for"]; entry["status"] = "called"
         if entry:
             out[rid] = entry
-    doc = {"updated": now, "note": "Counts from state election offices, refreshed every few minutes on election night; calls entered by hand.", "races": out}
+    doc = {"updated": now, "note": "Counts from state election offices, refreshed every few minutes on election night; calls entered by hand.", "races": out, "errors": errors}
     if dry:
         print(json.dumps(doc, indent=1)[:4000]); return
     json.dump(doc, open(DATA / "results-live.json", "w", encoding="utf-8"), indent=0, ensure_ascii=False)

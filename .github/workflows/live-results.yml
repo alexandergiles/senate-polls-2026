@@ -9,6 +9,12 @@ on:
     - cron: '*/30 15-23 4 11 *'   # Wed daytime: late counting
     - cron: '0 */2 5-12 11 *'     # Nov 5–12, every two hours: mail ballots, Alaska's ranked-choice tabulation
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'fetch (normal) or probe (record what each feed returns, for fitting the adapters)'
+        default: fetch
+        type: choice
+        options: [fetch, probe]
 
 permissions:
   contents: write
@@ -25,9 +31,20 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Probe the feeds
+        if: ${{ github.event.inputs.mode == 'probe' }}
+        run: |
+          python3 scripts/fetch_results.py --probe
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/live-probe.json
+          git commit -q -m "Probe of the live-results feeds" || true
+          git push -q
       - name: Fetch the count
+        if: ${{ github.event.inputs.mode != 'probe' }}
         run: python3 scripts/fetch_results.py
       - name: Commit if the count changed
+        if: ${{ github.event.inputs.mode != 'probe' }}
         run: |
           python3 - <<'PY'
           import json, subprocess, datetime, sys
