@@ -3,6 +3,8 @@
   "adapter": "html",
   "probe_pages": {
    "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001290": {
+    "final_url": "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001290",
+    "status": 200,
     "head": "\r\n\r\n<link rel=\"stylesheet\" href=\"css/electionNightResults.css\" media=\"all\" />\r\n\r\n<html lang=\"en\" dir=\"ltr\" prefix=\"content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# schema: http://schema.org/ sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema# \"><head>\r\n    <!-- Global site tag (gtag.js) - Google Analytics -->\r\n        <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-5287078-7\"></script>\r\n        <script>\r\n            window.dataLayer = window.dataLayer || [];\r\n            function gtag() { dataLayer.push(arguments); }\r\n            gtag('js', new Date());\r\n\r\n            gtag('config', 'UA-5287078-7');\r\n        </script>\r\n\r\n    <meta charset=\"utf-8\">\r\n   \r\n    <meta name=\"MobileOptimized\" content=\"width\">\r\n    <meta name=\"HandheldFriendly\" content=\"true\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    \r\n    <link rel=\"shortcut icon\" href=\"https://www2.alabamavotes.gov/electionNight/themes/custom/sos/favicon.ico\" type=\"image/vnd.microsoft.icon\">\r\n    <title>Alabama Votes | Alabama Secretary of State</title>\r\n\r\n\r\n    \r\n    <link rel=\"stylesheet\" href=\"https://www2.alabamavotes.gov/electionNight/themes/custom/sos/css/reset.css?ot006q\" media=\"all\">\r\n    <link rel=\"stylesheet\" href=\"https://www2.alabamavotes.go",
     "tables": [],
     "eids": [],
@@ -44,6 +46,8 @@
     "error": "HTTP Error 403: Forbidden"
    },
    "https://www.sos.state.co.us/pubs/elections/resultsData.html": {
+    "final_url": "https://www.sos.state.co.us/pubs/elections/resultsData.html",
+    "status": 200,
     "head": "<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\">\n<head>\n<meta charset=\"utf-8\"/>\n<title>Election Results &amp; Data</title>\n<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\"/>\n<meta content=\"Colorado Secretary of State's official website, including business filings, elections information, notary public registration, charitable organizations, UCC filing, lobbyist &amp; bingo-raffle information.\" name=\"description\"/>\n<meta content=\"business, trade name, apostilles, periodic report, elections, voting, candidates, initiatives, title board, campaign finance, lobbyists, referendum, TRACER, election disinformation, bingo, raffle, games manager, charitable gaming, charities, fundraisers, paid solicitors, professional fundraising consultants, notary public, remote notarization\" name=\"keywords\"/><link href=\"https://www.coloradosos.gov/pubs/css/responsive.css\" rel=\"stylesheet\"/><link href=\"https://www.coloradosos.gov/pubs/css/r-theme2.css\" rel=\"stylesheet\"/><link href=\"https://www.coloradosos.gov/ableplayer-main/build/ableplayer.min.css\" rel=\"stylesheet\" type=\"text/css\"/>\n</head>\n<body>\n<div id=\"dedsecContainer\"><span aria-label=\"Header\" role=\"banner\"><style><!--\n.w3-navbarP2{\n     list-style-type:none;\n     margin:0;\n     padding:0;\n     overflow:hidden;\n}\n .w3-navbarP2 li{\n     float:left;\n}\n .w3-navbarP2 li a{\n     display:block;\n     padding:8px 8px 12px 8px;\n}\n .w3-navbarP2 li a:hover{\n     color:#fff!important;\n     outline:1;\n",
     "tables": [],
     "eids": [],
@@ -83,6 +87,8 @@
   "adapter": "html",
   "probe_pages": {
    "https://floridaelectionwatch.gov/CountyReportingStatus": {
+    "final_url": "https://floridaelectionwatch.gov/CountyReportingStatus",
+    "status": 200,
     "head": "<!DOCTYPE html>\r\n<html style=\"overflow-y: scroll;\" xml:lang=\"en\" lang=\"en\">\r\n<head>\r\n\r\n        <!-- Global Site Tag (gtag.js) - Google Analytics -->\r\n        <script async src=\"https://www.googletagmanager.com/gtag/js?id=G-ZSJ66DYG9T\"></script>\r\n        <script>\r\n            window.dataLayer = window.dataLayer || [];\r\n            function gtag() { dataLayer.push(arguments); }\r\n            gtag('js', new Date());\r\n            gtag('config', 'G-ZSJ66DYG9T');\r\n        </script>\r\n\r\n    <meta name=\"description\" content= \"Florida Election Watch displays votes collected from all Florida counties as they are being reported on election night.\">\r\n    <meta name=\"keywords\" content=\"Florida Department of State, election, election results, Florida election results, Florida election, 2026 election results, 2026 Florida election results, Florida Election Watch, election night\">\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Florida Election Watch - County Reporting Status</title>\r\n    \r\n\r\n\r\n\r\n    <link href=\"/Scripts/umd/popper.js\" rel=\"stylesheet\"/>\r\n\r\n\r\n    <link href=\"/Content/bootstrap.css\" rel=\"stylesheet\"/>\r\n<link href=\"/Content/site.css\" rel=\"stylesheet\"/>\r\n\r\n    <script src=\"/Scripts/modernizr-2.8.3.js\"></script>\r\n\r\n\r\n\r\n    <link rel=\"stylesheet\" href=\"/Content/BSVerticalMenu.css\">\r\n</head>\r\n<body style=\"padding-top: 0px;\">\r\n    \r\n<div style=\"background: linear-gradient(to right,#2C5084,#2C5084, white); height: 1",
     "tables": [
      "<table class=\"table-striped reportingTable\">\r\n                    <thead>\r\n\r\n                        <tr class=\"report-head\">\r\n                            <th scope=\"col\" style=\" word-wrap: break-word; width:80px;\">\r\n                                County SOE Website\r\n                            </th>\r\n                            <th scope=\"col\" class=\"voter-head\">\r\n                                <center>Voter<br /> Turnout</center>\r\n                            </th>\r\n                            <th scope=\"col\" class=\" voter-head\">\r\n                                <center>Eligible Active Registered Voters</center>\r\n                            </th>\r\n                            <th scope=\"col\" class=\"voter-head\">\r\n                                <center>Turnout Percentage</center>\r\n                            </th>\r\n                            <th scope=\"col\" class=\"voter-head\">\r\n                                <center>Precincts Reporting</center>\r\n                            </th>\r\n                            <th scope=\"col\" class=\"report-head-column\">\r\n                                <center>Precincts Completed</center>\r\n                            </th>\r\n                            <th scope=\"col\" class=\" report-head-column\">\r\n                                <center>Vote-by-Mail Ballots Completed</center>\r\n                            </th>\r\n                            <th scope=\"col\" class=\"report-head-column\">\r\n                                <center>Early Voting Ballots Completed</center>\r\n                            </th>\r\n                            <th scope=\"col\" style=\"width: 83px;  word-wrap: break-word;\">\r\n                                <center>Provisional Ballots Completed</center>\r\n                            </th>\r\n                                <th scope=\"col\" style=\"width: 83px;  word-wrap: break-word;\">\r\n                                    <center>10-day Overseas Vote-by-Mail Completed</center>\r\n                                </th>\r\n                        </tr>\r\n\r\n                    </thead>\r\n                    <tbody>\r\n\r\n\r\n\r\n                            <tr class=\"reporting-row \">\r\n                                \r\n                                <td class=\"linkCounty\" style=\"border-left-style: solid;width:80px; \"><strong> <a href='https://www.votealachua.gov                                                ' item. target=\"_blank\" title=\" External link. Open in new window.\" style=\"color:#1f3d51 !important; \"><strong><u>Alachua</u></st"
@@ -128,15 +134,81 @@
   "adapter": "json",
   "probe_pages": {
    "https://results.sos.ga.gov/results/public/Georgia": {
-    "head": "<!doctype html>\n<html lang=\"en\" data-beasties-container=\"\">\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Election Results</title>\n    <base href=\"/results/public/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.png\">\n\n    <meta name=\"CSP_NONCE\" content=\"38c732eed1cdf0abd6481465fe9a6922\">\n    <!-- The below should only be uncommented when testing CSP locally -->\n    <!-- <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; script-src 'self' 'nonce-38c732eed1cdf0abd6481465fe9a6922'; img-src 'self' https://app.dev.enhancedvoting.com https://app.enhancedvoting.com data:; connect-src 'self' https://api.mapbox.com https://events.mapbox.com ws://localhost:4200 https://app.enhancedvoting.com https://app.dev.enhancedvoting.com https://localhost:7297 https://localhost:5006; style-src 'self' 'nonce-38c732eed1cdf0abd6481465fe9a6922'; worker-src 'self' blob:;\"> -->\n  <style nonce=\"38c732eed1cdf0abd6481465fe9a6922\">@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}:root{--fa-font-solid:normal 900 1em/1 \"Font Awesome 7 Free\";--fa-font-regular:normal 400 1em/1 \"Font Awesome 7 Free\";--fa-font-light:normal 300 1em/1 \"Font Awesome 7 Pro\";--fa-font-thin:normal 100 1em/1 \"Font Awesome 7 Pro\";--fa-font-duotone:normal 900 1em/1 \"Font Awesome 7 Duotone\";--fa-font-duotone-regular:normal 400 1em/1 \"Font Aweso",
+    "final_url": "https://results.sos.ga.gov/results/public/Georgia",
+    "status": 200,
+    "head": "<!doctype html>\n<html lang=\"en\" data-beasties-container=\"\">\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Election Results</title>\n    <base href=\"/results/public/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.png\">\n\n    <meta name=\"CSP_NONCE\" content=\"2450b4029310a284a36f22267f5f9813\">\n    <!-- The below should only be uncommented when testing CSP locally -->\n    <!-- <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; script-src 'self' 'nonce-2450b4029310a284a36f22267f5f9813'; img-src 'self' https://app.dev.enhancedvoting.com https://app.enhancedvoting.com data:; connect-src 'self' https://api.mapbox.com https://events.mapbox.com ws://localhost:4200 https://app.enhancedvoting.com https://app.dev.enhancedvoting.com https://localhost:7297 https://localhost:5006; style-src 'self' 'nonce-2450b4029310a284a36f22267f5f9813'; worker-src 'self' blob:;\"> -->\n  <style nonce=\"2450b4029310a284a36f22267f5f9813\">@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}:root{--fa-font-solid:normal 900 1em/1 \"Font Awesome 7 Free\";--fa-font-regular:normal 400 1em/1 \"Font Awesome 7 Free\";--fa-font-light:normal 300 1em/1 \"Font Awesome 7 Pro\";--fa-font-thin:normal 100 1em/1 \"Font Awesome 7 Pro\";--fa-font-duotone:normal 900 1em/1 \"Font Awesome 7 Duotone\";--fa-font-duotone-regular:normal 400 1em/1 \"Font Aweso",
     "tables": [],
     "eids": [],
     "paths": [],
     "hints": [],
     "js": {
-     "https://results.sos.ga.gov/results/public/Georgia/polyfills-2FSRUXKO.js": [],
-     "https://results.sos.ga.gov/results/public/Georgia/scripts-TTWY4XDY.js": [],
-     "https://results.sos.ga.gov/results/public/Georgia/main-SDUQU7SI.js": []
+     "https://results.sos.ga.gov/results/public/polyfills-2FSRUXKO.js": [],
+     "https://results.sos.ga.gov/results/public/scripts-TTWY4XDY.js": [
+      "exports==",
+      "module.exports=fe"
+     ],
+     "https://results.sos.ga.gov/results/public/main-SDUQU7SI.js": [
+      ".election-cards",
+      ".electionId",
+      ".electionId===a.id",
+      "//www.mapbox.com/mapbox-gl-js/api/.",
+      "/cdn/results",
+      "/cdn/results/",
+      "/elections/${a}/${p}",
+      "/elections/${a}/${p}/localities",
+      "/elections/${a}/${p}/stats",
+      "/elections/${a}/${p}/turnout",
+      "/elections/${a}/${p}/vr",
+      "K.election=o.find",
+      "K.election?.groupReportingStatus?.sort",
+      "K.election?.precinctReportingStatus",
+      "M.electionId",
+      "Yt.electionBallotItemResults",
+      "Yt.electionBallotItemResults}}",
+      "Yt.electionSummaryResults",
+      "Yt.electionSummaryResults?o=ct.searchPlaceholder",
+      "Yt.electionSummaryResults}}",
+      "a.election.closeRaceThreshold",
+      "a.election.electionId",
+      "a.election.isOfficialResults?p.ClientTextKey.officialResults",
+      "a.election.map.disclaimer",
+      "a.election.map==null?null",
+      "a.election.nextUpdateAt.time",
+      "a.election==null",
+      "a.electionDate",
+      "a.electionId",
+      "a.electionNightComplete.reportingStatus.clientTextKey",
+      "a.electionNightComplete.reportingStatus.clientTextKey?1",
+      "a.electionNightComplete.value",
+      "a.electionNightComplete.value/a.totalPrecincts",
+      "a.electionParams?1",
+      "a.electionStatsCardCount",
+      "a.electionStatsCardCount==1?",
+      "a.electionStatsCardCount==1?I=",
+      "a.electionStatsCardCount==2",
+      "a.electionStatsCardCount==2?",
+      "a.electionStatsCardCount?",
+      "a.electionStatsCardCount?0",
+      "a.electionStatsCardCount?4",
+      "a.elections",
+      "a.elections.length",
+      "a.elections.slice",
+      "a.elections=a.elections.sort",
+      "a.elections?.length",
+      "app-election-filters",
+      "app-election-summary-page",
+      "app-election-summary-widgets",
+      "app-election-top-controls",
+      "e.exports",
+      "e.exports}var",
+      "ef.exports=d",
+      "election",
+      "election-cards",
+      "election-filters-section",
+      "election-header",
+      "election-info",
+      "electionId"
+     ]
     }
    }
   },
@@ -159,7 +231,19 @@
    "https://results.sos.ga.gov/cdn/results/Georgia/export-2026NovGeneral.json": "HTTP Error 404: Not Found",
    "https://results.sos.ga.gov/cdn/results/Georgia/export-2026NovemberGen.json": "HTTP Error 404: Not Found",
    "https://results.sos.ga.gov/cdn/results/Georgia/export-2026Nov.json": "HTTP Error 404: Not Found",
-   "https://results.sos.ga.gov/cdn/results/Georgia/export-2026-11-03.json": "HTTP Error 404: Not Found"
+   "https://results.sos.ga.gov/cdn/results/Georgia/export-2026-11-03.json": "HTTP Error 404: Not Found",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-2026NovGen.json": "HTTP Error 404: The specified blob does not exist.",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-2026NovemberGeneral.json": "HTTP Error 404: The specified blob does not exist.",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-2026General.json": "HTTP Error 404: The specified blob does not exist.",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-Nov2026Gen.json": "HTTP Error 404: The specified blob does not exist.",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-2026Gen.json": "HTTP Error 404: The specified blob does not exist.",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-November2026General.json": "HTTP Error 404: The specified blob does not exist.",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-2026-November-General.json": "HTTP Error 404: The specified blob does not exist.",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-GeneralElection110326.json": "HTTP Error 404: The specified blob does not exist.",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-General110326.json": "HTTP Error 404: The specified blob does not exist.",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-nov2026.json": "HTTP Error 404: The specified blob does not exist.",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-Nov2026.json": "HTTP Error 404: The specified blob does not exist.",
+   "https://app.enhancedvoting.com/cdn/results/Georgia/export-2026GeneralElection.json": "HTTP Error 404: The specified blob does not exist."
   },
   "error": "HTTPError: HTTP Error 404: Not Found"
  },
@@ -203,6 +287,8 @@
   "adapter": "clarity",
   "probe_pages": {
    "https://electionresults.iowa.gov/IA/": {
+    "final_url": "https://electionresults.iowa.gov/IA/",
+    "status": 202,
     "head": "",
     "tables": [],
     "eids": [],
@@ -210,6 +296,8 @@
     "hints": []
    },
    "https://electionresults.iowa.gov/": {
+    "final_url": "https://electionresults.iowa.gov/",
+    "status": 202,
     "head": "",
     "tables": [],
     "eids": [],
@@ -316,6 +404,8 @@
   "adapter": "html",
   "probe_pages": {
    "https://sosmt.gov/elections/results": {
+    "final_url": "https://sosmt.gov/elections/results",
+    "status": 200,
     "head": "<!DOCTYPE html>\r\n<html lang=\"en-US\" prefix=\"og: https://ogp.me/ns#\">\r\n<head >\r\n\r\n\t<meta charset=\"UTF-8\">\r\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n\t<link rel=\"profile\" href=\"https://gmpg.org/xfn/11\">\r\n\t<meta name=\"mobile-web-app-capable\" content=\"yes\">\n<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n<meta name=\"apple-mobile-web-app-title\" content=\"Official Montana Secretary of State Website - Christi Jacobsen - Business, Elections, Voters, Notary &amp; Other Services\">\n\t\t\t<script type=\"text/javascript\" defer src=\"data:text/javascript,var%20WebFontConfig%20%3D%20WebFontConfig%20%7C%7C%20%7B%7D%3B%0A%09%09%09WebFontConfig%5B%27active%27%5D%20%3D%20function%28%29%20%7B%0A%09%09%09%09if%20%28%20typeof%20%28%20window.jQuery%20%29%20%21%3D%3D%20%27undefined%27%20%29%20%7B%0A%09%09%09%09%09jQuery%28window%29.trigger%28%27liquid_async_fonts_active%27%29%3B%0A%09%09%09%09%7D%0A%09%09%09%7D%3B%0A%09%09%09WebFontConfig%5B%27inactive%27%5D%20%3D%20function%28%29%20%7B%0A%09%09%09%09if%20%28%20typeof%20%28%20window.jQuery%20%29%20%21%3D%3D%20%27undefined%27%20%29%20%7B%0A%09%09%09%09%09jQuery%28window%29.trigger%28%27liquid_async_fonts_inactive%27%29%3B%0A%09%09%09%09%7D%0A%09%09%09%7D%3B\"></script>\n\t\t\t\n<!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->\n<title>Official Election Results - Official Montana Secretary of State Website - Christi Jacobsen</title>\n<style>.flying",
     "tables": [
      "<table cellpadding=\"5\"><tbody><tr><td style=\"text-align: center;\" colspan=\"5\"><h3><span style=\"color: #000;\">Archived Election Results</span></h3></td></tr><tr style=\"height: 24px;\"><th style=\"height: 24px; width: 726px;\" colspan=\"5\"><h5 style=\"text-align: center;\"><span style=\"font-weight: normal;\">2024 Election Results</span></h5></th></tr><tr><td style=\"width: 160px; text-align: left;\"><strong>Canvass</strong></td><td style=\"width: 160px; text-align: left;\"><strong>State</strong></td><td style=\"width: 160px; text-align: left;\"><strong>By County</strong></td><td style=\"width: 160px; text-align: left;\"><strong>Legislative</strong></td><td style=\"width: 160px; text-align: left;\"><strong>Writein</strong></td></tr><tr><td style=\"width: 160px; text-align: left;\"><strong>2024 General</strong></td><td style=\"width: 160px;\"><p><a href=\"https://sosmt.gov/docs/31/post-election/66775/2024-general-election-report-state-canvass\" target=\"_blank\" rel=\"noopener\">Statewide</a></p><p><a href=\"https://sosmt.gov/docs/31/post-election/66772/2024-general-election-report-state-canvass-by-hd\">Statewide by HD</a></p></td><td style=\"width: 160px;\"><p><a href=\"https://electionresults.mt.gov/ResultsList.aspx?eid=450002785\" target=\"_blank\" rel=\"noopener\">County by County</a></p><p><a href=\"https://sosmt.gov/docs/32/results/66992/2024_general_precinct_by_precinct\">Precinct by Precinct</a></p></td><td style=\"width: 160px;\"><p><a href=\"https://sosmt.gov/docs/31/post-election/66773/2024-general-election-report-state-canvass-legislative\" target=\"_blank\" rel=\"noopener\">Legislative</a></p><p><a href=\"https://sosmt.gov/docs/31/post-election/66820/2024-general-election-legislative-hd-57-recount-report\" target=\"_blank\" rel=\"noopener\">Legislative Recount</a></p></td><td style=\"width: 160px;\"><a href=\"https://sosmt.gov/docs/31/post-election/66774/2024-general-election-report-state-canvass-write-in\" target=\"_blank\" rel=\"noopener\">Write-in</a></td></tr><tr><td style=\"width: 160px; text-align: left;\"><strong>2024 Primary</strong></td><td style=\"width: 160px;\"><p><a href=\"https://sosmt.gov/wp-admin/admin-ajax.php?juwpfisadmin=false&amp;action=wpfd&amp;task=file.download&amp;wpfd_category_id=32&amp;wpfd_file_id=64926&amp;token=e7531a0dffdbf6c5f797b18d83d8e89c&amp;preview=1\" target=\"_blank\" rel=\"noopener\">Statewide</a></p><p><a href=\"https://sosmt.gov/wp-admin/admin-ajax.php?juwpfisadmin=false&amp;action=wpfd&amp;task=file.download&amp;wpfd_category_id=32&amp;wpfd_file_id=64927&amp;token=e7531a0dffdb",
@@ -350,8 +440,28 @@
   "head": "\r\n\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head><title>\r\n\tMontana Secretary of State\r\n</title><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" /><meta content=\"text/html; charset=windows-1252\" http-equiv=\"Content-Type\" /><meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0\" /><link href=\"/Styles/styles.css\" rel=\"stylesheet\" /><link href=\"/Styles/stylesmobile.css\" rel=\"stylesheet\" /><link href=\"/Styles/sidemenu.css\" rel=\"stylesheet\" /><link href=\"/Styles/font_PT_Sans.css\" rel=\"stylesheet\" />\r\n    \r\n    <script src=\"/Scripts/jquery/jquery-3.6.0.min.js\"></script>\r\n\r\n    <script src=\"/Scripts/Chart.min.js\"></script>\r\n    <script src=\"/Scripts/utils.js\"></script>\r\n    <!-- Twitter Widget -->\r\n    \r\n    <script>\r\n        (function (i, s, o, g, r, a, m) {\r\n            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function ()\r\n            { (i[r].q = i[r].q || []).push(arguments) }\r\n\r\n            , i[r].l = 1 * new Date(); a = s.createElement(o),\r\n            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)\r\n        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');\r\n\r\n        ga('create', 'UA-31899828-1', 'auto');\r\n        ga('send', 'pageview');\r\n\r\n    </script>\r\n    <script>\r\n        var ServiceRoot = 'https://esersws.mt.gov/';\r\n        var Maps = {};\r\n        var Bound = {};\r\n        var mapBuilt = [];\r\n\r\n        window.onload = function () {\r\n            //WatchList = document.getElementById(\"hidWatchedRaces\");\r\n            //var temp = document.cookie;\r\n            var WatchList = getCookie(\"MTTracked\");\r\n            if (WatchList === undefined) { WatchList = \"\"; }\r\n\r\n            var checked = WatchList.split(\"_\");\r\n            for (var i = 0; i < checked.length; i++) {\r\n                var checkbox = document.getElementById(\"chk-\" + checked[i]);\r\n                if (checkbox !== null) { checkbox.checked = true; }\r\n            };\r\n        };\r\n    </script>\r\n    \r\n    <!--Animated Graphs-->\r\n    \r\n    <link href=\"/Scripts/animated-horizontal-charts/jqbar.css\" rel=\"stylesheet\" />\r\n    <script src=\"/Scripts/animated-horizontal-charts/jqbar.js\"></script>\r\n    <!--Animated Graphs-->\r\n    <script src=\"/Scripts/jquery-jtemplates.js\"></script>\r\n    <!--Maps-->\r\n    <link href=\"/maps/static/css/0_7_7_leaflet.css\" rel=\"stylesheet\" />\r\n    <script src=\"/maps/static/js/0_7_7_leaflet.js\"></script>\r\n    \r\n    <link href=\"/maps/static/css/mt-maps.css\" ",
   "tables": [],
   "section_found": true,
-  "section_head": "UNITED STATES SENATOR</h1>\r\n                        </div>\r\n                        <div class=\"wrapper-mobile\">\r\n                            <div class=\"section group\">\r\n                                <div class=\"col display-results-box-b\">\r\n                                    <div class=\"col follow-checkbox\">\r\n                                        <input class=\"css-checkbox\" type=\"checkbox\" onclick=\"CheckboxChecked(this);\" id=\"chk-10421\">\r\n                                        <label class=\"css-label\" for=\"chk-10421\">Follow This Contest</label>\r\n                                    </div>\r\n                                    <div class=\"recount\" style=\"display: none;\"><img class=\"recount-flag\" alt=\"Race recount indicator\" title=\"Recount Flag\" src=\"Images/recount-icon.png\" /></div>\r\n                                </div>\r\n                                <div class=\"display-results-box-g\">\r\n                                    <div class=\"export-box dropdown\" >\r\n                                        <div class=\"export dropbtn\">Export</div>\r\n                                        <div id=\"export-10421\" class=\"dropdown-content export-container\">\r\n                                            <div class=\"export-header\">EXPORT:</div>\r\n                                            <input onclick=\"DownloadFile(); __doPostBack('ctl00$MainContent$rptRace$ctl00$ctl00','')\" name=\"ctl00$MainContent$rptRace$ctl00$ctl00\" type=\"button\" class=\"export-button\" value=\"Precinct Level\" raceid=\"450000000002597\" party=\"REP\" countyid=\"\" />\r\n                                            <input onclick=\"DownloadFile(); __doPostBack('ctl00$MainContent$rptRace$ctl00$ctl01','')\" name=\"ctl00$MainContent$rptRace$ctl00$ctl01\" type=\"button\" class=\"export-button\" value=\"County Level\" raceid=\"450000000002597\" party=\"REP\" />\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"share-box dropdown\">\r\n                                        <img class=\"mtc-icon-inline-position dropbtn\" alt=\"\" title=\"Share\" src=\"Images/my-tracked-contests-icon.png\">\r\n                                        <div class=\"dropdown-content\">\r\n                                            <div class=\"share-header\">SHARE ON</div>\r\n                                            <div class=\"facebook\">\r\n                                                <a href=\"https://www.facebook.com/sharer/sharer.php?u=mtresults.totalvote.com/SearchResults.aspx?ID=10421\" target=\"_blank\">\r\n                                                    <img alt=\"Share on Facebook\" title=\"Facebook\" src=\"Images/facebook-icon.png\" /></a>\r\n                                            </div>\r\n                                            <div class=\"twitter\">\r\n                                                <a href=\"https://twitter.com/intent/tweet?text=electionresults.mt.gov/SearchResults.aspx?ID=10421&hashtags=Vote\" target=\"_blank\">\r\n                                                    <img alt=\"Share on Twitter\" title=\"Twitter\" src=\"Images/twitter-icon.png\" /></a>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col display-results-box-c\">\r\n                                    <div class=\"precinct-fully\">\r\n                                        Precincts Fully: 728 / 728\r\n                                    </div>\r\n                                    <div class=\"precinct-separator\">|</div>\r\n                                    <div class=\"precinct-partial\">\r\n                                        Partially: 0 / 728\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    \r\n                    \r\n                            <div class=\"section group\">\r\n                                <img src=\"\" class=\"photo-display\" style=\"display: none;\" />\r\n                                <div class=\"col display-results-box-d\">\r\n                                    <h1>KURT ALME</h1>\r\n                                    <h2 class=\"Republican\">Republican</h2>\r\n                                </div>\r\n                                <div class=\"col display-results-box-e\">\r\n                                    <div class=\"wrapper-mobile\">\r\n                                        <div class=\"bar-graph-wrap\">\r\n                                            <div id=\"bar45000000000259726580\"></div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col display-results-box-f\">\r\n                                    <h1>128,716</h1>\r\n                                </div>\r\n                            </div>\r\n                            <hr />\r\n                        \r\n                            <div class=\"section group\">\r\n                                <img src=\"\" class=\"photo-display\" style=\"display: none;\" />\r\n                                <div class=\"col display-results-box-d\">\r\n                                    <h1>LEE CALHOUN</h1>\r\n                                    <h2 class=\"Republican\">Republican</h2>\r\n                                </div>\r\n                                <div class=\"col display-results-box-e\">\r\n                                    <div class=\"wrapper-mobile\">\r\n                                        <div class=\"bar-graph-wrap\">\r\n                                            <div id=\"bar45000000000259726525\"></div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col display-results-box-f\">\r\n                                    <h1>23,872</h1>\r\n                                </div>\r\n                            </div>\r\n                            <hr />\r\n                        \r\n                            <div class=\"section group\">\r\n                                <img src=\"\" class=\"photo-display\" style=\"display: none;\" />\r\n                                <div class=\"col display-results-box-d\">\r\n                                    <h1>CHARLES WALKING CHILD</h1>\r\n                                    <h2 class=\"Republican\">Republican</h2>\r\n                                </div>\r\n                                <div class=\"col display-results-box-e\">\r\n                                    <div class=\"wrapper-mobile\">\r\n                                        <div class=\"bar-graph-wrap\">\r\n                                            <div id=\"bar45000000000259726579\"></div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col display-results-box-f\">\r\n                                    <h1>16,474</h1>\r\n                                </div>\r\n                            </div>\r\n                            <hr />\r\n                        \r\n                            <div class=\"section group\">\r\n                                <div class=\"col display-results-box-totalvotes\">\r\n                                    <h2>total votes</h2>\r\n                                </div>\r\n                                <div class=\"col display-results-box-total\">\r\n                                    <h2>169,062</h2>\r\n                                </div>\r\n                            </div>\r\n                        \r\n                </div>\r\n\r\n                <input class=\"button-maps\" type=\"button\" onclick=\"CreateMap('FED', '450000000002597', '1000', 'REP');\" value=\"Map\" />\r\n                <input class=\"button-county\" type=\"button\" onclick=\"BuildCounty('FED', '450000000002597', '1000', 'REP');\" value=\"County Results\" />\r\n\r\n                <div id=\"Map450000000002597REP\" style=\"display: none;\" class=\"slidingDiv-maps\">\r\n                    <div class=\"section group\">\r\n                        <div class=\"col map-col1\" id=\"Mapinfo450000000002597REP\">\r\n                            <div id=\"countyInfoBox450000000002597REP\"></div>\r\n                        </div>\r\n                        <div class=\"col map-col2\">\r\n                            <h1>Click on County Below</h1>\r\n                            <div class=\"map\" id=\"Mapmap450000000002597REP\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col map-col3\">\r\n                            <div id=\"legendInfoBox450000000002597REP\"></div>\r\n                        </div>\r\n                        <div class=\"modal\"></div>\r\n                    </div>\r\n                </div>\r\n                <div id=\"County450000000002597REP\" style=\"display: none\" class=\"slidingDiv-maps\"></div>\r\n            </div>\r\n        \r\n            <div class=\"wrapper-inside wrapper-border\">\r\n                <div>\r\n                    <div class=\"display-results-box-wrapper\">\r\n                        <div class=\"display-results-box-a\">\r\n                            <h1>UNITED STATES SENATOR</h1>\r\n                        </div>\r\n                        <div class=\"wrapper-mobile\">\r\n                            <div class=\"section group\">\r\n                                <div class=\"col display-results-box-b\">\r\n                                    <div class=\"col follow-checkbox\">\r\n                                        <input class=\"css-checkbox\" type=\"checkbox\" onclick=\"CheckboxChecked(this);\" id=\"chk-10419\">\r\n                                        <label class=\"css-label\" for=\"chk-10419\">Follow This Contest</label>\r\n                                    </div>\r\n                                    <div class=\"recount\" style=\"display: none;\"><img class=\"recount-flag\" alt=\"Race recount indicator\" title=\"Recount Flag\" src=\"Images/recount-icon.png\" /></div>\r\n                                </div>\r\n                                <div class=\"display-results-box-g\">\r\n                                    <div class=\"export-box dropdown\" >\r\n                                        <div class=\"export dropbtn\">Export</div>\r\n                                        <div id=\"export-10419\" class=\"dropdown-content export-container\">\r\n                                            <div class=\"export-header\">EXPORT:</div>\r\n                                            <input onclick=\"DownloadFile(); __doPostBack('ctl00$MainContent$rptRace$ctl01$ctl00','')\" name=\"ctl00$MainContent$rptRace$ctl01$ctl00\" type=\"button\" class=\"export-button\" value=\"Precinct Level\" raceid=\"450000000002597\" party=\"DEM\" countyid=\"\" />\r\n                                            <input onclick=\"DownloadFile(); __doPostBack('ctl00$MainContent$rptRace$ctl01$ctl01','')\" name=\"ctl00$MainContent$rptRace$ctl01$ctl01\" type=\"button\" class=\"export-button\" value=\"County Level\" raceid=\"450000000002597\" party=\"DEM\" />\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"share-box dropdown\">\r\n                                        <img class=\"mtc-icon-inline-position dropbtn\" alt=\"\" title=\"Share\" src=\"Images/my-tracked-contests-icon.png\">\r\n                                        <div class=\"dropdown-content\">\r\n                                            <div class=\"share-header\">SHARE ON</div>\r\n                                            <div class=\"facebook\">\r\n                                                <a href=\"https://www.facebook.com/sharer/sharer.php?u=mtresults.totalvote.com/SearchResults.aspx?ID=10419\" target=\"_blank\">\r\n                                                    <img alt=\"Share on Facebook\" title=\"Facebook\" src=\"Images/facebook-icon.png\" /></a>\r\n                                            </div>\r\n                    ",
-  "parse_error": "RuntimeError: no candidate rows matched"
+  "section_head": "display-results-box-a\">\r\n                            <h1>UNITED STATES SENATOR</h1>\r\n                        </div>\r\n                        <div class=\"wrapper-mobile\">\r\n                            <div class=\"section group\">\r\n                                <div class=\"col display-results-box-b\">\r\n                                    <div class=\"col follow-checkbox\">\r\n                                        <input class=\"css-checkbox\" type=\"checkbox\" onclick=\"CheckboxChecked(this);\" id=\"chk-10421\">\r\n                                        <label class=\"css-label\" for=\"chk-10421\">Follow This Contest</label>\r\n                                    </div>\r\n                                    <div class=\"recount\" style=\"display: none;\"><img class=\"recount-flag\" alt=\"Race recount indicator\" title=\"Recount Flag\" src=\"Images/recount-icon.png\" /></div>\r\n                                </div>\r\n                                <div class=\"display-results-box-g\">\r\n                                    <div class=\"export-box dropdown\" >\r\n                                        <div class=\"export dropbtn\">Export</div>\r\n                                        <div id=\"export-10421\" class=\"dropdown-content export-container\">\r\n                                            <div class=\"export-header\">EXPORT:</div>\r\n                                            <input onclick=\"DownloadFile(); __doPostBack('ctl00$MainContent$rptRace$ctl00$ctl00','')\" name=\"ctl00$MainContent$rptRace$ctl00$ctl00\" type=\"button\" class=\"export-button\" value=\"Precinct Level\" raceid=\"450000000002597\" party=\"REP\" countyid=\"\" />\r\n                                            <input onclick=\"DownloadFile(); __doPostBack('ctl00$MainContent$rptRace$ctl00$ctl01','')\" name=\"ctl00$MainContent$rptRace$ctl00$ctl01\" type=\"button\" class=\"export-button\" value=\"County Level\" raceid=\"450000000002597\" party=\"REP\" />\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"share-box dropdown\">\r\n                                        <img class=\"mtc-icon-inline-position dropbtn\" alt=\"\" title=\"Share\" src=\"Images/my-tracked-contests-icon.png\">\r\n                                        <div class=\"dropdown-content\">\r\n                                            <div class=\"share-header\">SHARE ON</div>\r\n                                            <div class=\"facebook\">\r\n                                                <a href=\"https://www.facebook.com/sharer/sharer.php?u=mtresults.totalvote.com/SearchResults.aspx?ID=10421\" target=\"_blank\">\r\n                                                    <img alt=\"Share on Facebook\" title=\"Facebook\" src=\"Images/facebook-icon.png\" /></a>\r\n                                            </div>\r\n                                            <div class=\"twitter\">\r\n                                                <a href=\"https://twitter.com/intent/tweet?text=electionresults.mt.gov/SearchResults.aspx?ID=10421&hashtags=Vote\" target=\"_blank\">\r\n                                                    <img alt=\"Share on Twitter\" title=\"Twitter\" src=\"Images/twitter-icon.png\" /></a>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col display-results-box-c\">\r\n                                    <div class=\"precinct-fully\">\r\n                                        Precincts Fully: 728 / 728\r\n                                    </div>\r\n                                    <div class=\"precinct-separator\">|</div>\r\n                                    <div class=\"precinct-partial\">\r\n                                        Partially: 0 / 728\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    \r\n                    \r\n                            <div class=\"section group\">\r\n                                <img src=\"\" class=\"photo-display\" style=\"display: none;\" />\r\n                                <div class=\"col display-results-box-d\">\r\n                                    <h1>KURT ALME</h1>\r\n                                    <h2 class=\"Republican\">Republican</h2>\r\n                                </div>\r\n                                <div class=\"col display-results-box-e\">\r\n                                    <div class=\"wrapper-mobile\">\r\n                                        <div class=\"bar-graph-wrap\">\r\n                                            <div id=\"bar45000000000259726580\"></div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col display-results-box-f\">\r\n                                    <h1>128,716</h1>\r\n                                </div>\r\n                            </div>\r\n                            <hr />\r\n                        \r\n                            <div class=\"section group\">\r\n                                <img src=\"\" class=\"photo-display\" style=\"display: none;\" />\r\n                                <div class=\"col display-results-box-d\">\r\n                                    <h1>LEE CALHOUN</h1>\r\n                                    <h2 class=\"Republican\">Republican</h2>\r\n                                </div>\r\n                                <div class=\"col display-results-box-e\">\r\n                                    <div class=\"wrapper-mobile\">\r\n                                        <div class=\"bar-graph-wrap\">\r\n                                            <div id=\"bar45000000000259726525\"></div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col display-results-box-f\">\r\n                                    <h1>23,872</h1>\r\n                                </div>\r\n                            </div>\r\n                            <hr />\r\n                        \r\n                            <div class=\"section group\">\r\n                                <img src=\"\" class=\"photo-display\" style=\"display: none;\" />\r\n                                <div class=\"col display-results-box-d\">\r\n                                    <h1>CHARLES WALKING CHILD</h1>\r\n                                    <h2 class=\"Republican\">Republican</h2>\r\n                                </div>\r\n                                <div class=\"col display-results-box-e\">\r\n                                    <div class=\"wrapper-mobile\">\r\n                                        <div class=\"bar-graph-wrap\">\r\n                                            <div id=\"bar45000000000259726579\"></div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col display-results-box-f\">\r\n                                    <h1>16,474</h1>\r\n                                </div>\r\n                            </div>\r\n                            <hr />\r\n                        \r\n                            <div class=\"section group\">\r\n                                <div class=\"col display-results-box-totalvotes\">\r\n                                    <h2>total votes</h2>\r\n                                </div>\r\n                                <div class=\"col display-results-box-total\">\r\n                                    <h2>169,062</h2>\r\n                                </div>\r\n                            </div>\r\n                        \r\n                </div>\r\n\r\n                <input class=\"button-maps\" type=\"button\" onclick=\"CreateMap('FED', '450000000002597', '1000', 'REP');\" value=\"Map\" />\r\n                <input class=\"button-county\" type=\"button\" onclick=\"BuildCounty('FED', '450000000002597', '1000', 'REP');\" value=\"County Results\" />\r\n\r\n                <div id=\"Map450000000002597REP\" style=\"display: none;\" class=\"slidingDiv-maps\">\r\n                    <div class=\"section group\">\r\n                        <div class=\"col map-col1\" id=\"Mapinfo450000000002597REP\">\r\n                            <div id=\"countyInfoBox450000000002597REP\"></div>\r\n                        </div>\r\n                        <div class=\"col map-col2\">\r\n                            <h1>Click on County Below</h1>\r\n                            <div class=\"map\" id=\"Mapmap450000000002597REP\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col map-col3\">\r\n                            <div id=\"legendInfoBox450000000002597REP\"></div>\r\n                        </div>\r\n                        <div class=\"modal\"></div>\r\n                    </div>\r\n                </div>\r\n                <div id=\"County450000000002597REP\" style=\"display: none\" class=\"slidingDiv-maps\"></div>\r\n            </div>\r\n        \r\n            <div class=\"wrapper-inside wrapper-border\">\r\n                <div>\r\n                    <div class=\"display-results-box-wrapper\">\r\n                        <div class=\"display-results-box-a\">\r\n                            <h1>UNITED STATES SENATOR</h1>\r\n                        </div>\r\n                        <div class=\"wrapper-mobile\">\r\n                            <div class=\"section group\">\r\n                                <div class=\"col display-results-box-b\">\r\n                                    <div class=\"col follow-checkbox\">\r\n                                        <input class=\"css-checkbox\" type=\"checkbox\" onclick=\"CheckboxChecked(this);\" id=\"chk-10419\">\r\n                                        <label class=\"css-label\" for=\"chk-10419\">Follow This Contest</label>\r\n                                    </div>\r\n                                    <div class=\"recount\" style=\"display: none;\"><img class=\"recount-flag\" alt=\"Race recount indicator\" title=\"Recount Flag\" src=\"Images/recount-icon.png\" /></div>\r\n                                </div>\r\n                                <div class=\"display-results-box-g\">\r\n                                    <div class=\"export-box dropdown\" >\r\n                                        <div class=\"export dropbtn\">Export</div>\r\n                                        <div id=\"export-10419\" class=\"dropdown-content export-container\">\r\n                                            <div class=\"export-header\">EXPORT:</div>\r\n                                            <input onclick=\"DownloadFile(); __doPostBack('ctl00$MainContent$rptRace$ctl01$ctl00','')\" name=\"ctl00$MainContent$rptRace$ctl01$ctl00\" type=\"button\" class=\"export-button\" value=\"Precinct Level\" raceid=\"450000000002597\" party=\"DEM\" countyid=\"\" />\r\n                                            <input onclick=\"DownloadFile(); __doPostBack('ctl00$MainContent$rptRace$ctl01$ctl01','')\" name=\"ctl00$MainContent$rptRace$ctl01$ctl01\" type=\"button\" class=\"export-button\" value=\"County Level\" raceid=\"450000000002597\" party=\"DEM\" />\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"share-box dropdown\">\r\n                                        <img class=\"mtc-icon-inline-position dropbtn\" alt=\"\" title=\"Share\" src=\"Images/my-tracked-contests-icon.png\">\r\n                                        <div class=\"dropdown-content\">\r\n                                            <div class=\"share-header\">SHARE ON</div>\r\n                                            <div class=\"facebook\">\r\n                                                <a href=\"https://www.facebook.com/sharer/sharer.php?u=mtresults.totalvote.com/SearchResults.aspx?ID=10419\" target=\"_blank\">\r\n                                                    <img alt=\"Share on Facebook\" title=\"Facebook\" src=\"Images/facebook-icon.png\" /></a>\r\n               ",
+  "parsed": {
+   "candidates": [
+    {
+     "name": "KURT ALME",
+     "party": "R",
+     "votes": 128716
+    },
+    {
+     "name": "LEE CALHOUN",
+     "party": "R",
+     "votes": 23872
+    },
+    {
+     "name": "CHARLES WALKING CHILD",
+     "party": "R",
+     "votes": 16474
+    }
+   ],
+   "reporting": "Precincts Fully Reported",
+   "reporting_pct": null
+  }
  },
  "NE": {
   "adapter": "csv",
@@ -462,6 +572,8 @@
   "adapter": "csv",
   "probe_pages": {
    "https://sos.oregon.gov/voting/pages/current-election.aspx": {
+    "final_url": "https://sos.oregon.gov/elections/pages/current-election.aspx",
+    "status": 200,
     "head": "<!DOCTYPE html>\r\n<!-- SE2022  -->\r\n<!-- DO NOT ALTER OR DETACH FROM SITE DEFINITION WITHOUT CONSULTING NIC CREATIVE SERVICES -->\r\n\r\n\r\n<!-- Legacy Controls -->\r\n\r\n<!-- Necessary to use TemplateSettings -->\r\n\r\n<!-- HTML -->\r\n\r\n<html lang='en-us'>\r\n<!-- HEAD -->\r\n<head>\r\n                <script src=\"https://kit.fontawesome.com/49bde766de.js\" crossorigin=\"anonymous\"></script>\r\n        \r\n\r\n        <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" />\r\n\r\n    <title>\r\n\tOregon Secretary of State : Upcoming Elections : State of Oregon\r\n</title>\r\n        \r\n\r\n        <meta name=\"application-name\" content=\"Upcoming Elections : Oregon Secretary of State\" />\r\n        <meta name=\"description\" content=\"Information about upcoming elections including important dates and voting resources.\" />\r\n        <meta name=\"keywords\" content=\"typeahead, typeahead-elections, election, voters guide, voters pamphlet, election results\" />\r\n        \r\n\r\n        <meta name=\"GENERATOR\" content=\"Microsoft SharePoint\" />\r\n        <meta name=\"progid\" content=\"SharePoint.WebPartPage.Document\" />\r\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n        <meta name=\"google-translate-customization\" content=\"d78d477bc586dd01-66d24054f200e54f-g61435a41cc4d65c3-e\" />\r\n\r\n\r\n        \r\n            \r\n            <link rel=\"canonical\" href=\"https://sos.oregon.gov/elections/pages/current-election.aspx\" />\r\n            \r\n            <link href=\"https://orcdn.govstatus.site/Application",
     "tables": [],
     "eids": [],
@@ -469,6 +581,8 @@
     "hints": []
    },
    "https://results.oregonvotes.gov/Default.aspx": {
+    "final_url": "https://results.oregonvotes.gov/Default.aspx",
+    "status": 200,
     "head": "\r\n\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head><title>\r\n\tOregon Secretary of State\r\n</title><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" /><meta content=\"text/html; charset=windows-1252\" http-equiv=\"Content-Type\" /><meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=10.0\" /><link href='https://orresultswebservices.azureedge.us//Styles/styles.css' rel='stylesheet' /><link href='https://orresultswebservices.azureedge.us//Styles/stylesmobile.css' rel='stylesheet' /><link href='https://orresultswebservices.azureedge.us//Styles/sidemenu.css' rel='stylesheet' /><script src='https://orresultswebservices.azureedge.us//Scripts/jquery/jquery-3.6.1.min.js'></script><script src='https://orresultswebservices.azureedge.us//Scripts/utils.js'></script> <!--styles are called in .vb file-->\r\n    <!-- below is the hardcoded version -->\r\n    <!--<link href=\"&lt;%= ConfigurationManager.AppSettings(&quot;ServiceRoot&quot;) &amp; &quot;/Styles/styles.css&quot; %>\" rel=\"stylesheet\" /><link href=\"https://orresultswebservices.azureedge.us/Styles/stylesmobile.css\" rel=\"stylesheet\" /><link href=\"https://orresultswebservices.azureedge.us/Styles/sidemenu.css\" rel=\"stylesheet\" />\r\n    <script src=\"https://orresultswebservices.azureedge.us/Scripts/jquery/jquery-3.6.1.min.js\"></script>\r\n    <script src=\"https://orresultswebservices.azureedge.us/Scripts/utils.js\"></script>-->\r\n    <!-- Application Insights -->\r\n    <script type=\"text/javascript\">\r\n      var appIn",
     "tables": [],
     "eids": [],
@@ -476,6 +590,8 @@
     "hints": []
    },
    "https://results.oregonvotes.gov/ResultsSW.aspx?type=SW&map=CTY": {
+    "final_url": "https://results.oregonvotes.gov/ResultsSW.aspx?type=SW&map=CTY",
+    "status": 200,
     "head": "\r\n\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head><title>\r\n\tOregon Secretary of State\r\n</title><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" /><meta content=\"text/html; charset=windows-1252\" http-equiv=\"Content-Type\" /><meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=10.0\" /><link href='https://orresultswebservices.azureedge.us//Styles/styles.css' rel='stylesheet' /><link href='https://orresultswebservices.azureedge.us//Styles/stylesmobile.css' rel='stylesheet' /><link href='https://orresultswebservices.azureedge.us//Styles/sidemenu.css' rel='stylesheet' /><script src='https://orresultswebservices.azureedge.us//Scripts/jquery/jquery-3.6.1.min.js'></script><script src='https://orresultswebservices.azureedge.us//Scripts/utils.js'></script> <!--styles are called in .vb file-->\r\n    <!-- below is the hardcoded version -->\r\n    <!--<link href=\"&lt;%= ConfigurationManager.AppSettings(&quot;ServiceRoot&quot;) &amp; &quot;/Styles/styles.css&quot; %>\" rel=\"stylesheet\" /><link href=\"https://orresultswebservices.azureedge.us/Styles/stylesmobile.css\" rel=\"stylesheet\" /><link href=\"https://orresultswebservices.azureedge.us/Styles/sidemenu.css\" rel=\"stylesheet\" />\r\n    <script src=\"https://orresultswebservices.azureedge.us/Scripts/jquery/jquery-3.6.1.min.js\"></script>\r\n    <script src=\"https://orresultswebservices.azureedge.us/Scripts/utils.js\"></script>-->\r\n    <!-- Application Insights -->\r\n    <script type=\"text/javascript\">\r\n      var appIn",
     "tables": [],
     "eids": [],
@@ -494,6 +610,8 @@
   "adapter": "clarity",
   "probe_pages": {
    "https://scvotes.gov/election-results": {
+    "final_url": "https://scvotes.gov/elections-statistics/election-results/",
+    "status": 200,
     "head": "<!DOCTYPE html>\n<html lang=\"en-US\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"profile\" href=\"http://gmpg.org/xfn/11\">\n<link rel=\"pingback\" href=\"https://scvotes.gov/xmlrpc.php\">\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n\n<!-- Global site tag (gtag.js) - Google Analytics -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-143792196-3\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  gtag('config', 'UA-143792196-3');\n</script>\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-E268245MFZ\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());  gtag('config', 'G-E268245MFZ');\n</script>\n<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-WNJ8LK9');</script>\n\n<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />\n\t<style>img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { ",
     "tables": [],
     "eids": [],
@@ -530,8 +648,8 @@
   "content_type": "application/text",
   "final_url": "https://electionresults.sd.gov/resultsCSV.aspx?text=All&type=SWR&map=CTY",
   "bytes": 2227,
-  "raw_head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n14412,\"United States Senator\",\"REP\",\"\",\"\",110,,24967,\"Mike  Rounds \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14412,\"United States ",
-  "head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n14412,\"United States Senator\",\"REP\",\"\",\"\",110,,24967,\"Mike  Rounds \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14412,\"United States Senator\",\"IND\",\"\",\"\",110,,24887,\"Brian L Bengs \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14869,\"United States Representative\",\"REP\",\"\",\"\",120,,24968,\"Marty  Jackley \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14869,\"United States Representative\",\"DEM\",\"\",\"\",120,,25521,\"Nicole 'Nikki'  Gronli \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14896,\"Governor and Lieutenant Governor\",\"REP\",\"\",\"\",205,,25561,\"Larry Rhoden and Tony Venhuizen \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14896,\"Governor and Lieutenant Governor\",\"DEM\",\"\",\"\",205,,25560,\"Dan Ahlers and Steven  McCleerey \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14441,\"Secretary of State\",\"REP\",\"\",\"\",210,,25540,\"Heather  Baxter \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14441,\"Secretary of State\",\"LIB\",\"\",\"\",210,,24925,\"Tamara J. Lesnar \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14441,\"Secretary of State\",\"DEM\",\"\",\"\",210,,24958,\"Terrence  Davis \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14882,\"Attorney General\",\"REP\",\"\",\"\",220,,25541,\"Lance  Russell \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14462,\"State Auditor\",\"REP\",\"\",\"\",230,,25538,\"Catherine  Barranco \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14462,\"State Auditor\",\"DEM\",\"\",\"\",230,,24956,\"Tom  Cool \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14463,\"State Treasurer\",\"REP\",\"\",\"\",240,,25537,\"Melissa  Hull \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14463,\"State Treasurer\",\"DEM\",\"\",\"\",240,,24957,\"Margaret  Kuipers \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14464,\"Commissioner of School and Public Lands\",\"REP\",\"\",\"\",250,,25539,\"Brock  Greenfield \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14464,\"Commissioner of School and Public Lands\",\"DEM\",\"\",\"\",250,,24959,\"Raeann  Mettler \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14465,\"Public Utilities Commissioner\",\"REP\",\"\",\"\",260,,25536,\"Don  Haggar \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n14465,\"Public Utilities Commissioner\",\"DEM\",\"\",\"\",260,,24960,\"Frank  Kloucek \",11/2/2026 8:15:09 PM,1,0,0,=\"0/671\",\r\n",
+  "raw_head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n14412,\"United States Senator\",\"REP\",\"\",\"\",110,,24967,\"Mike  Rounds \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14412,\"United States ",
+  "head": "RaceID,RaceName,PartyCode,AreaType,AreaNum,OfficeSeqNo,BallotOrder,CandidateID,CandidateName,CurrentDateTime,VoteFor,CandidateVotes,CandidatePercentage,PrecinctsReporting\r\n14412,\"United States Senator\",\"REP\",\"\",\"\",110,,24967,\"Mike  Rounds \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14412,\"United States Senator\",\"IND\",\"\",\"\",110,,24887,\"Brian L Bengs \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14869,\"United States Representative\",\"REP\",\"\",\"\",120,,24968,\"Marty  Jackley \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14869,\"United States Representative\",\"DEM\",\"\",\"\",120,,25521,\"Nicole 'Nikki'  Gronli \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14896,\"Governor and Lieutenant Governor\",\"REP\",\"\",\"\",205,,25561,\"Larry Rhoden and Tony Venhuizen \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14896,\"Governor and Lieutenant Governor\",\"DEM\",\"\",\"\",205,,25560,\"Dan Ahlers and Steven  McCleerey \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14441,\"Secretary of State\",\"REP\",\"\",\"\",210,,25540,\"Heather  Baxter \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14441,\"Secretary of State\",\"LIB\",\"\",\"\",210,,24925,\"Tamara J. Lesnar \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14441,\"Secretary of State\",\"DEM\",\"\",\"\",210,,24958,\"Terrence  Davis \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14882,\"Attorney General\",\"REP\",\"\",\"\",220,,25541,\"Lance  Russell \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14462,\"State Auditor\",\"REP\",\"\",\"\",230,,25538,\"Catherine  Barranco \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14462,\"State Auditor\",\"DEM\",\"\",\"\",230,,24956,\"Tom  Cool \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14463,\"State Treasurer\",\"REP\",\"\",\"\",240,,25537,\"Melissa  Hull \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14463,\"State Treasurer\",\"DEM\",\"\",\"\",240,,24957,\"Margaret  Kuipers \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14464,\"Commissioner of School and Public Lands\",\"REP\",\"\",\"\",250,,25539,\"Brock  Greenfield \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14464,\"Commissioner of School and Public Lands\",\"DEM\",\"\",\"\",250,,24959,\"Raeann  Mettler \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14465,\"Public Utilities Commissioner\",\"REP\",\"\",\"\",260,,25536,\"Don  Haggar \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n14465,\"Public Utilities Commissioner\",\"DEM\",\"\",\"\",260,,24960,\"Frank  Kloucek \",11/2/2026 8:18:09 PM,1,0,0,=\"0/671\",\r\n",
   "parsed": {
    "candidates": [
     {
@@ -558,21 +676,127 @@
   "bytes": 1613174,
   "raw_head": "{\"Version\":\"enr/53815/5/\",\"Districted\":\"eyJPZmZUeXBlIjoiRElTVFJJQ1QgT0ZGSUNFUyIsIk9mZlR5cGVJRCI6MTQ0MiwiUmFjZXMiOlt7ImlkIjoxLCJOIjoiMVNUIE1VTFRJQ09VTlRZIENPVVJUIEFUIExBVyIsIk8iOjgwLCJTTyI6MSwiQ2FuZGlkYXRlcyI6W3siSUQiOjM5NjkyLCJOIjoiREFWSUQgSEFMTCAoSSkiLCJQIjoiUkVQIiwiViI6MCwiRVYiOjAsIlBFIjowLCJDIjoi",
   "head": "{\"Version\":\"enr/53815/5/\",\"Districted\":\"eyJPZmZUeXBlIjoiRElTVFJJQ1QgT0ZGSUNFUyIsIk9mZlR5cGVJRCI6MTQ0MiwiUmFjZXMiOlt7ImlkIjoxLCJOIjoiMVNUIE1VTFRJQ09VTlRZIENPVVJUIEFUIExBVyIsIk8iOjgwLCJTTyI6MSwiQ2FuZGlkYXRlcyI6W3siSUQiOjM5NjkyLCJOIjoiREFWSUQgSEFMTCAoSSkiLCJQIjoiUkVQIiwiViI6MCwiRVYiOjAsIlBFIjowLCJDIjoiI0UzMDIwMiIsIk8iOjEsIkxOIjoiSEFMTCIsIkZOIjoiREFWSUQifV0sIlQiOjB9LHsiaWQiOjYsIk4iOiJDSElFRiBKVVNUSUNFLCAxMlRIIENPVVJUIE9GIEFQUEVBTFMgRElTVFJJQ1QiLCJPIjo2MCwiU08iOjE1LCJDYW5kaWRhdGVzIjpbeyJJRCI6Mzk2MTgsIk4iOiJCUklBTiBIT1lMRSIsIlAiOiJSRVAiLCJWIjowLCJFViI6MCwiUEUiOjAsIkMiOiIjRTMwMjAyIiwiTyI6MSwiTE4iOiJIT1lMRSIsIkZOIjoiQlJJQU4ifV0sIlQiOjB9LHsiaWQiOjgsIk4iOiJDSElFRiBKVVNUSUNFLCAxNFRIIENPVVJUIE9GIEFQUEVBTFMgRElTVFJJQ1QiLCJPIjo2MCwiU08iOjE3LCJDYW5kaWRhdGVzIjpbeyJJRCI6Mzk2MTksIk4iOiJLRVZJTiBKRVdFTEwiLCJQIjoiUkVQIiwiViI6MCwiRVYiOjAsIlBFIjowLCJDIjoiI0UzMDIwMiIsIk8iOjEsIkxOIjoiSkVXRUxMIiwiRk4iOiJLRVZJTiJ9LHsiSUQiOjQxMzY0LCJOIjoiU0FSQUggQkVUSCBMQU5EQVUiLCJQIjoiREVNIiwiViI6MCwiRVYiOjAsIlBFIjowLCJDIjoiIzAwN0JCRCIsIk8iOjIsIkxOIjoiTEFOREFVIiwiRk4iOiJTQVJBSCBCRVRIIn1dLCJUIjowfSx7ImlkIjoxMSwiTiI6IkNISUVGIEpVU1RJQ0UsIDNSRCBDT1VSVCBPRiBBUFBFQUxTIERJU1RSSUNUIiwiTyI6NjAsIlNPIjo2LCJDYW5kaWRhdGVzIjpbeyJJRCI6NDEzNjEsIk4iOiJEQVJMRU5FIEJZUk5FIChJKSIsIlAiOiJERU0iLCJWIjowLCJFViI6MCwiUEUiOjAsIkMiOiIjMDA3QkJEIiwiTyI6MiwiTE4iOiJCWVJORSIsIkZOIjoiREFSTEVORSJ9LHsiSUQiOjM5NjE0LCJOIjoiQ09SWSBMSVUiLCJQIjoiUkVQIiwiViI6MCwiRVYiOjAsIlBFIjowLCJDIjoiI0UzMDIwMiIsIk8iOjEsIkxOIjoiTElVIiwiRk4iOiJDT1JZIn1dLCJUIjowfSx7ImlkIjoxMiwiTiI6IkNISUVGIEpVU1RJQ0UsIDRUSCBDT1VSVCBPRiBBUFBFQUxTIERJU1RSSUNUIiwiTyI6NjAsIlNPIjo3LCJDYW5kaWRhdGVzIjpbeyJJRCI6NDEzNjIsIk4iOiJBTlRPTklBIFwiVE9OSVwiIEFSVEVBR0EiLCJQIjoiREVNIiwiViI6MCwiRVYiOjAsIlBFIjowLCJDIjoiIzAwN0JCRCIsIk8iOjIsIkxOIjoiQVJURUFHQSIsIkZOIjoiQU5UT05JQSBcIlRPTklcIiJ9LHsiSUQiOjM5NjE1LCJOIjoiQkVSVCBSSUNIQVJEU09OIiwiUCI6IlJFUCIsIlYiOjAsIkVWIjowLCJQRSI6MCwiQyI6IiNFMzAyMDIiLCJPIjoxLCJMTiI6IlJJQ0hBUkRTT04iLCJGTiI6IkJFUlQifV0sIlQiOjB9LHsiaWQiOjE1LCJOIjoiQ0hJRUYgSlVTVElDRSwgN1RIIENPVVJUIE9GIEFQUEVBTFMgRElTVFJJQ1QiLCJPIjo2MCwiU08iOjEwLCJDYW5kaWRhdGVzIjpbeyJJRCI6Mzk2MTYsIk4iOiJKVURZIFBBUktFUiIsIlAiOiJSRVAiLCJWIjowLCJFViI6MCwiUEUiOjAsIkMiOiIjRTMwMjAyIiwiTyI6MSwiTE4iOiJQQVJLRVIiLCJGTiI6IkpVRFkifV0sIlQiOjB9LHsiaWQiOjE2LCJOIjoiQ0hJRUYgSlVTVElDRSwgOFRIIENPVVJUIE9GIEFQUEVBTFMgRElTVFJJQ1QiLCJPIjo2MCwiU08iOjExLCJDYW5kaWRhdGVzIjpbeyJJRCI6NDEzNjMsIk4iOiJNQVJJQSBTQUxBUyBNRU5ET1pBIChJKSIsIlAiOiJERU0iLCJWIjowLCJFViI6MCwiUEUiOjAsIkMiOiIjMDA3QkJEIiwiTyI6MSwiTE4iOiJTQUxBUyBNRU5ET1pBIiwiRk4iOiJNQVJJ",
-  "parse_error": "RuntimeError: Senate race not found; sections: DISTRICT OFFICES, FEDERAL OFFICES, None, None, None, None, STATEWIDE OFFICES, None, None, None"
+  "parsed": {
+   "candidates": [
+    {
+     "name": "Avery Ayers",
+     "party": null,
+     "votes": 0
+    },
+    {
+     "name": "Ted Brown",
+     "party": "L",
+     "votes": 0
+    },
+    {
+     "name": "Bradford \"Brad\" Hall",
+     "party": null,
+     "votes": 0
+    },
+    {
+     "name": "Zul Mohamed",
+     "party": null,
+     "votes": 0
+    },
+    {
+     "name": "Ken Paxton",
+     "party": "R",
+     "votes": 0
+    },
+    {
+     "name": "Jade Simmons",
+     "party": null,
+     "votes": 0
+    },
+    {
+     "name": "James Talarico",
+     "party": "D",
+     "votes": 0
+    }
+   ],
+   "reporting": null,
+   "reporting_pct": null
+  }
  },
  "VA": {
   "adapter": "json",
   "probe_pages": {
    "https://enr.elections.virginia.gov/results/public/virginia": {
-    "head": "<!doctype html>\n<html lang=\"en\" data-beasties-container=\"\">\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Election Results</title>\n    <base href=\"/results/public/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.png\">\n\n    <meta name=\"CSP_NONCE\" content=\"2007d23ac3b7f807f2982e6925beb82a\">\n    <!-- The below should only be uncommented when testing CSP locally -->\n    <!-- <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; script-src 'self' 'nonce-2007d23ac3b7f807f2982e6925beb82a'; img-src 'self' https://app.dev.enhancedvoting.com https://app.enhancedvoting.com data:; connect-src 'self' https://api.mapbox.com https://events.mapbox.com ws://localhost:4200 https://app.enhancedvoting.com https://app.dev.enhancedvoting.com https://localhost:7297 https://localhost:5006; style-src 'self' 'nonce-2007d23ac3b7f807f2982e6925beb82a'; worker-src 'self' blob:;\"> -->\n  <style nonce=\"2007d23ac3b7f807f2982e6925beb82a\">@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}:root{--fa-font-solid:normal 900 1em/1 \"Font Awesome 7 Free\";--fa-font-regular:normal 400 1em/1 \"Font Awesome 7 Free\";--fa-font-light:normal 300 1em/1 \"Font Awesome 7 Pro\";--fa-font-thin:normal 100 1em/1 \"Font Awesome 7 Pro\";--fa-font-duotone:normal 900 1em/1 \"Font Awesome 7 Duotone\";--fa-font-duotone-regular:normal 400 1em/1 \"Font Aweso",
+    "final_url": "https://enr.elections.virginia.gov/results/public/virginia",
+    "status": 200,
+    "head": "<!doctype html>\n<html lang=\"en\" data-beasties-container=\"\">\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Election Results</title>\n    <base href=\"/results/public/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.png\">\n\n    <meta name=\"CSP_NONCE\" content=\"d583fc16ca5cbe7f49275de5cd032e17\">\n    <!-- The below should only be uncommented when testing CSP locally -->\n    <!-- <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; script-src 'self' 'nonce-d583fc16ca5cbe7f49275de5cd032e17'; img-src 'self' https://app.dev.enhancedvoting.com https://app.enhancedvoting.com data:; connect-src 'self' https://api.mapbox.com https://events.mapbox.com ws://localhost:4200 https://app.enhancedvoting.com https://app.dev.enhancedvoting.com https://localhost:7297 https://localhost:5006; style-src 'self' 'nonce-d583fc16ca5cbe7f49275de5cd032e17'; worker-src 'self' blob:;\"> -->\n  <style nonce=\"d583fc16ca5cbe7f49275de5cd032e17\">@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}:root{--fa-font-solid:normal 900 1em/1 \"Font Awesome 7 Free\";--fa-font-regular:normal 400 1em/1 \"Font Awesome 7 Free\";--fa-font-light:normal 300 1em/1 \"Font Awesome 7 Pro\";--fa-font-thin:normal 100 1em/1 \"Font Awesome 7 Pro\";--fa-font-duotone:normal 900 1em/1 \"Font Awesome 7 Duotone\";--fa-font-duotone-regular:normal 400 1em/1 \"Font Aweso",
     "tables": [],
     "eids": [],
     "paths": [],
     "hints": [],
     "js": {
-     "https://enr.elections.virginia.gov/results/public/virginia/polyfills-2FSRUXKO.js": [],
-     "https://enr.elections.virginia.gov/results/public/virginia/scripts-TTWY4XDY.js": [],
-     "https://enr.elections.virginia.gov/results/public/virginia/main-SDUQU7SI.js": []
+     "https://enr.elections.virginia.gov/results/public/polyfills-2FSRUXKO.js": [],
+     "https://enr.elections.virginia.gov/results/public/scripts-TTWY4XDY.js": [
+      "exports==",
+      "module.exports=fe"
+     ],
+     "https://enr.elections.virginia.gov/results/public/main-SDUQU7SI.js": [
+      ".election-cards",
+      ".electionId",
+      ".electionId===a.id",
+      "//www.mapbox.com/mapbox-gl-js/api/.",
+      "/cdn/results",
+      "/cdn/results/",
+      "/elections/${a}/${p}",
+      "/elections/${a}/${p}/localities",
+      "/elections/${a}/${p}/stats",
+      "/elections/${a}/${p}/turnout",
+      "/elections/${a}/${p}/vr",
+      "K.election=o.find",
+      "K.election?.groupReportingStatus?.sort",
+      "K.election?.precinctReportingStatus",
+      "M.electionId",
+      "Yt.electionBallotItemResults",
+      "Yt.electionBallotItemResults}}",
+      "Yt.electionSummaryResults",
+      "Yt.electionSummaryResults?o=ct.searchPlaceholder",
+      "Yt.electionSummaryResults}}",
+      "a.election.closeRaceThreshold",
+      "a.election.electionId",
+      "a.election.isOfficialResults?p.ClientTextKey.officialResults",
+      "a.election.map.disclaimer",
+      "a.election.map==null?null",
+      "a.election.nextUpdateAt.time",
+      "a.election==null",
+      "a.electionDate",
+      "a.electionId",
+      "a.electionNightComplete.reportingStatus.clientTextKey",
+      "a.electionNightComplete.reportingStatus.clientTextKey?1",
+      "a.electionNightComplete.value",
+      "a.electionNightComplete.value/a.totalPrecincts",
+      "a.electionParams?1",
+      "a.electionStatsCardCount",
+      "a.electionStatsCardCount==1?",
+      "a.electionStatsCardCount==1?I=",
+      "a.electionStatsCardCount==2",
+      "a.electionStatsCardCount==2?",
+      "a.electionStatsCardCount?",
+      "a.electionStatsCardCount?0",
+      "a.electionStatsCardCount?4",
+      "a.elections",
+      "a.elections.length",
+      "a.elections.slice",
+      "a.elections=a.elections.sort",
+      "a.elections?.length",
+      "app-election-filters",
+      "app-election-summary-page",
+      "app-election-summary-widgets",
+      "app-election-top-controls",
+      "e.exports",
+      "e.exports}var",
+      "ef.exports=d",
+      "election",
+      "election-cards",
+      "election-filters-section",
+      "election-header",
+      "election-info",
+      "electionId"
+     ]
     }
    }
   },
@@ -594,6 +818,8 @@
   "adapter": "clarity",
   "probe_pages": {
    "https://results.enr.clarityelections.com/WV/": {
+    "final_url": "https://results.enr.clarityelections.com/WV/",
+    "status": 202,
     "head": "",
     "tables": [],
     "eids": [],
@@ -604,6 +830,8 @@
     "error": "HTTP Error 404: Not Found"
    },
    "https://sos.wv.gov/elections/Pages/default.aspx": {
+    "final_url": "https://sos.wv.gov/elections",
+    "status": 200,
     "head": "<!DOCTYPE html><html  lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\"><head><meta charset=\"utf-8\" />\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-RR483BK30L\"></script>\n<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag(\"js\", new Date());gtag(\"set\", \"developer_id.dMDhkMT\", true);gtag(\"config\", \"G-RR483BK30L\", {\"groups\":\"default\",\"page_placeholder\":\"PLACEHOLDER_page_location\"});</script>\n<meta name=\"description\" content=\"Access West Virginia election resources, including voter registration, candidate information, campaign finance, election data, and tools for voters and election officials.\" />\n<meta name=\"geo.region\" content=\"US-WV\" />\n<meta name=\"robots\" content=\"index, follow\" />\n<link rel=\"canonical\" href=\"https://sos.wv.gov/elections\" />\n<meta property=\"og:type\" content=\"Basic page\" />\n<meta property=\"og:url\" content=\"https://sos.wv.gov/elections\" />\n<meta property=\"og:title\" content=\"Elections\" />\n<meta property=\"og:description\" content=\"Access West Virginia election resources, including voter registration, candidate information, campaign finance, election data, and tools for voters and election officials.\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"Elections\" />\n<meta name=\"twitter:description\" content=\"Access West Virginia election resources, including voter registration, candidate information, campaign finance, election data, and tools for voters",
     "tables": [],
     "eids": [],
