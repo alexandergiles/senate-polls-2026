@@ -291,10 +291,13 @@ table.polls td.smp { color: var(--ink-2); white-space: nowrap; font-variant-nume
 .swarm svg { display: block; width: 100%; height: auto; overflow: visible; }
 .swarm text { font-family: var(--font-body); font-size: 11px; fill: var(--ink-3); font-variant-numeric: tabular-nums; }
 .swarm text.yr { fill: var(--ink); font-weight: 700; font-size: 13px; }
-.swarm text.st { font-size: 9px; fill: var(--ink); font-weight: 600; }
+.swarm text.st { font-size: 8.5px; fill: var(--surface); font-weight: 700; letter-spacing: .02em; }
+.swarm text.st.blow { fill: var(--ink-3); }
 .swarm .grid { stroke: var(--rule-2); stroke-width: 1; } .swarm .zero { stroke: var(--ink); stroke-width: 1; }
-.swarm .pt { stroke: var(--surface); stroke-width: 1.5; cursor: default; }
-.swarm .pt.blow { fill-opacity: .35; }
+.swarm .pt { fill: var(--ink-2); stroke: var(--surface); stroke-width: 1.5; cursor: default; }
+.swarm .pt.blow { fill: var(--surface); stroke: var(--rule); }
+.swarm .pt.D { fill: var(--dem); } .swarm .pt.R { fill: var(--rep); }
+.swarm .pt.blow.D, .swarm .pt.blow.R { fill: var(--surface); }
 .swarm .mean { stroke: var(--ink); stroke-width: 2; }
 .swarm .band { fill: var(--ink); fill-opacity: .06; }
 .swarm .axis { fill: var(--ink-3); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
@@ -697,10 +700,10 @@ footer a { color: var(--ink-2); }
     }
 
     if (A && A.by_state[r.abbr]) {
-      const hs = A.by_state[r.abbr].filter(h => !h.runoff);
+      const hs = A.by_state[r.abbr].filter(h => !h.runoff && h.fresh);
       const avg = hs.length ? hs.reduce((s, h) => s + h.miss, 0) / hs.length : null;
       app.append(el('section', {}, el('div', { class: 'sec-head' }, el('h2', { text: 'How the polls did here before' }),
-        el('p', { text: (avg != null ? 'Across ' + hs.length + (hs.length === 1 ? ' race' : ' races') + ' since 2018 the final average here ' + (Math.abs(avg) < 0.05 ? 'was on target on average' : 'overrated ' + (avg < 0 ? 'the Democratic side' : 'the Republican') + ' by ' + n1(Math.abs(avg)) + ' points on average') + '. ' : '') + 'See the full record on the accuracy page.' })),
+        el('p', { text: (avg != null ? 'Across ' + hs.length + (hs.length === 1 ? ' race' : ' races') + ' since 2018, the final polls here ' + missWords(avg) + ' on average. ' : '') + 'The full record is on the accuracy page.' })),
         stateHistoryTable(r.abbr)));
     }
     const notes = el('div', { class: 'notes' });
@@ -918,12 +921,13 @@ footer a { color: var(--ink-2); }
   const fmtMiss = m => m === 0 ? 'Even' : (m < 0 ? 'D overrated by ' : 'R overrated by ') + n1(Math.abs(m));
   const fmtMarginDR = m => m === 0 ? 'Even' : (m > 0 ? 'D +' : 'R +') + n1(Math.abs(m));
   const biasPhrase = b => b === 0 ? 'No net lean' : 'Polls overrated ' + (b < 0 ? 'Democrats' : 'Republicans') + ' by ' + n1(Math.abs(b));
+  const missWords = m => Math.abs(m) < 0.05 ? 'were on target' : 'overrated ' + (m < 0 ? 'Democrats' : 'Republicans') + ' by ' + n1(Math.abs(m)) + ' points';
   function renderAccuracy() {
     app.replaceChildren();
     const years = Object.keys(A.cycles).filter(k => k !== 'all').sort();
     app.append(el('section', { style: 'padding-top:20px' },
       el('div', { class: 'sec-head' }, el('h2', { text: 'How Senate polls have missed, 2018–2024' })),
-      el('p', { class: 'lede', text: 'Every Senate race with a RealClearPolitics final polling average in the last four cycles, scored against the certified result. The miss is the result margin minus the polled margin, Democratic side minus Republican: a negative miss means the polls overrated the Democrat (or the independent running against a Republican), a positive miss means they overrated the Republican. “Competitive” means the final average was within 10 points.' })));
+      el('p', { class: 'lede', text: 'Every Senate race with public polling in the final three weeks of the last four cycles, scored against the certified result. The polling number is the same estimator this site uses for 2026, the plain mean of the last five polls listed by RealClearPolitics; RCP’s own published average is shown where it issued one. The miss is the result margin minus the polled margin, Democratic side minus Republican: a negative miss means the polls overrated the Democrat (or the independent running against a Republican), a positive miss means they overrated the Republican. “Competitive” means the polls had the race within 10 points.' })));
     // cycle cards
     const cards = el('div', { class: 'cycles' });
     for (const y of [...years, 'all']) {
@@ -941,7 +945,7 @@ footer a { color: var(--ink-2); }
     app.append(el('section', {}, el('div', { class: 'sec-head' }, el('h2', { text: 'The lean, cycle by cycle' }), el('p', { text: 'A miss of a few points in one direction, shared across most states, is the signature of a polling cycle. The size of the typical miss has been steadier than its direction.' })), cards));
     // swarm
     const swarm = el('div', { class: 'swarm' });
-    app.append(el('section', {}, el('div', { class: 'sec-head' }, el('h2', { text: 'Every race’s miss' }), el('p', { text: 'One dot per race, placed by how far the result landed from the final average. Filled dots are competitive races; faded dots are races the polls had outside 10 points. The bar marks each cycle’s average miss among competitive races.' })), swarm,
+    app.append(el('section', {}, el('div', { class: 'sec-head' }, el('h2', { text: 'Every race’s miss' }), el('p', { text: 'One dot per race, placed by how far the result landed from the final polls. Blue dots are races where the polls overrated the Democratic side, red where they overrated the Republican; hollow dots are races the polls had outside 10 points. The bar marks each cycle’s average miss among competitive races.' })), swarm,
       el('p', { class: 'caption', text: 'Hover a dot for the race. Races at the edge of the axis are plotted at the edge.' })));
     drawSwarm(swarm, years);
     // what-if for 2026
@@ -955,7 +959,7 @@ footer a { color: var(--ink-2); }
   }
   function drawSwarm(box, years) {
     box.replaceChildren();
-    const W = Math.max(320, box.clientWidth - 20), narrow = W < 560, left = narrow ? 44 : 70, right = 14, top = 30, rowH = narrow ? 70 : 84, bottom = 6;
+    const W = Math.max(320, box.clientWidth - 20), narrow = W < 560, left = narrow ? 44 : 70, right = 14, top = 30, rowH = narrow ? 76 : 100, bottom = 6, R = narrow ? 6 : 10, step = narrow ? 13 : 21;
     const H = top + years.length * rowH + bottom;
     const lim = 15;
     const x = v => left + (Math.max(-lim, Math.min(lim, v)) + lim) / (2 * lim) * (W - left - right);
@@ -967,7 +971,7 @@ footer a { color: var(--ink-2); }
     const tip = el('div', { class: 'tip', hidden: '' }); box.append(tip);
     years.forEach((y, i) => {
       const y0 = top + i * rowH, yc = y0 + rowH / 2;
-      const rs = A.races.filter(r => String(r.cycle) === y && !r.runoff);
+      const rs = A.races.filter(r => String(r.cycle) === y && !r.runoff && r.fresh);
       svg.append(svgEl('text', { class: 'yr', x: left - 10, y: yc + 5, 'text-anchor': 'end' }, y));
       const k = A.cycles[y].competitive;
       if (k) { svg.append(svgEl('rect', { class: 'band', x: Math.min(x(0), x(k.bias)), y: y0 + 6, width: Math.abs(x(k.bias) - x(0)), height: rowH - 12 })); svg.append(svgEl('line', { class: 'mean', x1: x(k.bias), x2: x(k.bias), y1: y0 + 6, y2: y0 + rowH - 6 })); }
@@ -975,18 +979,19 @@ footer a { color: var(--ink-2); }
       const placed = [];
       for (const r of rs.slice().sort((a, b) => a.miss - b.miss)) {
         const cx = x(r.miss); let dy = 0, tries = 0;
-        const collides = () => placed.some(p => Math.abs(p.cx - cx) < 11 && Math.abs(p.dy - dy) < 11);
-        while (collides() && tries < 12) { tries++; dy = (tries % 2 ? 1 : -1) * Math.ceil(tries / 2) * 11; }
+        const collides = () => placed.some(p => Math.abs(p.cx - cx) < 2 * R + 1 && Math.abs(p.dy - dy) < step);
+        while (collides() && tries < 8) { tries++; dy = (tries % 2 ? 1 : -1) * Math.ceil(tries / 2) * step; }
         placed.push({ cx, dy, r });
       }
       for (const { cx, dy, r } of placed) {
         const g = svgEl('g', {});
-        const c = svgEl('circle', { class: 'pt ' + (r.d.party === 'D' ? 'D' : 'I') + (r.competitive ? '' : ' blow'), cx, cy: yc + dy, r: 5.5 });
-        g.append(c, svgEl('text', { class: 'st', x: cx, y: yc + dy + 3, 'text-anchor': 'middle', 'pointer-events': 'none' }, narrow ? '' : r.abbr));
+        // color = which side the polls overrated (left of zero: Democrats; right: Republicans); hollow = not competitive
+        const c = svgEl('circle', { class: 'pt ' + (r.miss < 0 ? 'D' : 'R') + (r.competitive ? '' : ' blow'), cx, cy: yc + dy, r: R });
+        g.append(c, svgEl('text', { class: 'st' + (r.competitive ? '' : ' blow'), x: cx, y: yc + dy + 3, 'text-anchor': 'middle', 'pointer-events': 'none' }, narrow ? '' : r.abbr));
         const show = ev => {
           tip.replaceChildren(el('div', { class: 't', text: r.state + (r.special ? ' special' : '') + ' ' + r.cycle }),
             el('div', { class: 'm', text: r.d.name + ' (' + r.d.party + ') vs. ' + r.r.name + ' (R)' }),
-            el('div', { class: 'r' }, el('span', { text: 'Final average' }), el('b', { text: fmtMarginDR(r.poll.margin) })),
+            el('div', { class: 'r' }, el('span', { text: 'Last ' + r.poll.n + (r.poll.n === 1 ? ' poll' : ' polls') }), el('b', { text: fmtMarginDR(r.poll.margin) })),
             el('div', { class: 'r' }, el('span', { text: 'Result' }), el('b', { text: fmtMarginDR(r.result.margin) })),
             el('div', { class: 'r' }, el('span', { text: 'Miss' }), el('b', { text: fmtMiss(r.miss) })));
           tip.hidden = false; place(tip, box, ev);
@@ -1017,7 +1022,7 @@ footer a { color: var(--ink-2); }
     const wrap = el('div', { class: 'tablewrap' }); const t = el('table', { class: 'acc' });
     const cols = years.map(y => ({ y, shift: A.cycles[y].competitive ? A.cycles[y].competitive.bias : 0 }));
     const head = el('tr', {}, el('th', { text: 'Race' }), el('th', { class: 'n', text: 'Polls now' }));
-    for (const c of cols) head.append(el('th', { class: 'n', text: 'Like ' + c.y + ' (' + (c.shift > 0 ? 'R' : 'D') + ' +' + n1(Math.abs(c.shift)) + ')' }));
+    for (const c of cols) head.append(el('th', { class: 'n', text: 'Like ' + c.y + ': ' + (c.shift < 0 ? 'D' : 'R') + ' overrated ' + n1(Math.abs(c.shift)) }));
     t.append(el('thead', {}, head));
     const tb = el('tbody');
     const polled = RACES.filter(r => r.average).sort((a, b) => a.average.signedMargin - b.average.signedMargin);
@@ -1035,7 +1040,7 @@ footer a { color: var(--ink-2); }
     for (const c of cols) { const s = scenarioSeats(c.shift); tot.append(el('td', { class: 'n' }, el('strong', { text: 'D ' + s.D + ' – R ' + s.R }), el('div', { class: 'sub', text: s.flips.length ? s.flips.length + (s.flips.length === 1 ? ' flip' : ' flips') : 'no flips' }))); }
     tb.append(tot);
     t.append(tb); wrap.append(t); sec.append(wrap);
-    const lines = cols.map(c => { const s = scenarioSeats(c.shift); return 'A ' + c.y + '-sized miss (' + biasPhrase(c.shift).toLowerCase() + ' points) gives ' + (s.D >= 51 ? 'Democrats ' + s.D : s.R >= 51 ? 'Republicans ' + s.R : 'a 50–50 Senate') + (s.flips.length ? ', flipping ' + s.flips.map(f => f.r.state + (f.r.special ? ' (sp.)' : '')).join(', ') : ', flipping nothing') + '.'; });
+    const lines = cols.map(c => { const s = scenarioSeats(c.shift); return 'A ' + c.y + '-sized miss (polls ' + missWords(c.shift) + ') gives ' + (s.D >= 51 ? 'Democrats ' + s.D : s.R >= 51 ? 'Republicans ' + s.R : 'a 50–50 Senate') + (s.flips.length ? ', flipping ' + s.flips.map(f => f.r.state + (f.r.special ? ' (sp.)' : '')).join(', ') : ', flipping nothing') + '.'; });
     sec.append(el('p', { class: 'sumline', text: lines.join(' ') }));
     return sec;
   }
@@ -1043,7 +1048,7 @@ footer a { color: var(--ink-2); }
     const hs = (A.by_state[abbr] || []);
     if (!hs.length) return null;
     const t = el('table', { class: 'acc' });
-    t.append(el('thead', {}, el('tr', {}, el('th', { text: 'Year' }), el('th', { text: 'Race' }), el('th', { class: 'n', text: 'Final average' }), el('th', { class: 'n', text: 'Result' }), el('th', { class: 'n', text: 'Miss' }))));
+    t.append(el('thead', {}, el('tr', {}, el('th', { text: 'Year' }), el('th', { text: 'Race' }), el('th', { class: 'n', text: 'Last polls' }), el('th', { class: 'n', text: 'Result' }), el('th', { class: 'n', text: 'Miss' }))));
     const tb = el('tbody');
     for (const h of hs) tb.append(el('tr', {}, el('td', { text: String(h.cycle) + (h.runoff ? ' runoff' : h.special ? ' special' : '') }),
       el('td', {}, h.d.name + ' (' + h.d.party + ') vs. ' + h.r.name + ' (R)'), el('td', { class: 'n', text: fmtMarginDR(h.poll.margin) }), el('td', { class: 'n', text: fmtMarginDR(h.result.margin) }), el('td', { class: 'n miss', text: fmtMiss(h.miss) })));
@@ -1055,10 +1060,10 @@ footer a { color: var(--ink-2); }
     sec.append(el('div', { class: 'sec-head' }, el('h2', { text: 'The 2026 battlegrounds’ own record' }), el('p', { text: 'How the final averages did the last time each of this year’s competitive states elected a senator. A state’s average miss is a weak guide on its own (two or three data points), but a repeated lean is worth knowing.' })));
     const list = RACES.filter(r => r.average && A.by_state[r.abbr]).sort(competitiveSort);
     for (const r of list) {
-      const hs = A.by_state[r.abbr].filter(h => !h.runoff);
+      const hs = A.by_state[r.abbr].filter(h => !h.runoff && h.fresh);
       const avg = hs.length ? hs.reduce((s, h) => s + h.miss, 0) / hs.length : null;
       const box = el('div', { class: 'hist' });
-      box.append(el('h3', {}, el('a', { href: '#' + r.id, style: 'text-decoration:none', text: raceTitle(r) }), ' ', el('span', { style: 'font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--ink-2)', text: '· 2026 average ' + marginText(r, r.average.values) + (avg != null ? ' · past misses here average ' + fmtMiss(Math.round(avg * 10) / 10).toLowerCase() : '') })));
+      box.append(el('h3', {}, el('a', { href: '#' + r.id, style: 'text-decoration:none', text: raceTitle(r) }), ' ', el('span', { style: 'font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--ink-2)', text: '· 2026 average ' + marginText(r, r.average.values) + (avg != null ? ' · past polls here ' + missWords(avg) + ' on average' : '') })));
       box.append(stateHistoryTable(r.abbr));
       sec.append(box);
     }
@@ -1066,18 +1071,18 @@ footer a { color: var(--ink-2); }
   }
   function buildAccTable(years) {
     const sec = el('section', {});
-    sec.append(el('div', { class: 'sec-head' }, el('h2', { text: 'Every race scored' }), el('p', { text: 'Final RCP average, certified result, and the miss. “Last 5” scores the plain mean of the five final polls, the estimator this site uses for 2026.' })));
+    sec.append(el('div', { class: 'sec-head' }, el('h2', { text: 'Every race scored' }), el('p', { text: 'The five-poll mean, RCP’s published average where there was one, the certified result, and the miss. Races whose last poll ended more than three weeks before the election are listed but left out of the cycle statistics.' })));
     const chips = el('div', { class: 'filters' }, el('span', { class: 'lab', text: 'Cycle' }));
     const wrap = el('div', { class: 'tablewrap' }); let active = 'all';
     const paint = () => {
       wrap.replaceChildren();
       const t = el('table', { class: 'acc' });
-      t.append(el('thead', {}, el('tr', {}, el('th', { text: 'Year' }), el('th', { text: 'State' }), el('th', { text: 'Candidates' }), el('th', { class: 'n', text: 'Final average' }), el('th', { class: 'n', text: 'Last 5' }), el('th', { class: 'n', text: 'Result' }), el('th', { class: 'n', text: 'Miss (average)' }), el('th', { class: 'n', text: 'Miss (last 5)' }))));
+      t.append(el('thead', {}, el('tr', {}, el('th', { text: 'Year' }), el('th', { text: 'State' }), el('th', { text: 'Candidates' }), el('th', { class: 'n', text: 'Last 5 polls' }), el('th', { class: 'n', text: 'RCP average' }), el('th', { class: 'n', text: 'Result' }), el('th', { class: 'n', text: 'Miss' }), el('th', { class: 'n', text: 'Miss vs. RCP' }))));
       const tb = el('tbody');
       const rows = A.races.filter(r => active === 'all' || String(r.cycle) === active).sort((a, b) => (b.cycle - a.cycle) || (a.abs_miss - b.abs_miss));
-      for (const h of rows) tb.append(el('tr', {}, el('td', { text: String(h.cycle) + (h.runoff ? ' runoff' : h.special ? ' special' : '') }), el('td', {}, el('a', { href: h.url || '#', target: '_blank', rel: 'noopener', text: h.state })),
-        el('td', { text: h.d.name + ' (' + h.d.party + ') vs. ' + h.r.name + ' (R)' }), el('td', { class: 'n', text: fmtMarginDR(h.poll.margin) }), el('td', { class: 'n', text: h.last5_margin == null ? '—' : fmtMarginDR(h.last5_margin) }), el('td', { class: 'n', text: fmtMarginDR(h.result.margin) }),
-        el('td', { class: 'n miss', text: fmtMiss(h.miss) }), el('td', { class: 'n', text: h.miss5 == null ? '—' : fmtMiss(h.miss5) })));
+      for (const h of rows) tb.append(el('tr', { style: h.fresh ? null : 'color:var(--ink-3)' }, el('td', { text: String(h.cycle) + (h.runoff ? ' runoff' : h.special ? ' special' : '') + (h.fresh ? '' : ' (stale)') }), el('td', {}, el('a', { href: h.url || '#', target: '_blank', rel: 'noopener', text: h.state })),
+        el('td', { text: h.d.name + ' (' + h.d.party + ') vs. ' + h.r.name + ' (R)' }), el('td', { class: 'n' }, fmtMarginDR(h.poll.margin), el('div', { class: 'sub', text: h.poll.n + (h.poll.n === 1 ? ' poll' : ' polls') + ', last ' + fmtYearRange(null, h.poll.latest) })), el('td', { class: 'n', text: h.rcp ? fmtMarginDR(h.rcp.margin) : '—' }), el('td', { class: 'n', text: fmtMarginDR(h.result.margin) }),
+        el('td', { class: 'n miss', text: fmtMiss(h.miss) }), el('td', { class: 'n', text: h.miss_rcp == null ? '—' : fmtMiss(h.miss_rcp) })));
       t.append(tb); wrap.append(t);
       for (const b of chips.querySelectorAll('button')) b.setAttribute('aria-pressed', String(b.dataset.f === active));
     };
