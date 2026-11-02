@@ -6893,7 +6893,7 @@
   "NH": {
    "first": "20:00",
    "last": "20:00",
-   "note": "Towns set their own hours; most close at 7, none later than 8."
+   "note": null
   },
   "NJ": {
    "first": "20:00",
@@ -6964,6 +6964,68 @@
    "first": "21:00",
    "last": "21:00",
    "note": null
+  }
+ },
+ "counting_notes": {
+  "GA": {
+   "note": "A candidate needs a majority of the vote to win outright; otherwise the top two meet in a runoff on Dec. 1, 2026.",
+   "source": "https://law.justia.com/codes/georgia/title-21/chapter-2/article-12/section-21-2-501 ; https://georgia.gov/georgia-election-guide"
+  },
+  "ME": {
+   "note": "Maine uses ranked-choice voting for the Senate race. If nobody wins a majority of first choices, the ballots go to Augusta for a centralized count; the upload and verification has taken a week to ten days, so a close race may not be settled until mid-November.",
+   "source": "https://fairvote.org/which-maine-elections-will-use-ranked-choice-voting-this-november/ ; https://mainemorningstar.com/?p=15524 ; https://www.maine.gov/sos/news/maine-secretary-states-office-announces-ranked-choice-tabulations"
+  },
+  "AK": {
+   "note": "Only first-choice results are reported on election night and through the absentee window; the Division of Elections runs the ranked-choice tabulation on Nov. 18. Mail ballots postmarked by Election Day count if received within 10 days (15 from abroad).",
+   "source": "https://alaskapublic.org/news/politics/elections/2026-10-05/what-to-know-about-alaskas-general-election ; https://www.adn.com/politics/2026/08/06/saturday-is-the-deadline-to-request-an-absentee-by-mail-ballot-in-alaskas-primary-election/ ; https://fairvote.org/when-should-we-expect-alaska-results/"
+  },
+  "NC": {
+   "note": "Mail ballots must be in by 7:30 p.m. on Election Day, with no postmark grace period (a 2023 law ended it). Mail and early-vote results post between 7:30 and 9:30 p.m., precincts by about midnight; only provisional, cured and military/overseas ballots are added later.",
+   "source": "https://www.wfae.org/politics/2026-09-07/whats-up-with-mail-in-voting-in-nc-in-2026 ; https://ncsbe.gov/node/445 ; https://ncsbe.gov/news/press-releases/2024/10/31/absentee-voters-put-your-ballot-mail-today-or-return-it-person ; https://news.ballotpedia.org/2023/08/28/north-carolina-governor-vetoes-elections-bill/"
+  },
+  "MI": {
+   "note": "Clerks in jurisdictions over 5,000 people may pre-process absentee ballots for up to eight days before Election Day (smaller ones the Monday before), with no totals released before 8 p.m.; first used in 2024, it makes absentee reporting much faster than in 2020.",
+   "source": "https://www.votebeat.org/michigan/2026/08/04/when-to-expect-election-results-2026-primary-timing/ ; https://www.clickondetroit.com/news/local/2026/10/14/why-arent-michigan-election-results-instant-how-our-votes-are-counted/"
+  },
+  "NE": {
+   "note": "Early ballots must reach county officials by the close of polls.",
+   "source": "https://sos.nebraska.gov/sites/default/files/doc/news-releases/Reminders%20for%20voters%20ahead%20of%20Election%20Day_0.pdf ; https://sos.nebraska.gov/sites/default/files/doc/news-releases/Media%20Release%20One%20Week%20Ahead%20of%20the%20General%20Election%2C%20Evnen%20Tells%20Voters%2C%20%E2%80%9CElections%20Matter%2C%20and%20Your%20Vote%20Counts.%E2%80%9D.pdf"
+  },
+  "NH": {
+   "note": "Towns set their own hours (open by 11 a.m., closed no earlier than 7 p.m.); in practice they close at 7 or 8 p.m. Ballots are counted locally, by machine in most towns and by hand in more than 120 small ones.",
+   "source": "https://gc.nh.gov/rsa/html/LXIII/659/659-4.htm ; https://www.nhpr.org/nh-news/2024-10-30/follow-the-ballot-what-happens-after-you-vote-in-nh ; https://www.dover.nh.gov/government/open-government/election-information/2026-general-election/"
+  },
+  "TX": {
+   "note": "Most counties post early-voting and mail totals right after polls close locally; Bexar County (San Antonio) says it will hold its early results until lines clear.",
+   "source": "https://www.sos.texas.gov/about/newsreleases/2024/110524.shtml ; https://www.tpr.org/government-politics/2026-10-28/bexar-county-says-it-wont-release-early-results-until-everyone-in-line-has-voted ; https://www.cbsnews.com/texas/news/texas-polls-open-close-2024-election/"
+  },
+  "FL": {
+   "note": "State law requires early-voting and mail results within 30 minutes of poll closing and precinct updates at least every 45 minutes, so Florida counts fast.",
+   "source": "https://www.flsenate.gov/Laws/Statutes/2025/102.141 ; https://www.fox35orlando.com/news/florida-primary-voting-guide-2026"
+  },
+  "OH": {
+   "note": "Under Senate Bill 293 (signed Dec. 2025, first used in the May 2026 primary) mail ballots must be received by 7:30 p.m. on Election Day regardless of postmark; the old four-day grace period is gone.",
+   "source": "https://www.wyso.org/news/2026-03-12/may-primary-will-be-first-ohio-election-without-grace-period-for-absentee-ballots ; https://spectrumnews1.com/oh/columbus/news/2026/10/26/request-mail-in-ballots-by-tomorrow ; https://www.13abc.com/2025/12/19/bill-eliminating-ohios-absentee-ballot-grace-period-reluctantly-gets-gov-dewines-signature/ ; https://vote.delawarecountyohio.gov/wp-content/uploads/2026/08/Important-Dates-November-2026.pdf"
+  },
+  "IA": {
+   "note": "Absentee ballots must reach the county auditor by 8 p.m. Central on Election Day.",
+   "source": "https://www.legis.iowa.gov/legislators/pollingtimes ; https://www.iowapublicradio.org/political-news/2026-08-26/absentee-ballot-requests-begin-in-iowa-for-nov-3-election"
+  },
+  "KS": {
+   "note": "Counties may keep polls open until 8 p.m. local, and the Mountain-time counties until 7 p.m. Mountain (9 p.m. ET). Counties vary in how they release results.",
+   "source": "https://ksrevisor.gov/statutes/chapters/ch25/025_001_0006.html ; https://shermancountyks.gov/election-office ; https://www.kctv5.com/2026/08/04/election-guide-heres-what-you-need-know-august-4-primary-kansas/"
+  },
+  "MN": {
+   "note": "Mail ballots must be received by 8 p.m. Central. First results usually appear around 8:30 p.m. Central, with complete unofficial results early Wednesday.",
+   "source": "https://www.sos.mn.gov/about-the-office/news-room/voting-in-the-november-3-general-election-begins-september-18/ ; https://www.fox9.com/news/minnesota-general-election-2026-voter-guide.amp"
+  },
+  "SC": {
+   "note": "Early voting ran Oct. 19–31.",
+   "source": "https://scvotes.gov/calendar/category/general/ ; https://www.live5news.com/2026/10/19/your-2026-live-5-voter-guide-what-know-when-you-go-polls/"
+  },
+  "ALL": {
+   "note": "The AP will not declare a winner before the final poll-closing time in a state. It calls noncompetitive races at poll close from its VoteCast survey and voting history, and competitive ones only once enough votes are counted to make the winner clear.",
+   "source": "https://www.pbs.org/newshour/politics/how-the-ap-is-able-to-declare-winners-in-states-where-polls-just-closed"
   }
  }
 }
