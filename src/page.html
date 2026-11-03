@@ -109,6 +109,9 @@ button { font: inherit; color: inherit; }
 .lv-row { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: baseline; font-size: 13px; font-variant-numeric: tabular-nums; }
 .lv-row .v { color: var(--ink-2); } .lv-row .p { font-weight: 700; min-width: 52px; text-align: right; }
 .lv-src { font-size: 11px; color: var(--ink-3); }
+.lv-stale { font-size: 12px; color: var(--tossup); font-weight: 600; }
+.nr.early .lv-row .p, .nr.early .lv-row .nm { opacity: .55; }
+.nr.early { border-left-color: var(--rule) !important; }
 .nr.reporting { background: var(--surface); box-shadow: var(--shadow); }
 .seatbar .seg[data-k="dCall"] { background: var(--dem); } .seatbar .seg[data-k="rCall"] { background: var(--rep); }
 .nr .note { font-size: 12px; color: var(--ink-3); line-height: 1.4; }
@@ -926,13 +929,15 @@ footer a { color: var(--ink-2); }
     for (const c of rows) c.pct = total ? c.votes / total * 100 : 0;
     const lead = rows[0], second = rows[1];
     const party = lead.party === 'R' ? 'R' : lead.party === 'D' ? 'D' : lead.party ? 'I' : 'N';
-    return { L, rows, total, lead, party, margin: second ? lead.pct - second.pct : null, reported: total > 0, called: L.called_for || null };
+    const pct = L.reporting_pct != null ? Number(L.reporting_pct) : null;
+    return { L, rows, total, lead, party, margin: second ? lead.pct - second.pct : null, reported: total > 0, called: L.called_for || null, pct, early: !L.called_for && pct != null && pct < 25 };
   }
   function liveSeatMath() {
-    const out = { dHold: DATA.senate.not_up.D, dCall: 0, dLead: 0, open: 0, rLead: 0, rCall: 0, rHold: DATA.senate.not_up.R, reporting: 0 };
+    const out = { dHold: DATA.senate.not_up.D, dCall: 0, dLead: 0, open: 0, rLead: 0, rCall: 0, rHold: DATA.senate.not_up.R, reporting: 0, early: 0 };
     for (const r of RACES) {
       const s = liveState(r);
       if (!s || !s.reported) { out.open++; continue; }
+      if (s.early) { out.open++; out.early++; continue; }   // a lead with under a quarter of precincts in is not counted
       out.reporting++;
       const p = s.called ? (s.called === 'R' ? 'R' : 'D') : (s.party === 'R' ? 'R' : 'D');
       if (s.called) out[p === 'D' ? 'dCall' : 'rCall']++; else out[p === 'D' ? 'dLead' : 'rLead']++;
@@ -947,7 +952,8 @@ footer a { color: var(--ink-2); }
     const bar = el('div', { class: 'seatbar', role: 'img', 'aria-label': `Seats won or led in the count: Democrats ${sm.D}, Republicans ${sm.R}, ${sm.open} races not yet reporting` });
     for (const [k, n] of [['dHold', sm.dHold], ['dCall', sm.dCall], ['dLead', sm.dLead], ['open', sm.open], ['rLead', sm.rLead], ['rCall', sm.rCall], ['rHold', sm.rHold]]) if (n > 0) bar.append(el('div', { class: 'seg', 'data-k': k, style: 'flex:' + n + ' 1 0', title: n + ' seats' }, el('span', { text: n >= 4 ? String(n) : '' })));
     bar.append(el('div', { class: 'majority', 'aria-hidden': 'true' }, el('b', { text: '50' })));
-    const status = live && live.updated ? 'Count updated ' + fmtTime(live.updated) + (live.note ? ' · ' + live.note : '')
+    const failing = live && live.errors ? Object.keys(live.errors).filter(id => byId[id] && isKeyRace(byId[id]) && !(live.races[id] && live.races[id].called_for)).map(id => raceTitle(byId[id])) : [];
+    const status = live && live.updated ? 'Count updated ' + fmtTime(live.updated) + '. ' + (live.note || '') + (failing.length ? ' No automatic feed right now for ' + failing.join(', ') + '; those update when entered by hand.' : '')
       : liveError === 404 || location.protocol === 'file:' ? 'Live counts run on the GitHub Pages copy of this site (alexandergiles.github.io/senate-polls-2026), which refreshes the official count every few minutes on election night.'
       : 'No results yet. The count will appear here as states report after their polls close; this page refreshes itself every minute.';
     box.append(el('div', { class: 'seatbox' },
@@ -959,7 +965,7 @@ footer a { color: var(--ink-2); }
       el('div', { class: 'seatkey' },
         el('span', {}, el('i', { style: 'background:var(--dem)' }), 'Democratic seat not up or called'),
         el('span', {}, el('i', { style: 'background:var(--dem);opacity:.62' }), 'Democrat or independent leads the count'),
-        el('span', {}, el('i', { style: 'background:var(--rule)' }), 'Not yet reporting'),
+        el('span', {}, el('i', { style: 'background:var(--rule)' }), 'Not yet reporting, or under 25% of precincts in'),
         el('span', {}, el('i', { style: 'background:var(--rep);opacity:.62' }), 'Republican leads the count'),
         el('span', {}, el('i', { style: 'background:var(--rep)' }), 'Republican seat not up or called'))));
     // per-race blocks
@@ -969,16 +975,17 @@ footer a { color: var(--ink-2); }
       const s = liveState(r);
       const card = host.closest('.nr');
       if (!s || !s.reported) { if (card) card.setAttribute('data-lead', leadClass(r)); continue; }
-      if (card) { card.setAttribute('data-lead', s.called ? (s.called === 'R' ? 'R' : s.called === 'D' ? 'D' : 'I') : s.party); card.classList.add('reporting'); }
+      if (card) { card.setAttribute('data-lead', s.called ? (s.called === 'R' ? 'R' : s.called === 'D' ? 'D' : 'I') : s.party); card.classList.add('reporting'); card.classList.toggle('early', s.early); }
       const head = el('div', { class: 'lv-head' }, el('span', { class: 'chip ' + (s.called ? (s.called === 'R' ? 'R' : 'D') : 'N'), text: s.called ? 'Called · ' + (s.called === 'R' ? 'Republican' : s.called === 'D' ? 'Democrat' : s.called) : 'Counting' }),
-        el('span', { text: (s.L.reporting ? s.L.reporting + ' reporting' : s.L.reporting_pct != null ? n1(s.L.reporting_pct) + '% reporting' : '') }));
+        el('span', { text: (s.pct != null ? n1(s.pct) + '% of precincts in' : s.L.reporting ? (/report/i.test(s.L.reporting) ? s.L.reporting : s.L.reporting + ' reporting') : 'Share counted not published') + (s.early ? ' · too early to read' : '') }));
       host.append(head);
       for (const c of s.rows.slice(0, 4)) {
         const cd = cands(r).find(x => x.key === c.key) || cands(r).find(x => surname(x.name).toLowerCase() === surname(c.name || c.key || '').toLowerCase());
         const party = c.party || (cd ? cd.party : 'O');
         host.append(el('div', { class: 'lv-row' }, el('span', { class: 'nm' }, el('i', { class: 'k ' + party }), (cd ? shortName(cd) : (c.name || c.key)) + ' (' + party + ')'), el('span', { class: 'v', text: fmtInt(c.votes) }), el('b', { class: 'p', text: n1(c.pct) + '%' })));
       }
-      if (s.L.source) host.append(el('div', { class: 'lv-src', text: 'Source: ' + s.L.source + (s.L.fetched ? ' · ' + fmtTime(s.L.fetched) : '') }));
+      if (s.L.stale) host.append(el('div', { class: 'lv-stale', text: 'The state feed has not answered since ' + fmtTime(s.L.fetched) + '; these numbers may be behind.' }));
+      if (s.L.source) host.append(el('div', { class: 'lv-src', text: 'Source: ' + s.L.source + (s.L.fetched ? ' · as of ' + fmtTime(s.L.fetched) : '') }));
     }
   }
   function renderNight() {
