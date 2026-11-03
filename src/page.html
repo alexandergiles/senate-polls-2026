@@ -382,7 +382,7 @@ footer a { color: var(--ink-2); }
   </header>
   <main id="app"></main>
   <footer>
-    <p><strong>Data.</strong> Individual polls are those listed by RealClearPolling (race pages and the latest-polls listing, read Oct. 29, 2026), with Nebraska polls RCP does not carry taken from 270toWin. Each race’s average is this site’s own: the plain mean of the five most recent polls. Candidates and seat status come from 270toWin and Ballotpedia; race ratings are the Cook Political Report’s, as shown on 270toWin (Oct. 20 update). The New York Times keeps its own tracker, with a different poll set and averaging method, at <a href="https://www.nytimes.com/interactive/polls/senate-polls-2026.html" target="_blank" rel="noopener">nytimes.com</a>.</p>
+    <p><strong>Data.</strong> Individual polls are those listed by RealClearPolling (race pages and the latest-polls listing, read Oct. 29, 2026), with Nebraska polls RCP does not carry taken from 270toWin; the final-week polls released Oct. 28 – Nov. 2 were added on Nov. 2 from 270toWin and the pollsters’ own releases, leaving out polls sponsored by campaigns or parties. Each race’s average is this site’s own: the plain mean of the five most recent polls. Candidates and seat status come from 270toWin and Ballotpedia; race ratings are the Cook Political Report’s, as shown on 270toWin (Oct. 20 update). The New York Times keeps its own tracker, with a different poll set and averaging method, at <a href="https://www.nytimes.com/interactive/polls/senate-polls-2026.html" target="_blank" rel="noopener">nytimes.com</a>.</p>
     <p><strong>Reading the numbers.</strong> A lead inside a poll’s margin of error is not a lead you can count on; a one-point average is a coin flip. Trend lines are a time-weighted smoothing of the listed polls, not anyone’s official average. This is a snapshot of public polling, not a forecast.</p>
   </footer>
 </div>
@@ -422,7 +422,7 @@ footer a { color: var(--ink-2); }
   const pd = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
   const fmtD = s => { const d = pd(s); return MONTHS[d.getMonth()] + ' ' + d.getDate(); };
   const fmtRange = (s, e) => {
-    if (!s) return fmtD(e);
+    if (!s || s === e) return fmtD(e);
     const a = pd(s), b = pd(e);
     if (a.getMonth() === b.getMonth() && a.getFullYear() === b.getFullYear()) return MONTHS[a.getMonth()] + ' ' + a.getDate() + '–' + b.getDate();
     return fmtD(s) + ' – ' + fmtD(e);

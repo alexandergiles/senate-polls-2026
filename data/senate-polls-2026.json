@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-29",
+ "generated": "2026-11-02",
  "election_day": "2026-11-03",
  "senate": {
   "current": {
@@ -17,7 +17,7 @@
   "note": "D counts include the two independents who caucus with Democrats."
  },
  "sources": {
-  "polls": "RealClearPolling race pages (realclearpolling.com), read 2026-10-29",
+  "polls": "RealClearPolling race pages (realclearpolling.com), read 2026-10-29; final-week polls (released 2026-10-28 to 2026-11-02) added 2026-11-02 from 270toWin race pages and pollsters' releases, excluding campaign- and party-sponsored polls",
   "roster": "270toWin 2026 Senate map and Ballotpedia, read 2026-10-29",
   "ratings": "Cook Political Report ratings as shown on 270toWin (reflecting Cook's Oct. 20, 2026 update)",
   "reference": "https://www.nytimes.com/interactive/polls/senate-polls-2026.html",
@@ -148,12 +148,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Peltola": 49.4,
-     "Sullivan": 48.2
+     "Peltola": 50.0,
+     "Sullivan": 47.7
     },
     "leader_key": "Peltola",
-    "margin": 1.2,
-    "dates": "10/1 - 10/16"
+    "margin": 2.3,
+    "dates": "10/8 - 11/1"
    },
    "rcp_average_when_read": {
     "values": {
@@ -512,6 +512,66 @@
      },
      "url": "https://www.filesforprogress.org/datasets/2026/10/dfp_alaska_oct_2026.pdf",
      "via": "RCP"
+    },
+    {
+     "pollster": "Alaska Survey Research",
+     "start": "2026-10-26",
+     "end": "2026-10-29",
+     "sample": 1326,
+     "sample_type": "LV",
+     "moe": null,
+     "results": {
+      "Peltola": 51,
+      "Sullivan": 49
+     },
+     "url": "https://www.realclearpolling.com/latest-polls/senate",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Head-to-head version; the four-way first-round numbers are in the ranked-choice table."
+    },
+    {
+     "pollster": "NY Times/Siena",
+     "start": "2026-10-23",
+     "end": "2026-10-30",
+     "sample": 610,
+     "sample_type": "LV",
+     "moe": 5.0,
+     "results": {
+      "Peltola": 48,
+      "Sullivan": 46
+     },
+     "url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Fieldwork dates and n from Wikipedia's transcription of the NYT toplines (nytimes.com blocked; sri.siena.edu release gives only results and MOE incl. design effect). Released Nov 1 (RCP lists Nov 2). Head-to-head only (Sullivan Jr./Heikes not reported; other 0, undecided 6). Siena MOE 5.0 with design effect 1.47; 270toWin shows 4.8."
+    },
+    {
+     "pollster": "AtlasIntel",
+     "start": "2026-10-28",
+     "end": "2026-11-01",
+     "sample": 522,
+     "sample_type": "LV",
+     "moe": 4.0,
+     "results": {
+      "Peltola": 50.1,
+      "Sullivan": 44.6
+     },
+     "url": "https://pollstergraph.com/poll/exclusive-atlas-us-ak-20261101-senate",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Exclusive AtlasIntel/PollsterGraph poll, released the evening of Nov 2 (not yet on RCP/270toWin). Valid-votes basis (other 2.2). 'Sullivan' = Dan S. Sullivan (R incumbent); 'Sullivan Jr.' = Dan J. Sullivan (independent). Four-way poll; top-two figures shown here, full first-round numbers in the ranked-choice table."
+    },
+    {
+     "pollster": "InsiderAdvantage",
+     "start": "2026-10-31",
+     "end": "2026-11-01",
+     "sample": 1200,
+     "sample_type": "LV",
+     "moe": null,
+     "results": {
+      "Peltola": 50,
+      "Sullivan": 50
+     },
+     "url": "https://www.realclearpolling.com/latest-polls/senate",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Head-to-head version; the four-way first-round numbers are in the ranked-choice table."
     }
    ],
    "rcv_first_round": {
@@ -687,6 +747,54 @@
        "J. Sullivan": 4
       },
       "url": "https://www.filesforprogress.org/datasets/2026/10/dfp_alaska_oct_2026.pdf"
+     },
+     {
+      "pollster": "Alaska Survey Research",
+      "start": "2026-10-26",
+      "end": "2026-10-29",
+      "sample": 1326,
+      "sample_type": "LV",
+      "moe": 3.0,
+      "results": {
+       "Peltola": 48,
+       "Sullivan": 46,
+       "Heikes": 3,
+       "J. Sullivan": 3
+      },
+      "url": "https://x.com/The_Real_ASR/status/2116291676176331181",
+      "via": "270toWin/pollster releases, Nov 2 update"
+     },
+     {
+      "pollster": "AtlasIntel",
+      "start": "2026-10-28",
+      "end": "2026-11-01",
+      "sample": 522,
+      "sample_type": "LV",
+      "moe": 4.0,
+      "results": {
+       "Peltola": 50.1,
+       "Sullivan": 44.6,
+       "Heikes": 2.5,
+       "J. Sullivan": 0.6
+      },
+      "url": "https://pollstergraph.com/poll/exclusive-atlas-us-ak-20261101-senate",
+      "via": "270toWin/pollster releases, Nov 2 update"
+     },
+     {
+      "pollster": "InsiderAdvantage",
+      "start": "2026-10-31",
+      "end": "2026-11-01",
+      "sample": 1200,
+      "sample_type": "LV",
+      "moe": 2.8,
+      "results": {
+       "Peltola": 48,
+       "Sullivan": 48,
+       "Heikes": 1,
+       "J. Sullivan": 2
+      },
+      "url": "https://insideradvantage.com/insideradvantage-final-alaska-survey-race-tied-in-first-round-48-peltola-48-sullivan-tied-in-ranked-choice-round/",
+      "via": "270toWin/pollster releases, Nov 2 update"
      }
     ],
     "source_url": "https://www.realclearpolling.com/polls/senate/general/2026/alaska/peltola-vs-sullivan-vs-heikes-vs-j-sullivan",
@@ -694,14 +802,14 @@
      "source": "mean",
      "n": 5,
      "values": {
-      "Peltola": 46.4,
-      "Sullivan": 44.0,
-      "Heikes": 2.2,
-      "J. Sullivan": 3.2
+      "Peltola": 47.4,
+      "Sullivan": 44.9,
+      "Heikes": 2.3,
+      "J. Sullivan": 2.5
      },
      "leader_key": "Peltola",
-     "margin": 2.4,
-     "dates": "9/28 - 10/16"
+     "margin": 2.5,
+     "dates": "10/8 - 11/1"
     }
    },
    "sources": [
@@ -765,19 +873,60 @@
     {
      "name": "John Hickenlooper",
      "party": "D",
-     "key": null,
+     "key": "Hickenlooper",
      "incumbent": true
     },
     {
      "name": "Mark Baisley",
      "party": "R",
-     "key": null,
+     "key": "Baisley",
      "incumbent": false
     }
    ],
-   "average": null,
+   "average": {
+    "source": "mean",
+    "n": 2,
+    "values": {
+     "Hickenlooper": 59.0,
+     "Baisley": 38.0
+    },
+    "leader_key": "Hickenlooper",
+    "margin": 21.0,
+    "dates": "10/9 - 11/2"
+   },
    "rcp_average_when_read": null,
-   "polls": [],
+   "polls": [
+    {
+     "pollster": "U. of Colorado/YouGov",
+     "start": "2026-10-09",
+     "end": "2026-10-20",
+     "sample": 710,
+     "sample_type": "LV",
+     "moe": 4.5,
+     "results": {
+      "Hickenlooper": 57,
+      "Baisley": 39
+     },
+     "url": "https://www.colorado.edu/lab/aprl/media/84",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 29, 2026. Online survey of 800 Colorado adults administered by YouGov; Senate ballot uses the likely-voter weight, 710 observations, credible interval +/-4.48. Other 1%, would not vote 3%. RCP shows Hickenlooper 58 (Nov 2 entry 'U. of Colorado/YouGov'); the report itself says 57-39."
+    },
+    {
+     "pollster": "Research Co.",
+     "start": "2026-10-31",
+     "end": "2026-11-02",
+     "sample": 450,
+     "sample_type": "LV",
+     "moe": 4.6,
+     "results": {
+      "Hickenlooper": 61,
+      "Baisley": 37
+     },
+     "url": "https://researchco.ca/2026/11/02/midterms-2026-two/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Online; released Nov 2, 2026. Among decided voters (as published); with undecided: Hickenlooper 57, Baisley 35, other 2, undecided 6. 270toWin spells the Republican 'Baisely'."
+    }
+   ],
    "rcv_first_round": null,
    "sources": [
     "https://ballotpedia.org/United_States_Senate_elections,_2026",
@@ -850,12 +999,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Nixon": 43.2,
-     "Moody": 49.4
+     "Nixon": 44.3,
+     "Moody": 50.9
     },
     "leader_key": "Moody",
-    "margin": 6.2,
-    "dates": "10/2 - 10/27"
+    "margin": 6.6,
+    "dates": "10/26 - 11/2"
    },
    "rcp_average_when_read": {
     "values": {
@@ -1076,6 +1225,21 @@
      "via": "RCP"
     },
     {
+     "pollster": "Echelon Insights",
+     "start": "2026-10-16",
+     "end": "2026-10-23",
+     "sample": 515,
+     "sample_type": "LV",
+     "moe": 5.0,
+     "results": {
+      "Moody": 51,
+      "Nixon": 43
+     },
+     "url": "https://netchoice.org/wp-content/uploads/2026/10/NetChoice-October-2026-Antitrust-Tech-Survey-Topline.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "DATED OCT 27 (release; 270toWin 10/27). Not in the tracker. Florida oversample (n=515) of a national mixed-mode survey; Gillespie (NPA) 3%. Sponsored by NetChoice."
+    },
+    {
      "pollster": "NY Times/Siena",
      "start": "2026-10-19",
      "end": "2026-10-25",
@@ -1090,6 +1254,21 @@
      "via": "RCP"
     },
     {
+     "pollster": "ActiVote",
+     "start": "2026-10-17",
+     "end": "2026-10-27",
+     "sample": 400,
+     "sample_type": "LV",
+     "moe": 4.9,
+     "results": {
+      "Moody": 53,
+      "Nixon": 47
+     },
+     "url": "https://www.activote.net/polls/2026/fl-u-s-senate/2026-10-27/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "DATED OCT 27 (release). Not in the tracker. App-based panel; 400 likely midterm voters, forced choice (no undecided). On 270toWin (10/27)."
+    },
+    {
      "pollster": "St. Pete Polls",
      "start": "2026-10-25",
      "end": "2026-10-27",
@@ -1102,6 +1281,96 @@
      },
      "url": "https://floridapolitics.com/archives/827487-final-st-pete-polls-byron-donalds-leads-david-jolly-48-to-46-as-long-as-republicans-show-up/",
      "via": "RCP"
+    },
+    {
+     "pollster": "Political Matrix",
+     "start": "2026-10-26",
+     "end": "2026-10-28",
+     "sample": 500,
+     "sample_type": "LV",
+     "moe": 4.4,
+     "results": {
+      "Moody": 41.8,
+      "Nixon": 35.8
+     },
+     "url": "https://palafoxproductions.com/new-florida-statewide-poll-for-november-election/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Palafox Media Network divisions; stated MOE +/-4.38. 22.4% undecided; among decided voters Moody 53.8, Nixon 46.2. Release cited Oct 29 (Wikipedia). Not on 270toWin or RCP."
+    },
+    {
+     "pollster": "Targoz",
+     "start": "2026-10-26",
+     "end": "2026-10-29",
+     "sample": 1013,
+     "sample_type": "LV",
+     "moe": 2.8,
+     "results": {
+      "Moody": 52,
+      "Nixon": 43
+     },
+     "url": "https://www.targoz.com/market-matters-blog/2026/11/2/republicans-lead-all-five-florida-statewide-races",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 2, 2026. Online poll of n=1,200 registered voters, MOE +/-2.77 on the full RV sample; Senate topline is among those who already voted or are likely to vote (PollCheck gives that subsample as 1,013 LV; 270toWin lists 1,200 LV). Undecided/other 5%."
+    },
+    {
+     "pollster": "InsiderAdvantage",
+     "start": "2026-10-28",
+     "end": "2026-10-29",
+     "sample": 1200,
+     "sample_type": "LV",
+     "moe": 2.8,
+     "results": {
+      "Moody": 49,
+      "Nixon": 43
+     },
+     "url": "https://insideradvantage.com/insideradvantage-florida-survey-donalds-49-jolly-45-moody-49-nixon-43/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 30, 2026 (270toWin 10/30; RCP Oct 30, fieldwork 10/28-10/29). Other 2%, undecided 6%. Governor Donalds 49 Jolly 45."
+    },
+    {
+     "pollster": "Stetson University",
+     "start": "2026-10-26",
+     "end": "2026-10-30",
+     "sample": 861,
+     "sample_type": "LV",
+     "moe": 3.6,
+     "results": {
+      "Moody": 49,
+      "Nixon": 45
+     },
+     "url": "https://www.stetson.edu/artsci/cpor/media/cpor-release-lateoct2026.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Center for Public Opinion Research late-October wave; 270toWin dates it 10/31 and lists 861 LV +/-3.6; Wikipedia/PollCheck list 852 RV +/-3.6 with fieldwork Oct 26-30 (release cited Oct 30). Other 3%, undecided 3%. Stetson PDF blocked in this environment; sample type unverified."
+    },
+    {
+     "pollster": "Big Data Poll",
+     "start": "2026-10-26",
+     "end": "2026-10-30",
+     "sample": 1129,
+     "sample_type": "LV",
+     "moe": 3.0,
+     "results": {
+      "Moody": 51.6,
+      "Nixon": 44.7
+     },
+     "url": "https://www.bigdatapoll.com/blog/sunshine-state-poll-ashley-moody-leads-angie-craig-governors-race-tight/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 30, 2026; for the 1776 Law Center / Public Polling Project. 1,201 RV and 1,129 LV; mixed mode (online ~40%, live phone/SMS ~60%). Topline 'when undecideds are leaned' 51.6-44.7; RCP rounds to 52-45 (1129 LV). Wikipedia/PollCheck list 1,067 LV. Not on 270toWin; on RCP (Oct 30)."
+    },
+    {
+     "pollster": "Research Co.",
+     "start": "2026-10-31",
+     "end": "2026-11-02",
+     "sample": 450,
+     "sample_type": "LV",
+     "moe": 4.6,
+     "results": {
+      "Moody": 53,
+      "Nixon": 46
+     },
+     "url": "https://researchco.ca/2026/11/02/midterms-2026-two/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Online; released Nov 2, 2026. Figures are among decided voters (as published and as 270toWin lists); with undecided included: Moody 51, Nixon 44, other 1, undecided 4 (Wikipedia/PollCheck). Canadian firm; six-state release (CO, FL, GA, IL, NM, TX)."
     }
    ],
    "rcv_first_round": null,
@@ -1142,12 +1411,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Ossoff": 51.2,
-     "Collins": 43.0
+     "Ossoff": 52.6,
+     "Collins": 43.2
     },
     "leader_key": "Ossoff",
-    "margin": 8.2,
-    "dates": "9/21 - 10/17"
+    "margin": 9.4,
+    "dates": "10/7 - 11/2"
    },
    "rcp_average_when_read": {
     "values": {
@@ -1422,6 +1691,51 @@
      },
      "url": "https://quantusinsights.org/polling/f/georgia-two-weeks-out-ossoff-ahead-down-ballot-near-even",
      "via": "RCP"
+    },
+    {
+     "pollster": "Echelon Insights",
+     "start": "2026-10-16",
+     "end": "2026-10-23",
+     "sample": 508,
+     "sample_type": "LV",
+     "moe": 5.2,
+     "results": {
+      "Ossoff": 55,
+      "Collins": 40
+     },
+     "url": "https://netchoice.org/wp-content/uploads/2026/10/NetChoice-October-2026-Antitrust-Tech-Survey-Topline.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "DATED OCT 27 (release; 270toWin 10/27). Not in the tracker. Georgia oversample (n=508) of a national mixed-mode survey; Buckley (L) 3%, unsure 2%. Sponsored by NetChoice."
+    },
+    {
+     "pollster": "Research Co.",
+     "start": "2026-10-31",
+     "end": "2026-11-02",
+     "sample": 450,
+     "sample_type": "LV",
+     "moe": 4.6,
+     "results": {
+      "Ossoff": 55,
+      "Collins": 45
+     },
+     "url": "https://researchco.ca/2026/11/02/midterms-2026-two/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Online; released Nov 2, 2026. Among decided voters (as published); with undecided: Ossoff 52, Collins 42, undecided 6."
+    },
+    {
+     "pollster": "InsiderAdvantage",
+     "start": "2026-10-31",
+     "end": "2026-11-02",
+     "sample": 2500,
+     "sample_type": "LV",
+     "moe": 2.0,
+     "results": {
+      "Ossoff": 53,
+      "Collins": 46
+     },
+     "url": "https://insideradvantage.com/it-figures-in-matt-towery-and-insideradvantages-final-public-poll-at-the-end-of-a-26-year-career-georgias-governors-race-has-a-3-separation-insideradvantages-final-georgia-governors-su/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Final InsiderAdvantage public poll (Matt Towery), released Nov 2, 2026; 270toWin dates it 11/02; fieldwork Oct 31-Nov 2 per Wikipedia/PollCheck (IA site unreachable from this environment). Undecided 1%."
     }
    ],
    "rcv_first_round": null,
@@ -1483,19 +1797,60 @@
     {
      "name": "Juliana Stratton",
      "party": "D",
-     "key": null,
+     "key": "Stratton",
      "incumbent": false
     },
     {
      "name": "Don Tracy",
      "party": "R",
-     "key": null,
+     "key": "Tracy",
      "incumbent": false
     }
    ],
-   "average": null,
+   "average": {
+    "source": "mean",
+    "n": 2,
+    "values": {
+     "Stratton": 55.8,
+     "Tracy": 43.7
+    },
+    "leader_key": "Stratton",
+    "margin": 12.1,
+    "dates": "10/21 - 11/2"
+   },
    "rcp_average_when_read": null,
-   "polls": [],
+   "polls": [
+    {
+     "pollster": "ActiVote",
+     "start": "2026-10-21",
+     "end": "2026-10-30",
+     "sample": 400,
+     "sample_type": "LV",
+     "moe": 4.9,
+     "results": {
+      "Stratton": 55.6,
+      "Tracy": 44.4
+     },
+     "url": "https://www.activote.net/polls/2026/il-u-s-senate/2026-10-30/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 30, 2026 (270toWin 10/30). App-based panel, forced choice. ActiVote's prior IL reading (Sep 26-Oct 20, 58.5-41.5, released Oct 20) is also absent from the tracker but predates the window."
+    },
+    {
+     "pollster": "Research Co.",
+     "start": "2026-10-31",
+     "end": "2026-11-02",
+     "sample": 450,
+     "sample_type": "LV",
+     "moe": 4.6,
+     "results": {
+      "Stratton": 56,
+      "Tracy": 43
+     },
+     "url": "https://researchco.ca/2026/11/02/midterms-2026-two/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Online; released Nov 2, 2026. Among decided voters (as published); with undecided: Stratton 53, Tracy 41, other 1, undecided 5. Tracker currently has no candidate keys for IL; Juliana Stratton (D) vs Don Tracy (R)."
+    }
+   ],
    "rcv_first_round": null,
    "sources": [
     "https://ballotpedia.org/United_States_Senate_elections,_2026",
@@ -1533,12 +1888,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Turek": 45.6,
-     "Hinson": 46.4
+     "Turek": 48.0,
+     "Hinson": 47.4
     },
-    "leader_key": "Hinson",
-    "margin": 0.8,
-    "dates": "10/6 - 10/22"
+    "leader_key": "Turek",
+    "margin": 0.6,
+    "dates": "10/26 - 11/1"
    },
    "rcp_average_when_read": {
     "values": {
@@ -1953,6 +2308,111 @@
      },
      "url": "https://insideradvantage.com/insideradvantage-senate-surveys-mi-el-sayed-47-rogers-46-ia-hinson-47-turek-45-oh-brown-47-husted-44/",
      "via": "RCP"
+    },
+    {
+     "pollster": "Echelon Insights",
+     "start": "2026-10-16",
+     "end": "2026-10-23",
+     "sample": 403,
+     "sample_type": "LV",
+     "moe": 6.5,
+     "results": {
+      "Turek": 45,
+      "Hinson": 43
+     },
+     "url": "https://netchoice.org/wp-content/uploads/2026/10/NetChoice-October-2026-Antitrust-Tech-Survey-Topline.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Dated Oct 27 on 270toWin: borderline, may already be in the tracker. NetChoice-sponsored multi-state survey."
+    },
+    {
+     "pollster": "co/efficient",
+     "start": "2026-10-28",
+     "end": "2026-10-28",
+     "sample": 1020,
+     "sample_type": "LV",
+     "moe": 3.1,
+     "results": {
+      "Turek": 46,
+      "Hinson": 48
+     },
+     "url": "https://battlegrounds.coefficient.org/ia/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 29. Single-day fieldwork per pollcheck.co.uk. Republican pollster."
+    },
+    {
+     "pollster": "YouGov",
+     "start": "2026-10-26",
+     "end": "2026-10-29",
+     "sample": 2020,
+     "sample_type": "LV",
+     "moe": 3.1,
+     "results": {
+      "Turek": 50,
+      "Hinson": 49
+     },
+     "url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ia_20261026_lv.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. Fieldwork from YouGov PDF."
+    },
+    {
+     "pollster": "Rasmussen Reports",
+     "start": "2026-10-27",
+     "end": "2026-10-31",
+     "sample": 901,
+     "sample_type": "LV",
+     "moe": 3.0,
+     "results": {
+      "Turek": 46,
+      "Hinson": 47
+     },
+     "url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_iowa_senate",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 2 per RCP (Rasmussen's page header misprints the date as 'October 02, 2026'; fieldwork Oct 27-31 confirms it is the final poll). Undecided 5."
+    },
+    {
+     "pollster": "Grayhouse",
+     "start": "2026-10-28",
+     "end": "2026-10-31",
+     "sample": 601,
+     "sample_type": "LV",
+     "moe": 4.0,
+     "results": {
+      "Turek": 46,
+      "Hinson": 48
+     },
+     "url": "https://www.grayhouse.com/post/grayhouse-poll-hinson-leads-in-iowa-by-2",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 2. Fieldwork dates via pollcheck.co.uk."
+    },
+    {
+     "pollster": "NY Times/Siena",
+     "start": "2026-10-26",
+     "end": "2026-11-01",
+     "sample": 705,
+     "sample_type": "LV",
+     "moe": 4.7,
+     "results": {
+      "Turek": 48,
+      "Hinson": 47
+     },
+     "url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. MoE 4.7 is Siena's stated figure incl. design effect (270toWin shows 4.4). Fieldwork dates via pollcheck.co.uk."
+    },
+    {
+     "pollster": "AtlasIntel",
+     "start": "2026-10-28",
+     "end": "2026-11-01",
+     "sample": null,
+     "sample_type": "LV",
+     "moe": null,
+     "results": {
+      "Turek": 50,
+      "Hinson": 46
+     },
+     "url": "https://www.atlasintel.org/polls",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Listed by RCP Nov 2 (link went to AtlasIntel homepage). Not on atlasintel.org's public poll list as of the evening of Nov 2. Fieldwork and n unverified. Fieldwork dates taken from AtlasIntel's same-day battleground series (Oct 28–Nov 1); this state's own release was not public."
     }
    ],
    "rcv_first_round": null,
@@ -1993,12 +2453,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Hamilton": 47.2,
-     "Marshall": 45.8
+     "Hamilton": 50.2,
+     "Marshall": 45.6
     },
     "leader_key": "Hamilton",
-    "margin": 1.4,
-    "dates": "9/24 - 10/26"
+    "margin": 4.6,
+    "dates": "10/26 - 11/1"
    },
    "rcp_average_when_read": {
     "values": {
@@ -2119,6 +2579,96 @@
      },
      "url": "https://www.documentcloud.org/documents/28856723-cnn-poll-conducted-by-ssrs-kansas-october/",
      "via": "RCP"
+    },
+    {
+     "pollster": "Washington Post",
+     "start": "2026-10-22",
+     "end": "2026-10-26",
+     "sample": 801,
+     "sample_type": "LV",
+     "moe": 3.9,
+     "results": {
+      "Hamilton": 54,
+      "Marshall": 44
+     },
+     "url": "https://www.washingtonpost.com/documents/91bad124-1d3a-437b-b1ba-07af61cb729d.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 30. Figures per 270toWin and Wikipedia (PDF download failed here); RCP lists 54-44, presumably with leaners. Other 1. With leaners, as RealClearPolling lists it (52–43 without)."
+    },
+    {
+     "pollster": "Emerson",
+     "start": "2026-10-26",
+     "end": "2026-10-28",
+     "sample": 800,
+     "sample_type": "LV",
+     "moe": 3.5,
+     "results": {
+      "Hamilton": 50,
+      "Marshall": 47
+     },
+     "url": "https://emersoncollegepolling.com/october-2026-kansas-poll-hamilton-maintains-edge-over-marshall/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 30. Undecided 3; with leaners pushed: Hamilton 50, Marshall 47 (RCP shows the leaned figures). Credibility interval +/-3.5. With leaners, as RealClearPolling lists it (49–45 without)."
+    },
+    {
+     "pollster": "YouGov",
+     "start": "2026-10-26",
+     "end": "2026-10-29",
+     "sample": 2092,
+     "sample_type": "LV",
+     "moe": 2.8,
+     "results": {
+      "Hamilton": 50,
+      "Marshall": 49
+     },
+     "url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ks_20261026_lv.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. Leaners included; someone else 1, not sure 0. Sponsor not named in the topline PDF (file prefix 'ttw')."
+    },
+    {
+     "pollster": "NY Times/Siena",
+     "start": "2026-10-27",
+     "end": "2026-11-01",
+     "sample": 736,
+     "sample_type": "LV",
+     "moe": 4.4,
+     "results": {
+      "Hamilton": 49,
+      "Marshall": 44
+     },
+     "url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Fieldwork dates and n from Wikipedia's transcription of the NYT toplines (nytimes.com blocked; sri.siena.edu release gives only results and MOE incl. design effect). Released Nov 1 (RCP lists it Nov 2). 270toWin shows MOE 4.1; Siena says 4.4 with design effect 1.30. Undecided 3."
+    },
+    {
+     "pollster": "Survey160",
+     "start": "2026-10-27",
+     "end": "2026-11-01",
+     "sample": 1267,
+     "sample_type": "LV",
+     "moe": 3.6,
+     "results": {
+      "Hamilton": 50,
+      "Marshall": 43
+     },
+     "url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 2. Likely-voter column of the Senate ballot; with leaners 50-44 (Wikipedia lists the leaned 50-44; other 4, undecided 2). Total n=1,353 incl. non-LV; MOE +/-3.6 after design effect 1.78. Multi-mode text/IVR/AI-caller registration-based sample. Not on 270toWin or RCP."
+    },
+    {
+     "pollster": "AtlasIntel",
+     "start": "2026-10-28",
+     "end": "2026-11-01",
+     "sample": 2038,
+     "sample_type": "LV",
+     "moe": 2.0,
+     "results": {
+      "Hamilton": 51.9,
+      "Marshall": 44.9
+     },
+     "url": "https://pollstergraph.com/poll/exclusive-atlas-us-ks-20261101-senate",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Exclusive AtlasIntel/PollsterGraph poll, released Nov 2 (evening). Total-votes basis; other 1.6, would not vote 1.2, don't know 0.5. RCP rounds to 52-45. Not yet on 270toWin."
     }
    ],
    "rcv_first_round": null,
@@ -2231,12 +2781,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Jackson": 48.6,
+     "Jackson": 51.2,
      "Collins": 47.0
     },
     "leader_key": "Jackson",
-    "margin": 1.6,
-    "dates": "10/13 - 10/26"
+    "margin": 4.2,
+    "dates": "10/26 - 11/1"
    },
    "rcp_average_when_read": {
     "values": {
@@ -2555,6 +3105,21 @@
      "via": "RCP"
     },
     {
+     "pollster": "Echelon Insights",
+     "start": "2026-10-16",
+     "end": "2026-10-23",
+     "sample": 413,
+     "sample_type": "LV",
+     "moe": 6.3,
+     "results": {
+      "Jackson": 51,
+      "Collins": 44
+     },
+     "url": "https://netchoice.org/wp-content/uploads/2026/10/NetChoice-October-2026-Antitrust-Tech-Survey-Topline.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Dated Oct 27 on 270toWin: borderline, may already be in the tracker. NetChoice-sponsored multi-state survey."
+    },
+    {
      "pollster": "Trafalgar Group",
      "start": "2026-10-21",
      "end": "2026-10-23",
@@ -2595,6 +3160,96 @@
      },
      "url": "https://www.documentcloud.org/documents/28856725-cnn-poll-conducted-by-ssrs-maine-october/",
      "via": "RCP"
+    },
+    {
+     "pollster": "Data for Progress",
+     "start": "2026-10-23",
+     "end": "2026-10-27",
+     "sample": 652,
+     "sample_type": "LV",
+     "moe": 4.0,
+     "results": {
+      "Jackson": 50,
+      "Collins": 45
+     },
+     "url": "https://www.dataforprogress.org/blog/2026/10/30/democratic-senate-candidates-lead-in-maine-michigan-and-texas",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 30. Democratic pollster. Fieldwork dates via pollcheck.co.uk."
+    },
+    {
+     "pollster": "YouGov",
+     "start": "2026-10-26",
+     "end": "2026-10-29",
+     "sample": 1503,
+     "sample_type": "LV",
+     "moe": 4.0,
+     "results": {
+      "Jackson": 52,
+      "Collins": 47
+     },
+     "url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_me_20261026_lv.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. Fieldwork from YouGov PDF."
+    },
+    {
+     "pollster": "UNH Survey Center",
+     "start": "2026-10-27",
+     "end": "2026-10-31",
+     "sample": 1654,
+     "sample_type": "LV",
+     "moe": 2.4,
+     "results": {
+      "Jackson": 54,
+      "Collins": 45
+     },
+     "url": "https://scholars.unh.edu/cgi/viewcontent.cgi?article=2012&context=survey_center_polls",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1 (UNH Survey Center Pine Tree State Poll). Fieldwork dates via pollcheck.co.uk; UNH PDF returned 403 in this environment. n and MoE from 270toWin."
+    },
+    {
+     "pollster": "NY Times/Siena",
+     "start": "2026-10-27",
+     "end": "2026-11-01",
+     "sample": 714,
+     "sample_type": "LV",
+     "moe": 4.7,
+     "results": {
+      "Jackson": 51,
+      "Collins": 45
+     },
+     "url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. MoE 4.7 is Siena's stated figure incl. design effect (270toWin shows 4.3). Fieldwork dates via pollcheck.co.uk."
+    },
+    {
+     "pollster": "Survey160",
+     "start": "2026-10-27",
+     "end": "2026-11-01",
+     "sample": 1322,
+     "sample_type": "LV",
+     "moe": null,
+     "results": {
+      "Jackson": 50,
+      "Collins": 47
+     },
+     "url": "https://www.pollcheck.co.uk/us-midterms-2026/senate/maine",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "DOUBTFUL: listed only on pollcheck.co.uk (not on 270toWin or RCP); RV version n=1,334 Jackson 49 Collins 47. Release date unknown (fieldwork ended Nov 1)."
+    },
+    {
+     "pollster": "Poll Vault/Emerson",
+     "start": "2026-10-31",
+     "end": "2026-11-01",
+     "sample": 500,
+     "sample_type": "LV",
+     "moe": null,
+     "results": {
+      "Jackson": 49,
+      "Collins": 51
+     },
+     "url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Listed by RCP Nov 2; the only final-week poll with Collins ahead. Paywalled on Poll Vault substack; not on emersoncollegepolling.com. Sibling Michigan poll was 10/31-11/1, 500 LV, MoE 4.4; unverified for ME. Dates and sample from the Michigan release of the same Emerson series (Oct 31–Nov 1, 500 LV); this state's release is paywalled."
     }
    ],
    "rcv_first_round": null,
@@ -2636,11 +3291,11 @@
     "n": 5,
     "values": {
      "Markey": 55.6,
-     "Deaton": 29.0
+     "Deaton": 29.4
     },
     "leader_key": "Markey",
-    "margin": 26.6,
-    "dates": "9/14 - 10/18"
+    "margin": 26.2,
+    "dates": "9/14 - 10/31"
    },
    "rcp_average_when_read": {
     "values": {
@@ -2831,6 +3486,21 @@
      },
      "url": "https://www.suffolk.edu/-/media/suffolk/documents/academics/research-at-suffolk/suprc/polls/massachusetts2/2026/10_20_2026_massachusetts_statewide_marginals.pdf?la=en&hash=12AC3ACF484DC216ED83A879BAF0781ACEA5FC89",
      "via": "RCP"
+    },
+    {
+     "pollster": "UNH Survey Center",
+     "start": "2026-10-27",
+     "end": "2026-10-31",
+     "sample": 905,
+     "sample_type": "LV",
+     "moe": 3.3,
+     "results": {
+      "Markey": 53,
+      "Deaton": 32
+     },
+     "url": "https://scholars.unh.edu/survey_center_polls/1014/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1, 2026 (PDF: https://scholars.unh.edu/cgi/viewcontent.cgi?article=2013&context=survey_center_polls). Tache (PSL) 7%, Ayyadurai (I) 4%, undecided 4%. On 270toWin (11/01) and RCP (Nov 2)."
     }
    ],
    "rcv_first_round": null,
@@ -2871,12 +3541,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "El-Sayed": 49.2,
-     "Rogers": 44.6
+     "El-Sayed": 50.2,
+     "Rogers": 45.0
     },
     "leader_key": "El-Sayed",
-    "margin": 4.6,
-    "dates": "10/2 - 10/27"
+    "margin": 5.2,
+    "dates": "10/23 - 11/1"
    },
    "rcp_average_when_read": {
     "values": {
@@ -3475,6 +4145,36 @@
      "via": "RCP"
     },
     {
+     "pollster": "MSU/Verasight",
+     "start": "2026-10-08",
+     "end": "2026-10-23",
+     "sample": 1383,
+     "sample_type": "LV",
+     "moe": 2.9,
+     "results": {
+      "El-Sayed": 51,
+      "Rogers": 43
+     },
+     "url": "https://polisci.msu.edu/_assets/MI_2026_pre_election_report.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 29 (MSU pre-election report). Fieldwork dates via pollcheck.co.uk."
+    },
+    {
+     "pollster": "Data for Progress",
+     "start": "2026-10-23",
+     "end": "2026-10-25",
+     "sample": 622,
+     "sample_type": "LV",
+     "moe": 4.0,
+     "results": {
+      "El-Sayed": 50,
+      "Rogers": 46
+     },
+     "url": "https://www.dataforprogress.org/blog/2026/10/30/democratic-senate-candidates-lead-in-maine-michigan-and-texas",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 30. Democratic pollster. Fieldwork dates via pollcheck.co.uk."
+    },
+    {
      "pollster": "CNN",
      "start": "2026-10-20",
      "end": "2026-10-27",
@@ -3501,6 +4201,96 @@
      },
      "url": "https://www.cbsnews.com/detroit/news/el-sayed-widens-lead-rogers-michigan-senate-poll/",
      "via": "RCP"
+    },
+    {
+     "pollster": "YouGov",
+     "start": "2026-10-26",
+     "end": "2026-10-29",
+     "sample": 2093,
+     "sample_type": "LV",
+     "moe": 3.0,
+     "results": {
+      "El-Sayed": 51,
+      "Rogers": 47
+     },
+     "url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_mi_20261026_lv.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. Fieldwork from YouGov PDF."
+    },
+    {
+     "pollster": "Rasmussen Reports",
+     "start": "2026-10-28",
+     "end": "2026-10-29",
+     "sample": 745,
+     "sample_type": "LV",
+     "moe": 3.0,
+     "results": {
+      "El-Sayed": 49,
+      "Rogers": 44
+     },
+     "url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_michigan_senate",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 30. Christensen (L) 2, Long (UST) 1, undecided 4. Fieldwork from pollster release."
+    },
+    {
+     "pollster": "NY Times/Siena",
+     "start": "2026-10-23",
+     "end": "2026-11-01",
+     "sample": 1011,
+     "sample_type": "LV",
+     "moe": 3.8,
+     "results": {
+      "El-Sayed": 53,
+      "Rogers": 42
+     },
+     "url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. MoE 3.8 is Siena's stated figure incl. design effect (270toWin shows 3.6). Fieldwork 10/23-11/1 per RCP race page and pollcheck (longer field period than the other states in the same release)."
+    },
+    {
+     "pollster": "Research Co.",
+     "start": "2026-10-30",
+     "end": "2026-11-01",
+     "sample": 450,
+     "sample_type": "LV",
+     "moe": 4.6,
+     "results": {
+      "El-Sayed": 51,
+      "Rogers": 48
+     },
+     "url": "https://researchco.ca/2026/11/01/midterms-2026-one/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. Online; 'decided voters' (pollcheck lists 48/46 incl. undecided). Fieldwork from pollster release."
+    },
+    {
+     "pollster": "Trafalgar Group",
+     "start": "2026-10-31",
+     "end": "2026-11-01",
+     "sample": 1087,
+     "sample_type": "LV",
+     "moe": 2.9,
+     "results": {
+      "El-Sayed": 47.1,
+      "Rogers": 45.9
+     },
+     "url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/MI-Gen-Sen-Poll-Report-1101.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 2. 270toWin rounds to 47/46. Fieldwork from pollster PDF."
+    },
+    {
+     "pollster": "Poll Vault/Emerson",
+     "start": "2026-10-31",
+     "end": "2026-11-01",
+     "sample": 500,
+     "sample_type": "LV",
+     "moe": 4.4,
+     "results": {
+      "El-Sayed": 51,
+      "Rogers": 45
+     },
+     "url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 2 via Sean Trende's Poll Vault substack (paywalled); fieldwork, n and MoE from RCP's Michigan race page."
     }
    ],
    "rcv_first_round": null,
@@ -3541,12 +4331,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Flanagan": 48.6,
-     "Tafoya": 43.4
+     "Flanagan": 49.8,
+     "Tafoya": 44.5
     },
     "leader_key": "Flanagan",
-    "margin": 5.2,
-    "dates": "10/5 - 10/26"
+    "margin": 5.3,
+    "dates": "10/24 - 11/1"
    },
    "rcp_average_when_read": {
     "values": {
@@ -3765,6 +4555,81 @@
      },
      "url": "https://www.nytimes.com/2026/10/28/us/south-carolina-florida-minnesota-poll.html",
      "via": "RCP"
+    },
+    {
+     "pollster": "KSTP/SurveyUSA",
+     "start": "2026-10-24",
+     "end": "2026-10-28",
+     "sample": 714,
+     "sample_type": "LV",
+     "moe": 4.2,
+     "results": {
+      "Flanagan": 48,
+      "Tafoya": 41
+     },
+     "url": "https://kstp.com/kstp-news/top-news/kstp-surveyusa-minnesota-statewide-races-inch-left-in-final-poll-before-election-day/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 30. Undecided 7 (other 4 per Wikipedia). Fieldwork dates and n per Wikipedia; KSTP article confirms 48-41, +/-4.2, 7% undecided. Not on 270toWin."
+    },
+    {
+     "pollster": "InsiderAdvantage",
+     "start": "2026-10-29",
+     "end": "2026-10-30",
+     "sample": 1200,
+     "sample_type": "LV",
+     "moe": 2.8,
+     "results": {
+      "Flanagan": 49,
+      "Tafoya": 46
+     },
+     "url": "https://insideradvantage.com/insideradvantage-final-minnesota-senate-survey-flanagan-49-tafoya-46/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. Other 4, undecided 1. Fieldwork dates per Wikipedia (insideradvantage.com reset the connection here)."
+    },
+    {
+     "pollster": "Survey160",
+     "start": "2026-10-27",
+     "end": "2026-11-01",
+     "sample": 1365,
+     "sample_type": "LV",
+     "moe": 3.7,
+     "results": {
+      "Flanagan": 52,
+      "Tafoya": 43
+     },
+     "url": "https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 2. Likely-voter column (same with leaners); other 2, undecided 2 per Wikipedia. Total n=1,423 incl. non-LV; MOE +/-3.7 after design effect 2.04. Not on 270toWin or RCP."
+    },
+    {
+     "pollster": "AtlasIntel",
+     "start": "2026-10-28",
+     "end": "2026-11-01",
+     "sample": 2133,
+     "sample_type": "LV",
+     "moe": 2.0,
+     "results": {
+      "Flanagan": 48.1,
+      "Tafoya": 45.7
+     },
+     "url": "https://pollstergraph.com/poll/exclusive-atlas-us-mn-20261101-senate",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Exclusive AtlasIntel/PollsterGraph poll, released Nov 2. Total-votes basis; other 2.5, would not vote 2.5, don't know 1.1. RCP rounds to 48-46. Not on 270toWin."
+    },
+    {
+     "pollster": "Research Co.",
+     "start": "2026-10-30",
+     "end": "2026-11-01",
+     "sample": 450,
+     "sample_type": "LV",
+     "moe": 4.6,
+     "results": {
+      "Flanagan": 52,
+      "Tafoya": 47
+     },
+     "url": "https://researchco.ca/2026/11/01/midterms-2026-one/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. Online panel, 450 LV. Headline figures as published in the release and on 270toWin (likely decided voters); Wikipedia tabulates 48-43 with 2 other / 7 undecided."
     }
    ],
    "rcv_first_round": null,
@@ -3964,12 +4829,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Ricketts": 46.0,
-     "Osborn": 45.2
+     "Ricketts": 48.2,
+     "Osborn": 45.4
     },
     "leader_key": "Ricketts",
-    "margin": 0.8,
-    "dates": "9/8 - 10/27"
+    "margin": 2.8,
+    "dates": "10/20 - 11/2"
    },
    "rcp_average_when_read": null,
    "polls": [
@@ -4056,6 +4921,52 @@
      },
      "url": "https://www.270towin.com/2026-senate-polls/nebraska",
      "via": "270toWin"
+    },
+    {
+     "pollster": "NY Times/Siena",
+     "start": "2026-10-23",
+     "end": "2026-10-29",
+     "sample": 809,
+     "sample_type": "LV",
+     "moe": 4.0,
+     "results": {
+      "Ricketts": 49,
+      "Osborn": 43
+     },
+     "url": "https://sri.siena.edu/2026/10/31/nytimes-siena-poll-of-likely-nebraska-voters/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Fieldwork dates and n from Wikipedia's transcription of the NYT toplines (nytimes.com blocked; sri.siena.edu release gives only results and MOE incl. design effect). Released Oct 31. Undecided 8."
+    },
+    {
+     "pollster": "YouGov",
+     "start": "2026-10-26",
+     "end": "2026-10-29",
+     "sample": 1979,
+     "sample_type": "LV",
+     "moe": 2.8,
+     "results": {
+      "Ricketts": 49,
+      "Osborn": 49
+     },
+     "url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ne_20261026_lv.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. Leaners included; someone else 1, would not vote 1. Sponsor not named in the topline PDF (file prefix 'ttw')."
+    },
+    {
+     "pollster": "Grayhouse",
+     "start": null,
+     "end": "2026-11-02",
+     "sample": 534,
+     "sample_type": "LV",
+     "moe": 4.2,
+     "results": {
+      "Ricketts": 50,
+      "Osborn": 46
+     },
+     "url": "https://www.270towin.com/2026-senate-polls/nebraska",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "date_basis": "release",
+     "notes": "Release date only (270toWin dates it Nov 2); other/undecided 4. Pollster page (grayhouse.com/post/grayhouse-poll-ricketts-leads-in-nebraska-by-4) is behind a Cloudflare challenge, so fieldwork dates and sponsor unverified. Not on RCP or Wikipedia yet."
     }
    ],
    "rcv_first_round": null,
@@ -4096,12 +5007,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Pappas": 49.6,
-     "Sununu": 43.0
+     "Pappas": 50.6,
+     "Sununu": 42.6
     },
     "leader_key": "Pappas",
-    "margin": 6.6,
-    "dates": "9/28 - 10/23"
+    "margin": 8.0,
+    "dates": "9/28 - 10/31"
    },
    "rcp_average_when_read": {
     "values": {
@@ -4222,6 +5133,21 @@
      },
      "url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_new_hampshire_senate",
      "via": "RCP"
+    },
+    {
+     "pollster": "UNH Survey Center",
+     "start": "2026-10-27",
+     "end": "2026-10-31",
+     "sample": 2040,
+     "sample_type": "LV",
+     "moe": 2.2,
+     "results": {
+      "Pappas": 54,
+      "Sununu": 42
+     },
+     "url": "https://scholars.unh.edu/survey_center_polls/1011/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Granite State Poll, 'NH Final 2026 Election Poll', released Nov 1, 2026 (PDF: https://scholars.unh.edu/cgi/viewcontent.cgi?article=2010&context=survey_center_polls). LaPlante (Constitution) 2%, undecided 2%. On 270toWin (dated 11/01) and RCP (Nov 2)."
     }
    ],
    "rcv_first_round": null,
@@ -4283,19 +5209,45 @@
     {
      "name": "Ben Ray Luján",
      "party": "D",
-     "key": null,
+     "key": "Luján",
      "incumbent": true
     },
     {
      "name": "Larry Marker",
      "party": "R",
-     "key": null,
+     "key": "Marker",
      "incumbent": false
     }
    ],
-   "average": null,
+   "average": {
+    "source": "mean",
+    "n": 1,
+    "values": {
+     "Luján": 60.0,
+     "Marker": 40.0
+    },
+    "leader_key": "Luján",
+    "margin": 20.0,
+    "dates": "10/31 - 11/2"
+   },
    "rcp_average_when_read": null,
-   "polls": [],
+   "polls": [
+    {
+     "pollster": "Research Co.",
+     "start": "2026-10-31",
+     "end": "2026-11-02",
+     "sample": 450,
+     "sample_type": "LV",
+     "moe": 4.6,
+     "results": {
+      "Luján": 60,
+      "Marker": 40
+     },
+     "url": "https://researchco.ca/2026/11/02/midterms-2026-two/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Online; released Nov 2, 2026. Among decided voters (as published; 270toWin lists 'Lujan' 60, Marker 40); with undecided: Luján 56, Marker 37, undecided 7."
+    }
+   ],
    "rcv_first_round": null,
    "sources": [
     "https://ballotpedia.org/United_States_Senate_elections,_2026",
@@ -4333,12 +5285,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Cooper": 51.0,
-     "Whatley": 40.4
+     "Cooper": 53.1,
+     "Whatley": 42.5
     },
     "leader_key": "Cooper",
     "margin": 10.6,
-    "dates": "9/29 - 10/25"
+    "dates": "10/18 - 11/1"
    },
    "rcp_average_when_read": {
     "values": {
@@ -4935,6 +5887,51 @@
      },
      "url": "https://quantusinsights.org/polling/f/north-carolina-senate-cooper-holds-a-9-point-lead-over-whatley",
      "via": "RCP"
+    },
+    {
+     "pollster": "East Carolina U.",
+     "start": "2026-10-26",
+     "end": "2026-10-29",
+     "sample": 1041,
+     "sample_type": "LV",
+     "moe": 3.5,
+     "results": {
+      "Cooper": 54,
+      "Whatley": 45
+     },
+     "url": "https://surveyresearch-ecu.reportablenews.com/pr/ecu-poll-cooper-leads-whatley-by-9-points-as-election-day-nears",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. Minor-party/write-in 1. Credibility interval +/-3.5. MMS-to-web + IVR + online panel."
+    },
+    {
+     "pollster": "YouGov",
+     "start": "2026-10-26",
+     "end": "2026-10-29",
+     "sample": 2130,
+     "sample_type": "LV",
+     "moe": 2.9,
+     "results": {
+      "Cooper": 55,
+      "Whatley": 44
+     },
+     "url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_nc_20261026_lv.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. Leaners included; someone else 1, not sure 1. Sponsor not named in the topline PDF (file prefix 'ttw')."
+    },
+    {
+     "pollster": "AtlasIntel",
+     "start": "2026-10-28",
+     "end": "2026-11-01",
+     "sample": 1459,
+     "sample_type": "LV",
+     "moe": 3.0,
+     "results": {
+      "Cooper": 56.4,
+      "Whatley": 41.5
+     },
+     "url": "https://pollstergraph.com/poll/exclusive-atlas-us-nc-20261101-senate",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Exclusive AtlasIntel/PollsterGraph poll, released Nov 2. Total-votes basis; other 1.3, don't know 0.4, would not vote 0.4. RCP rounds to 56-42. Not on 270toWin."
     }
    ],
    "rcv_first_round": null,
@@ -4975,12 +5972,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Brown": 48.6,
-     "Husted": 45.4
+     "Brown": 48.3,
+     "Husted": 45.8
     },
     "leader_key": "Brown",
-    "margin": 3.2,
-    "dates": "10/9 - 10/22"
+    "margin": 2.5,
+    "dates": "10/26 - 11/1"
    },
    "rcp_average_when_read": {
     "values": {
@@ -5409,6 +6406,171 @@
      },
      "url": "https://insideradvantage.com/insideradvantage-senate-surveys-mi-el-sayed-47-rogers-46-ia-hinson-47-turek-45-oh-brown-47-husted-44/",
      "via": "RCP"
+    },
+    {
+     "pollster": "Echelon Insights",
+     "start": "2026-10-16",
+     "end": "2026-10-23",
+     "sample": 508,
+     "sample_type": "LV",
+     "moe": 5.2,
+     "results": {
+      "Brown": 47,
+      "Husted": 47
+     },
+     "url": "https://netchoice.org/wp-content/uploads/2026/10/NetChoice-October-2026-Antitrust-Tech-Survey-Topline.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Dated Oct 27 on 270toWin: borderline, may already be in the tracker. NetChoice-sponsored multi-state survey."
+    },
+    {
+     "pollster": "Suffolk University",
+     "start": "2026-10-21",
+     "end": "2026-10-26",
+     "sample": 500,
+     "sample_type": "LV",
+     "moe": 4.4,
+     "results": {
+      "Brown": 47,
+      "Husted": 44
+     },
+     "url": "https://www.suffolk.edu/-/media/suffolk/documents/academics/research-at-suffolk/suprc/polls/other-states/2026/10_28_2026_ohio_statewide_marginals.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 28. 270toWin mislabels this row as 'Siena College' but links Suffolk's Oct 28 Ohio marginals; pollcheck confirms Suffolk. Fieldwork dates via pollcheck.co.uk."
+    },
+    {
+     "pollster": "YouGov",
+     "start": "2026-10-26",
+     "end": "2026-10-29",
+     "sample": 2090,
+     "sample_type": "LV",
+     "moe": 2.8,
+     "results": {
+      "Brown": 50,
+      "Husted": 48
+     },
+     "url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_oh_20261026_lv.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. Fieldwork from YouGov PDF."
+    },
+    {
+     "pollster": "InsiderAdvantage",
+     "start": "2026-10-29",
+     "end": "2026-10-30",
+     "sample": 1200,
+     "sample_type": "LV",
+     "moe": 2.8,
+     "results": {
+      "Brown": 49,
+      "Husted": 47
+     },
+     "url": "https://insideradvantage.com/final-insideradvantage-ohio-survey-brown-49-husted-47-acton-49-ramaswamy-46/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1 (final InsiderAdvantage Ohio survey). Fieldwork dates via pollcheck.co.uk (pollster site refused connection)."
+    },
+    {
+     "pollster": "ActiVote",
+     "start": "2026-10-18",
+     "end": "2026-10-31",
+     "sample": 400,
+     "sample_type": "LV",
+     "moe": 4.9,
+     "results": {
+      "Brown": 50,
+      "Husted": 50
+     },
+     "url": "https://www.activote.net/polls/2026/oh-u-s-senate/2026-10-31/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 31. ActiVote reports no undecided. Fieldwork dates via pollcheck.co.uk."
+    },
+    {
+     "pollster": "Rasmussen Reports",
+     "start": "2026-10-27",
+     "end": "2026-10-31",
+     "sample": 1119,
+     "sample_type": "LV",
+     "moe": 3.0,
+     "results": {
+      "Brown": 46,
+      "Husted": 46
+     },
+     "url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_ohio_senate",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 2. Undecided 3. Fieldwork from pollster release."
+    },
+    {
+     "pollster": "NY Times/Siena",
+     "start": "2026-10-26",
+     "end": "2026-11-01",
+     "sample": 717,
+     "sample_type": "LV",
+     "moe": 4.4,
+     "results": {
+      "Brown": 49,
+      "Husted": 44
+     },
+     "url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. MoE 4.4 is Siena's stated figure incl. design effect (270toWin shows 4.2). Fieldwork dates via pollcheck.co.uk."
+    },
+    {
+     "pollster": "AtlasIntel",
+     "start": "2026-10-28",
+     "end": "2026-11-01",
+     "sample": null,
+     "sample_type": "LV",
+     "moe": null,
+     "results": {
+      "Brown": 51,
+      "Husted": 44
+     },
+     "url": "https://www.atlasintel.org/polls",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Listed by RCP Nov 2 (link went to AtlasIntel homepage). Not on atlasintel.org's public poll list as of the evening of Nov 2 (only Texas and national, both 10/28-11/1). Fieldwork and n unverified. Fieldwork dates taken from AtlasIntel's same-day battleground series (Oct 28–Nov 1); this state's own release was not public."
+    },
+    {
+     "pollster": "Research Co.",
+     "start": "2026-10-30",
+     "end": "2026-11-01",
+     "sample": 450,
+     "sample_type": "LV",
+     "moe": 4.6,
+     "results": {
+      "Brown": 49,
+      "Husted": 48
+     },
+     "url": "https://researchco.ca/2026/11/01/midterms-2026-one/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. Online; 'decided voters' (pollcheck lists 45/44 incl. undecided). Fieldwork from pollster release."
+    },
+    {
+     "pollster": "Trafalgar Group",
+     "start": "2026-10-31",
+     "end": "2026-11-01",
+     "sample": 1092,
+     "sample_type": "LV",
+     "moe": 2.9,
+     "results": {
+      "Brown": 46.6,
+      "Husted": 45.1
+     },
+     "url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/OH-Midterms-Report-1102.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 2. 270toWin rounds to 47/45 and shows MoE 2.8; PDF says 2.9. Fieldwork from pollster PDF."
+    },
+    {
+     "pollster": "Poll Vault/Emerson",
+     "start": "2026-10-31",
+     "end": "2026-11-01",
+     "sample": 500,
+     "sample_type": "LV",
+     "moe": null,
+     "results": {
+      "Brown": 46,
+      "Husted": 48
+     },
+     "url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Listed by RCP Nov 2. Paywalled on Poll Vault substack; not on emersoncollegepolling.com. Sibling Michigan poll was 10/31-11/1, 500 LV, MoE 4.4; unverified for OH. Dates and sample from the Michigan release of the same Emerson series (Oct 31–Nov 1, 500 LV); this state's release is paywalled."
     }
    ],
    "rcv_first_round": null,
@@ -5521,12 +6683,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Reed": 54.0,
-     "McKay": 31.2
+     "Reed": 56.2,
+     "McKay": 30.6
     },
     "leader_key": "Reed",
-    "margin": 22.8,
-    "dates": "6/18 - 10/11"
+    "margin": 25.6,
+    "dates": "8/20 - 10/31"
    },
    "rcp_average_when_read": {
     "values": {
@@ -5619,6 +6781,21 @@
      },
      "url": "https://emersoncollegepolling.com/rhode-island-2026-governor/",
      "via": "RCP"
+    },
+    {
+     "pollster": "UNH Survey Center",
+     "start": "2026-10-27",
+     "end": "2026-10-31",
+     "sample": 753,
+     "sample_type": "LV",
+     "moe": 3.6,
+     "results": {
+      "Reed": 63,
+      "McKay": 32
+     },
+     "url": "https://scholars.unh.edu/survey_center_polls/1015/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1, 2026 (PDF: https://scholars.unh.edu/cgi/viewcontent.cgi?article=2014&context=survey_center_polls). Bahry (I) 3%, undecided 2%. On 270toWin (11/01) and RCP (Nov 2)."
     }
    ],
    "rcv_first_round": null,
@@ -5659,12 +6836,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Andrews": 44.6,
-     "Graham Nordone": 47.0
+     "Andrews": 45.1,
+     "Graham Nordone": 47.1
     },
     "leader_key": "Graham Nordone",
-    "margin": 2.4,
-    "dates": "9/28 - 10/26"
+    "margin": 2.0,
+    "dates": "10/14 - 11/1"
    },
    "rcp_average_when_read": {
     "values": {
@@ -5759,6 +6936,21 @@
      "via": "RCP"
     },
     {
+     "pollster": "East Carolina U.",
+     "start": "2026-10-19",
+     "end": "2026-10-24",
+     "sample": 955,
+     "sample_type": "LV",
+     "moe": 3.7,
+     "results": {
+      "Graham Nordone": 51,
+      "Andrews": 47
+     },
+     "url": "https://surveyresearch-ecu.reportablenews.com/pr/ecu-poll-finds-graham-leading-andrews-by-four-points",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 29. Independent/minor-party/write-in 2. Credibility interval +/-3.7."
+    },
+    {
      "pollster": "The Citadel",
      "start": "2026-10-14",
      "end": "2026-10-25",
@@ -5773,6 +6965,21 @@
      "via": "RCP"
     },
     {
+     "pollster": "Targoz",
+     "start": "2026-10-16",
+     "end": "2026-10-25",
+     "sample": 895,
+     "sample_type": "LV",
+     "moe": 2.8,
+     "results": {
+      "Graham Nordone": 47,
+      "Andrews": 46
+     },
+     "url": "https://www.foxcarolina.com/2026/10/26/new-poll-shows-neck-and-neck-senate-race-double-digit-lead-governor-sc-midterms/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "FLAG: released Oct 26 (Fox Carolina), 270toWin dates it Oct 27 - may already be in the tracker. 895 likely/already-voted of 1,200 RV; MOE +/-2.77 is for the RV sample. Undecided 4; Whitener 2, Hackett 1 per Wikipedia."
+    },
+    {
      "pollster": "NY Times/Siena",
      "start": "2026-10-19",
      "end": "2026-10-26",
@@ -5785,6 +6992,36 @@
      },
      "url": "https://www.nytimes.com/2026/10/28/us/south-carolina-florida-minnesota-poll.html",
      "via": "RCP"
+    },
+    {
+     "pollster": "Rasmussen Reports",
+     "start": "2026-10-27",
+     "end": "2026-10-31",
+     "sample": 1028,
+     "sample_type": "LV",
+     "moe": 3.0,
+     "results": {
+      "Graham Nordone": 50,
+      "Andrews": 47
+     },
+     "url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_south_carolina_senate",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 2. Not sure 6 (as published). Phone + online; fieldwork by Pulse Opinion Research. Not on 270toWin."
+    },
+    {
+     "pollster": "Trafalgar Group",
+     "start": "2026-10-31",
+     "end": "2026-11-01",
+     "sample": 1091,
+     "sample_type": "LV",
+     "moe": 2.9,
+     "results": {
+      "Graham Nordone": 47.5,
+      "Andrews": 45.5
+     },
+     "url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/SC-Midterms-Survey-Report-1101.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 2. Undecided 4.2. 270toWin/RCP round to 48-46."
     }
    ],
    "rcv_first_round": null,
@@ -5959,12 +7196,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Talarico": 48.4,
-     "Paxton": 45.6
+     "Talarico": 50.1,
+     "Paxton": 46.6
     },
     "leader_key": "Talarico",
-    "margin": 2.8,
-    "dates": "10/13 - 10/27"
+    "margin": 3.5,
+    "dates": "10/27 - 11/2"
    },
    "rcp_average_when_read": {
     "values": {
@@ -6661,6 +7898,21 @@
      "via": "RCP"
     },
     {
+     "pollster": "Data for Progress",
+     "start": "2026-10-23",
+     "end": "2026-10-26",
+     "sample": 712,
+     "sample_type": "LV",
+     "moe": 4.0,
+     "results": {
+      "Talarico": 49,
+      "Paxton": 45
+     },
+     "url": "https://www.dataforprogress.org/blog/2026/10/30/democratic-senate-candidates-lead-in-maine-michigan-and-texas",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 30. Democratic pollster. Fieldwork dates via pollcheck.co.uk."
+    },
+    {
      "pollster": "CNN",
      "start": "2026-10-20",
      "end": "2026-10-27",
@@ -6673,6 +7925,156 @@
      },
      "url": "https://www.documentcloud.org/documents/28856724-cnn-poll-conducted-by-ssrs-texas-october/",
      "via": "RCP"
+    },
+    {
+     "pollster": "A2 Insights",
+     "start": "2026-10-23",
+     "end": "2026-10-27",
+     "sample": 631,
+     "sample_type": "LV",
+     "moe": 4.9,
+     "results": {
+      "Talarico": 50,
+      "Paxton": 47
+     },
+     "url": "https://drive.google.com/file/d/1UACnmnM84Dd1hU0l6iqHNgXkyh5oCelO/view",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 29. Fieldwork dates via pollcheck.co.uk."
+    },
+    {
+     "pollster": "ActiVote",
+     "start": "2026-10-22",
+     "end": "2026-10-28",
+     "sample": 400,
+     "sample_type": "LV",
+     "moe": 4.9,
+     "results": {
+      "Talarico": 52,
+      "Paxton": 48
+     },
+     "url": "https://www.activote.net/polls/2026/tx-u-s-senate/2026-10-29/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 29. ActiVote reports no undecided. Fieldwork dates via pollcheck.co.uk."
+    },
+    {
+     "pollster": "Quantus Insights",
+     "start": "2026-10-26",
+     "end": "2026-10-28",
+     "sample": 1221,
+     "sample_type": "LV",
+     "moe": 3.2,
+     "results": {
+      "Talarico": 48,
+      "Paxton": 49
+     },
+     "url": "https://quantusinsights.org/polling/f/texas-survey-paxton-up-one-abbott-ahead-by-five",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 30. Fieldwork dates via pollcheck.co.uk."
+    },
+    {
+     "pollster": "YouGov",
+     "start": "2026-10-26",
+     "end": "2026-10-29",
+     "sample": 2141,
+     "sample_type": "LV",
+     "moe": 2.9,
+     "results": {
+      "Talarico": 51,
+      "Paxton": 47
+     },
+     "url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_tx_20261026_lv.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. Fieldwork from YouGov PDF."
+    },
+    {
+     "pollster": "Kreate Strategies",
+     "start": "2026-10-27",
+     "end": "2026-10-30",
+     "sample": 900,
+     "sample_type": "LV",
+     "moe": 3.3,
+     "results": {
+      "Talarico": 48,
+      "Paxton": 45
+     },
+     "url": "https://kstrat.net/press/texas-2026-senate-governor-talarico-leads-paxton-october",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Oct 30. Fieldwork dates via pollcheck.co.uk."
+    },
+    {
+     "pollster": "NY Times/Siena",
+     "start": "2026-10-27",
+     "end": "2026-11-01",
+     "sample": 1215,
+     "sample_type": "LV",
+     "moe": 3.4,
+     "results": {
+      "Talarico": 50,
+      "Paxton": 43
+     },
+     "url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1 (final Times/Siena poll). MoE 3.4 is Siena's stated figure incl. design effect (270toWin shows 3.3). Fieldwork dates via pollcheck.co.uk and Fox 7 Austin coverage citing NYT; sri.siena.edu release page does not state dates."
+    },
+    {
+     "pollster": "AtlasIntel",
+     "start": "2026-10-28",
+     "end": "2026-11-01",
+     "sample": 1678,
+     "sample_type": "LV",
+     "moe": 2.0,
+     "results": {
+      "Talarico": 52,
+      "Paxton": 46
+     },
+     "url": "https://www.atlasintel.org/poll/usa-texas-2026-11-01",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1. Results as listed by RCP (valid-votes basis); pollcheck lists 51/45 (incl. undecided). Fieldwork, n and MoE from atlasintel.org poll page/PDF."
+    },
+    {
+     "pollster": "Trafalgar Group",
+     "start": "2026-10-31",
+     "end": "2026-11-01",
+     "sample": 1089,
+     "sample_type": "LV",
+     "moe": 2.9,
+     "results": {
+      "Talarico": 47.5,
+      "Paxton": 48.1
+     },
+     "url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/TX-Midterms-Report-1101.pdf",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 1-2. 270toWin rounds to 48/48. Fieldwork from pollster PDF."
+    },
+    {
+     "pollster": "Poll Vault/Emerson",
+     "start": "2026-10-31",
+     "end": "2026-11-01",
+     "sample": 500,
+     "sample_type": "LV",
+     "moe": null,
+     "results": {
+      "Talarico": 50,
+      "Paxton": 48
+     },
+     "url": "https://pollvault.substack.com/p/new-poll-vault-emerson-senate-and",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Listed by RCP Nov 2 as 'Poll Vault/Emerson'. Release is paywalled on Sean Trende's Poll Vault substack; not on emersoncollegepolling.com. Sibling Michigan poll was 10/31-11/1, 500 LV, MoE 4.4, so likely the same design, but unverified for TX. Dates and sample from the Michigan release of the same Emerson series (Oct 31–Nov 1, 500 LV); this state's release is paywalled."
+    },
+    {
+     "pollster": "Research Co.",
+     "start": "2026-10-31",
+     "end": "2026-11-02",
+     "sample": 450,
+     "sample_type": "LV",
+     "moe": 4.6,
+     "results": {
+      "Talarico": 51,
+      "Paxton": 48
+     },
+     "url": "https://researchco.ca/2026/11/02/midterms-2026-two/",
+     "via": "270toWin/pollster releases, Nov 2 update",
+     "notes": "Released Nov 2. Online; 'decided voters' (undecided excluded). Fieldwork from pollster release."
     }
    ],
    "rcv_first_round": null,

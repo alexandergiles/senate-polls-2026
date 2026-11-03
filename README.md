@@ -25,7 +25,7 @@ Everything the page shows is in [`data/senate-polls-2026.json`](data/senate-poll
 
 | Field | Source |
 |---|---|
-| Individual polls | [RealClearPolling](https://www.realclearpolling.com/latest-polls/senate) race pages and latest-polls listing, read 2026-10-29 (fieldwork dates for the newest polls from the pollsters' releases) |
+| Individual polls | [RealClearPolling](https://www.realclearpolling.com/latest-polls/senate) race pages and latest-polls listing, read 2026-10-29 (fieldwork dates for the newest polls from the pollsters' releases); the final-week polls released Oct 28 – Nov 2 added on Nov 2 from [270toWin](https://www.270towin.com/2026-senate-polls/) race pages and the pollsters' releases (`scripts/add_polls.py`), leaving out campaign- and party-sponsored polls |
 | Nebraska polls RCP does not list | [270toWin](https://www.270towin.com/2026-senate-polls/nebraska) (marked `"via": "270toWin"`) |
 | Candidates, incumbents, open seats | [270toWin](https://www.270towin.com/2026-senate-election/) and [Ballotpedia](https://ballotpedia.org/United_States_Senate_elections,_2026) |
 | Race ratings | Cook Political Report, as shown on 270toWin (Oct. 20, 2026 update) |
