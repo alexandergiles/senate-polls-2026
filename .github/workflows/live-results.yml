@@ -14,19 +14,22 @@ on:
         description: 'fetch (normal) or probe (record what each feed returns, for fitting the adapters)'
         default: fetch
         type: choice
-        options: [fetch, probe]
+        options: [fetch, loop, probe]
+      minutes:
+        description: 'loop mode: how long to keep running (max 350)'
+        default: '340'
 
 permissions:
   contents: write
 
 concurrency:
   group: live-results
-  cancel-in-progress: false
+  cancel-in-progress: false   # a running loop holds the group; scheduled runs wait behind it
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: ${{ github.event.inputs.mode == 'loop' && 355 || 10 }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -42,39 +45,23 @@ jobs:
           git add data/live-probe.json
           git commit -q -m "Probe of the live-results feeds" || true
           git push -q
-      - name: Fetch the count
-        if: ${{ github.event.inputs.mode != 'probe' }}
-        run: python3 scripts/fetch_results.py
-      - name: Commit if the count changed
-        if: ${{ github.event.inputs.mode != 'probe' }}
+      - name: Fetch and commit once
+        if: ${{ github.event.inputs.mode != 'probe' && github.event.inputs.mode != 'loop' }}
         run: |
-          python3 - <<'PY'
-          import json, subprocess, datetime, sys
-          new = json.load(open('data/results-live.json'))
-          try:
-              old = json.loads(subprocess.check_output(['git', 'show', 'HEAD:data/results-live.json']))
-          except Exception:
-              old = {}
-          strip = lambda d: {k: {kk: vv for kk, vv in v.items() if kk not in ('fetched',)} for k, v in (d.get('races') or {}).items()}
-          changed = strip(new) != strip(old)
-          age_ok = True
-          try:
-              t = datetime.datetime.fromisoformat(old.get('updated'))
-              age_ok = (datetime.datetime.now(datetime.timezone.utc) - t.astimezone(datetime.timezone.utc)).total_seconds() > 15 * 60
-          except Exception:
-              pass
-          if not changed and not age_ok:
-              print('no change; skipping commit'); sys.exit(0)
-          subprocess.check_call(['git', 'config', 'user.name', 'github-actions[bot]'])
-          subprocess.check_call(['git', 'config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com'])
-          subprocess.check_call(['git', 'add', 'data/results-live.json'])
-          msg = 'Live results ' + (new.get('updated') or '') + ('' if changed else ' (heartbeat)')
-          subprocess.check_call(['git', 'commit', '-q', '-m', msg])
-          for attempt in range(4):   # someone may have pushed (e.g. a hand edit of results-manual.json): rebase and retry
-              if subprocess.call(['git', 'pull', '-q', '--rebase', '-X', 'theirs', 'origin', 'main']) == 0 and subprocess.call(['git', 'push', '-q']) == 0:
-                  break
-              subprocess.call(['git', 'rebase', '--abort'])
-          else:
-              sys.exit('push failed after retries')
-          print('committed:', msg)
-          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python3 scripts/fetch_results.py
+          python3 scripts/commit_results.py
+      - name: Fetch and commit every 2 minutes (election night)
+        if: ${{ github.event.inputs.mode == 'loop' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          end=$((SECONDS + ${{ github.event.inputs.minutes || 340 }} * 60))
+          while [ $SECONDS -lt $end ]; do
+            git checkout -q -- data/results-live.json 2>/dev/null || true
+            git pull -q --rebase -X theirs origin main || git rebase --abort || true   # pick up hand edits to results-manual.json
+            timeout 240 python3 scripts/fetch_results.py || echo "fetch failed"
+            python3 scripts/commit_results.py || echo "commit failed"
+            sleep 120
+          done
