@@ -772,7 +772,7 @@ footer a { color: var(--ink-2); }
         const tr = el('tr', { class: 'p' });
         const name = p.url ? el('a', { href: p.url, target: '_blank', rel: 'noopener', text: p.pollster }) : el('span', { text: p.pollster });
         tr.append(el('td', {}, name, p.via === '270toWin' ? el('div', { class: 'src', text: 'via 270toWin' }) : null));
-        tr.append(el('td', { class: 'd', text: fmtYearRange(p.start, p.end) }));
+        tr.append(el('td', { class: 'd', text: fmtYearRange(p.start, p.end) + (p.date_basis === 'release' ? ' (released)' : ''), title: p.date_basis === 'release' ? 'Release date; fieldwork dates not published' : null }));
         tr.append(el('td', { class: 'smp', text: p.sample ? p.sample.toLocaleString() + ' ' + (p.sample_type || '') + (p.moe ? ' · ±' + p.moe : '') : (p.sample_type || '—') }));
         for (const c of order) tr.append(el('td', { class: 'n' + (m && m.key === c.key && m.lead > 0 ? ' top' : ''), text: p.results[c.key] == null ? '—' : String(p.results[c.key]) }));
         tr.append(el('td', { class: 'mg', text: marginText(r, p.results) }));
