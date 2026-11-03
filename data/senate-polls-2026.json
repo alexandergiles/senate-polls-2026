@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02",
+ "generated": "2026-11-03",
  "election_day": "2026-11-03",
  "senate": {
   "current": {
@@ -1888,11 +1888,11 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Turek": 48.0,
+     "Turek": 48.2,
      "Hinson": 47.4
     },
     "leader_key": "Turek",
-    "margin": 0.6,
+    "margin": 0.8,
     "dates": "10/26 - 11/1"
    },
    "rcp_average_when_read": {
@@ -2403,11 +2403,11 @@
      "pollster": "AtlasIntel",
      "start": "2026-10-28",
      "end": "2026-11-01",
-     "sample": null,
+     "sample": 1219,
      "sample_type": "LV",
      "moe": null,
      "results": {
-      "Turek": 50,
+      "Turek": 51,
       "Hinson": 46
      },
      "url": "https://www.atlasintel.org/polls",
@@ -2781,12 +2781,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Jackson": 51.2,
-     "Collins": 47.0
+     "Jackson": 51.4,
+     "Collins": 46.4
     },
     "leader_key": "Jackson",
-    "margin": 4.2,
-    "dates": "10/26 - 11/1"
+    "margin": 5.0,
+    "dates": "10/27 - 11/1"
    },
    "rcp_average_when_read": {
     "values": {
@@ -3237,10 +3237,25 @@
      "notes": "DOUBTFUL: listed only on pollcheck.co.uk (not on 270toWin or RCP); RV version n=1,334 Jackson 49 Collins 47. Release date unknown (fieldwork ended Nov 1)."
     },
     {
+     "pollster": "AtlasIntel",
+     "start": "2026-10-28",
+     "end": "2026-11-01",
+     "sample": 967,
+     "sample_type": "LV",
+     "moe": 3.0,
+     "results": {
+      "Jackson": 53,
+      "Collins": 44
+     },
+     "url": "https://www.270towin.com/2026-senate-polls/",
+     "via": "270toWin, Nov 3 update",
+     "notes": "Fieldwork dates taken from AtlasIntel's same-day battleground series (Oct 28–Nov 1)."
+    },
+    {
      "pollster": "Poll Vault/Emerson",
      "start": "2026-10-31",
      "end": "2026-11-01",
-     "sample": 500,
+     "sample": 600,
      "sample_type": "LV",
      "moe": null,
      "results": {
@@ -3541,11 +3556,11 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "El-Sayed": 50.2,
-     "Rogers": 45.0
+     "El-Sayed": 51.2,
+     "Rogers": 45.4
     },
     "leader_key": "El-Sayed",
-    "margin": 5.2,
+    "margin": 5.8,
     "dates": "10/23 - 11/1"
    },
    "rcp_average_when_read": {
@@ -4246,6 +4261,21 @@
      "url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/",
      "via": "270toWin/pollster releases, Nov 2 update",
      "notes": "Released Nov 1. MoE 3.8 is Siena's stated figure incl. design effect (270toWin shows 3.6). Fieldwork 10/23-11/1 per RCP race page and pollcheck (longer field period than the other states in the same release)."
+    },
+    {
+     "pollster": "AtlasIntel",
+     "start": "2026-10-28",
+     "end": "2026-11-01",
+     "sample": 1316,
+     "sample_type": "LV",
+     "moe": 3.0,
+     "results": {
+      "El-Sayed": 54,
+      "Rogers": 46
+     },
+     "url": "https://www.270towin.com/2026-senate-polls/",
+     "via": "270toWin, Nov 3 update",
+     "notes": "Fieldwork dates taken from AtlasIntel's same-day battleground series (Oct 28–Nov 1)."
     },
     {
      "pollster": "Research Co.",
@@ -5007,12 +5037,12 @@
     "source": "mean",
     "n": 5,
     "values": {
-     "Pappas": 50.6,
-     "Sununu": 42.6
+     "Pappas": 50.8,
+     "Sununu": 42.8
     },
     "leader_key": "Pappas",
     "margin": 8.0,
-    "dates": "9/28 - 10/31"
+    "dates": "10/2 - 11/1"
    },
    "rcp_average_when_read": {
     "values": {
@@ -5148,6 +5178,21 @@
      "url": "https://scholars.unh.edu/survey_center_polls/1011/",
      "via": "270toWin/pollster releases, Nov 2 update",
      "notes": "Granite State Poll, 'NH Final 2026 Election Poll', released Nov 1, 2026 (PDF: https://scholars.unh.edu/cgi/viewcontent.cgi?article=2010&context=survey_center_polls). LaPlante (Constitution) 2%, undecided 2%. On 270toWin (dated 11/01) and RCP (Nov 2)."
+    },
+    {
+     "pollster": "AtlasIntel",
+     "start": "2026-10-28",
+     "end": "2026-11-01",
+     "sample": 1057,
+     "sample_type": "LV",
+     "moe": 3.0,
+     "results": {
+      "Pappas": 52,
+      "Sununu": 44
+     },
+     "url": "https://www.270towin.com/2026-senate-polls/",
+     "via": "270toWin, Nov 3 update",
+     "notes": "Fieldwork dates taken from AtlasIntel's same-day battleground series (Oct 28–Nov 1)."
     }
    ],
    "rcv_first_round": null,
@@ -6516,7 +6561,7 @@
      "pollster": "AtlasIntel",
      "start": "2026-10-28",
      "end": "2026-11-01",
-     "sample": null,
+     "sample": 1801,
      "sample_type": "LV",
      "moe": null,
      "results": {
@@ -6561,7 +6606,7 @@
      "pollster": "Poll Vault/Emerson",
      "start": "2026-10-31",
      "end": "2026-11-01",
-     "sample": 500,
+     "sample": 930,
      "sample_type": "LV",
      "moe": null,
      "results": {
