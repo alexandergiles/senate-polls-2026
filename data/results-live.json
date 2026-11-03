@@ -164,36 +164,6 @@
 }
 ]
 },
-"MT": {
-"source": "Montana Secretary of State",
-"source_url": "https://electionresults.mt.gov/",
-"fetched": "2026-11-02T15:28:26-05:00",
-"stale": false,
-"reporting": "Precincts Fully: 728 / 728",
-"reporting_pct": 100.0,
-"status": "counting",
-"called_for": null,
-"candidates": [
-{
-"key": "Alme",
-"name": "Kurt Alme",
-"party": "R",
-"votes": 128716
-},
-{
-"key": "Calhoun",
-"name": "LEE CALHOUN",
-"party": "R",
-"votes": 23872
-},
-{
-"key": "Child",
-"name": "CHARLES WALKING CHILD",
-"party": "R",
-"votes": 16474
-}
-]
-},
 "NE": {
 "source": "Nebraska Secretary of State",
 "source_url": "https://electionresults.nebraska.gov/",

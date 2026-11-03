@@ -76,14 +76,19 @@ def party_code(s):
 
 
 def surname(name):
-    n = re.sub(r"\s*\([^)]*\)\s*$", "", name or "").strip()
+    import unicodedata
+    n = unicodedata.normalize("NFKD", name or "").encode("ascii", "ignore").decode()
+    n = re.sub(r"\s*\([^)]*\)\s*$", "", n).strip()
     n = re.sub(r",?\s+(jr\.?|sr\.?|ii|iii|iv)$", "", n, flags=re.I)
+    if "," in n:                      # "Sullivan, Dan S." -> Sullivan
+        n = n.split(",")[0]
     parts = n.replace(",", " ").split()
     return parts[-1].lower() if parts else ""
 
 
 def match_candidates(race, found):
-    """Map fetched rows [{name, party, votes}] onto the site's candidate keys for the race (by surname, then party)."""
+    """Map fetched rows [{name, party, votes}] onto the race's candidates (by surname, then by a unique party).
+    Works for unpolled races too, whose candidates have no poll key: their key becomes the surname."""
     out = []
     site = race["candidates"]
     used = set()
@@ -91,19 +96,30 @@ def match_candidates(race, found):
         sn = surname(row["name"])
         hit = None
         for c in site:
-            if c["key"] and c["key"] not in used and (surname(c["name"]) == sn or sn in c["name"].lower().split()):
+            if c["name"] not in used and sn and (surname(c["name"]) == sn or sn in [surname(w) for w in c["name"].split()]):
                 hit = c; break
-        if hit is None and row.get("party"):
-            cands = [c for c in site if c["key"] and c["key"] not in used and c["party"] == row["party"]]
-            if len(cands) == 1 and sn and sn not in ("write-in", "writein"):
+        if hit is None and row.get("party") and sn and sn not in ("write-in", "writein", "in"):
+            cands = [c for c in site if c["name"] not in used and c["party"] == row["party"]]
+            if len(cands) == 1:
                 hit = cands[0]
-        key = hit["key"] if hit else None
-        party = row.get("party") or (hit["party"] if hit else "O")
         if hit:
-            used.add(key)
-        out.append({"key": key or surname(row["name"]).capitalize(), "name": hit["name"] if hit else row["name"], "party": party, "votes": int(row["votes"] or 0)})
+            used.add(hit["name"])
+        key = (hit.get("key") or hit["name"]) if hit else surname(row["name"]).capitalize()
+        party = row.get("party") or (hit["party"] if hit else "O")
+        out.append({"key": key, "name": hit["name"] if hit else row["name"], "party": party, "votes": int(row["votes"] or 0),
+                    "matched": bool(hit), "side": (("R" if hit["party"] == "R" else "D") if hit else None)})
     out.sort(key=lambda c: -c["votes"])
     return out
+
+
+def is_this_race(race, cands):
+    """Guard against a feed serving another election (Montana's site still served the June primary): the result
+    must name at least two of this race's candidates, the Republican and a Democrat or independent among them."""
+    hit = [c for c in cands if c.get("matched")]
+    if not any("matched" in c for c in cands):          # entries written before the guard existed: re-match by name
+        hit = [c for c in match_candidates(race, [{"name": c["name"], "party": c.get("party"), "votes": c.get("votes", 0)} for c in cands]) if c["matched"]]
+    sides = {c.get("side") or ("R" if c.get("party") == "R" else "D") for c in hit}
+    return len(hit) >= 2 and sides == {"R", "D"}
 
 
 # ---------- adapters: each returns {"candidates": [{name, party, votes}], "reporting": str|None, "reporting_pct": float|None} ----------
@@ -607,6 +623,8 @@ def main():
             try:
                 got = ADAPTERS[cfg["adapter"]](cfg)
                 cands = match_candidates(race, got["candidates"])
+                if not is_this_race(race, cands):
+                    raise RuntimeError("feed does not carry this race's general-election candidates (another election?): " + ", ".join(c["name"] for c in cands[:5]))
                 entry = {"source": cfg.get("source", "State election office"), "source_url": cfg.get("source_url", cfg.get("url")), "fetched": now, "stale": False,
                          "reporting": got.get("reporting"), "reporting_pct": got.get("reporting_pct"), "status": "counting" if any(c["votes"] for c in cands) else "no results",
                          "called_for": None, "candidates": cands}
@@ -614,9 +632,9 @@ def main():
             except Exception as e:
                 log(rid, "FAILED", type(e).__name__, str(e)[:160])
                 errors[rid] = type(e).__name__ + ": " + str(e)[:200]
-                if rid in prev:
+                if rid in prev and is_this_race(race, prev[rid].get("candidates") or []):
                     entry = dict(prev[rid]); entry["stale"] = True
-        elif rid in prev:
+        elif rid in prev and (manual.get(rid) or is_this_race(race, prev[rid].get("candidates") or [])):
             entry = prev[rid]
         # hand-entered numbers and calls win
         m = manual.get(rid)
