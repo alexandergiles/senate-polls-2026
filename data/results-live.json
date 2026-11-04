@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-03T22:44:36-05:00",
+"updated": "2026-11-03T22:46:55-05:00",
 "note": "Counts from state election offices, refreshed every few minutes on election night; calls entered by hand.",
 "races": {
 "AL": {
@@ -157,7 +157,7 @@
 "FL-special": {
 "source": "Florida Division of Elections (Florida Election Watch); race call by the Associated Press (via Poliwave)",
 "source_url": "https://floridaelectionwatch.gov/FederalOffices/USSenator",
-"fetched": "2026-11-03T22:44:36-05:00",
+"fetched": "2026-11-03T22:46:55-05:00",
 "stale": false,
 "reporting": "about 99% of the last election's vote counted",
 "reporting_pct": 99.0,
@@ -168,7 +168,7 @@
 "key": "Moody",
 "name": "Ashley Moody",
 "party": "R",
-"votes": 4192518,
+"votes": 4193538,
 "matched": true,
 "side": "R"
 },
@@ -176,7 +176,7 @@
 "key": "Nixon",
 "name": "Angie Nixon",
 "party": "D",
-"votes": 3946009,
+"votes": 3948462,
 "matched": true,
 "side": "D"
 },
@@ -184,7 +184,7 @@
 "key": "Gillespie",
 "name": "Neil J. Gillespie",
 "party": "I",
-"votes": 93970,
+"votes": 94022,
 "matched": false,
 "side": null
 }
@@ -229,7 +229,7 @@
 "ID": {
 "source": "Idaho Secretary of State",
 "source_url": "https://app.enhancedvoting.com/results/public/id/nov2026",
-"fetched": "2026-11-03T22:44:36-05:00",
+"fetched": "2026-11-03T22:46:55-05:00",
 "stale": false,
 "reporting": null,
 "reporting_pct": null,
@@ -345,10 +345,10 @@
 "KS": {
 "source": "Kansas Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://ent.sos.ks.gov/kssos_ent.html",
-"fetched": "2026-11-03T22:44:36-05:00",
+"fetched": "2026-11-03T22:46:55-05:00",
 "stale": false,
-"reporting": "Precincts Reporting: 3148 of 4168",
-"reporting_pct": 75.5,
+"reporting": "Precincts Reporting: 3169 of 4168",
+"reporting_pct": 76.0,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -356,7 +356,7 @@
 "key": "Hamilton",
 "name": "Adam Hamilton",
 "party": "D",
-"votes": 510116,
+"votes": 511680,
 "matched": true,
 "side": "D"
 },
@@ -364,7 +364,7 @@
 "key": "Marshall",
 "name": "Roger Marshall",
 "party": "R",
-"votes": 421473,
+"votes": 425191,
 "matched": true,
 "side": "R"
 },
@@ -372,7 +372,7 @@
 "key": "Graham",
 "name": "David C Graham",
 "party": "L",
-"votes": 27462,
+"votes": 27652,
 "matched": false,
 "side": null
 }
@@ -757,7 +757,7 @@
 "NE": {
 "source": "Nebraska Secretary of State",
 "source_url": "https://electionresults.nebraska.gov/",
-"fetched": "2026-11-03T22:44:36-05:00",
+"fetched": "2026-11-03T22:46:55-05:00",
 "stale": false,
 "reporting": "82 of 1,322 precincts",
 "reporting_pct": 6.2,
@@ -768,7 +768,7 @@
 "key": "Osborn",
 "name": "Dan Osborn",
 "party": "I",
-"votes": 170920,
+"votes": 171836,
 "matched": true,
 "side": "D"
 },
@@ -776,7 +776,7 @@
 "key": "Ricketts",
 "name": "Pete Ricketts",
 "party": "R",
-"votes": 140563,
+"votes": 142379,
 "matched": true,
 "side": "R"
 },
@@ -784,7 +784,7 @@
 "key": "Richards",
 "name": "Robin  Richards",
 "party": "O",
-"votes": 8130,
+"votes": 8209,
 "matched": false,
 "side": null
 },
@@ -792,7 +792,7 @@
 "key": "Marvin",
 "name": "Mike  Marvin",
 "party": "O",
-"votes": 6146,
+"votes": 6205,
 "matched": false,
 "side": null
 },
@@ -800,7 +800,7 @@
 "key": "Conboy",
 "name": "Chuck  Conboy",
 "party": "O",
-"votes": 3269,
+"votes": 3319,
 "matched": false,
 "side": null
 }
@@ -889,7 +889,7 @@
 "NM": {
 "source": "New Mexico Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://electionresults.sos.nm.gov/",
-"fetched": "2026-11-03T22:44:36-05:00",
+"fetched": "2026-11-03T22:46:55-05:00",
 "stale": false,
 "reporting": "137 of 2,204 precincts",
 "reporting_pct": 6.2,
@@ -917,7 +917,7 @@
 "NC": {
 "source": "N.C. State Board of Elections; race call by the Associated Press (via Poliwave)",
 "source_url": "https://er.ncsbe.gov/?election_dt=11/03/2026",
-"fetched": "2026-11-03T22:44:36-05:00",
+"fetched": "2026-11-03T22:46:55-05:00",
 "stale": false,
 "reporting": "about 74% of the last election's vote counted",
 "reporting_pct": 73.5,
@@ -1153,10 +1153,10 @@
 "SD": {
 "source": "South Dakota Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://electionresults.sd.gov/",
-"fetched": "2026-11-03T22:44:36-05:00",
+"fetched": "2026-11-03T22:46:55-05:00",
 "stale": false,
-"reporting": "216 of 671 precincts",
-"reporting_pct": 32.2,
+"reporting": "229 of 671 precincts",
+"reporting_pct": 34.1,
 "status": "called",
 "called_for": "R",
 "candidates": [
@@ -1164,7 +1164,7 @@
 "key": "Rounds",
 "name": "Mike Rounds",
 "party": "R",
-"votes": 54066,
+"votes": 56420,
 "matched": true,
 "side": "R"
 },
@@ -1172,7 +1172,7 @@
 "key": "Bengs",
 "name": "Brian Bengs",
 "party": "I",
-"votes": 30787,
+"votes": 31900,
 "matched": true,
 "side": "D"
 }
@@ -1273,7 +1273,7 @@
 "TX": {
 "source": "Texas Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://goelect.txelections.civixapps.com/ivis-enr-ui/races",
-"fetched": "2026-11-03T22:44:36-05:00",
+"fetched": "2026-11-03T22:46:55-05:00",
 "stale": false,
 "reporting": "about 58% of the last election's vote counted",
 "reporting_pct": 57.9,
@@ -1341,10 +1341,10 @@
 "VA": {
 "source": "Virginia Department of Elections; race call by the Associated Press (via Poliwave)",
 "source_url": "https://enr.elections.virginia.gov/results/public/virginia/elections/2026-November-General",
-"fetched": "2026-11-03T22:44:36-05:00",
+"fetched": "2026-11-03T22:46:55-05:00",
 "stale": false,
 "reporting": "about 72% of the last election's vote counted",
-"reporting_pct": 71.6,
+"reporting_pct": 71.8,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -1352,7 +1352,7 @@
 "key": "Mark Warner",
 "name": "Mark Warner",
 "party": "D",
-"votes": 1901913,
+"votes": 1906234,
 "matched": true,
 "side": "D"
 },
@@ -1360,7 +1360,7 @@
 "key": "Bert Mizusawa",
 "name": "Bert Mizusawa",
 "party": "R",
-"votes": 1243341,
+"votes": 1247020,
 "matched": true,
 "side": "R"
 },
@@ -1368,7 +1368,7 @@
 "key": "Write-in",
 "name": "Write-In",
 "party": "O",
-"votes": 8539,
+"votes": 8572,
 "matched": false,
 "side": null
 }
