@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-03T21:38:55-05:00",
+"updated": "2026-11-03T21:41:06-05:00",
 "note": "Counts from state election offices, refreshed every few minutes on election night; calls entered by hand.",
 "races": {
 "AL": {
@@ -157,7 +157,7 @@
 "FL-special": {
 "source": "Florida Division of Elections (Florida Election Watch); race call by the Associated Press (via Poliwave)",
 "source_url": "https://floridaelectionwatch.gov/FederalOffices/USSenator",
-"fetched": "2026-11-03T21:38:55-05:00",
+"fetched": "2026-11-03T21:41:06-05:00",
 "stale": false,
 "reporting": "about 99% of the last election's vote counted",
 "reporting_pct": 99.0,
@@ -168,7 +168,7 @@
 "key": "Moody",
 "name": "Ashley Moody",
 "party": "R",
-"votes": 4179737,
+"votes": 4180204,
 "matched": true,
 "side": "R"
 },
@@ -176,7 +176,7 @@
 "key": "Nixon",
 "name": "Angie Nixon",
 "party": "D",
-"votes": 3930937,
+"votes": 3931736,
 "matched": true,
 "side": "D"
 },
@@ -184,7 +184,7 @@
 "key": "Gillespie",
 "name": "Neil J. Gillespie",
 "party": "I",
-"votes": 93537,
+"votes": 93546,
 "matched": false,
 "side": null
 }
@@ -229,7 +229,7 @@
 "ID": {
 "source": "Idaho Secretary of State",
 "source_url": "https://app.enhancedvoting.com/results/public/id/nov2026",
-"fetched": "2026-11-03T21:38:55-05:00",
+"fetched": "2026-11-03T21:41:06-05:00",
 "stale": false,
 "reporting": null,
 "reporting_pct": null,
@@ -345,10 +345,10 @@
 "KS": {
 "source": "Kansas Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://ent.sos.ks.gov/kssos_ent.html",
-"fetched": "2026-11-03T21:38:55-05:00",
+"fetched": "2026-11-03T21:41:06-05:00",
 "stale": false,
-"reporting": "Precincts Reporting: 1199 of 4168",
-"reporting_pct": 28.8,
+"reporting": "Precincts Reporting: 1263 of 4168",
+"reporting_pct": 30.3,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -356,7 +356,7 @@
 "key": "Hamilton",
 "name": "Adam Hamilton",
 "party": "D",
-"votes": 377566,
+"votes": 383612,
 "matched": true,
 "side": "D"
 },
@@ -364,7 +364,7 @@
 "key": "Marshall",
 "name": "Roger Marshall",
 "party": "R",
-"votes": 256505,
+"votes": 265226,
 "matched": true,
 "side": "R"
 },
@@ -372,7 +372,7 @@
 "key": "Graham",
 "name": "David C Graham",
 "party": "L",
-"votes": 15421,
+"votes": 16233,
 "matched": false,
 "side": null
 }
@@ -721,7 +721,7 @@
 "NE": {
 "source": "Nebraska Secretary of State",
 "source_url": "https://electionresults.nebraska.gov/",
-"fetched": "2026-11-03T21:38:55-05:00",
+"fetched": "2026-11-03T21:41:06-05:00",
 "stale": false,
 "reporting": "21 of 1,322 precincts",
 "reporting_pct": 1.6,
@@ -853,7 +853,7 @@
 "NM": {
 "source": "New Mexico Secretary of State",
 "source_url": "https://electionresults.sos.nm.gov/",
-"fetched": "2026-11-03T21:38:55-05:00",
+"fetched": "2026-11-03T21:41:06-05:00",
 "stale": false,
 "reporting": "0 of 2,204 precincts",
 "reporting_pct": 0.0,
@@ -881,10 +881,10 @@
 "NC": {
 "source": "N.C. State Board of Elections; race call by the Associated Press (via Poliwave)",
 "source_url": "https://er.ncsbe.gov/?election_dt=11/03/2026",
-"fetched": "2026-11-03T21:38:55-05:00",
+"fetched": "2026-11-03T21:41:06-05:00",
 "stale": false,
 "reporting": "about 64% of the last election's vote counted",
-"reporting_pct": 63.6,
+"reporting_pct": 64.0,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -892,7 +892,7 @@
 "key": "Cooper",
 "name": "Roy Cooper",
 "party": "D",
-"votes": 2063726,
+"votes": 2069796,
 "matched": true,
 "side": "D"
 },
@@ -900,7 +900,7 @@
 "key": "Whatley",
 "name": "Michael Whatley",
 "party": "R",
-"votes": 1347689,
+"votes": 1362172,
 "matched": true,
 "side": "R"
 },
@@ -908,7 +908,7 @@
 "key": "Bray",
 "name": "Shannon W. Bray",
 "party": "L",
-"votes": 42518,
+"votes": 42887,
 "matched": false,
 "side": null
 },
@@ -916,7 +916,7 @@
 "key": "Dublin",
 "name": "Michael Dublin",
 "party": "O",
-"votes": 28412,
+"votes": 28657,
 "matched": false,
 "side": null
 }
@@ -1273,10 +1273,10 @@
 "VA": {
 "source": "Virginia Department of Elections; race call by the Associated Press (via Poliwave)",
 "source_url": "https://enr.elections.virginia.gov/results/public/virginia/elections/2026-November-General",
-"fetched": "2026-11-03T21:38:55-05:00",
+"fetched": "2026-11-03T21:41:06-05:00",
 "stale": false,
 "reporting": "about 61% of the last election's vote counted",
-"reporting_pct": 60.7,
+"reporting_pct": 60.8,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -1284,7 +1284,7 @@
 "key": "Mark Warner",
 "name": "Mark Warner",
 "party": "D",
-"votes": 1601644,
+"votes": 1604164,
 "matched": true,
 "side": "D"
 },
@@ -1292,7 +1292,7 @@
 "key": "Bert Mizusawa",
 "name": "Bert Mizusawa",
 "party": "R",
-"votes": 1065646,
+"votes": 1067448,
 "matched": true,
 "side": "R"
 },
@@ -1300,7 +1300,7 @@
 "key": "Write-in",
 "name": "Write-In",
 "party": "O",
-"votes": 7574,
+"votes": 7581,
 "matched": false,
 "side": null
 }
