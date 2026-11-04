@@ -1,11 +1,11 @@
 {
-"updated": "2026-11-03T20:36:51-05:00",
+"updated": "2026-11-03T20:39:00-05:00",
 "note": "Counts from state election offices, refreshed every few minutes on election night; calls entered by hand.",
 "races": {
 "DE": {
 "source": "Delaware Department of Elections",
 "source_url": "https://elections.delaware.gov/results/enr/GE2026.html",
-"fetched": "2026-11-03T20:36:51-05:00",
+"fetched": "2026-11-03T20:39:00-05:00",
 "stale": false,
 "reporting": null,
 "reporting_pct": null,
@@ -33,7 +33,7 @@
 "FL-special": {
 "source": "Florida Division of Elections (Florida Election Watch)",
 "source_url": "https://floridaelectionwatch.gov/FederalOffices/USSenator",
-"fetched": "2026-11-03T20:36:51-05:00",
+"fetched": "2026-11-03T20:39:00-05:00",
 "stale": false,
 "reporting": null,
 "reporting_pct": null,
@@ -44,7 +44,7 @@
 "key": "Moody",
 "name": "Ashley Moody",
 "party": "R",
-"votes": 4040737,
+"votes": 4041191,
 "matched": true,
 "side": "R"
 },
@@ -52,7 +52,7 @@
 "key": "Nixon",
 "name": "Angie Nixon",
 "party": "D",
-"votes": 3833859,
+"votes": 3834051,
 "matched": true,
 "side": "D"
 },
@@ -60,7 +60,7 @@
 "key": "Gillespie",
 "name": "Neil J. Gillespie",
 "party": "I",
-"votes": 90316,
+"votes": 90323,
 "matched": false,
 "side": null
 }
@@ -69,7 +69,7 @@
 "ID": {
 "source": "Idaho Secretary of State",
 "source_url": "https://app.enhancedvoting.com/results/public/id/nov2026",
-"fetched": "2026-11-03T20:36:51-05:00",
+"fetched": "2026-11-03T20:39:00-05:00",
 "stale": false,
 "reporting": null,
 "reporting_pct": null,
@@ -113,7 +113,7 @@
 "KS": {
 "source": "Kansas Secretary of State",
 "source_url": "https://ent.sos.ks.gov/kssos_ent.html",
-"fetched": "2026-11-03T20:36:51-05:00",
+"fetched": "2026-11-03T20:39:00-05:00",
 "stale": false,
 "reporting": "Precincts Reporting: 28 of 4168",
 "reporting_pct": 0.7,
@@ -149,7 +149,7 @@
 "MN": {
 "source": "Minnesota Secretary of State",
 "source_url": "https://electionresults.sos.mn.gov/20261103",
-"fetched": "2026-11-03T20:36:51-05:00",
+"fetched": "2026-11-03T20:39:00-05:00",
 "stale": false,
 "reporting": "0 of 4,105 precincts",
 "reporting_pct": 0.0,
@@ -201,7 +201,7 @@
 "NE": {
 "source": "Nebraska Secretary of State",
 "source_url": "https://electionresults.nebraska.gov/",
-"fetched": "2026-11-03T20:36:51-05:00",
+"fetched": "2026-11-03T20:39:00-05:00",
 "stale": false,
 "reporting": "0 of 1,322 precincts",
 "reporting_pct": 0.0,
@@ -253,7 +253,7 @@
 "NM": {
 "source": "New Mexico Secretary of State",
 "source_url": "https://electionresults.sos.nm.gov/",
-"fetched": "2026-11-03T20:36:51-05:00",
+"fetched": "2026-11-03T20:39:00-05:00",
 "stale": false,
 "reporting": "0 of 2,204 precincts",
 "reporting_pct": 0.0,
@@ -281,7 +281,7 @@
 "NC": {
 "source": "N.C. State Board of Elections",
 "source_url": "https://er.ncsbe.gov/?election_dt=11/03/2026",
-"fetched": "2026-11-03T20:36:51-05:00",
+"fetched": "2026-11-03T20:39:00-05:00",
 "stale": false,
 "reporting": null,
 "reporting_pct": null,
@@ -292,7 +292,7 @@
 "key": "Cooper",
 "name": "Roy Cooper",
 "party": "D",
-"votes": 1613117,
+"votes": 1618439,
 "matched": true,
 "side": "D"
 },
@@ -300,7 +300,7 @@
 "key": "Whatley",
 "name": "Michael Whatley",
 "party": "R",
-"votes": 841360,
+"votes": 848670,
 "matched": true,
 "side": "R"
 },
@@ -308,7 +308,7 @@
 "key": "Bray",
 "name": "Shannon W. Bray",
 "party": "L",
-"votes": 24247,
+"votes": 24537,
 "matched": false,
 "side": null
 },
@@ -316,7 +316,7 @@
 "key": "Dublin",
 "name": "Michael Dublin",
 "party": "O",
-"votes": 18284,
+"votes": 18438,
 "matched": false,
 "side": null
 }
@@ -325,7 +325,7 @@
 "SD": {
 "source": "South Dakota Secretary of State",
 "source_url": "https://electionresults.sd.gov/",
-"fetched": "2026-11-03T20:36:51-05:00",
+"fetched": "2026-11-03T20:39:00-05:00",
 "stale": false,
 "reporting": "0 of 671 precincts",
 "reporting_pct": 0.0,
@@ -353,7 +353,7 @@
 "TX": {
 "source": "Texas Secretary of State",
 "source_url": "https://goelect.txelections.civixapps.com/ivis-enr-ui/races",
-"fetched": "2026-11-03T20:36:51-05:00",
+"fetched": "2026-11-03T20:39:00-05:00",
 "stale": false,
 "reporting": null,
 "reporting_pct": null,
@@ -364,7 +364,7 @@
 "key": "Paxton",
 "name": "Ken Paxton",
 "party": "R",
-"votes": 95047,
+"votes": 266914,
 "matched": true,
 "side": "R"
 },
@@ -372,7 +372,7 @@
 "key": "Talarico",
 "name": "James Talarico",
 "party": "D",
-"votes": 55172,
+"votes": 200895,
 "matched": true,
 "side": "D"
 },
@@ -380,7 +380,7 @@
 "key": "Brown",
 "name": "Ted Brown",
 "party": "L",
-"votes": 3233,
+"votes": 9018,
 "matched": false,
 "side": null
 },
@@ -388,7 +388,7 @@
 "key": "Ayers",
 "name": "Avery Ayers",
 "party": "O",
-"votes": 51,
+"votes": 92,
 "matched": false,
 "side": null
 },
@@ -396,7 +396,7 @@
 "key": "Hall",
 "name": "Bradford \"Brad\" Hall",
 "party": "O",
-"votes": 40,
+"votes": 64,
 "matched": false,
 "side": null
 },
@@ -404,7 +404,7 @@
 "key": "Simmons",
 "name": "Jade Simmons",
 "party": "O",
-"votes": 18,
+"votes": 29,
 "matched": false,
 "side": null
 },
@@ -412,7 +412,7 @@
 "key": "Mohamed",
 "name": "Zul Mohamed",
 "party": "O",
-"votes": 0,
+"votes": 3,
 "matched": false,
 "side": null
 }
@@ -421,7 +421,7 @@
 "VA": {
 "source": "Virginia Department of Elections",
 "source_url": "https://enr.elections.virginia.gov/results/public/virginia/elections/2026-November-General",
-"fetched": "2026-11-03T20:36:51-05:00",
+"fetched": "2026-11-03T20:39:00-05:00",
 "stale": false,
 "reporting": null,
 "reporting_pct": null,
@@ -432,7 +432,7 @@
 "key": "Mark Warner",
 "name": "Mark Warner",
 "party": "D",
-"votes": 1030796,
+"votes": 1079582,
 "matched": true,
 "side": "D"
 },
@@ -440,7 +440,7 @@
 "key": "Bert Mizusawa",
 "name": "Bert Mizusawa",
 "party": "R",
-"votes": 684389,
+"votes": 724586,
 "matched": true,
 "side": "R"
 },
@@ -448,7 +448,7 @@
 "key": "Write-in",
 "name": "Write-In",
 "party": "O",
-"votes": 4686,
+"votes": 4902,
 "matched": false,
 "side": null
 }
