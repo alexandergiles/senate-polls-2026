@@ -18,57 +18,5 @@
     "votes": 188902
    }
   ]
- },
- "FL-special": {
-  "called_for": "R",
-  "source": "Florida Division of Elections; race call by the AP",
-  "as_of": "2026-11-03T20:37:00-05:00"
- },
- "NC": {
-  "called_for": "D",
-  "source": "N.C. State Board of Elections; race call by the AP",
-  "as_of": "2026-11-03T20:30:00-05:00"
- },
- "VA": {
-  "called_for": "D",
-  "source": "Virginia Department of Elections; race call by the AP",
-  "as_of": "2026-11-03T19:30:00-05:00"
- },
- "GA": {
-  "called_for": "D",
-  "source": "Georgia Secretary of State count via civicAPI (as of 7:41 pm); race call by the AP",
-  "as_of": "2026-11-03T19:41:00-05:00",
-  "reporting": "early count, 65 of 2,582 precincts",
-  "reporting_pct": 2.5,
-  "candidates": [
-   {
-    "name": "Jon Ossoff",
-    "party": "D",
-    "votes": 864631
-   },
-   {
-    "name": "Mike Collins",
-    "party": "R",
-    "votes": 465907
-   }
-  ]
- },
- "KY": {
-  "called_for": "R",
-  "source": "Kentucky Secretary of State count via civicAPI (as of 7:41 pm); race call by the AP",
-  "as_of": "2026-11-03T19:41:00-05:00",
-  "reporting": "early count",
-  "candidates": [
-   {
-    "name": "Andy Barr",
-    "party": "R",
-    "votes": 35858
-   },
-   {
-    "name": "Charles Booker",
-    "party": "D",
-    "votes": 21112
-   }
-  ]
  }
 }

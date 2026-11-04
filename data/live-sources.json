@@ -1,5 +1,5 @@
 {
- "_doc": "Where each race's election-night count comes from. adapter: clarity (Scytl/Clarity ENR: url = election base, or root = state root to resolve the current election id), json, csv (delimited text, zip optional; columns auto-detected from the header unless given), html (regex over a server-rendered page), manual (no official feed; numbers come from results-manual.json). verified: whether the feed was read successfully before election night.",
+ "_doc": "Where each race's election-night count comes from. adapter: clarity (Scytl/Clarity ENR: url = election base, or root = state root to resolve the current election id), json, csv (delimited text, zip optional; columns auto-detected from the header unless given), html (regex over a server-rendered page), manual (no official feed; numbers come from results-manual.json). verified: whether the feed was read successfully before election night. Where a state feed is missing or failing, the fetcher falls back to the AP/civicAPI count published by Poliwave's election-night API, labelled as unofficial; AP race calls come from the same source.",
  "AL": {
   "adapter": "html",
   "source": "Alabama Secretary of State",
@@ -53,18 +53,10 @@
   "adapter": "clarity",
   "source": "Colorado Secretary of State",
   "source_url": "https://results.enr.clarityelections.com/CO/126592/web.345435/",
-  "url": "https://results.enr.clarityelections.com/CO/126592",
-  "contest": "United States Senat|U\\.?S\\.? Senat",
+  "url": "https://results.enr.clarityelections.com/CO/127407",
   "verified": false,
-  "root": "https://results.enr.clarityelections.com/CO/",
-  "state": "CO",
-  "notes": "Election 126592 per Mesa County's link; if it has no version yet the state root is used to find the current election.",
-  "eid_from": "https://www.sos.state.co.us/pubs/elections/Results/",
-  "eid_pattern": "/CO/(\\d{5,7})",
-  "probe_urls": [
-   "https://www.sos.state.co.us/pubs/elections/Results/",
-   "https://www.sos.state.co.us/pubs/elections/resultsData.html"
-  ],
+  "root": "https://results.enr.clarityelections.com/CO",
+  "notes": "Clarity; 2026 general is election 127407 (from /CO/elections.json).",
   "user_agent": "browser"
  },
  "DE": {
@@ -166,18 +158,11 @@
   "adapter": "clarity",
   "source": "Iowa Secretary of State",
   "source_url": "https://electionresults.iowa.gov/",
-  "root": "https://electionresults.iowa.gov/",
-  "state": "IA",
-  "contest": "United States Senat|U\\.?S\\.? Senat",
-  "verified": false,
-  "notes": "Clarity; the Nov 3 election id is resolved from the site root at run time.",
-  "probe_urls": [
-   "https://electionresults.iowa.gov/IA/",
-   "https://electionresults.iowa.gov/",
-   "https://sos.iowa.gov/elections/results/2026results.html",
-   "https://sos.iowa.gov/elections/results/index.html"
-  ],
-  "user_agent": "browser"
+  "root": "https://electionresults.iowa.gov/IA",
+  "verified": true,
+  "notes": "Clarity; 2026 general is election 127077 (from /IA/elections.json).",
+  "user_agent": "browser",
+  "url": "https://electionresults.iowa.gov/IA/127077"
  },
  "KS": {
   "adapter": "html",
@@ -365,16 +350,10 @@
   "source": "S.C. Election Commission",
   "source_url": "https://scvotes.gov/election-results",
   "root": "https://www.enr-scvotes.org/",
-  "state": "SC",
-  "contest": "U\\.?S\\.? Senat|United States Senat",
-  "verified": false,
-  "notes": "Clarity (enr-scvotes.org); the Nov 3 election id is resolved from the site root at run time.",
-  "probe_urls": [
-   "https://scvotes.gov/election-results"
-  ],
-  "eid_from": "https://scvotes.gov/election-results",
-  "eid_pattern": "enr-scvotes\\.org/SC/(\\d{5,7})",
-  "user_agent": "browser"
+  "verified": true,
+  "notes": "Clarity; 2026 general is election 127300 (found on the SEC's results index on election night). Reporting is counties fully reported.",
+  "user_agent": "browser",
+  "url": "https://www.enr-scvotes.org/SC/127300"
  },
  "SD": {
   "adapter": "csv",
@@ -429,9 +408,8 @@
   "adapter": "clarity",
   "source": "West Virginia Secretary of State",
   "source_url": "https://results.enr.clarityelections.com/WV/",
-  "root": "https://results.enr.clarityelections.com/WV/",
+  "root": "https://results.enr.clarityelections.com/WV",
   "state": "WV",
-  "contest": "U\\.?S\\.? Senat|United States Senat",
   "verified": false,
   "notes": "Clarity; the Nov 3 election id is resolved from the state root at run time.",
   "probe_urls": [

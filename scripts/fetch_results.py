@@ -125,91 +125,50 @@ def is_this_race(race, cands):
 # ---------- adapters: each returns {"candidates": [{name, party, votes}], "reporting": str|None, "reporting_pct": float|None} ----------
 
 def clarity_base(cfg):
-    """Election base URL: cfg.url as given, or resolved from the state root (the root redirects / links to the current election)."""
+    """Election base URL. cfg.url as given; otherwise the state's elections.json (e.g. .../IA/elections.json) names the
+    current election, picked by cfg.election_date (default Nov 3, 2026)."""
     if cfg.get("url"):
-        base = cfg["url"].rstrip("/")
-        if not cfg.get("root"):
-            return base
-        try:
-            if get(base + "/current_ver.txt", cfg=cfg).strip():
-                return base
-        except Exception:
-            pass
-    st = cfg.get("state", "")
-    if cfg.get("eid_from"):
-        page = get(cfg["eid_from"], cfg=cfg)
-        ids = re.findall(cfg.get("eid_pattern", r"/" + re.escape(st) + r"/(\d{5,7})"), page)
-        if ids:
-            host = re.match(r"https?://[^/]+", cfg.get("root") or cfg["url"]).group(0)
-            return f"{host}/{st}/{max(ids, key=int)}"
-    root = cfg["root"]
-    with opener_for(cfg).open(root, timeout=TIMEOUT) as r:
-        final, body = r.geturl(), r.read().decode("utf-8", errors="replace")
-    cfg["_root_seen"] = {"final_url": final, "head": body[:1500]}
-    for text in (final, body):
-        m = re.search(r"/" + re.escape(st) + r"/(\d{5,7})(?:/|\b)", text)
-        if m:
-            host = re.match(r"https?://[^/]+", final or root).group(0)
-            return f"{host}/{st}/{m.group(1)}"
-    raise RuntimeError("could not find the current election id at " + root)
+        return cfg["url"].rstrip("/")
+    root = cfg["root"].rstrip("/")
+    lst = json.loads(get(root + "/elections.json", cfg=cfg))
+    want = cfg.get("election_date", "11/3/2026")
+    for e in lst:
+        if str(e.get("Date", "")).startswith(want) and not e.get("County"):
+            return f"{root}/{e['EID']}"
+    raise RuntimeError("no election dated " + want + " in " + root + "/elections.json: " + "; ".join(f"{e.get('EID')} {e.get('ElectionName')}" for e in lst[:5]))
 
 
 def adapter_clarity(cfg):
-    """Scytl/Clarity ENR. cfg.url = election base, e.g. https://results.enr.clarityelections.com/GA/123456
-    (the web id segment is optional). Reads current_ver.txt, then <ver>/json/en/summary.json. Older sites return a
-    bare list of contests; newer ones {"Contests": [...]} — each contest: A name, C candidate names, P parties
-    (sometimes), V votes; precinct counts vary by version, so they are read where present."""
+    """Scytl/Clarity ENR. Reads current_ver.txt, then <ver>/json/en/summary.json. Two layouts exist: older sites give
+    contest A, candidates C, votes V (parties P); newer ones give contest C, choices CH, parties P, votes V, with
+    TP/PR = reporting units participating/reported."""
     base = clarity_base(cfg)
     ver = get(base + "/current_ver.txt", cfg=cfg).strip()
+    if not ver:
+        raise RuntimeError("no results version published yet at " + base)
     doc = json.loads(get(f"{base}/{ver}/json/en/summary.json", cfg=cfg))
     summary = doc.get("Contests") if isinstance(doc, dict) else doc
-    pat = re.compile(cfg.get("contest", r"U\.?S\.? Senat|United States Senat"), re.I)
-    name_of = lambda c: str(c.get("A") or c.get("Name") or "")
-    contests = [c for c in summary if pat.search(name_of(c)) and not re.search(cfg.get("exclude", r"\b(District|Dist\.?)\b"), name_of(c))]
+    pat = re.compile(cfg.get("contest", r"U\.?\s?S\.?\s*Senat|United States Senat"), re.I)
+    def name_of(c):
+        if "CH" in c: return str(c.get("C") or "")
+        return str(c.get("A") or c.get("Name") or "")
+    contests = [c for c in summary if pat.search(name_of(c)) and not re.search(cfg.get("exclude", r"\b(District|Dist\.?|State)\b"), name_of(c))]
     if not contests:
         raise RuntimeError("contest not found in summary.json: " + "; ".join(name_of(c) for c in summary[:40]))
     c = contests[0]
-    names, votes, parties = c.get("C", []), c.get("V", []), c.get("P") or []
-    cands = [{"name": n, "party": (party_code(parties[i]) if i < len(parties) and isinstance(parties[i], str) else None) or party_code(n), "votes": v} for i, (n, v) in enumerate(zip(names, votes))]
+    names = c.get("CH") if "CH" in c else c.get("C", [])
+    votes, parties = c.get("V", []), c.get("P") or []
+    cands = []
+    for i, (n, v) in enumerate(zip(names, votes)):
+        party = party_code(parties[i]) if i < len(parties) and isinstance(parties[i], str) else None
+        n2 = re.sub(r"^(REP|DEM|LIB|CON|GRN|IND|NON|WFP|UNA)\s+", "", str(n))   # "REP Darline Graham"
+        cands.append({"name": n2, "party": party or party_code(str(n)), "votes": v})
     rep, pct = None, None
-    # precinct totals: in the contest on some versions, in the election settings on others
-    tot, rep_n = c.get("PT") or c.get("TP"), c.get("PR") or c.get("RP")
-    if isinstance(c.get("P"), str) and "/" in c["P"]:
-        rep_n, tot = [int(x) for x in c["P"].split("/")[:2]]
+    tot, rep_n = c.get("TP"), c.get("PR")
     if isinstance(tot, (int, float)) and isinstance(rep_n, (int, float)) and tot:
-        rep, pct = f"{int(rep_n):,} of {int(tot):,} precincts", round(100.0 * rep_n / tot, 1)
-    else:
-        try:
-            es = json.loads(get(f"{base}/{ver}/json/en/electionsettings.json", cfg=cfg))
-            s = es.get("settings", {}).get("electiondetails", es.get("electiondetails", es))
-            t = s.get("totalprecincts") or s.get("precinctsTotal") or s.get("PrecinctsTotal")
-            r = s.get("precinctsreporting") or s.get("precinctsReported") or s.get("PrecinctsReporting") or 0
-            if t:
-                rep, pct = f"{int(r):,} of {int(t):,} precincts", round(100.0 * int(r) / int(t), 1)
-        except Exception:
-            pass
+        unit = "counties" if tot <= 120 else "precincts"
+        rep, pct = f"{int(rep_n):,} of {int(tot):,} {unit} fully reported", round(100.0 * rep_n / tot, 1)
     return {"candidates": cands, "reporting": rep, "reporting_pct": pct}
-
-
-def election_keys(cfg):
-    """Election keys found at run time: walk the JSON at cfg.key_from for objects dated cfg.key_date and collect their slug-like fields."""
-    doc = json.loads(get(cfg["key_from"], cfg=cfg))
-    found = []
-    def walk_(o):
-        if isinstance(o, dict):
-            if str(o.get("electionDate", ""))[:10] == cfg["key_date"]:
-                for k in ("shortName", "slug", "key", "urlKey", "urlName", "electionKey", "name", "id"):
-                    v = o.get(k)
-                    if isinstance(v, str) and 2 < len(v) < 80: found.append(v)
-                    if isinstance(v, list):
-                        for x in v:
-                            if isinstance(x, dict) and isinstance(x.get("text"), str): found.append(x["text"])
-            for v in o.values(): walk_(v)
-        elif isinstance(o, list):
-            for v in o: walk_(v)
-    walk_(doc)
-    cfg["_keys_seen"] = found[:20]
-    return found
 
 
 def get_first(cfg):
@@ -502,6 +461,36 @@ def adapter_civix(cfg):
     raise RuntimeError("Senate race not found; federal/statewide races: " + "; ".join(seen)[:400])
 
 
+POLIWAVE_URL = "https://www.poliwave.com/api/us/election-night?office=senate"
+_poliwave = {}
+
+
+def poliwave():
+    """Poliwave's election-night API: per-state votes by candidate, AP race calls, and a reporting share where the
+    state publishes one. Fetched once per run. Secondary source: AP's count where the state feed is unusable."""
+    if not _poliwave:
+        d = json.loads(get(POLIWAVE_URL, cfg={"user_agent": "browser"}))
+        _poliwave["meta"] = d["meta"]["regions"]; _poliwave["latest"] = d["latest"]["regions"]; _poliwave["time"] = d["latest"].get("sourceTime")
+    return _poliwave
+
+
+def poliwave_race(abbr):
+    pw = poliwave()
+    m, r = pw["meta"].get(abbr), pw["latest"].get(abbr)
+    if not m or not r or not r.get("votes"):
+        return None
+    byid = {c["id"]: c for c in m.get("candidates", [])}
+    cands = [{"name": byid[i]["name"], "party": party_code(byid[i].get("party")), "votes": v} for i, v in (r.get("cands") or {}).items() if i in byid]
+    if not cands:
+        cands = [{"name": p, "party": party_code(p), "votes": v} for p, v in r["votes"].items()]
+    call = (r.get("callControl") or {}).get("party") if r.get("called") else None
+    call = {"DEM": "D", "REP": "R", "IND": "I"}.get(call) if call else None
+    src = "Unofficial count, " + ("the Associated Press" if r.get("source") == "ap" else "civicAPI") + " via Poliwave"
+    pct = float(r["counted"]) if r.get("reportingKnown") and r.get("counted") is not None else None
+    return {"candidates": cands, "reporting": (f"{pct:.0f}% of precincts" if pct is not None else None), "reporting_pct": pct,
+            "called_for": call, "source": src, "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate", "updated": r.get("updated")}
+
+
 def adapter_manual(cfg):
     raise RuntimeError("manual-only race")
 
@@ -636,6 +625,23 @@ def main():
                     entry = dict(prev[rid]); entry["stale"] = True
         elif rid in prev and (manual.get(rid) or is_this_race(race, prev[rid].get("candidates") or [])):
             entry = prev[rid]
+        # no usable state feed: the AP/civicAPI count via Poliwave
+        pw = None
+        try:
+            pw = poliwave_race(race["abbr"])
+        except Exception as e:
+            log(rid, "poliwave failed", str(e)[:120])
+        pw_total = sum(c["votes"] for c in pw["candidates"]) if pw else 0
+        have_total = sum(c["votes"] for c in (entry.get("candidates") or [])) if entry else 0
+        if pw and (entry is None or entry.get("stale") or cfg.get("adapter") in (None, "manual") or pw_total > have_total * 1.1):
+            cands = match_candidates(race, pw["candidates"])
+            if is_this_race(race, cands) and any(c["votes"] for c in cands):
+                entry = {"source": pw["source"], "source_url": pw["source_url"], "fetched": pw.get("updated") or now, "stale": False,
+                         "reporting": pw["reporting"], "reporting_pct": pw["reporting_pct"], "status": "counting", "called_for": None, "candidates": cands}
+                errors.pop(rid, None)
+        if pw and pw.get("called_for") and entry is not None and not entry.get("called_for"):
+            entry["called_for"] = pw["called_for"]; entry["status"] = "called"
+            entry["source"] = entry["source"] + "; race call by the Associated Press (via Poliwave)" if "Associated Press" not in entry["source"] else entry["source"]
         # hand-entered numbers and calls win
         m = manual.get(rid)
         if m:
