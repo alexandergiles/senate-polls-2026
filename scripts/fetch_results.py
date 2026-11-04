@@ -487,7 +487,12 @@ def poliwave_race(abbr):
     call = {"DEM": "D", "REP": "R", "IND": "I"}.get(call) if call else None
     src = "Unofficial count, " + ("the Associated Press" if r.get("source") == "ap" else "civicAPI") + " via Poliwave"
     pct = float(r["counted"]) if r.get("reportingKnown") and r.get("counted") is not None else None
-    return {"candidates": cands, "reporting": (f"{pct:.0f}% of precincts" if pct is not None else None), "reporting_pct": pct,
+    reporting = f"{pct:.0f}% of precincts" if pct is not None else None
+    base = (m.get("base") or {}).get("valid")
+    if pct is None and base and r.get("valid"):   # no precinct share published: votes counted as a share of the last comparable election's total
+        pct = min(round(100.0 * r["valid"] / base, 1), 99.0)
+        reporting = f"about {pct:.0f}% of the last election's vote counted"
+    return {"candidates": cands, "reporting": reporting, "reporting_pct": pct, "base_valid": base,
             "called_for": call, "source": src, "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate", "updated": r.get("updated")}
 
 
@@ -639,6 +644,11 @@ def main():
                 entry = {"source": pw["source"], "source_url": pw["source_url"], "fetched": pw.get("updated") or now, "stale": False,
                          "reporting": pw["reporting"], "reporting_pct": pw["reporting_pct"], "status": "counting", "called_for": None, "candidates": cands}
                 errors.pop(rid, None)
+        if pw and entry is not None and entry.get("reporting_pct") is None and pw.get("base_valid"):   # a state feed with no precinct share: estimate from votes counted
+            tot = sum(c["votes"] for c in entry.get("candidates") or [])
+            if tot:
+                entry["reporting_pct"] = min(round(100.0 * tot / pw["base_valid"], 1), 99.0)
+                entry["reporting"] = f"about {entry['reporting_pct']:.0f}% of the last election's vote counted"
         if pw and pw.get("called_for") and entry is not None and not entry.get("called_for"):
             entry["called_for"] = pw["called_for"]; entry["status"] = "called"
             entry["source"] = entry["source"] + "; race call by the Associated Press (via Poliwave)" if "Associated Press" not in entry["source"] else entry["source"]

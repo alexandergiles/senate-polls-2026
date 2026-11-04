@@ -986,7 +986,7 @@ footer a { color: var(--ink-2); }
       if (!s || !s.reported) { if (card) card.setAttribute('data-lead', leadClass(r)); continue; }
       if (card) { card.setAttribute('data-lead', s.called ? (s.called === 'R' ? 'R' : s.called === 'D' ? 'D' : 'I') : s.party); card.classList.add('reporting'); card.classList.toggle('early', s.early); }
       const head = el('div', { class: 'lv-head' }, el('span', { class: 'chip ' + (s.called ? (s.called === 'R' ? 'R' : 'D') : 'N'), text: s.called ? 'Called · ' + (s.called === 'R' ? 'Republican' : s.called === 'D' ? 'Democrat' : s.called) : 'Counting' }),
-        el('span', { text: (s.pct != null ? n1(s.pct) + '% of precincts in' : s.L.reporting ? (/report/i.test(s.L.reporting) ? s.L.reporting : s.L.reporting + ' reporting') : 'Share counted not published') + (s.early ? ' · too early to read' : '') }));
+        el('span', { text: (s.L.reporting ? (/report|counted|precinct/i.test(s.L.reporting) ? s.L.reporting : s.L.reporting + ' reporting') : s.pct != null ? n1(s.pct) + '% in' : 'Share counted not published') + (s.early ? ' · too early to read' : '') }));
       host.append(head);
       for (const c of s.rows.slice(0, 4)) {
         const cd = cands(r).find(x => x.key === c.key) || cands(r).find(x => surname(x.name).toLowerCase() === surname(c.name || c.key || '').toLowerCase());
