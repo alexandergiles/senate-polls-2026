@@ -1,11 +1,11 @@
 {
-"updated": "2026-11-03T20:13:06-05:00",
+"updated": "2026-11-03T20:15:15-05:00",
 "note": "Counts from state election offices, refreshed every few minutes on election night; calls entered by hand.",
 "races": {
 "DE": {
 "source": "Delaware Department of Elections",
 "source_url": "https://elections.delaware.gov/results/enr/GE2026.html",
-"fetched": "2026-11-03T20:13:06-05:00",
+"fetched": "2026-11-03T20:15:15-05:00",
 "stale": false,
 "reporting": null,
 "reporting_pct": null,
@@ -33,7 +33,7 @@
 "FL-special": {
 "source": "Florida Division of Elections (Florida Election Watch)",
 "source_url": "https://floridaelectionwatch.gov/FederalOffices/USSenator",
-"fetched": "2026-11-03T20:13:06-05:00",
+"fetched": "2026-11-03T20:15:15-05:00",
 "stale": false,
 "reporting": null,
 "reporting_pct": null,
@@ -44,7 +44,7 @@
 "key": "Moody",
 "name": "Ashley Moody",
 "party": "R",
-"votes": 3642231,
+"votes": 3758324,
 "matched": true,
 "side": "R"
 },
@@ -52,7 +52,7 @@
 "key": "Nixon",
 "name": "Angie Nixon",
 "party": "D",
-"votes": 3570069,
+"votes": 3683705,
 "matched": true,
 "side": "D"
 },
@@ -60,7 +60,7 @@
 "key": "Gillespie",
 "name": "Neil J. Gillespie",
 "party": "I",
-"votes": 81381,
+"votes": 84515,
 "matched": false,
 "side": null
 }
@@ -69,7 +69,7 @@
 "ID": {
 "source": "Idaho Secretary of State",
 "source_url": "https://app.enhancedvoting.com/results/public/id/nov2026",
-"fetched": "2026-11-03T20:13:06-05:00",
+"fetched": "2026-11-03T20:15:15-05:00",
 "stale": false,
 "reporting": null,
 "reporting_pct": null,
@@ -113,7 +113,7 @@
 "KS": {
 "source": "Kansas Secretary of State",
 "source_url": "https://ent.sos.ks.gov/kssos_ent.html",
-"fetched": "2026-11-03T20:13:06-05:00",
+"fetched": "2026-11-03T20:15:15-05:00",
 "stale": false,
 "reporting": "Precincts Reporting: 4 of 4168",
 "reporting_pct": 0.1,
@@ -149,7 +149,7 @@
 "MN": {
 "source": "Minnesota Secretary of State",
 "source_url": "https://electionresults.sos.mn.gov/20261103",
-"fetched": "2026-11-03T20:13:06-05:00",
+"fetched": "2026-11-03T20:15:15-05:00",
 "stale": false,
 "reporting": "0 of 4,105 precincts",
 "reporting_pct": 0.0,
@@ -201,7 +201,7 @@
 "NE": {
 "source": "Nebraska Secretary of State",
 "source_url": "https://electionresults.nebraska.gov/",
-"fetched": "2026-11-03T20:13:06-05:00",
+"fetched": "2026-11-03T20:15:15-05:00",
 "stale": false,
 "reporting": "0 of 1,322 precincts",
 "reporting_pct": 0.0,
@@ -253,7 +253,7 @@
 "NM": {
 "source": "New Mexico Secretary of State",
 "source_url": "https://electionresults.sos.nm.gov/",
-"fetched": "2026-11-03T20:13:06-05:00",
+"fetched": "2026-11-03T20:15:15-05:00",
 "stale": false,
 "reporting": "0 of 2,204 precincts",
 "reporting_pct": 0.0,
@@ -281,7 +281,7 @@
 "NC": {
 "source": "N.C. State Board of Elections",
 "source_url": "https://er.ncsbe.gov/?election_dt=11/03/2026",
-"fetched": "2026-11-03T20:13:06-05:00",
+"fetched": "2026-11-03T20:15:15-05:00",
 "stale": false,
 "reporting": null,
 "reporting_pct": null,
@@ -325,7 +325,7 @@
 "SD": {
 "source": "South Dakota Secretary of State",
 "source_url": "https://electionresults.sd.gov/",
-"fetched": "2026-11-03T20:13:06-05:00",
+"fetched": "2026-11-03T20:15:15-05:00",
 "stale": false,
 "reporting": "0 of 671 precincts",
 "reporting_pct": 0.0,
@@ -353,7 +353,7 @@
 "TX": {
 "source": "Texas Secretary of State",
 "source_url": "https://goelect.txelections.civixapps.com/ivis-enr-ui/races",
-"fetched": "2026-11-03T20:13:06-05:00",
+"fetched": "2026-11-03T20:15:15-05:00",
 "stale": false,
 "reporting": null,
 "reporting_pct": null,
@@ -421,7 +421,7 @@
 "VA": {
 "source": "Virginia Department of Elections",
 "source_url": "https://enr.elections.virginia.gov/results/public/virginia/elections/2026-November-General",
-"fetched": "2026-11-03T20:13:06-05:00",
+"fetched": "2026-11-03T20:15:15-05:00",
 "stale": false,
 "reporting": null,
 "reporting_pct": null,
@@ -432,7 +432,7 @@
 "key": "Mark Warner",
 "name": "Mark Warner",
 "party": "D",
-"votes": 765217,
+"votes": 775366,
 "matched": true,
 "side": "D"
 },
@@ -440,7 +440,7 @@
 "key": "Bert Mizusawa",
 "name": "Bert Mizusawa",
 "party": "R",
-"votes": 500329,
+"votes": 513369,
 "matched": true,
 "side": "R"
 },
@@ -448,7 +448,7 @@
 "key": "Write-in",
 "name": "Write-In",
 "party": "O",
-"votes": 3579,
+"votes": 3654,
 "matched": false,
 "side": null
 }
