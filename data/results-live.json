@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-05T09:06:53-05:00",
+"updated": "2026-11-05T16:48:19-05:00",
 "note": "Counts from state election offices, refreshed every few minutes on election night; calls entered by hand.",
 "races": {
 "AL": {
@@ -93,10 +93,10 @@
 "AR": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-05T13:49:19.321Z",
+"fetched": "2026-11-05T21:22:44.039Z",
 "stale": false,
 "reporting": "100% of precincts",
-"reporting_pct": 100.0,
+"reporting_pct": 99.9,
 "status": "called",
 "called_for": "R",
 "candidates": [
@@ -104,7 +104,7 @@
 "key": "Tom Cotton",
 "name": "Tom Cotton",
 "party": "R",
-"votes": 480642,
+"votes": 480777,
 "matched": true,
 "side": "R"
 },
@@ -112,27 +112,27 @@
 "key": "Hallie Shoffner",
 "name": "Hallie Shoffner",
 "party": "D",
-"votes": 375662,
+"votes": 375800,
 "matched": true,
 "side": "D"
 },
 {
 "key": "Wadlin",
-"name": "LIB Jeff Wadlin",
+"name": "Jeff Wadlin",
 "party": "L",
-"votes": 29485,
+"votes": 29487,
 "matched": false,
 "side": null
 }
 ]
 },
 "CO": {
-"source": "Unofficial count, the Associated Press via Poliwave",
+"source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-05T06:18:44.143Z",
+"fetched": "2026-11-05T20:18:14.000Z",
 "stale": false,
-"reporting": "88% of precincts",
-"reporting_pct": 87.7,
+"reporting": "39% of precincts",
+"reporting_pct": 39.06,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -140,7 +140,7 @@
 "key": "Hickenlooper",
 "name": "John Hickenlooper",
 "party": "D",
-"votes": 1424709,
+"votes": 1437096,
 "matched": true,
 "side": "D"
 },
@@ -148,7 +148,7 @@
 "key": "Baisley",
 "name": "Mark Baisley",
 "party": "R",
-"votes": 853374,
+"votes": 861498,
 "matched": true,
 "side": "R"
 },
@@ -156,15 +156,15 @@
 "key": "Chew",
 "name": "Bob Chew",
 "party": "O",
-"votes": 62100,
+"votes": 62754,
 "matched": false,
 "side": null
 },
 {
 "key": "Huber",
 "name": "Blake Huber",
-"party": "L",
-"votes": 27145,
+"party": "O",
+"votes": 27538,
 "matched": false,
 "side": null
 },
@@ -172,7 +172,7 @@
 "key": "Withrow",
 "name": "Adam Withrow",
 "party": "O",
-"votes": 10943,
+"votes": 11122,
 "matched": false,
 "side": null
 },
@@ -180,7 +180,7 @@
 "key": "Baum",
 "name": "Christopher Baum",
 "party": "O",
-"votes": 3511,
+"votes": 3556,
 "matched": false,
 "side": null
 }
@@ -217,7 +217,7 @@
 "FL-special": {
 "source": "Florida Division of Elections (Florida Election Watch); race call by the Associated Press (via Poliwave)",
 "source_url": "https://floridaelectionwatch.gov/FederalOffices/USSenator",
-"fetched": "2026-11-05T09:06:53-05:00",
+"fetched": "2026-11-05T16:48:19-05:00",
 "stale": false,
 "reporting": "about 99% of the last election's vote counted",
 "reporting_pct": 99.0,
@@ -253,7 +253,7 @@
 "GA": {
 "source": "Unofficial count, the Associated Press via Poliwave",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-04T21:46:20.162Z",
+"fetched": "2026-11-05T21:24:27.897Z",
 "stale": false,
 "reporting": "99% of precincts",
 "reporting_pct": 99.0,
@@ -264,7 +264,7 @@
 "key": "Ossoff",
 "name": "Jon Ossoff",
 "party": "D",
-"votes": 2466207,
+"votes": 2466235,
 "matched": true,
 "side": "D"
 },
@@ -272,7 +272,7 @@
 "key": "Collins",
 "name": "Mike Collins",
 "party": "R",
-"votes": 1711747,
+"votes": 1712056,
 "matched": true,
 "side": "R"
 },
@@ -289,10 +289,10 @@
 "ID": {
 "source": "Idaho Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://app.enhancedvoting.com/results/public/id/nov2026",
-"fetched": "2026-11-05T09:06:53-05:00",
+"fetched": "2026-11-05T16:48:19-05:00",
 "stale": false,
 "reporting": "about 83% of the last election's vote counted",
-"reporting_pct": 82.7,
+"reporting_pct": 82.6,
 "status": "called",
 "called_for": "R",
 "candidates": [
@@ -300,7 +300,7 @@
 "key": "Jim Risch",
 "name": "Jim Risch",
 "party": "R",
-"votes": 401731,
+"votes": 401717,
 "matched": true,
 "side": "R"
 },
@@ -308,7 +308,7 @@
 "key": "Todd Achilles",
 "name": "Todd Achilles",
 "party": "I",
-"votes": 238348,
+"votes": 238329,
 "matched": true,
 "side": "D"
 },
@@ -316,7 +316,7 @@
 "key": "Fleming",
 "name": "Natalie M Fleming",
 "party": "I",
-"votes": 49927,
+"votes": 49923,
 "matched": false,
 "side": null
 },
@@ -324,19 +324,19 @@
 "key": "Loesby",
 "name": "Matt Loesby",
 "party": "L",
-"votes": 20673,
+"votes": 20672,
 "matched": false,
 "side": null
 }
 ]
 },
 "IL": {
-"source": "Unofficial count, the Associated Press via Poliwave",
+"source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-05T00:21:09.703Z",
+"fetched": "2026-11-05T21:24:05.753Z",
 "stale": false,
-"reporting": "93% of precincts",
-"reporting_pct": 93.2,
+"reporting": "86% of precincts",
+"reporting_pct": 86.0,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -344,7 +344,7 @@
 "key": "Stratton",
 "name": "Juliana Stratton",
 "party": "D",
-"votes": 2431012,
+"votes": 2435142,
 "matched": true,
 "side": "D"
 },
@@ -352,15 +352,15 @@
 "key": "Tracy",
 "name": "Don Tracy",
 "party": "R",
-"votes": 1501458,
+"votes": 1501979,
 "matched": true,
 "side": "R"
 },
 {
 "key": "Harrington",
-"name": "Whitfield Harrington",
+"name": "Whitfield Harrington Jr",
 "party": "O",
-"votes": 62967,
+"votes": 63040,
 "matched": false,
 "side": null
 }
@@ -413,7 +413,7 @@
 "KS": {
 "source": "Kansas Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://ent.sos.ks.gov/kssos_ent.html",
-"fetched": "2026-11-05T09:06:53-05:00",
+"fetched": "2026-11-05T16:48:19-05:00",
 "stale": false,
 "reporting": "Precincts Reporting: 4168 of 4168",
 "reporting_pct": 100.0,
@@ -449,7 +449,7 @@
 "KY": {
 "source": "Unofficial count, the Associated Press via Poliwave",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-05T13:37:39.188Z",
+"fetched": "2026-11-05T20:41:09.537Z",
 "stale": false,
 "reporting": "99% of precincts",
 "reporting_pct": 99.0,
@@ -485,7 +485,7 @@
 "LA": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-04T15:45:27.864Z",
+"fetched": "2026-11-05T21:42:46.424Z",
 "stale": false,
 "reporting": "100% of precincts",
 "reporting_pct": 99.9,
@@ -513,10 +513,10 @@
 "ME": {
 "source": "Unofficial count, the Associated Press via Poliwave",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-05T14:02:16.242Z",
+"fetched": "2026-11-05T19:45:15.445Z",
 "stale": false,
-"reporting": "91% of precincts",
-"reporting_pct": 91.1,
+"reporting": "92% of precincts",
+"reporting_pct": 92.1,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -524,7 +524,7 @@
 "key": "Jackson",
 "name": "Troy Jackson",
 "party": "D",
-"votes": 368714,
+"votes": 371255,
 "matched": true,
 "side": "D"
 },
@@ -532,7 +532,7 @@
 "key": "Collins",
 "name": "Susan Collins",
 "party": "R",
-"votes": 321196,
+"votes": 325082,
 "matched": true,
 "side": "R"
 },
@@ -540,7 +540,7 @@
 "key": "Andrews",
 "name": "Brent Andrews (write-in)",
 "party": "O",
-"votes": 220,
+"votes": 221,
 "matched": false,
 "side": null
 },
@@ -548,7 +548,7 @@
 "key": "Webb",
 "name": "Ashley Webb (write-in)",
 "party": "D",
-"votes": 81,
+"votes": 82,
 "matched": false,
 "side": null
 },
@@ -564,7 +564,7 @@
 "key": "Olson",
 "name": "Sigrid Olson (write-in)",
 "party": "D",
-"votes": 49,
+"votes": 50,
 "matched": false,
 "side": null
 },
@@ -572,7 +572,7 @@
 "key": "Turcotte",
 "name": "Michael Turcotte (write-in)",
 "party": "O",
-"votes": 42,
+"votes": 43,
 "matched": false,
 "side": null
 },
@@ -589,10 +589,10 @@
 "MA": {
 "source": "Unofficial count, the Associated Press via Poliwave",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-04T20:50:00.095Z",
+"fetched": "2026-11-05T21:46:03.677Z",
 "stale": false,
-"reporting": "95% of precincts",
-"reporting_pct": 95.3,
+"reporting": "98% of precincts",
+"reporting_pct": 98.3,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -600,7 +600,7 @@
 "key": "Markey",
 "name": "Ed Markey",
 "party": "D",
-"votes": 1590089,
+"votes": 1645744,
 "matched": true,
 "side": "D"
 },
@@ -608,7 +608,7 @@
 "key": "Deaton",
 "name": "John Deaton",
 "party": "R",
-"votes": 811327,
+"votes": 834081,
 "matched": true,
 "side": "R"
 },
@@ -616,7 +616,7 @@
 "key": "Ayyadurai",
 "name": "Shiva Ayyadurai",
 "party": "I",
-"votes": 57847,
+"votes": 59570,
 "matched": false,
 "side": null
 },
@@ -624,7 +624,7 @@
 "key": "Tache",
 "name": "Joe Tache",
 "party": "O",
-"votes": 54678,
+"votes": 56074,
 "matched": false,
 "side": null
 }
@@ -633,10 +633,10 @@
 "MI": {
 "source": "Unofficial count, the Associated Press via Poliwave",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-05T13:41:45.436Z",
+"fetched": "2026-11-05T21:44:23.139Z",
 "stale": false,
 "reporting": "98% of precincts",
-"reporting_pct": 97.5,
+"reporting_pct": 97.7,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -644,7 +644,7 @@
 "key": "El-Sayed",
 "name": "Abdul El-Sayed",
 "party": "D",
-"votes": 2507454,
+"votes": 2507616,
 "matched": true,
 "side": "D"
 },
@@ -652,7 +652,7 @@
 "key": "Rogers",
 "name": "Mike Rogers",
 "party": "R",
-"votes": 2172586,
+"votes": 2172814,
 "matched": true,
 "side": "R"
 },
@@ -660,7 +660,7 @@
 "key": "Christensen",
 "name": "Lydia Christensen",
 "party": "L",
-"votes": 49484,
+"votes": 49491,
 "matched": false,
 "side": null
 },
@@ -668,7 +668,7 @@
 "key": "Long",
 "name": "Tim Long",
 "party": "O",
-"votes": 26417,
+"votes": 26420,
 "matched": false,
 "side": null
 },
@@ -693,7 +693,7 @@
 "MN": {
 "source": "Minnesota Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://electionresults.sos.mn.gov/20261103",
-"fetched": "2026-11-05T09:06:53-05:00",
+"fetched": "2026-11-05T16:48:19-05:00",
 "stale": false,
 "reporting": "4,105 of 4,105 precincts",
 "reporting_pct": 100.0,
@@ -704,7 +704,7 @@
 "key": "Flanagan",
 "name": "Peggy Flanagan",
 "party": "D",
-"votes": 1520865,
+"votes": 1520868,
 "matched": true,
 "side": "D"
 },
@@ -712,7 +712,7 @@
 "key": "Tafoya",
 "name": "Michele Tafoya",
 "party": "R",
-"votes": 1233464,
+"votes": 1233462,
 "matched": true,
 "side": "R"
 },
@@ -743,12 +743,12 @@
 ]
 },
 "MS": {
-"source": "Unofficial count, civicAPI via Poliwave",
+"source": "Unofficial count, the Associated Press via Poliwave",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-05T14:03:42.445Z",
+"fetched": "2026-11-05T21:43:18.063Z",
 "stale": false,
-"reporting": "98% of precincts",
-"reporting_pct": 97.8,
+"reporting": "96% of precincts",
+"reporting_pct": 95.7,
 "status": "counting",
 "called_for": null,
 "candidates": [
@@ -756,7 +756,7 @@
 "key": "Scott Colom",
 "name": "Scott Colom",
 "party": "D",
-"votes": 466246,
+"votes": 466709,
 "matched": true,
 "side": "D"
 },
@@ -764,7 +764,7 @@
 "key": "Cindy Hyde-Smith",
 "name": "Cindy Hyde-Smith",
 "party": "R",
-"votes": 464526,
+"votes": 464906,
 "matched": true,
 "side": "R"
 },
@@ -772,7 +772,7 @@
 "key": "Ty Pinkins",
 "name": "Ty Pinkins",
 "party": "I",
-"votes": 19950,
+"votes": 20003,
 "matched": true,
 "side": "D"
 }
@@ -781,10 +781,10 @@
 "MT": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-05T14:00:25.000Z",
+"fetched": "2026-11-05T17:18:46.096Z",
 "stale": false,
-"reporting": "100% of precincts",
-"reporting_pct": 100.0,
+"reporting": "85% of precincts",
+"reporting_pct": 85.2,
 "status": "called",
 "called_for": "R",
 "candidates": [
@@ -792,7 +792,7 @@
 "key": "Alme",
 "name": "Kurt Alme",
 "party": "R",
-"votes": 232863,
+"votes": 232864,
 "matched": true,
 "side": "R"
 },
@@ -825,7 +825,7 @@
 "NE": {
 "source": "Nebraska Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://electionresults.nebraska.gov/",
-"fetched": "2026-11-05T09:06:53-05:00",
+"fetched": "2026-11-05T16:48:19-05:00",
 "stale": false,
 "reporting": "1,322 of 1,322 precincts",
 "reporting_pct": 100.0,
@@ -877,10 +877,10 @@
 "NH": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-04T20:16:43.468Z",
+"fetched": "2026-11-05T20:51:02.817Z",
 "stale": false,
-"reporting": "91% of precincts",
-"reporting_pct": 91.0,
+"reporting": "92% of precincts",
+"reporting_pct": 92.5,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -888,7 +888,7 @@
 "key": "Pappas",
 "name": "Chris Pappas",
 "party": "D",
-"votes": 349147,
+"votes": 356332,
 "matched": true,
 "side": "D"
 },
@@ -896,7 +896,7 @@
 "key": "Sununu",
 "name": "John Sununu",
 "party": "R",
-"votes": 265306,
+"votes": 268586,
 "matched": true,
 "side": "R"
 },
@@ -904,7 +904,7 @@
 "key": "Laplante",
 "name": "Edmond Laplante",
 "party": "O",
-"votes": 11842,
+"votes": 12082,
 "matched": false,
 "side": null
 },
@@ -912,19 +912,19 @@
 "key": "Write-in",
 "name": "Write-in",
 "party": "O",
-"votes": 693,
+"votes": 768,
 "matched": false,
 "side": null
 }
 ]
 },
 "NJ": {
-"source": "Unofficial count, the Associated Press via Poliwave",
+"source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-04T22:44:02.263Z",
+"fetched": "2026-11-05T21:28:05.793Z",
 "stale": false,
-"reporting": "94% of precincts",
-"reporting_pct": 94.4,
+"reporting": "81% of precincts",
+"reporting_pct": 81.1,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -932,7 +932,7 @@
 "key": "Cory Booker",
 "name": "Cory Booker",
 "party": "D",
-"votes": 1787172,
+"votes": 1801769,
 "matched": true,
 "side": "D"
 },
@@ -940,15 +940,15 @@
 "key": "Justin Murphy",
 "name": "Justin Murphy",
 "party": "R",
-"votes": 1015941,
+"votes": 1018917,
 "matched": true,
 "side": "R"
 },
 {
 "key": "Fernandez",
 "name": "Veronica Fernandez",
-"party": "O",
-"votes": 47222,
+"party": "I",
+"votes": 47649,
 "matched": false,
 "side": null
 },
@@ -956,7 +956,311 @@
 "key": "Kuniansky",
 "name": "Joanne Kuniansky",
 "party": "O",
-"votes": 26720,
+"votes": 26939,
+"matched": false,
+"side": null
+},
+{
+"key": "Write-in",
+"name": "Write-in",
+"party": "O",
+"votes": 3263,
+"matched": false,
+"side": null
+},
+{
+"key": "Massie",
+"name": "Thomas Massie",
+"party": "O",
+"votes": 2,
+"matched": false,
+"side": null
+},
+{
+"key": "Sheridan",
+"name": "Adam Sheridan",
+"party": "O",
+"votes": 2,
+"matched": false,
+"side": null
+},
+{
+"key": "Rajab",
+"name": "Hind Rajab",
+"party": "O",
+"votes": 2,
+"matched": false,
+"side": null
+},
+{
+"key": "Castillo",
+"name": "Edwardo Castillo",
+"party": "O",
+"votes": 2,
+"matched": false,
+"side": null
+},
+{
+"key": "Castille",
+"name": "Eduardo Castille",
+"party": "I",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Rickly",
+"name": "Geoff Rickly",
+"party": "I",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Stout",
+"name": "Gary Stout",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Heier",
+"name": "Heier",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "State",
+"name": "Someone From Out of State",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Hunt",
+"name": "William Hunt",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Kim",
+"name": "Andy Kim",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Harper",
+"name": "Bryce Harper",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Tabor",
+"name": "Richard tabor",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Palestine",
+"name": "Free Palestine",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Porter",
+"name": "Fred Porter",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "God",
+"name": "God",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Kelly",
+"name": "Loretta Kelly",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Wallace",
+"name": "Emily Wallace",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Prime",
+"name": "optimus prime",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Case",
+"name": "Clifford P. Case",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Drew",
+"name": "Jeff Van Drew",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Frost",
+"name": "Scott Frost",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Benavides",
+"name": "Lily Benavides",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Bansil",
+"name": "Katie Bansil",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Lima",
+"name": "Lucca Lima",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Clay",
+"name": "Michael Clay",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Isreal",
+"name": "Death to Isreal",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Pallone",
+"name": "Frank Pallone",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Head",
+"name": "Mr. Potato Head",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Naphy",
+"name": "Steven P Naphy",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Mejia",
+"name": "Analia Mejia",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Fitzgerald",
+"name": "Laura Fitzgerald",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Serrentino",
+"name": "Dominic Serrentino",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Undecided",
+"name": "Undecided",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Quinn",
+"name": "Joseph D. Quinn II",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Garza",
+"name": "John Garza",
+"party": "O",
+"votes": 1,
+"matched": false,
+"side": null
+},
+{
+"key": "Riggins",
+"name": "Shawn Riggins",
+"party": "I",
+"votes": 0,
 "matched": false,
 "side": null
 }
@@ -965,10 +1269,10 @@
 "NM": {
 "source": "New Mexico Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://electionresults.sos.nm.gov/",
-"fetched": "2026-11-05T09:06:53-05:00",
+"fetched": "2026-11-05T16:48:19-05:00",
 "stale": false,
-"reporting": "2,204 of 2,204 precincts",
-"reporting_pct": 100.0,
+"reporting": "2,014 of 2,204 precincts",
+"reporting_pct": 91.4,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -976,7 +1280,7 @@
 "key": "Luján",
 "name": "Ben Ray Luján",
 "party": "D",
-"votes": 455165,
+"votes": 458007,
 "matched": true,
 "side": "D"
 },
@@ -984,7 +1288,7 @@
 "key": "Marker",
 "name": "Larry Marker",
 "party": "R",
-"votes": 265557,
+"votes": 266260,
 "matched": true,
 "side": "R"
 }
@@ -993,7 +1297,7 @@
 "NC": {
 "source": "N.C. State Board of Elections; race call by the Associated Press (via Poliwave)",
 "source_url": "https://er.ncsbe.gov/?election_dt=11/03/2026",
-"fetched": "2026-11-05T09:06:53-05:00",
+"fetched": "2026-11-05T16:48:19-05:00",
 "stale": false,
 "reporting": "about 77% of the last election's vote counted",
 "reporting_pct": 76.8,
@@ -1037,10 +1341,10 @@
 "OH-special": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-04T15:49:15.075Z",
+"fetched": "2026-11-05T21:27:03.406Z",
 "stale": false,
-"reporting": "97% of precincts",
-"reporting_pct": 96.6,
+"reporting": "100% of precincts",
+"reporting_pct": 99.9,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -1080,7 +1384,7 @@
 "key": "Faris",
 "name": "Stephen Faris",
 "party": "O",
-"votes": 0,
+"votes": 291,
 "matched": false,
 "side": null
 },
@@ -1088,7 +1392,7 @@
 "key": "Holliman",
 "name": "Anthony Holliman",
 "party": "O",
-"votes": 0,
+"votes": 36,
 "matched": false,
 "side": null
 },
@@ -1096,19 +1400,19 @@
 "key": "Telymonde",
 "name": "Timothy Telymonde",
 "party": "O",
-"votes": 0,
+"votes": 27,
 "matched": false,
 "side": null
 }
 ]
 },
 "OK": {
-"source": "Unofficial count, the Associated Press via Poliwave",
+"source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-04T23:47:01.365Z",
+"fetched": "2026-11-05T21:26:53.534Z",
 "stale": false,
-"reporting": "99% of precincts",
-"reporting_pct": 99.0,
+"reporting": "100% of precincts",
+"reporting_pct": 99.9,
 "status": "called",
 "called_for": "R",
 "candidates": [
@@ -1157,7 +1461,7 @@
 "OR": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-05T13:51:28.555Z",
+"fetched": "2026-11-05T21:27:18.659Z",
 "stale": false,
 "reporting": "78% of precincts",
 "reporting_pct": 78.5,
@@ -1305,7 +1609,7 @@
 "SD": {
 "source": "South Dakota Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://electionresults.sd.gov/",
-"fetched": "2026-11-05T09:06:53-05:00",
+"fetched": "2026-11-05T16:48:19-05:00",
 "stale": false,
 "reporting": "671 of 671 precincts",
 "reporting_pct": 100.0,
@@ -1316,7 +1620,7 @@
 "key": "Rounds",
 "name": "Mike Rounds",
 "party": "R",
-"votes": 184584,
+"votes": 184589,
 "matched": true,
 "side": "R"
 },
@@ -1324,7 +1628,7 @@
 "key": "Bengs",
 "name": "Brian Bengs",
 "party": "I",
-"votes": 120502,
+"votes": 120507,
 "matched": true,
 "side": "D"
 }
@@ -1333,7 +1637,7 @@
 "TN": {
 "source": "Unofficial count, the Associated Press via Poliwave",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-05T14:00:39.839Z",
+"fetched": "2026-11-05T21:34:53.713Z",
 "stale": false,
 "reporting": "99% of precincts",
 "reporting_pct": 99.0,
@@ -1360,7 +1664,7 @@
 "key": "Jones",
 "name": "Robert Jones",
 "party": "I",
-"votes": 9392,
+"votes": 9398,
 "matched": false,
 "side": null
 },
@@ -1376,7 +1680,7 @@
 "key": "Gerena",
 "name": "Andrew Gerena",
 "party": "I",
-"votes": 5626,
+"votes": 5633,
 "matched": false,
 "side": null
 },
@@ -1392,7 +1696,7 @@
 "key": "Hearn",
 "name": "Jeremy Hearn",
 "party": "I",
-"votes": 4944,
+"votes": 4937,
 "matched": false,
 "side": null
 },
@@ -1416,7 +1720,7 @@
 "key": "Macon",
 "name": "James Macon",
 "party": "I",
-"votes": 2573,
+"votes": 2576,
 "matched": false,
 "side": null
 }
@@ -1425,7 +1729,7 @@
 "TX": {
 "source": "Texas Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://goelect.txelections.civixapps.com/ivis-enr-ui/races",
-"fetched": "2026-11-05T09:06:53-05:00",
+"fetched": "2026-11-05T16:48:19-05:00",
 "stale": false,
 "reporting": "about 89% of the last election's vote counted",
 "reporting_pct": 88.7,
@@ -1493,7 +1797,7 @@
 "VA": {
 "source": "Virginia Department of Elections; race call by the Associated Press (via Poliwave)",
 "source_url": "https://enr.elections.virginia.gov/results/public/virginia/elections/2026-November-General",
-"fetched": "2026-11-05T09:06:53-05:00",
+"fetched": "2026-11-05T16:48:19-05:00",
 "stale": false,
 "reporting": "about 81% of the last election's vote counted",
 "reporting_pct": 81.0,
@@ -1504,7 +1808,7 @@
 "key": "Mark Warner",
 "name": "Mark Warner",
 "party": "D",
-"votes": 2182691,
+"votes": 2182958,
 "matched": true,
 "side": "D"
 },
@@ -1512,7 +1816,7 @@
 "key": "Bert Mizusawa",
 "name": "Bert Mizusawa",
 "party": "R",
-"votes": 1376552,
+"votes": 1376709,
 "matched": true,
 "side": "R"
 },
@@ -1520,7 +1824,7 @@
 "key": "Write-in",
 "name": "Write-In",
 "party": "O",
-"votes": 9436,
+"votes": 9432,
 "matched": false,
 "side": null
 }
@@ -1565,7 +1869,7 @@
 "WY": {
 "source": "Unofficial count, the Associated Press via Poliwave",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-04T09:04:42.230Z",
+"fetched": "2026-11-05T19:37:56.842Z",
 "stale": false,
 "reporting": "97% of precincts",
 "reporting_pct": 97.0,
