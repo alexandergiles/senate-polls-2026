@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-09T18:58:28-05:00",
+"updated": "2026-11-10T02:02:06-05:00",
 "note": "Counts from state election offices, refreshed every few minutes on election night; calls entered by hand.",
 "races": {
 "AL": {
@@ -39,12 +39,12 @@
 ]
 },
 "AK": {
-"source": "Unofficial count, the Associated Press via Poliwave",
+"source": "Unofficial count, civicAPI via Poliwave",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-05T00:25:19.743Z",
+"fetched": "2026-11-10T03:46:00.359Z",
 "stale": false,
-"reporting": "74% of precincts",
-"reporting_pct": 74.4,
+"reporting": "75% of precincts",
+"reporting_pct": 75.4,
 "status": "counting",
 "called_for": null,
 "candidates": [
@@ -52,7 +52,7 @@
 "key": "Peltola",
 "name": "Mary Peltola",
 "party": "D",
-"votes": 102962,
+"votes": 106321,
 "matched": true,
 "side": "D"
 },
@@ -60,7 +60,7 @@
 "key": "Sullivan",
 "name": "Dan Sullivan",
 "party": "R",
-"votes": 102325,
+"votes": 103804,
 "matched": true,
 "side": "R"
 },
@@ -68,35 +68,27 @@
 "key": "Gerald Heikes",
 "name": "Gerald Heikes",
 "party": "R",
-"votes": 4846,
+"votes": 4865,
 "matched": true,
 "side": "R"
 },
 {
 "key": "Daniel J. Sullivan Jr.",
 "name": "Daniel J. Sullivan Jr.",
-"party": "O",
-"votes": 3600,
+"party": "I",
+"votes": 3651,
 "matched": true,
 "side": "D"
-},
-{
-"key": "Write-ins",
-"name": "Total Write-ins",
-"party": "O",
-"votes": 0,
-"matched": false,
-"side": null
 }
 ]
 },
 "AR": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-09T21:11:09.684Z",
+"fetched": "2026-11-10T03:32:29.813Z",
 "stale": false,
-"reporting": "100% of precincts",
-"reporting_pct": 100.0,
+"reporting": "90% of precincts",
+"reporting_pct": 90.1,
 "status": "called",
 "called_for": "R",
 "candidates": [
@@ -118,7 +110,7 @@
 },
 {
 "key": "Wadlin",
-"name": "LIB Jeff Wadlin",
+"name": "Jeff Wadlin",
 "party": "L",
 "votes": 29490,
 "matched": false,
@@ -129,7 +121,7 @@
 "CO": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-08T01:11:17.000Z",
+"fetched": "2026-11-10T00:19:25.000Z",
 "stale": false,
 "reporting": "39% of precincts",
 "reporting_pct": 39.06,
@@ -140,7 +132,7 @@
 "key": "Hickenlooper",
 "name": "John Hickenlooper",
 "party": "D",
-"votes": 1609163,
+"votes": 1613054,
 "matched": true,
 "side": "D"
 },
@@ -148,7 +140,7 @@
 "key": "Baisley",
 "name": "Mark Baisley",
 "party": "R",
-"votes": 932741,
+"votes": 934666,
 "matched": true,
 "side": "R"
 },
@@ -156,7 +148,7 @@
 "key": "Chew",
 "name": "Bob Chew",
 "party": "O",
-"votes": 70049,
+"votes": 70169,
 "matched": false,
 "side": null
 },
@@ -164,7 +156,7 @@
 "key": "Huber",
 "name": "Blake Huber",
 "party": "O",
-"votes": 32507,
+"votes": 32641,
 "matched": false,
 "side": null
 },
@@ -172,7 +164,7 @@
 "key": "Withrow",
 "name": "Adam Withrow",
 "party": "O",
-"votes": 13409,
+"votes": 13470,
 "matched": false,
 "side": null
 },
@@ -180,7 +172,7 @@
 "key": "Baum",
 "name": "Christopher Baum",
 "party": "O",
-"votes": 4184,
+"votes": 4207,
 "matched": false,
 "side": null
 }
@@ -217,7 +209,7 @@
 "FL-special": {
 "source": "Florida Division of Elections (Florida Election Watch); race call by the Associated Press (via Poliwave)",
 "source_url": "https://floridaelectionwatch.gov/FederalOffices/USSenator",
-"fetched": "2026-11-09T18:58:28-05:00",
+"fetched": "2026-11-10T02:02:06-05:00",
 "stale": false,
 "reporting": "about 99% of the last election's vote counted",
 "reporting_pct": 99.0,
@@ -253,7 +245,7 @@
 "GA": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-09T21:20:26.238Z",
+"fetched": "2026-11-10T00:24:54.405Z",
 "stale": false,
 "reporting": "100% of precincts",
 "reporting_pct": 99.96,
@@ -264,7 +256,7 @@
 "key": "Ossoff",
 "name": "Jon Ossoff",
 "party": "D",
-"votes": 2468647,
+"votes": 2468985,
 "matched": true,
 "side": "D"
 },
@@ -272,7 +264,7 @@
 "key": "Collins",
 "name": "Mike Collins",
 "party": "R",
-"votes": 1713590,
+"votes": 1713656,
 "matched": true,
 "side": "R"
 }
@@ -281,7 +273,7 @@
 "ID": {
 "source": "Idaho Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://app.enhancedvoting.com/results/public/id/nov2026",
-"fetched": "2026-11-09T18:58:28-05:00",
+"fetched": "2026-11-10T02:02:06-05:00",
 "stale": false,
 "reporting": "about 83% of the last election's vote counted",
 "reporting_pct": 82.7,
@@ -325,7 +317,7 @@
 "IL": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-09T23:23:48.256Z",
+"fetched": "2026-11-10T03:21:28.146Z",
 "stale": false,
 "reporting": "88% of precincts",
 "reporting_pct": 87.7,
@@ -403,12 +395,12 @@
 ]
 },
 "KS": {
-"source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
-"source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-09T23:29:25.580Z",
+"source": "Kansas Secretary of State; race call by the Associated Press (via Poliwave)",
+"source_url": "https://ent.sos.ks.gov/kssos_ent.html",
+"fetched": "2026-11-10T02:02:06-05:00",
 "stale": false,
-"reporting": "96% of precincts",
-"reporting_pct": 96.0,
+"reporting": "Precincts Reporting: 4168 of 4168",
+"reporting_pct": 100.0,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -477,7 +469,7 @@
 "LA": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-09T21:31:37.434Z",
+"fetched": "2026-11-10T03:47:19.395Z",
 "stale": false,
 "reporting": "96% of precincts",
 "reporting_pct": 96.3,
@@ -581,7 +573,7 @@
 "MA": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-09T23:29:41.079Z",
+"fetched": "2026-11-10T03:35:11.023Z",
 "stale": false,
 "reporting": "91% of precincts",
 "reporting_pct": 91.1,
@@ -685,7 +677,7 @@
 "MN": {
 "source": "Minnesota Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://electionresults.sos.mn.gov/20261103",
-"fetched": "2026-11-09T18:58:28-05:00",
+"fetched": "2026-11-10T02:02:06-05:00",
 "stale": false,
 "reporting": "4,105 of 4,105 precincts",
 "reporting_pct": 100.0,
@@ -737,7 +729,7 @@
 "MS": {
 "source": "Unofficial count, civicAPI via Poliwave",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-09T23:27:33.460Z",
+"fetched": "2026-11-10T03:29:13.126Z",
 "stale": false,
 "reporting": "98% of precincts",
 "reporting_pct": 98.1,
@@ -773,7 +765,7 @@
 "MT": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-09T21:35:24.000Z",
+"fetched": "2026-11-10T03:45:23.000Z",
 "stale": false,
 "reporting": "100% of precincts",
 "reporting_pct": 100.0,
@@ -784,7 +776,7 @@
 "key": "Alme",
 "name": "Kurt Alme",
 "party": "R",
-"votes": 232916,
+"votes": 235279,
 "matched": true,
 "side": "R"
 },
@@ -792,7 +784,7 @@
 "key": "Bodnar",
 "name": "Seth Bodnar",
 "party": "I",
-"votes": 181674,
+"votes": 184434,
 "matched": true,
 "side": "D"
 },
@@ -800,7 +792,7 @@
 "key": "Bankhead",
 "name": "Alani Bankhead",
 "party": "D",
-"votes": 58556,
+"votes": 59905,
 "matched": true,
 "side": "D"
 },
@@ -808,7 +800,7 @@
 "key": "Austin",
 "name": "Kyle Austin",
 "party": "L",
-"votes": 8869,
+"votes": 9000,
 "matched": true,
 "side": "D"
 }
@@ -817,7 +809,7 @@
 "NE": {
 "source": "Nebraska Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://electionresults.nebraska.gov/",
-"fetched": "2026-11-09T18:58:28-05:00",
+"fetched": "2026-11-10T02:02:06-05:00",
 "stale": false,
 "reporting": "1,322 of 1,322 precincts",
 "reporting_pct": 100.0,
@@ -1629,7 +1621,7 @@
 "NM": {
 "source": "New Mexico Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://electionresults.sos.nm.gov/",
-"fetched": "2026-11-09T18:58:28-05:00",
+"fetched": "2026-11-10T02:02:06-05:00",
 "stale": false,
 "reporting": "2,204 of 2,204 precincts",
 "reporting_pct": 100.0,
@@ -1657,7 +1649,7 @@
 "NC": {
 "source": "N.C. State Board of Elections; race call by the Associated Press (via Poliwave)",
 "source_url": "https://er.ncsbe.gov/?election_dt=11/03/2026",
-"fetched": "2026-11-09T18:58:28-05:00",
+"fetched": "2026-11-10T02:02:06-05:00",
 "stale": false,
 "reporting": "about 77% of the last election's vote counted",
 "reporting_pct": 76.8,
@@ -1701,7 +1693,7 @@
 "OH-special": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-09T23:29:54.174Z",
+"fetched": "2026-11-10T03:32:34.483Z",
 "stale": false,
 "reporting": "97% of precincts",
 "reporting_pct": 96.6,
@@ -1769,7 +1761,7 @@
 "OK": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-09T23:30:23.097Z",
+"fetched": "2026-11-10T03:33:53.171Z",
 "stale": false,
 "reporting": "85% of precincts",
 "reporting_pct": 85.4,
@@ -1821,10 +1813,10 @@
 "OR": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-09T21:34:14.826Z",
+"fetched": "2026-11-10T03:52:58.342Z",
 "stale": false,
 "reporting": "91% of precincts",
-"reporting_pct": 90.8,
+"reporting_pct": 90.9,
 "status": "called",
 "called_for": "D",
 "candidates": [
@@ -1832,7 +1824,7 @@
 "key": "Jeff Merkley",
 "name": "Jeff Merkley",
 "party": "D",
-"votes": 1084210,
+"votes": 1085808,
 "matched": true,
 "side": "D"
 },
@@ -1840,7 +1832,7 @@
 "key": "David Brock Smith",
 "name": "David Brock Smith",
 "party": "R",
-"votes": 720444,
+"votes": 722073,
 "matched": true,
 "side": "R"
 },
@@ -1848,7 +1840,7 @@
 "key": "Henry",
 "name": "Chris Henry",
 "party": "O",
-"votes": 40799,
+"votes": 40914,
 "matched": false,
 "side": null
 },
@@ -1856,7 +1848,7 @@
 "key": "Dye",
 "name": "Gary Lyndon Dye",
 "party": "L",
-"votes": 18552,
+"votes": 18618,
 "matched": false,
 "side": null
 },
@@ -1864,7 +1856,7 @@
 "key": "Write-in",
 "name": "Write-in",
 "party": "O",
-"votes": 1441,
+"votes": 1447,
 "matched": false,
 "side": null
 }
@@ -1969,7 +1961,7 @@
 "SD": {
 "source": "South Dakota Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://electionresults.sd.gov/",
-"fetched": "2026-11-09T18:58:28-05:00",
+"fetched": "2026-11-10T02:02:06-05:00",
 "stale": false,
 "reporting": "671 of 671 precincts",
 "reporting_pct": 100.0,
@@ -1997,7 +1989,7 @@
 "TN": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-09T23:24:22.831Z",
+"fetched": "2026-11-10T03:46:05.980Z",
 "stale": false,
 "reporting": "89% of precincts",
 "reporting_pct": 89.3,
@@ -2089,7 +2081,7 @@
 "TX": {
 "source": "Texas Secretary of State; race call by the Associated Press (via Poliwave)",
 "source_url": "https://goelect.txelections.civixapps.com/ivis-enr-ui/races",
-"fetched": "2026-11-09T18:58:28-05:00",
+"fetched": "2026-11-10T02:02:06-05:00",
 "stale": false,
 "reporting": "about 89% of the last election's vote counted",
 "reporting_pct": 88.7,
@@ -2157,7 +2149,7 @@
 "VA": {
 "source": "Virginia Department of Elections; race call by the Associated Press (via Poliwave)",
 "source_url": "https://enr.elections.virginia.gov/results/public/virginia/elections/2026-November-General",
-"fetched": "2026-11-09T18:58:28-05:00",
+"fetched": "2026-11-10T02:02:06-05:00",
 "stale": false,
 "reporting": "about 82% of the last election's vote counted",
 "reporting_pct": 81.7,
@@ -2193,7 +2185,7 @@
 "WV": {
 "source": "Unofficial count, civicAPI via Poliwave; race call by the Associated Press (via Poliwave)",
 "source_url": "https://www.poliwave.com/us/live/midterms-2026/senate",
-"fetched": "2026-11-09T23:32:19.198Z",
+"fetched": "2026-11-10T03:35:45.571Z",
 "stale": false,
 "reporting": "75% of precincts",
 "reporting_pct": 75.2,
